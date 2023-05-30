@@ -1,0 +1,28 @@
+/* block element modifier */
+
+.profile__selector {
+    display: flex;
+    text-align: center;
+
+}
+
+.profile__title {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    font-family: Nunito,Helvetica,Arial,sans-serif;
+    font-size:x-large;
+
+}
+
+.profile__navigation {
+    font-family: Nunito,Helvetica,Arial,sans-serif;
+}
+
+.profile__item {
+
+}
+
+.profile__subtitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

@@ -1,23 +1,27 @@
+import { headers } from 'next/headers';
+import Link from "next/link";
+import './layout.css'
+
 export default function Find(){
     const profiles =  [
         {
-            jobName: 'Full Stack',
+            jobName1: 'Full Stack',
             icon: <figure></figure>,
         },
         {
-            jobName: 'Fron End',
+            jobName2: 'Fron End',
             icon: <figure></figure>,
         }
     ];
 
     return (
-        <section >
-            <h1>Select the profile that you want</h1>
-            <nav >
+        <section className="profile__selector">
+            <h1 className="profile__title">Select the profile that you want</h1>
+            <nav className="profile__navigation">
                 {
-                    profiles.map(({jobName, icon}) => (
-                        <article >
-                            <h4>{jobName}</h4>
+                    profiles.map(({jobName1, icon}) => (
+                        <article className="profile__item">
+                            <h4 className="profile__subtitle">{jobName1}</h4>
                             {icon}
                         </article>
                     ))

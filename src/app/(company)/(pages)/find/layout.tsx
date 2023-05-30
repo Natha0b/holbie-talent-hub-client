@@ -7,9 +7,7 @@ export default function DashboardLayout({
   }: {
     children: React.ReactNode
   }) {
-    console.log(headers());
-    console.log(headers().values());
-    console.log(headers().keys());
+
     return (
         <>
             <header className="header">
