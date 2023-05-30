@@ -6,22 +6,37 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --color-primary: #D55563;
+  --color-secondary: #8ACFC9;
+  --color-black: #495754;
+  --color-gray: #748A85;
+  --color-white: #F0FFFC;
+  --cards--shadow: 0 0 20px 10px var(--color-secondary);
+  --boder-size: 3px;
+
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  /* color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
+}
+
+[data-debugger],
+[data-debugger] *  {
+  box-shadow: 0 0 0 1px red;
+}
+
+* {
+  transition: all 250ms ease-in-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
