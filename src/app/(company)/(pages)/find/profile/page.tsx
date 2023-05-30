@@ -5,11 +5,11 @@ import './layout.css'
 export default function Find(){
     const profiles =  [
         {
-            jobName1: 'Full Stack',
+            jobName: 'Full Stack',
             icon: <figure></figure>,
         },
         {
-            jobName2: 'Fron End',
+            jobName: 'Front End',
             icon: <figure></figure>,
         }
     ];
@@ -19,9 +19,9 @@ export default function Find(){
             <h1 className="profile__title">Select the profile that you want</h1>
             <nav className="profile__navigation">
                 {
-                    profiles.map(({jobName1, icon}) => (
+                    profiles.map(({jobName, icon}) => (
                         <article className="profile__item">
-                            <h4 className="profile__subtitle">{jobName1}</h4>
+                            <h4 className="profile__subtitle">{jobName}</h4>
                             {icon}
                         </article>
                     ))

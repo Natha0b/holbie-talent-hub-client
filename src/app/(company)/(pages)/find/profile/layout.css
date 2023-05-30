@@ -1,28 +1,40 @@
 /* block element modifier */
 
-.profile__selector {
+.profile__selector:h1 {
     display: flex;
     text-align: center;
+    align-items:center;
+    height: 500px;
 
 }
 
 .profile__title {
-    display: flex;
-    height: 300px;
-    align-items: center;
+    text-align: center;
+    align-items:center;
+    line-height: 200px;
     font-family: Nunito,Helvetica,Arial,sans-serif;
-    font-size:x-large;
+    font-size:xx-large;
 
 }
 
-.profile__navigation {
-    font-family: Nunito,Helvetica,Arial,sans-serif;
+.profile__navigation:nav {
+    display: flex;
+    position: absolute;
+    padding-right: 20px;
+    text-align: center;
+    align-items:center;
+    height: 500px;
+
 }
 
 .profile__item {
+    width: var(--size);
+    height: var(--size);
 
 }
 
 .profile__subtitle {
+    text-align: center;
+    align-items:center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
