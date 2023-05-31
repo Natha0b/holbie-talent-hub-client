@@ -15,14 +15,15 @@ export default function Find(){
     ];
 
     return (
-        <section className="profile__selector">
+        <section className="profile">
             <h1 className="profile__title">Select the profile that you want</h1>
             <nav className="profile__navigation">
                 {
                     profiles.map(({jobName, icon}) => (
-                        <article className="profile__item">
-                            <h4 className="profile__subtitle">{jobName}</h4>
+                        <article className="card">
+                            <h4 className="card__title">{jobName}</h4>
                             {icon}
+                            <summary></summary>
                         </article>
                     ))
                 }

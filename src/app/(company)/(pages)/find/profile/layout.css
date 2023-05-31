@@ -1,39 +1,37 @@
 /* block element modifier */
 
-.profile__selector:h1 {
+.profile {
     display: flex;
     text-align: center;
     align-items:center;
-    height: 500px;
+    flex-direction: column;
 
 }
 
 .profile__title {
     text-align: center;
     align-items:center;
-    line-height: 200px;
     font-family: Nunito,Helvetica,Arial,sans-serif;
-    font-size:xx-large;
+    font-size: var(--font-size-large);
+    padding-block: 3rem 2rem;
 
 }
 
-.profile__navigation:nav {
+.profile__navigation {
     display: flex;
-    position: absolute;
-    padding-right: 20px;
-    text-align: center;
     align-items:center;
-    height: 500px;
+    flex-wrap: wrap;
+    gap: 1rem;
 
 }
 
-.profile__item {
+.card {
     width: var(--size);
     height: var(--size);
 
 }
 
-.profile__subtitle {
+.card__title {
     text-align: center;
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
