@@ -37,13 +37,13 @@
 
 
 .header__buttons-navigation:hover {
-    box-shadow: 0 0 0 var(--boder-size) inset var(--color-secondary);
+    box-shadow: 0 0 0 var(--border-size) inset var(--color-secondary);
     /* box-shadow: h v rd s; */
 }
 
 
 .header__buttons-navigation.--active {
-    box-shadow: 0 var(--boder-size) 0 0 inset var(--color-secondary);
+    box-shadow: 0 var(--border-size) 0 0 inset var(--color-secondary);
     height: var(--size);
     cursor: normal;
     color: var(--color-secondary);

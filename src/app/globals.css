@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'normalize.css/normalize.css';
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -12,7 +11,7 @@
   --color-gray: #748A85;
   --color-white: #F0FFFC;
   --cards--shadow: 0 0 20px 10px var(--color-secondary);
-  --boder-size: 3px;
+  --border-size: 3px;
   --font-size-large: 32px;
 
 }
@@ -25,15 +24,13 @@
   }
 } */
 
-body {
-  /* color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 [data-debugger],
-[data-debugger] *  {
+[data-debugger] * {
   box-shadow: 0 0 0 1px red;
 }
 

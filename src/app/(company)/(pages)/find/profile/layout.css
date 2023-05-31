@@ -3,15 +3,15 @@
 .profile {
     display: flex;
     text-align: center;
-    align-items:center;
+    align-items: center;
     flex-direction: column;
 
 }
 
 .profile__title {
     text-align: center;
-    align-items:center;
-    font-family: Nunito,Helvetica,Arial,sans-serif;
+    align-items: center;
+    font-family: Nunito, Helvetica, Arial, sans-serif;
     font-size: var(--font-size-large);
     padding-block: 3rem 2rem;
 
@@ -19,20 +19,98 @@
 
 .profile__navigation {
     display: flex;
-    align-items:center;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
 
 }
 
 .card {
-    width: var(--size);
-    height: var(--size);
-
+    min-width: 300px;
+    max-width: 600px;
+    width: 30vw;
+    min-height: 400px;
+    position: relative;
+    margin-inline: 25%;
+    filter: grayscale(.8);
 }
+
+.card > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+    transform-style: preserve-3d;
+    perspective: 20px;
+}
+
+
+.card__front {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    cursor: pointer;
+    z-index: 20;
+    
+    box-shadow: 0 0 0 var(--border-size) inset var(--color-secondary);
+    background-color: var(--color-white);
+}
+
+.card__icon {
+    font-size: 8rem;
+    color: var(--color-secondary);
+}
+
 
 .card__title {
     text-align: center;
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--color-secondary);
+}
+
+.card__back {
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 0 1px inset var(--color-secondary);
+    background-color: var(--color-white);
+}
+
+/** se activa cuando se pasa el mouse sobre el elemento card */
+.card:hover {
+    filter: grayscale(0);
+}
+
+/** se activa el card__front cuando se pasa el mouse sobre el elemento card */
+.card:hover .card__front {
+    transform: rotateY(10deg) translateX(-49%);
+}
+
+.card:hover .card__back {
+    transform: rotateY(10deg) translateX(49%);
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.form__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
