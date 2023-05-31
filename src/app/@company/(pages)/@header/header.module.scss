@@ -1,30 +1,14 @@
 
 /* block element modifier */
 
-
-
-.header {
-    /* CONSTANTS */
+.navigation {
     --size: 4rem;
 
-    display: flex;
-    height: var(--size);
-    width: 100%;
-    justify-content: space-between;
-    box-shadow: 0 -10px 30px 0 var(--color-gray);
-}
-
-.header__company-icon {
-    width: var(--size);
-    height: var(--size);
-}
-
-.header__navigation {
     display: flex;
     justify-content: center;
 }
 
-.header__buttons-navigation {
+.navigation__buttons {
     height: var(--size);
     padding-inline: 1rem;
     display: grid;
@@ -36,21 +20,15 @@
 }
 
 
-.header__buttons-navigation:hover {
+.navigation__buttons:hover {
     box-shadow: 0 0 0 var(--boder-size) inset var(--color-secondary);
     /* box-shadow: h v rd s; */
 }
 
-
-.header__buttons-navigation.--active {
+.navigation__buttons--active {
     box-shadow: 0 var(--boder-size) 0 0 inset var(--color-secondary);
     height: var(--size);
     cursor: normal;
     color: var(--color-secondary);
     font-weight: 400;
-}
-
-.header__profile-icon {
-    width: var(--size);
-    height: var(--size);
 }

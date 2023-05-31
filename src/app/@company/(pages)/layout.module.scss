@@ -1,0 +1,22 @@
+
+/* BEM: block element modifier */
+
+.header {
+    --size: 4rem;
+
+    display: flex;
+    height: var(--size);
+    width: 100%;
+    justify-content: space-between;
+    box-shadow: 0 -10px 30px 0 var(--color-gray);
+}
+
+.header__company-icon {
+    width: var(--size);
+    height: var(--size);
+}
+
+.header__profile-icon {
+    width: var(--size);
+    height: var(--size);
+}

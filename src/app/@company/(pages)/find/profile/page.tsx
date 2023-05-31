@@ -1,4 +1,4 @@
-export default function Find(){
+export default function FindPage(){
     const profiles =  [
         {
             jobName: 'Full Stack',
