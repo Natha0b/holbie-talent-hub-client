@@ -2,7 +2,7 @@ import { headers } from 'next/headers';
 import Link from "next/link";
 import './layout.css'
 import { DiAndroid, DiAptana, DiDatabase } from "react-icons/di";
-import  Card  from '../../components/card/card_page';
+import Card from '../../../../components/card/card_page'
 
 export default function Find(){
     const profiles =  [
@@ -65,7 +65,7 @@ export default function Find(){
                 {
                     profiles.map(({jobName, icon: Icon, location, kindJob}) => (
                         <article className="card">
-                            < Card />
+                            <Card />
                             <aside  className="card__back">
                                 <form className='form' action="edit-profile" method="post">
                                     <section className='form__item'>

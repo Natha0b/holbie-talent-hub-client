@@ -1,6 +1,5 @@
 import { headers } from 'next/headers';
 import Link from "next/link";
-import './layout.css'
 import { DiAndroid, DiAptana, DiDatabase } from "react-icons/di";
 import React from 'react';
 
