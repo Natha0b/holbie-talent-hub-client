@@ -1,9 +1,8 @@
-import { headers } from 'next/headers';
-import Link from "next/link";
-import { DiAndroid, DiAptana, DiDatabase } from "react-icons/di";
 import React from 'react';
+import { profiles, listOfCities } from '../../../../public/data'
+import { DiAndroid, DiAptana, DiDatabase } from "react-icons/di";
 
-const Card = () => {
+const Front_card = () => {
     return(
         <div>
             <article className="card">
@@ -14,8 +13,7 @@ const Card = () => {
             </article>
         </div>
         )
-};
+}
 
-export default Card;
-
+export { Front_card };
 
