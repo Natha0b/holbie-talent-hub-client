@@ -1,7 +1,7 @@
 import { headers } from 'next/headers';
 import Link from "next/link";
 import './layout.css'
-import Logo from '@/public/logo.png'
+import Logo from '../../../../../public/logo.png'
 
 export default function DashboardLayout({
     children, 
