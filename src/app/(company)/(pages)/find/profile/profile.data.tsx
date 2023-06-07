@@ -1,23 +1,34 @@
 import React from 'react';
 import { DiAndroid, DiAptana, DiDatabase } from "react-icons/di";
+import Logo from '../../../../../public/logo.png'
 
 const profiles =  [
     {
-        jobName: 'Dev Android',
-        location: 'Bogota D.C',
+        jobName: 'BackEnd',
         kindJob: 'On site',
+        location: 'Bogota D.C',
+        skills: 'english, technologies',
         icon: DiAndroid,
     },
     {
+        jobName: 'FrontEnd',
         kindJob: 'Remote',
         location: 'Medellin',
-        jobName: 'Devops',
+        skills: 'english, technologies',
         icon: DiAptana,
     },
     {
-        jobName: 'Back end',
+        jobName: 'Full Stack',
         kindJob: 'Remote',
         location: 'Cartagena',
+        skills: 'english, technologies',
+        icon: DiDatabase,
+    },
+    {
+        jobName: 'Other',
+        kindJob: 'Remote',
+        location: 'Cali',
+        skills: 'english, technologies',
         icon: DiDatabase,
     }
 ];
@@ -54,4 +65,27 @@ const listOfCities = [
     'Leticia',
 ];
 
-export{ profiles, listOfCities }
+const englishLevel = [
+    'A0: Beginner',
+    'A1-A2: Basic',
+    'A2-B1: Pre-intermediate',
+    'B1: Intermediate',
+    'B2: Upper-intermediate',
+    'C1-C2: Advanced',
+];
+
+const technologies = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Node.js',
+];
+
+const jobKind = [
+    'Remote',
+    'Onside',
+    'Both',
+];
+
+export{ profiles, listOfCities, englishLevel, technologies, jobKind }

@@ -1,0 +1,26 @@
+
+.card {
+    min-width: 300px;
+    max-width: 600px;
+    width: 30vw;
+    min-height: 400px;
+    position: relative;
+    margin-inline: 25%;
+    filter: grayscale(.8);
+}
+
+.card > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+    transform-style: preserve-3d;
+    perspective: 20px;
+}
+
+/** se activa cuando se pasa el mouse sobre el elemento card */
+.card--active {
+    filter: grayscale(0);
+}

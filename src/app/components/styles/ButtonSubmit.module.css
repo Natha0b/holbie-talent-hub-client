@@ -1,0 +1,21 @@
+.form__item {
+    margin-bottom: 20px;
+}
+
+.form__item.form__submit {
+    text-align: center;
+}
+
+.form__item button[type='submit'] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form__item button[type='submit']:hover {
+    background-color: var(--color-primary);
+}

@@ -1,0 +1,39 @@
+.card__back {
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 0 1px inset var(--color-secondary);
+    background-color: var(--color-white);
+}
+
+.card__back--active {
+    transform: rotateY(10deg) translateX(49%);
+}
+
+.form__item {
+    margin-bottom: 20px;
+}
+
+.form__item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-top: 1rem;
+
+}
+
+.form__item input[type='text'] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form__item datalist {
+    margin-top: 5px;
+}
+
+.form__item datalist option {
+    padding: 5px;
+}

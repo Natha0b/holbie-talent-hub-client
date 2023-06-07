@@ -17,7 +17,7 @@ export default function DashboardLayout({
                         src="/logo.png"
                         alt="Coderrise Logo"
                         className="dark:invert"
-                        width={85}
+                        width={83}
                         height={50}
                      />
                 </figure>

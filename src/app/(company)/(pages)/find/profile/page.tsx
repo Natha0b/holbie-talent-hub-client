@@ -1,26 +1,19 @@
-import './layout.css'
-import { FrontCard } from '../../../../components/card/FrontCard'
-import { BackCard } from '../../../../components/card/BackCard'
-import { JobCard } from '../../../../components/card/JobCard'
-import { ButtonSubmit } from '../../../../components/card/ButtonSubmit'
+'use client';
+import { Card } from '../../../../components/card/Card'
 import { profiles } from '../profile/profile.data'
+import profile from '../profile/profile.module.css'
 
 export default function Find() {
     return (
-        <section className="profile">
-            <h1 className="profile__title">Select the profile that you want</h1>
-            <nav className="profile__navigation">
-                {
-                    profiles.map(({ jobName, icon: Icon, location, kindJob }) => (
-                        <article className="card">
-                            <FrontCard Icon={Icon} jobName={jobName} />
-                            <BackCard kindJob={kindJob} />
-                            <JobCard kindJob={kindJob} />
-                            <ButtonSubmit />
-                        </article>
-                    ))
-                }
-            </nav>
-        </section>
+            <section className={profile.profile}>
+                <h1 className={profile.profile__title}>Select the profile that you want</h1>
+                <nav className={profile.profile__navigation}>
+                    {
+                        profiles.map(({ jobName, icon: Icon, kindJob }) => (
+                           <Card Icon={Icon} jobName={jobName} kindJob={kindJob}  />
+                        ))
+                    }
+                </nav>
+            </section>
     )
 }

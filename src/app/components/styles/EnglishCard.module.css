@@ -1,0 +1,25 @@
+.form__english {
+    margin-bottom: 20px;
+}
+
+.form__english label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form__english input[type='text'] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form__english datalist {
+    margin-top: 5px;
+}
+
+.form__english datalist option {
+    padding: 5px;
+}

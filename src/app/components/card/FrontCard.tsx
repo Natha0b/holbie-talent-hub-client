@@ -1,12 +1,14 @@
+'use client';
 import React from 'react';
 import { IconType } from 'react-icons';
+import styles from '../styles/FrontCard.module.css'
 
-const FrontCard: React.FC<{ jobName: string, Icon: IconType }> = ({ Icon, jobName }) => {
+const FrontCard: React.FC<{ jobName: string, Icon: IconType, active: boolean}> = ({ Icon, jobName, active }) => {
     return (
-        <main className="card__front">
-            <Icon className="card__icon" />
-            <h4 className="card__title">{jobName}</h4>
-        </main>
+            <main className={`${styles.card__front} ${active && styles['card__front--active']}`}>
+                <Icon className={styles.card__icon} />
+                <h4 className={styles.card__title}>{jobName}</h4>
+            </main>
     )
 }
 

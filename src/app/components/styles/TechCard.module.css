@@ -1,0 +1,25 @@
+.form__tech {
+    margin-bottom: 20px;
+}
+
+.form__tech label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form__tech input[type='text'] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form__tech datalist {
+    margin-top: 5px;
+}
+
+.form__tech datalist option {
+    padding: 5px;
+}
