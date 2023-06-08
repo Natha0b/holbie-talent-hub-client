@@ -1,37 +1,42 @@
-import React from 'react';
-import { DiAndroid, DiAptana, DiDatabase } from "react-icons/di";
-import Logo from '../../../../../public/logo.png'
 
-const profiles =  [
+interface Profile {
+    jobName: string;
+    kindJob: string;
+    location: string;
+    skills: string;
+    icon: string;
+  }
+  
+  const profiles: Profile[] = [
     {
-        jobName: 'BackEnd',
-        kindJob: 'On site',
-        location: 'Bogota D.C',
-        skills: 'english, technologies',
-        icon: DiAndroid,
+      jobName: 'BackEnd',
+      kindJob: 'On site',
+      location: 'Bogota D.C',
+      skills: 'english, technologies',
+      icon: '/imagenesCoderise/backend.png',
     },
     {
-        jobName: 'FrontEnd',
-        kindJob: 'Remote',
-        location: 'Medellin',
-        skills: 'english, technologies',
-        icon: DiAptana,
+      jobName: 'FrontEnd',
+      kindJob: 'Remote',
+      location: 'Medellin',
+      skills: 'english, technologies',
+      icon: '/imagenesCoderise/frontend.png',
     },
     {
-        jobName: 'Full Stack',
-        kindJob: 'Remote',
-        location: 'Cartagena',
-        skills: 'english, technologies',
-        icon: DiDatabase,
+      jobName: 'Full Stack',
+      kindJob: 'Remote',
+      location: 'Cartagena',
+      skills: 'english, technologies',
+      icon: '/imagenesCoderise/fullstack.png',
     },
     {
-        jobName: 'Other',
-        kindJob: 'Remote',
-        location: 'Cali',
-        skills: 'english, technologies',
-        icon: DiDatabase,
-    }
-];
+      jobName: 'Other',
+      kindJob: 'Remote',
+      location: 'Cali',
+      skills: 'english, technologies',
+      icon: '/imagenesCoderise/others.png',
+    },
+  ];
 
 const listOfCities = [
     'Bogota D.C',

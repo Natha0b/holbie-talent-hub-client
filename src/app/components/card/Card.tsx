@@ -1,4 +1,46 @@
 'use client';
+import React, { useRef } from 'react';
+import { FrontCard } from '../../components/card/FrontCard';
+import { BackCard } from '../../components/card/BackCard';
+import { TechCard } from '@/app/components/card/TechCard';
+import { EnglishCard } from '@/app/components/card/EnglishCard';
+import { JobCard } from '../../components/card/JobCard';
+import { ButtonSubmit } from '../../components/card/ButtonSubmit';
+import styles from '../styles/Card.module.css';
+import { useCardState } from '../../components/hooks/useCardState';
+
+const Card: React.FC<{ kindJob: string; jobName: string; icon: string; }> = ({
+  kindJob,
+  icon,
+  jobName,
+}) => {
+  const cardRef = useRef<HTMLElement | null>(null);
+  const { active, handleClick, handleMouseEnter } = useCardState({ cardRef });
+
+  return (
+    <article
+      ref={cardRef}
+      className={`${styles.card} ${active && styles['card--active']}`}
+      onMouseEnter={handleMouseEnter}
+      onClick={handleClick}
+      
+    >
+      <FrontCard icon={icon} jobName={jobName} active={active} />
+      <BackCard kindJob={kindJob} active={active} />
+      <JobCard />
+      <TechCard />
+      <EnglishCard />
+      <ButtonSubmit />
+    </article>
+  );
+};
+
+export { Card };
+
+
+
+
+/*'use client';
 import React, { useEffect, useRef } from 'react';
 import { IconType } from 'react-icons';
 import { FrontCard } from '../../components/card/FrontCard'
@@ -10,7 +52,8 @@ import { ButtonSubmit } from '../../components/card/ButtonSubmit'
 import styles from '../styles/Card.module.css'
 import { useState } from 'react';
 
-const Card: React.FC<{ kindJob: string, jobName: string, Icon: IconType }> = ({ kindJob, Icon, jobName }) => {
+
+const Card: React.FC<{ kindJob: string, jobName: string, icon: string; }> = ({ kindJob, icon, jobName }) => {
 
     const [active, setActive] = useState(false);
     const card = useRef<HTMLElement | null>(null);
@@ -49,7 +92,7 @@ const Card: React.FC<{ kindJob: string, jobName: string, Icon: IconType }> = ({ 
       }, []);
     return (
             <article ref={card} className={`${styles.card} ${active && styles['card--active']}`} onClick={onclick} onMouseEnter={onmouseenter}>
-                <FrontCard Icon={Icon} jobName={jobName} active={active} />
+                <FrontCard icon={icon} jobName={jobName} active={active} />
                 <BackCard kindJob={kindJob} active={active} />
                 <JobCard />
                 <TechCard />
@@ -60,3 +103,4 @@ const Card: React.FC<{ kindJob: string, jobName: string, Icon: IconType }> = ({ 
 }
 
 export { Card };
+*/
