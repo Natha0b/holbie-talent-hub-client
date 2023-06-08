@@ -24,7 +24,7 @@ const HomeProfiles: React.FC = () => {
     const users: User[] = [
         {
             name: 'John Doe',
-            profilePicture: '/profile1.jpg',
+            profilePicture: 'profile1.jpg',
             age: 30,
             programmingLanguages: ['JavaScript', 'C'],
             githubUrl: 'https://github.com/',
@@ -33,8 +33,8 @@ const HomeProfiles: React.FC = () => {
             slackUrl: 'https://slack.com/',
         },
         {
-            name: 'Jane Smith',
-            profilePicture: '/profile2.jpg',
+            name: 'Ana diaz',
+            profilePicture: 'profile2.jpg',
             age: 25,
             programmingLanguages: ['JavaScript', 'Ruby'],
             githubUrl: 'https://github.com/',
@@ -43,8 +43,8 @@ const HomeProfiles: React.FC = () => {
             slackUrl: 'https://slack.com/',
         },
         {
-            name: 'Ana diaz',
-            profilePicture: '/profile2.jpg',
+            name: 'Jane Smith',
+            profilePicture: 'profile3.jpg',
             age: 25,
             programmingLanguages:['JavaScript', 'C', 'Ruby'],
             githubUrl: 'https://github.com/',
@@ -98,23 +98,25 @@ const HomeProfiles: React.FC = () => {
                                     >
 
                                         <div className="user-info">
-                                            <img className="profile-picture" src="../../../../imagenescoderise/profile3.jpg" width={30} height={30} />
+                                            <div className="icon-profile">
+                                                <img className="profile-picture" src={`../../../../imagenescoderise/${user.profilePicture}`} />
+                                            </div>
                                             <div className="user-details">
                                                 <h1 className="name">{user.name}</h1>
                                                 <p className="title">Software Engineer</p>
                                                 <p className="description">
-                                                    Experiencia en la industria: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget
+                                                    Industry experience: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget
                                                     condimentum tortor, vitae gravida ipsum. Nullam ut mi vel nisi auctor fermentum. In hac habitasse
                                                     platea dictumst.
                                                 </p>
-                                                <p className="description">Lenguajes de Programación:</p>
+                                                <p className="description">Programming Languages</p>
                                                 <div className="programming-languages">
                                                     {user.programmingLanguages.map((language, index) => (
-                                                        <div key={index}>{getLanguageIcon(language)}</div>
+                                                        <div className="icons-languajes" key={index}>{getLanguageIcon(language)}</div>
                                                     ))}
                                                 </div>
                                                 <p className="description">
-                                                    Tipo de trabajo buscado: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu diam eget
+                                                    Type of work sought: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu diam eget
                                                     dui euismod commodo vitae eget augue. Mauris vitae vestibulum quam.
                                                 </p>
                                             </div>
@@ -128,11 +130,11 @@ const HomeProfiles: React.FC = () => {
                                     </div>
                                 ))}
                             </div>
+                            <button className="carousel__button carousel__button--next" onClick={handleNextSlide}>
+                                &gt;
+                            </button>
                         </div>
                     </div>
-                    <button className="carousel__button carousel__button--next" onClick={handleNextSlide}>
-                        &gt;
-                    </button>
                 </div >
             </section >
         </DashboardLayout>
