@@ -1,11 +1,36 @@
-.profile {
-    padding: 2rem;
-    text-align: center;
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 560px;
 }
 
 .profile__title {
     font-size: 2rem;
     margin-bottom: 2rem;
+    text-align: center;
+
+}
+
+.profile-picture {
+    border-radius: 150px;
+    width: 170px;
+    height: 170px;
+    ;
+}
+
+.icon-profile {
+    padding: 10px 20px 0 0;
 }
 
 .carousel {
@@ -14,19 +39,25 @@
 }
 
 .carousel__button {
-    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
     border: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 15px;
     cursor: pointer;
-    font-size: 1.5rem;
-    padding: 0.5rem;
 }
 
 .carousel__button--prev {
-    margin-right: 1rem;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 .carousel__button--next {
-    margin-left: 1rem;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 .carousel__slide-container {
@@ -45,16 +76,10 @@
     opacity: 1;
 }
 
-.profile-picture {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-}
-
 .user-info {
-    text-align: left;
+    text-align: center;
+
+
 }
 
 .name {
@@ -69,4 +94,28 @@
 
 .description {
     margin-bottom: 1rem;
+}
+
+.icon {
+    padding: 20px;
+
+}
+
+.icons-languajes {
+    padding: 10px;
+    text-align: center;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.programming-languages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
