@@ -33,6 +33,13 @@
     padding: 10px 20px 0 0;
 }
 
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 30%;
+    margin-right: 20px;
+}
+
 .carousel {
     display: flex;
     align-items: center;

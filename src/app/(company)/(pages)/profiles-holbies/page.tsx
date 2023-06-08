@@ -46,7 +46,7 @@ const HomeProfiles: React.FC = () => {
             name: 'Jane Smith',
             profilePicture: 'profile3.jpg',
             age: 25,
-            programmingLanguages: ['JavaScript', 'C', 'Ruby'],
+            programmingLanguages:['JavaScript', 'C', 'Ruby'],
             githubUrl: 'https://github.com/',
             linkedinUrl: 'https://linkedin.com/',
             gmailUrl: 'https://gmail.com',
@@ -78,7 +78,7 @@ const HomeProfiles: React.FC = () => {
                 return null;
         }
     };
-
+    
 
     return (
         <DashboardLayout>
