@@ -12,13 +12,15 @@
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    max-width: 560px;
+    max-width: 700px;
 }
 
+
 .profile__title {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
     text-align: center;
+    Font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
 
 }
 
@@ -26,7 +28,13 @@
     border-radius: 150px;
     width: 170px;
     height: 170px;
-    ;
+
+}
+
+.user-info {
+    text-align: left;
+    display: flex;
+   
 }
 
 .icon-profile {
@@ -38,6 +46,7 @@
     height: 150px;
     border-radius: 30%;
     margin-right: 20px;
+    float: left;
 }
 
 .carousel {
@@ -83,15 +92,11 @@
     opacity: 1;
 }
 
-.user-info {
-    text-align: center;
-
-
-}
-
 .name {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    Font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+
 }
 
 .title {
@@ -101,6 +106,7 @@
 
 .description {
     margin-bottom: 1rem;
+
 }
 
 .icon {
