@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { englishLevel } from '../../(company)/(pages)/find/profile/profile.data'
-import styles from '../styles/EnglishCard.module.css'
+import React from 'react';
+import { englishLevel } from '$company/(pages)/find/profile/profile.data'
+import styles from './EnglishCard.module.css'
 
 const EnglishCard = () => {
 

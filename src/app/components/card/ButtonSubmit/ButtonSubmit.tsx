@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/ButtonSubmit.module.css'
+import styles from './ButtonSubmit.module.css'
 
 const ButtonSubmit = () => {
     return (

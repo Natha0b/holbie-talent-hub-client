@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { IconType } from 'react-icons';
-import styles from '../styles/FrontCard.module.css'
+import styles from './FrontCard.module.css'
 
 const FrontCard: React.FC<{ jobName: string, Icon: IconType, active: boolean}> = ({ Icon, jobName, active }) => {
     return (

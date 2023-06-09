@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { jobKind } from '../../(company)/(pages)/find/profile/profile.data'
-import styles from '../styles/JobCard.module.css'
+import { jobKind } from '$company/(pages)/find/profile/profile.data'
+import styles from './JobCard.module.css'
 
 const JobCard = () => {
 

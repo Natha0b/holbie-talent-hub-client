@@ -1,7 +1,7 @@
 'use client';
-import { Card } from '../../../../components/card/Card'
-import { profiles } from '../profile/profile.data'
-import profile from '../profile/profile.module.css'
+import { Card } from '$components/card/Card/Card';
+import { profiles } from './profile.data';
+import profile from '../profile/profile.module.css';
 
 export default function Find() {
     return (
