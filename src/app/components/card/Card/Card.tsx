@@ -1,13 +1,13 @@
 'use client';
 import React, { useRef } from 'react';
-import { FrontCard } from '../../components/card/FrontCard';
-import { BackCard } from '../../components/card/BackCard';
-import { TechCard } from '@/app/components/card/TechCard';
-import { EnglishCard } from '@/app/components/card/EnglishCard';
-import { JobCard } from '../../components/card/JobCard';
-import { ButtonSubmit } from '../../components/card/ButtonSubmit';
-import styles from '../styles/Card.module.css';
-import { useCardState } from '../../components/hooks/useCardState';
+import { FrontCard } from '$components/card/FrontCard/FrontCard';
+import { BackCard } from '$components/card/BackCard/BackCard';
+import { TechCard } from '$components/card/TechCard/TechCard';
+import { EnglishCard } from '$components/card/EnglishCard/EnglishCard';
+import { JobCard } from '$components/card/JobCard/JobCard';
+import { ButtonSubmit } from '$components/card/ButtonSubmit/ButtonSubmit';
+import styles from './Card.module.css';
+import { useCardState } from '$components/hooks/useCardState';
 
 const Card: React.FC<{ kindJob: string; jobName: string; icon: string; }> = ({
   kindJob,
@@ -43,13 +43,13 @@ export { Card };
 /*'use client';
 import React, { useEffect, useRef } from 'react';
 import { IconType } from 'react-icons';
-import { FrontCard } from '../../components/card/FrontCard'
-import { BackCard } from '../../components/card/BackCard'
-import { TechCard } from '@/app/components/card/TechCard';
-import { EnglishCard } from '@/app/components/card/EnglishCard';
-import { JobCard } from '../../components/card/JobCard'
-import { ButtonSubmit } from '../../components/card/ButtonSubmit'
-import styles from '../styles/Card.module.css'
+import { FrontCard } from '$components/card/FrontCard/FrontCard'
+import { BackCard } from '$components/card/BackCard/BackCard'
+import { TechCard } from '$components/card/TechCard/TechCard';
+import { EnglishCard } from '$components/card/EnglishCard/EnglishCard';
+import { JobCard } from '$components/card/JobCard/JobCard';
+import { ButtonSubmit } from '$components/card/ButtonSubmit/ButtonSubmit';
+import styles from './Card.module.css';
 import { useState } from 'react';
 
 

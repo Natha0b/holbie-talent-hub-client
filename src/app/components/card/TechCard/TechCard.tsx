@@ -1,7 +1,7 @@
-import React from 'react';
-import { technologies } from '../../(company)/(pages)/find/profile/profile.data';
-import styles from '../styles/TechCard.module.css';
-import { useSelectedTechnologies } from '../../components/hooks/useSelectedTechnologies';
+import React, { useState } from 'react';
+import { technologies } from '$company/(pages)/find/profile/profile.data'
+import styles from './TechCard.module.css'
+import { useSelectedTechnologies } from '$components/hooks/useSelectedTechnologies';
 
 const TechCard = () => {
   const { selectedTechnologies, handleTechnologySelection, handleRemoveTechnology } =
@@ -43,8 +43,8 @@ export { TechCard };
 
 /*
 import React, { useState } from 'react';
-import { technologies } from '../../(company)/(pages)/find/profile/profile.data'
-import styles from '../styles/TechCard.module.css'
+import { technologies } from '$company/(pages)/find/profile/profile.data'
+import styles from './TechCard.module.css'
 
 const TechCard = () => {
     const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]); // Utilizamos un array de strings en lugar de un array de números

@@ -1,11 +1,11 @@
 'use client';
 import React from 'react';
-import { listOfCities } from '../../(company)/(pages)/find/profile/profile.data'
-import { JobCard } from './JobCard'
-import { TechCard } from '@/app/components/card/TechCard';
-import { EnglishCard } from '@/app/components/card/EnglishCard';
-import { ButtonSubmit } from './ButtonSubmit'
-import styles from '../styles/BackCard.module.css'
+import { ButtonSubmit } from '$components/card/ButtonSubmit/ButtonSubmit';
+import { listOfCities } from '$company/(pages)/find/profile/profile.data';
+import { EnglishCard } from '$components/card/EnglishCard/EnglishCard';
+import { TechCard } from '$components/card/TechCard/TechCard';
+import { JobCard } from '$components/card/JobCard//JobCard';
+import styles from './BackCard.module.css';
 
 const BackCard: React.FC<{ kindJob: string, active: boolean }> = ({ kindJob, active}) => {
     return (
