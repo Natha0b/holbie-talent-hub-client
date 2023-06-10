@@ -7,6 +7,113 @@ import Image from 'next/image';
 import javascriptIcon from '../../../../../public/imagenescoderise/java-script1.png';
 import cIcon from '../../../../../public/imagenescoderise/c-.png';
 import rubyIcon from '../../../../../public/imagenescoderise/ruby.png';
+import { ProfileSection } from "$components/profile/ProfileSection/ProfileSection";
+import { Carousel } from "$components/profile/Carousel/Carousel";
+import { ProfileCard } from "$components/profile/ProfileCard/ProfileCard";
+import { UserInfo } from "$components/profile/UserInfo/UserInfo";
+import { ContactIcons } from "$components/profile/ContactIcons/ContactIcons";
+
+interface User {
+    name: string;
+    profilePicture: string;
+    age: number;
+    programmingLanguages: string[];
+    githubUrl: string;
+    linkedinUrl: string;
+    gmailUrl: string;
+    slackUrl: string;
+
+}
+
+const HomeProfiles: React.FC = () => {
+    const users: User[] = [
+        {
+            name: 'John Doe',
+            profilePicture: 'profile1.jpg',
+            age: 30,
+            programmingLanguages: ['JavaScript', 'C'],
+            githubUrl: 'https://github.com/',
+            linkedinUrl: 'https://linkedin.com/',
+            gmailUrl: 'https://gmail.com',
+            slackUrl: 'https://slack.com/',
+        },
+        {
+            name: 'Ana diaz',
+            profilePicture: 'profile2.jpg',
+            age: 25,
+            programmingLanguages: ['JavaScript', 'Ruby'],
+            githubUrl: 'https://github.com/',
+            linkedinUrl: 'https://linkedin.com/',
+            gmailUrl: 'https://gmail.com',
+            slackUrl: 'https://slack.com/',
+        },
+        {
+            name: 'Jane Smith',
+            profilePicture: 'profile3.jpg',
+            age: 25,
+            programmingLanguages: ['JavaScript', 'C', 'Ruby'],
+            githubUrl: 'https://github.com/',
+            linkedinUrl: 'https://linkedin.com/',
+            gmailUrl: 'https://gmail.com',
+            slackUrl: 'https://slack.com/',
+        },
+        // Agrega más usuarios aquí si es necesario
+    ];
+
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    /*Estas funciones actualizan el estado currentSlide para mostrar el perfil de usuario anterior o siguiente en el carrusel.*/
+    const handlePrevSlide = () => {
+        setCurrentSlide((prevSlide) => (prevSlide === 0 ? users.length - 1 : prevSlide - 1));
+    };
+
+    const handleNextSlide = () => {
+        setCurrentSlide((prevSlide) => (prevSlide === users.length - 1 ? 0 : prevSlide + 1));
+    };
+
+    const getLanguageIcon = (language: string) => {
+        switch (language) {
+            case 'JavaScript':
+                return <Image src={javascriptIcon} alt="JavaScript" width={32} height={32} />;
+            case 'C':
+                return <Image src={cIcon} alt="C" width={32} height={32} />;
+            case 'Ruby':
+                return <Image src={rubyIcon} alt="Ruby" width={32} height={32} />;
+            default:
+                return null;
+        }
+    };
+
+
+    return (
+        <DashboardLayout>
+            <Carousel/>
+            <ContactIcons/>
+            <ProfileCard/>
+            <ProfileSection/>
+            <UserInfo/>
+            <ProfileSection
+                users={users}
+                handlePrevSlide={handlePrevSlide}
+                handleNextSlide={handleNextSlide}
+                currentSlide={currentSlide}
+            />
+
+        </DashboardLayout>
+    );
+};
+
+export { HomeProfiles };
+
+/*"use client";
+import React from 'react';
+import { useState } from "react";
+import './profiles.css';
+import DashboardLayout from '../find/layout';
+import Image from 'next/image';
+import javascriptIcon from '../../../../../public/imagenescoderise/java-script1.png';
+import cIcon from '../../../../../public/imagenescoderise/c-.png';
+import rubyIcon from '../../../../../public/imagenescoderise/ruby.png';
 
 interface User {
     name: string;
@@ -57,7 +164,7 @@ const HomeProfiles: React.FC = () => {
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    /*Estas funciones actualizan el estado currentSlide para mostrar el perfil de usuario anterior o siguiente en el carrusel.*/
+    Estas funciones actualizan el estado currentSlide para mostrar el perfil de usuario anterior o siguiente en el carrusel.
     const handlePrevSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide === 0 ? users.length - 1 : prevSlide - 1));
     };
@@ -141,4 +248,4 @@ const HomeProfiles: React.FC = () => {
     );
 };
 
-export default HomeProfiles;
+export default HomeProfiles;*/

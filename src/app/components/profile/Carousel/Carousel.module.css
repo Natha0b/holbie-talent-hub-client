@@ -1,0 +1,31 @@
+.carousel {
+    display: flex;
+    align-items: center;
+}
+
+.carousel__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.carousel__button--prev {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.carousel__button--next {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.carousel__slide-container {
+    position: relative;
+    flex-grow: 1;
+}

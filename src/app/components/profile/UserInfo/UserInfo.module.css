@@ -1,0 +1,40 @@
+.user-info {
+    text-align: left;
+    display: flex;
+
+}
+
+
+.name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    Font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+
+}
+
+.title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    margin-bottom: 1rem;
+
+}
+
+.icons-languajes {
+    padding: 10px;
+    text-align: center;
+}
+
+.icon-profile {
+    padding: 10px 20px 0 0;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 30%;
+    margin-right: 20px;
+    float: left;
+}

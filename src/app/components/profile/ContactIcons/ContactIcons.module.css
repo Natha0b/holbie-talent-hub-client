@@ -1,0 +1,18 @@
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    padding: 20px;
+
+}
+
+.programming-languages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

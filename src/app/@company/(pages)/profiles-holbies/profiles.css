@@ -1,4 +1,4 @@
-.container {
+/*.container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +34,7 @@
 .user-info {
     text-align: left;
     display: flex;
-   
+
 }
 
 .icon-profile {
@@ -132,3 +132,5 @@
     align-items: center;
     gap: 10px;
 }
+
+*/

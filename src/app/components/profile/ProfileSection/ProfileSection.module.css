@@ -1,0 +1,24 @@
+.profile__title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    Font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
