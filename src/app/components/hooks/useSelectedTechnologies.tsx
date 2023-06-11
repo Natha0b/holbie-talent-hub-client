@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useSelectedTechnologies = () => {
+export const useSelectedTechnologies = () => {
   const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
 
   const handleTechnologySelection = (selectedTechnology: string) => {
@@ -16,5 +16,3 @@ const useSelectedTechnologies = () => {
 
   return { selectedTechnologies, handleTechnologySelection, handleRemoveTechnology };
 };
-
-export { useSelectedTechnologies };

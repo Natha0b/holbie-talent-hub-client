@@ -1,6 +1,8 @@
 import React from "react";
-import { HomeProfiles } from "$company/(pages)/profiles-holbies/page";
 import styles from "./ProfileCard.module.css";
+import { UserInfo } from "../UserInfo/UserInfo";
+import { User } from "$company/(pages)/profiles-holbies/page";
+import { ContactIcons } from "../ContactIcons/ContactIcons";
 
 interface ProfileCardProps {
     user: User;
@@ -8,7 +10,7 @@ interface ProfileCardProps {
     currentSlide: number;
 }
 
-const ProfileCard: React.FC<ProfileCardProps> = ({ user, index, currentSlide }) => {
+export const ProfileCard: React.FC<ProfileCardProps> = ({ user, index, currentSlide }) => {
     return (
         <div className={`${styles["carousel__slide"]} ${index === currentSlide ? styles["carousel__slide--active"] : ""}`}>
             <UserInfo user={user} />
@@ -16,5 +18,3 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ user, index, currentSlide }) 
         </div>
     );
 };
-
-export { ProfileCard };

@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./ContactIcons.module.css"
+import { User } from "$/app/@company/(pages)/profiles-holbies/page";
 
 interface ContactIconsProps {
     user: User;
 }
 
-const ContactIcons: React.FC<ContactIconsProps> = ({ user }) => {
+export const ContactIcons: React.FC<ContactIconsProps> = ({ user }) => {
     return (
         <div className={styles["contact-icons"]}>
             <a href={user.githubUrl} target="_blank" rel="noopener noreferrer">
@@ -23,5 +24,3 @@ const ContactIcons: React.FC<ContactIconsProps> = ({ user }) => {
         </div>
     );
 };
-
-export { ContactIcons };

@@ -14,15 +14,15 @@ const Card: React.FC<{ kindJob: string; jobName: string; icon: string; }> = ({
   icon,
   jobName,
 }) => {
-  const cardRef = useRef<HTMLElement | null>(null);
-  const { active, handleClick, handleMouseEnter } = useCardState({ cardRef });
+  
+  const { active, activeShow, cardRef } = useCardState();
 
   return (
     <article
       ref={cardRef}
       className={`${styles.card} ${active && styles['card--active']}`}
-      onMouseEnter={handleMouseEnter}
-      onClick={handleClick}
+      onMouseEnter={activeShow}
+      onClick={activeShow}
       
     >
       <FrontCard icon={icon} jobName={jobName} active={active} />

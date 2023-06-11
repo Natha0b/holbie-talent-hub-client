@@ -1,16 +1,16 @@
 import React from "react";
-import { HomeProfiles  } from "$company/(pages)/profiles-holbies/page";
 import styles from "./UserInfo.module.css";
 import Image from 'next/image';
 import javascriptIcon from "../../../../../public/imagenescoderise/java-script1.png";
 import cIcon from "../../../../../public/imagenescoderise/c-.png";
+import { User } from "$company/(pages)/profiles-holbies/page";
 import rubyIcon from "../../../../../public/imagenescoderise/ruby.png";
 
 interface UserInfoProps {
     user: User;
 }
 
-const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
+export const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
     const getLanguageIcon = (language: string) => {
         switch (language) {
             case 'JavaScript':
@@ -51,4 +51,3 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
     );
 };
 
-export { UserInfo };

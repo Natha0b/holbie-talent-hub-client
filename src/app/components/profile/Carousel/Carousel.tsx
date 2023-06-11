@@ -1,6 +1,7 @@
 import React from "react";
 import { ProfileCard } from "../ProfileCard/ProfileCard"
 import styles from "./Carousel.module.css"
+import { User } from "$company/(pages)/profiles-holbies/page";
 
 interface CarouselProps {
     users: User[];
@@ -9,7 +10,7 @@ interface CarouselProps {
     currentSlide: number;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ users, handlePrevSlide, handleNextSlide, currentSlide }) => {
+export const Carousel: React.FC<CarouselProps> = ({ users, handlePrevSlide, handleNextSlide, currentSlide }) => {
     return (
         <div className={styles.carousel}>
             <button className={styles["carousel__button carousel__button--prev"]} onClick={handlePrevSlide}>
@@ -26,11 +27,3 @@ const Carousel: React.FC<CarouselProps> = ({ users, handlePrevSlide, handleNextS
         </div>
     );
 };
-
-export { Carousel };
-
-
-
-
-
-

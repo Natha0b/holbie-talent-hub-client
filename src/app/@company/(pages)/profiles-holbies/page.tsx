@@ -13,7 +13,7 @@ import { ProfileCard } from "$components/profile/ProfileCard/ProfileCard";
 import { UserInfo } from "$components/profile/UserInfo/UserInfo";
 import { ContactIcons } from "$components/profile/ContactIcons/ContactIcons";
 
-interface User {
+export interface User {
     name: string;
     profilePicture: string;
     age: number;
@@ -25,7 +25,7 @@ interface User {
 
 }
 
-const HomeProfiles: React.FC = () => {
+export default function HomeProfiles() {
     const users: User[] = [
         {
             name: 'John Doe',
@@ -86,24 +86,29 @@ const HomeProfiles: React.FC = () => {
 
 
     return (
-        <DashboardLayout>
-            <Carousel/>
-            <ContactIcons/>
-            <ProfileCard/>
-            <ProfileSection/>
-            <UserInfo/>
+        <>
+            <Carousel users={users} handlePrevSlide={function (): void {
+                throw new Error('Function not implemented.');
+            } } handleNextSlide={function (): void {
+                throw new Error('Function not implemented.');
+            } } currentSlide={0}/>
+            {/* <ContactIcons user={undefined}/>
+            <ProfileCard user={undefined} index={0} currentSlide={0}/> */}
+            <ProfileSection users={[]} handlePrevSlide={function (): void {
+                throw new Error('Function not implemented.');
+            } } handleNextSlide={function (): void {
+                throw new Error('Function not implemented.');
+            } } currentSlide={0}/>
+            {/* <UserInfo user={undefined}/> */}
             <ProfileSection
                 users={users}
                 handlePrevSlide={handlePrevSlide}
                 handleNextSlide={handleNextSlide}
                 currentSlide={currentSlide}
             />
-
-        </DashboardLayout>
+        </>
     );
 };
-
-export { HomeProfiles };
 
 /*"use client";
 import React from 'react';

@@ -1,5 +1,5 @@
 import React from "react";
-import { HomeProfiles  } from "$company/(pages)/profiles-holbies/page";
+import { User } from "$company/(pages)/profiles-holbies/page";
 import { Carousel } from "../Carousel/Carousel";
 import styles from "./ProfileSection.module.css";
 
@@ -10,7 +10,7 @@ interface ProfileSectionProps {
     currentSlide: number;
 }
 
-const ProfileSection: React.FC<ProfileSectionProps> = ({ users, handlePrevSlide, handleNextSlide, currentSlide }) => {
+export const ProfileSection: React.FC<ProfileSectionProps> = ({ users, handlePrevSlide, handleNextSlide, currentSlide }) => {
     return (
         <section className={styles.profile}>
             <h1 className={styles.profile__title}>Profiles</h1>
@@ -28,4 +28,3 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ users, handlePrevSlide,
     );
 };
 
-export { ProfileSection };

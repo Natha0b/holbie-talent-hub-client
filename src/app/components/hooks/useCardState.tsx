@@ -1,25 +1,22 @@
-import { useState, useEffect, RefObject } from 'react';
+import { useState, useEffect, useRef, MutableRefObject, useCallback } from 'react';
 
-type UseCardStateOptions = {
-  cardRef: RefObject<HTMLElement | null>;
-};
+type UseCardState = () => ({
+  active: boolean;
+  activeShow: () => void;
+  cardRef: MutableRefObject<HTMLElement | null>;
+});
 
-const useCardState = ({ cardRef }: UseCardStateOptions) => {
+export const useCardState: UseCardState = () => {
   const [active, setActive] = useState(false);
+  const cardRef = useRef<HTMLElement | null>(null);
 
-  const handleClick: React.MouseEventHandler<HTMLElement> = (event) => {
-    const { target } = event;
-
-    if (cardRef.current && !hasUseReferenceAncestor(target as HTMLElement)) {
-      setActive(false);
-    }
-  };
-
-  const handleMouseEnter: React.MouseEventHandler<HTMLElement> = () => {
+  
+  // generic function to active the card when the mouse is over the card or when the card is clicked
+  const activeShow = useCallback(() => {
     setActive(true);
-  };
+  }, []);
 
-  const hasUseReferenceAncestor = (element: HTMLElement): boolean => {
+  const hasUseReferenceAncestor = useCallback((element: HTMLElement): boolean => {
     let parent = element.parentElement;
 
     while (parent) {
@@ -30,24 +27,34 @@ const useCardState = ({ cardRef }: UseCardStateOptions) => {
     }
 
     return false;
-  };
+  }, []);
+
+  const validClose: (ev: MouseEvent) => void = useCallback((event) => {
+    const { target } = event;
+
+    if (cardRef.current && !hasUseReferenceAncestor(target as HTMLElement)) {
+      setActive(false);
+    }
+  }, [hasUseReferenceAncestor]);
+
 
   useEffect(() => {
+
     if (cardRef.current) {
-      document.body.addEventListener('click', handleClick);
+      document.body.addEventListener('click', validClose);
     }
 
     return () => {
-      document.body.removeEventListener('click', handleClick);
+      document.body.removeEventListener('click', validClose);
     };
-  }, [cardRef.current]);
+
+  }, [validClose]);
 
   return {
     active,
-    handleClick,
-    handleMouseEnter,
+    activeShow,
+    cardRef,
   };
 };
 
 
-export { useCardState };
