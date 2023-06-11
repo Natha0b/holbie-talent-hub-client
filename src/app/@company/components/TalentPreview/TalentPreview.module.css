@@ -1,0 +1,97 @@
+.talentPreview {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-shadow: 0 6.5rem 0 0 inset var(--color-secondary);
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    border-radius: 0px ;
+    line-height: 20px;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+.talentPreview header {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3rem;
+    width: 100%;
+}
+
+.talentPreview header figure {
+    width: 6rem;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.talentPreview header figure img {
+    top: 0;
+    left: 0;
+    width: 8rem;
+    height: 8rem;
+    transform: translate(-8%, -65%);
+    position: absolute;
+    box-shadow: 0 3px 0px 10px var(--color-secondary);
+    border-radius: 50% ;
+}
+
+.talentPreview:hover {
+    
+    border-radius: 50px  0px  0px  0px /  20px  0px  0px  0px ;
+}
+
+.talentPreview:hover header figure img {
+    transform: translate(-8%, -45%) rotate(3deg);
+    border-radius: 50% 50% 50% 5%/  50% 50% 50% 60%;
+}
+
+
+.talentPreview header h2 {
+    font-size: 1.5rem;
+    margin-inline: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.talentPreview main ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: unset;
+    list-style: none;
+    width: 35%;
+    padding-inline-start: 1rem;
+    margin: auto;
+    gap: 10px;
+}
+
+.talentPreview:hover {
+    /* box-shadow: var(--cards--shadow); */
+    --color-secondary : var(--color-primary);
+}
+
+/* 
+.profilePicture img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+ */
+.talentInfo h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.talentInfo p {
+    margin-bottom: 0;
+    color: var(--color-black);
+}
