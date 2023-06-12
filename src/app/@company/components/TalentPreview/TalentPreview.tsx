@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TalentPreview.module.css';
+import styles from './TalentPreview.module.scss';
 
 export const TalentPreview: React.FC<{ talent: Talent }> = ({ talent }) => {
   return (

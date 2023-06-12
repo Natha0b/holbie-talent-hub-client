@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./UserInfo.module.css";
+import styles from "./UserInfo.module.scss";
 import Image from 'next/image';
 import javascriptIcon from "../../../../../public/imagenescoderise/java-script1.png";
 import cIcon from "../../../../../public/imagenescoderise/c-.png";

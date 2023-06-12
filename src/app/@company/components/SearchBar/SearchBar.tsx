@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import styles from './SearchBar.module.css';
+import styles from './SearchBar.module.scss';
 
 export const SearchBar: React.FC<{ onSubmit: (keywords: string) => void }> = ({ onSubmit }) => {
   const [keywords, setKeywords] = useState('');

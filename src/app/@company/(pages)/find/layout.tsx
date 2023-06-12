@@ -1,6 +1,6 @@
 import { headers } from 'next/headers';
 import Link from "next/link";
-import styles from './layout.module.css'
+import styles from './layout.module.scss'
 import Logo from '../../../../../public/logo.png'
 import { getSegment } from '$/app/share/router/router.share';
 

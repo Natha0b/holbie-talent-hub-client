@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ProfileCard.module.css";
+import styles from "./ProfileCard.module.scss";
 import { UserInfo } from "../UserInfo/UserInfo";
 import { User } from "$company/(pages)/profiles-holbies/page";
 import { ContactIcons } from "../ContactIcons/ContactIcons";

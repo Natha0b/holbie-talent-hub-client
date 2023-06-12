@@ -1,5 +1,6 @@
 import crypto from "node:crypto";
-import './globals.css';
+import "./share/styles/global.scss";
+import "./share/styles/background.scss";
 // import { getSegment } from "@share/router/router.share";
 
 /* function to validate the auth with the headers and return the role of the user */

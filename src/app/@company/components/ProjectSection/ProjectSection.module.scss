@@ -1,0 +1,20 @@
+.projectSection {
+    margin-bottom: 2rem;
+}
+
+.projectCard {
+    padding: 1rem;
+    background-color: var(--color-white);
+    box-shadow: var(--cards--shadow);
+    border-radius: var(--border-size);
+    margin-bottom: 1rem;
+}
+
+.projectTitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.projectDescription {
+    font-size: 1rem;
+}

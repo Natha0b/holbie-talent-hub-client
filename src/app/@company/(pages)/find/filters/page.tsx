@@ -1,4 +1,4 @@
-import './details.css'
+import './details.scss'
 
 interface User {
   name: string;

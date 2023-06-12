@@ -5,7 +5,7 @@ import { listOfCities } from '$company/(pages)/find/profile/profile.data';
 import { EnglishCard } from '$components/card/EnglishCard/EnglishCard';
 import { TechCard } from '$components/card/TechCard/TechCard';
 import { JobCard } from '$components/card/JobCard//JobCard';
-import styles from './BackCard.module.css';
+import styles from './BackCard.module.scss';
 
 const BackCard: React.FC<{ kindJob: string, active: boolean }> = ({ kindJob, active}) => {
     return (

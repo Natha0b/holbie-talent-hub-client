@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { useState } from "react";
-import './profiles.css';
+import './profiles.scss';
 import DashboardLayout from '../find/layout';
 import Image from 'next/image';
 import javascriptIcon from '../../../../../public/imagenescoderise/java-script1.png';
@@ -113,7 +113,7 @@ export default function HomeProfiles() {
 /*"use client";
 import React from 'react';
 import { useState } from "react";
-import './profiles.css';
+import './profiles.scss';
 import DashboardLayout from '../find/layout';
 import Image from 'next/image';
 import javascriptIcon from '../../../../../public/imagenescoderise/java-script1.png';

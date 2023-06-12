@@ -2,7 +2,7 @@
 
 
 import React from 'react';
-import styles from './FilterPanel.module.css';
+import styles from './FilterPanel.module.scss';
 
 export const FilterPanel: React.FC<{ filters: Record<string, string>; onChange: (newFilters: object) => void }> = ({
     filters,

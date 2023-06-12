@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ContactIcons.module.css"
+import styles from "./ContactIcons.module.scss"
 import { User } from "$/app/@company/(pages)/profiles-holbies/page";
 
 interface ContactIconsProps {

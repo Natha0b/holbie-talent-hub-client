@@ -6,7 +6,7 @@ import { TechCard } from '$components/card/TechCard/TechCard';
 import { EnglishCard } from '$components/card/EnglishCard/EnglishCard';
 import { JobCard } from '$components/card/JobCard/JobCard';
 import { ButtonSubmit } from '$components/card/ButtonSubmit/ButtonSubmit';
-import styles from './Card.module.css';
+import styles from './Card.module.scss';
 import { useCardState } from '$components/hooks/useCardState';
 
 const Card: React.FC<{ kindJob: string; jobName: string; icon: string; }> = ({
@@ -49,7 +49,7 @@ import { TechCard } from '$components/card/TechCard/TechCard';
 import { EnglishCard } from '$components/card/EnglishCard/EnglishCard';
 import { JobCard } from '$components/card/JobCard/JobCard';
 import { ButtonSubmit } from '$components/card/ButtonSubmit/ButtonSubmit';
-import styles from './Card.module.css';
+import styles from './Card.module.scss';
 import { useState } from 'react';
 
 

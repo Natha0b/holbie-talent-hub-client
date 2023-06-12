@@ -1,6 +1,6 @@
 import React from "react";
 import { ProfileCard } from "../ProfileCard/ProfileCard"
-import styles from "./Carousel.module.css"
+import styles from "./Carousel.module.scss"
 import { User } from "$company/(pages)/profiles-holbies/page";
 
 interface CarouselProps {

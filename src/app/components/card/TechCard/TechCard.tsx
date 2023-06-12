@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { technologies } from '$company/(pages)/find/profile/profile.data'
-import styles from './TechCard.module.css'
+import styles from './TechCard.module.scss'
 import { useSelectedTechnologies } from '$components/hooks/useSelectedTechnologies';
 
 const TechCard = () => {
@@ -44,7 +44,7 @@ export { TechCard };
 /*
 import React, { useState } from 'react';
 import { technologies } from '$company/(pages)/find/profile/profile.data'
-import styles from './TechCard.module.css'
+import styles from './TechCard.module.scss'
 
 const TechCard = () => {
     const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]); // Utilizamos un array de strings en lugar de un array de números

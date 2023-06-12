@@ -1,6 +1,6 @@
 import React from 'react';
 import { englishLevel } from '$company/(pages)/find/profile/profile.data'
-import styles from './EnglishCard.module.css'
+import styles from './EnglishCard.module.scss'
 
 const EnglishCard = () => {
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { User } from "$company/(pages)/profiles-holbies/page";
 import { Carousel } from "../Carousel/Carousel";
-import styles from "./ProfileSection.module.css";
+import styles from "./ProfileSection.module.scss";
 
 interface ProfileSectionProps {
     users: User[];

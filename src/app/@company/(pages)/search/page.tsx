@@ -2,7 +2,7 @@
 // TalentSearch.tsx
 
 import React, { useState } from 'react';
-import styles from './TalentSearch.module.css';
+import styles from './TalentSearch.module.scss';
 
 // Import other components used within TalentSearch
 import {SearchBar} from '$company/components/SearchBar/SearchBar';
