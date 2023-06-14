@@ -16,7 +16,13 @@
     float: left;
 }
 
+.avatarprofile {
+    height: 50px;
+    width: 60px;
+    border-radius: 50%;
+    margin-top: 10px;
 
+}
 
 .chat-container {
     width: 360px;
@@ -56,6 +62,7 @@
     background-color: #b3d4fc;
     order: +1;
 }
+
 .message-text {
     float: right;
 }
@@ -81,12 +88,29 @@
     padding: 5px 10px;
     cursor: pointer;
 }
+
 .username {
-    vertical-align: middle;
-    padding: 20px;
+    padding: 10px;
+    font-weight: bold;
+    flex-grow: 1;
 }
 
-.profileContainer{
+.user-name-profile {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    flex-grow: 1;
+    float: none;
+    vertical-align: 20px;
+}
+
+.profilechat {
     height: 30px;
     width: 30px;
+    border-radius: 50%;
+}
+
+.profile-header {
+    background-color: hsl(213, 92%, 85%);
+    height: 4rem;
 }

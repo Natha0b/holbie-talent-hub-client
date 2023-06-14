@@ -65,7 +65,12 @@ const Chat: React.FC = () => {
     return (
 
         <div className="chat-container">
+            <div className="profile-header">
+                <img src={getUserData(1)?.avatar} className="avatarprofile" />
+                <span className='user-name-profile'>{getUserData(1)?.name}</span>
+            </div>
             <div className="message-container">
+
                 {messages.map((message) => (
                     <article key={message.id}>
                         <div
