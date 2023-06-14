@@ -1,3 +1,23 @@
+.chatHeader {
+    position: relative;
+    background-color: #f2f2f2;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.avatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    float: left;
+}
+
+
+
 .chat-container {
     width: 360px;
     height: 100%;
@@ -36,6 +56,9 @@
     background-color: #b3d4fc;
     order: +1;
 }
+.message-text {
+    float: right;
+}
 
 .input-container {
     display: flex;
@@ -57,4 +80,13 @@
     border-radius: 3px;
     padding: 5px 10px;
     cursor: pointer;
+}
+.username {
+    vertical-align: middle;
+    padding: 20px;
+}
+
+.profileContainer{
+    height: 30px;
+    width: 30px;
 }
