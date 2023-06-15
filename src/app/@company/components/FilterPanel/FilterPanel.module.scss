@@ -18,30 +18,43 @@ $photoTopLeftEnd: (topRight: 80% 5%, bottomRight: 2% 100% , bottomLeft: 50% 5% ,
     left: -2rem;
     top: -3rem;
     @include glassmorphism( map-get(map-get($themes, light), color-secondary), 15px, 0.6, rgba(0, 0, 255, 0.2));
-    border-radius: 60% 145% 52% 160% / 140% 60% 160% 40%;
-    transform: scale(.2, -.1) translateX(-200%);
+    border-radius: 20%;
+    transform:  translateX(-100%);
     // transition liquit
     transition: all 0.5s ease-in-out;
-    animation: #{generateAnimationName(1, "liquid")} 5s ease-in-out infinite alternate;
 
 }
 
 .filterPanel--active {
-    border-radius: 100% 50% 5% 80% / 5% 2% 80% 2%;
-    transform: scale(1);
-    animation: #{generateAnimationName(1, "liquid") + "Active"} 5s ease-in-out infinite alternate 250ms;
+    border-radius: 0% ;
+    transform: translateX(0%);
 }
 
 
-.filterPanel > * {
+.filterPanel > *:not(.filterIcon) {
     opacity: 0;
     transition: all 250ms ease-in-out 0.25s ;
+    transform: translateX(-10%);
 }
 
-.filterPanel--active > * {
+.filterPanel--active > *:not(.filterIcon) {
     opacity: .6;
+    transform: translateX(0%);
 }
 
+.filterPanel--active > .filterIcon {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-100%);
+}
+
+.filterIcon {
+    position: absolute;
+    top: 0;
+    left: 350px;
+    color: var(--color-primary);
+    cursor: pointer;
+}
 
 .filterSection {
     margin-bottom: 1.5rem;

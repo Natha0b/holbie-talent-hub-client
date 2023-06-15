@@ -23,7 +23,7 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
     display: flex;
     flex-direction: column;
     gap: 40px;
-    box-shadow: 0 6.5rem 0 0 inset var(--color-secondary);
+    box-shadow: 0 6.5rem 0 0 inset var(--color-primary);
     padding: 20px;
     color: white;
     font-size: 20px;
@@ -52,25 +52,25 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
                 height: 8rem;
                 transform: translate(-8%, -65%);
                 position: absolute;
-                box-shadow: 0 3px 0px 10px var(--color-secondary);
+                box-shadow: 0 3px 0px 10px var(--color-primary);
                 border-radius: 50%;
             }
         }
     }
-
+/* 
     &:hover {
         border-radius: 60px 0 0 0 / 40px 0 0 0;
-        box-shadow: 0 6.5rem 0 0 inset var(--color-secondary), 0 0 20px -10px var(--color-secondary);
+        box-shadow: 0 6.5rem 0 0 inset var(--color-primary), 0 0 20px -10px var(--color-primary);
         animation:  #{generateAnimationName(1, "liquid") + 'Wrapper'} 3s infinite linear 250ms;
     }
 
     &:hover header figure img {
         top: 1rem;
         border-radius: 60% 45% 52% 60% / 40% 60% 60% 40%;
-        box-shadow: 0 3px 0px 10px var(--color-secondary), -5px -10px 20px -10px var(--color-secondary);
+        box-shadow: 0 3px 0px 10px var(--color-primary), -5px -10px 20px -10px var(--color-primary);
         transform: translate(-8%, -65%) rotate(3deg);
         animation: #{generateAnimationName(0, "liquid")} 3s infinite linear 250ms, #{generateAnimationName(1, "liquid") + 'Photo'} 3.5s infinite linear 250ms;
-    }
+    } 
 
     &::after,
     &::before
@@ -86,9 +86,10 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
         transition: all .7s ease-in-out .1s, background-color 250ms ease-in-out;
         background-color: royalblue;
         z-index: -1;
-        background-color: var(--color-secondary);
+        background-color: var(--color-primary);
         animation-delay: 1s;
     }
+    */
 
     
     &::before {
@@ -96,18 +97,18 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
         z-index: initial;
         transition: all .7s ease-in-out -.4s, background-color 250ms ease-in-out;
     }
-
+/* 
     &:hover::before {
-        background-color: var(--color-primary);
+        background-color: var(--color-secondary);
         transform: translate(822%, 55%) rotateX(-100deg) scaleX(16);
         animation:  #{generateAnimationName(1, "liquid")} 3s infinite linear;
     }
     
     &:hover::after {
         transform: translate(822%, -50%) rotateX(-100deg) scaleX(16);
-        background-color: var(--color-primary);
+        background-color: var(--color-secondary);
         animation:  #{generateAnimationName(1, "liquid")} 3s infinite linear;
-    }
+    } */
 
     & main ul {
         display: flex;
@@ -122,13 +123,13 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
     }
 
     &:hover {
-        --color-secondary: var(--color-primary);
+        --color-primary: var(--color-secondary);
     }
 
     .talentInfo {
         h3 {
             margin-bottom: 0.5rem;
-            color: var(--color-primary);
+            color: var(--color-secondary);
         }
 
         p {

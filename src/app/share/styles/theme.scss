@@ -1,9 +1,10 @@
+@import './variables.scss'; 
 
 
 :root {
-  --color-primary: #D55563;
-  --color-secondary: #8ACFC9;
-  --color-black: #495754;
-  --color-gray: #748A85;
-  --color-white: #F0FFFC;
+  --color-secondary: #{map-get(map-get($themes, light), color-secondary)};
+  --color-primary: #{map-get(map-get($themes, light), color-primary)};
+  --color-black: #{map-get(map-get($themes, light), color-black)};
+  --color-gray: #{map-get(map-get($themes, light), color-gray)};
+  --color-white: #{map-get(map-get($themes, light), color-white)};
 }
