@@ -1,12 +1,16 @@
 
 $themes: (
   light: (
-    color-primary: #D55563,
-    color-secondary: #8ACFC9,
+    color-primary: #4FD7CB,
+    color-secondary: #5A9ED6,
+    color-warning: #D6993A,
+    color-success: #45D678,
+    color-danger: #D66965,
     color-black: #495754,
     color-gray: #748A85,
     color-white: #F0FFFC,
   ),
+  // TODO: add dark theme
   dark: (
     color-primary: darken(#D55563, 30%),
     color-secondary: darken(#8ACFC9, 30%),

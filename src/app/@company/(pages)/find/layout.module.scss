@@ -48,14 +48,14 @@
 
 
 .navigation__buttons:hover {
-    box-shadow: 0 0 0 var(--boder-size) inset var(--color-secondary);
+    box-shadow: 0 0 0 var(--boder-size) inset var(--color-primary);
     /* box-shadow: h v rd s; */
 }
 
 .navigation__buttons--active {
-    box-shadow: 0 var(--boder-size) 0 0 inset var(--color-secondary);
+    box-shadow: 0 var(--boder-size) 0 0 inset var(--color-primary);
     height: var(--size);
     cursor: normal;
-    color: var(--color-secondary);
+    color: var(--color-primary);
     font-weight: 400;
 }
