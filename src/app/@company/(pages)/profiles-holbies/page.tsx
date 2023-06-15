@@ -7,11 +7,11 @@ import Image from 'next/image';
 import javascriptIcon from '../../../../../public/imagenescoderise/java-script1.png';
 import cIcon from '../../../../../public/imagenescoderise/c-.png';
 import rubyIcon from '../../../../../public/imagenescoderise/ruby.png';
-import { ProfileSection } from "$components/profile/ProfileSection/ProfileSection";
-import { Carousel } from "$components/profile/Carousel/Carousel";
-import { ProfileCard } from "$components/profile/ProfileCard/ProfileCard";
-import { UserInfo } from "$components/profile/UserInfo/UserInfo";
-import { ContactIcons } from "$components/profile/ContactIcons/ContactIcons";
+import { ProfileSection } from "$/app/@company/components/profile/ProfileSection/ProfileSection";
+import { Carousel } from "$/app/@company/components/profile/Carousel/Carousel";
+import { ProfileCard } from "$/app/@company/components/profile/ProfileCard/ProfileCard";
+import { UserInfo } from "$/app/@company/components/profile/UserInfo/UserInfo";
+import { ContactIcons } from "$/app/@company/components/profile/ContactIcons/ContactIcons";
 
 export interface User {
     name: string;
