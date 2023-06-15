@@ -5,7 +5,7 @@ export const TalentPreview: React.FC<{ talent: Talent }> = ({ talent }) => {
   return (
     <div className={styles.talentPreview}>
         <header>
-      <figure>
+      <figure className={styles['liquid-animation']} >
         <img src={talent.profilePicture} alt="Profile" className="talent-img" />
       </figure>
       <h2>{talent.name}</h2>

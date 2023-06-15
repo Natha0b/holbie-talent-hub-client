@@ -1,32 +1,12 @@
-@import 'normalize.css/normalize.css';
 
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --color-primary: #D55563;
-  --color-secondary: #8ACFC9;
-  --color-black: #495754;
-  --color-gray: #748A85;
-  --color-white: #F0FFFC;
-  --cards--shadow: 0 0 20px 10px var(--color-secondary);
-  --border-size: 3px;
-  --font-size-large: 32px;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-[data-debugger],
-[data-debugger] * {
-  box-shadow: 0 0 0 1px red;
-}
-
-* {
-  transition: all 250ms ease-in-out;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
+@import './variables.scss';
+@import './theme.scss';
+@import './base.scss';
+@import './mixins.scss';
+@import './functions.scss';
+@import './typography.scss';
+@import './media-queries.scss';
+@import './debugger.scss';
+@import './print.scss';
+@import './animations.scss';
+@import './background.scss';

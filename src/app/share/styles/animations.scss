@@ -1,0 +1,138 @@
+/**
+* Animations
+*/
+@import './functions.scss';
+
+
+@function generateAnimationName($number, $prefix) {
+  $hex: decimalToHex($number);
+  @return #{$prefix}Animation0x#{$hex};
+}
+
+
+/**
+ * @mixin liquid0x00
+ * @param {String} $animation-name - The name of the animation.
+ * @param {Map} $transform-properties - The transform properties to apply.
+ * @param {Number} $scale - The scale value for the transform animation.
+ * @param {Number|String} $border-radius - The border radius value for the animation.
+ * @description Creates a liquid animation with customizable transform properties and border radius.
+ * @example
+ * // Usage:
+ * @include liquid0x00(
+ *   generateAnimationName(0, "liquid"),
+ *   (
+ *     transform: translateY(-50%)
+ *   ),
+ *   1.2,
+ *   40%
+ * );
+ */
+@mixin liquid0x00($animation-name: generateAnimationName(0, "liquid"), $transform-properties, $scale: 1.2, $border-radius: 40%) {
+  @keyframes #{$animation-name} {
+    0% {
+      transform: translateX(-50%) scale(1) map-get($transform-properties, transform);
+      border-radius: 50%;
+    }
+
+    50% {
+      transform: translateX(-50%) scale($scale) map-get($transform-properties, transform);
+      border-radius: $border-radius;
+    }
+
+    100% {
+      transform: translateX(-50%) scale(1) map-get($transform-properties, transform);
+      ;
+      border-radius: 50%;
+    }
+  }
+}
+
+/**
+ * Mixin for the liquid0x01 animation.
+ *
+ * @mixin liquid0x01
+ * @param {String} $animation-name - The name of the animation.
+ * @param {Map} $initial - The initial values for the border-radius sides.
+ * @param {Map} $final - The final values for the border-radius sides.
+ *
+ * @example
+ * // Usage with custom animation name and values
+ * .my-element {
+ *   @include liquid0x01(
+ *     $animation-name: "customAnimation",
+ *     $initial: (
+ *       topLeft: 70% 70%,
+ *       topRight: 40% 50%,
+ *       bottomRight: 30% 60%,
+ *       bottomLeft: 60% 40%
+ *     ),
+ *     $final: (
+ *       topLeft: 30% 50%,
+ *       topRight: 50% 60%,
+ *       bottomRight: 70% 30%,
+ *       bottomLeft: 40% 60%
+ *     )
+ *   );
+ * }
+ */
+@mixin liquid0x01($animation-name: generateAnimationName(1, "liquid"),
+  $initial: (
+    topLeft: 60% 60%,
+    topRight: 40% 30%,
+    bottomRight: 30% 70%,
+    bottomLeft: 70% 40%),
+  $final: (
+    topLeft: 30% 50%,
+    topRight: 60% 60%,
+    bottomRight: 70% 30%,
+    bottomLeft: 40% 60%)) {
+  $defaultInitial: (
+    topLeft: 60% 60%,
+    topRight: 40% 30%,
+    bottomRight: 30% 70%,
+    bottomLeft: 70% 40%);
+  $defaultFinal: (
+    topLeft: 30% 50%,
+    topRight: 60% 60%,
+    bottomRight: 70% 30%,
+    bottomLeft: 40% 60%);
+
+
+  @keyframes #{$animation-name} {
+    0% {
+      $sideTopLeft: if(map-has-key($initial, topLeft), map-get($initial, topLeft), map-get($defaultInitial, topLeft));
+      $sideTopRight: if(map-has-key($initial, topRight), map-get($initial, topRight), map-get($defaultInitial, topRight));
+      $sideBottomRight: if(map-has-key($initial, bottomRight), map-get($initial, bottomRight), map-get($defaultInitial, bottomRight));
+      $sideBottomLeft: if(map-has-key($initial, bottomLeft), map-get($initial, bottomLeft), map-get($defaultInitial, bottomLeft));
+      border-radius: nth($sideTopLeft, 1) nth($sideTopRight, 1) nth($sideBottomRight, 1) nth($sideBottomLeft, 1) #{'/'} nth($sideTopLeft, 2) nth($sideTopRight, 2) nth($sideBottomRight, 2) nth($sideBottomLeft, 2);
+    }
+
+    50% {
+      $sideTopLeft: if(map-has-key($final, topLeft), map-get($final, topLeft), map-get($defaultFinal, topLeft));
+      $sideTopRight: if(map-has-key($final, topRight), map-get($final, topRight), map-get($defaultFinal, topRight));
+      $sideBottomRight: if(map-has-key($final, bottomRight), map-get($final, bottomRight), map-get($defaultFinal, bottomRight));
+      $sideBottomLeft: if(map-has-key($final, bottomLeft), map-get($final, bottomLeft), map-get($defaultFinal, bottomLeft));
+      border-radius: nth($sideTopLeft, 1) nth($sideTopRight, 1) nth($sideBottomRight, 1) nth($sideBottomLeft, 1) #{'/'} nth($sideTopLeft, 2) nth($sideTopRight, 2) nth($sideBottomRight, 2) nth($sideBottomLeft, 2);
+    }
+
+    100% {
+      $sideTopLeft: if(map-has-key($initial, topLeft), map-get($initial, topLeft), map-get($defaultInitial, topLeft));
+      $sideTopRight: if(map-has-key($initial, topRight), map-get($initial, topRight), map-get($defaultInitial, topRight));
+      $sideBottomRight: if(map-has-key($initial, bottomRight), map-get($initial, bottomRight), map-get($defaultInitial, bottomRight));
+      $sideBottomLeft: if(map-has-key($initial, bottomLeft), map-get($initial, bottomLeft), map-get($defaultInitial, bottomLeft));
+      border-radius: nth($sideTopLeft, 1) nth($sideTopRight, 1) nth($sideBottomRight, 1) nth($sideBottomLeft, 1) #{'/'} nth($sideTopLeft, 2) nth($sideTopRight, 2) nth($sideBottomRight, 2) nth($sideBottomLeft, 2);
+    }
+  }
+}
+
+
+@mixin glassmorphism($color: rgba(255, 255, 255, 0.1), $blur: 30px, $opacity: 0.1, $border-color: rgba(255, 255, 255, 0.1)) {
+  background: rgba($color, $opacity);
+  backdrop-filter: blur($blur);
+  border-radius: 15px;
+  border: 1px solid $border-color;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+}
+

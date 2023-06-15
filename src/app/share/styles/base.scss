@@ -1,0 +1,19 @@
+@import 'normalize.css/normalize.css';
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+    --cards--shadow: 0 0 20px 10px var(--color-secondary);
+    --border-size: 3px;
+    --font-size-large: 32px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    transition: all 250ms ease-in-out;
+}

@@ -4,9 +4,6 @@
   align-items: center;
   padding: 2rem;
   
-  /* background: linear-gradient(to bottom,
-      rgb(var(--background-start-rgb)),
-      rgb(var(--background-end-rgb))); */
 }
 
 .contentWrapper {
@@ -14,13 +11,15 @@
   justify-content: space-between;
   margin-top: 2rem;
   width: 100%;
+  position: relative;
 }
 
 .resultsContainer {
   flex: 1;
   margin-left: 2rem;
   margin-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  padding-inline: 2vw;
+  display: flex;
+  flex-direction: column;
   gap: 5rem;
 }

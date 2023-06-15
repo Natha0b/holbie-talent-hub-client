@@ -3,6 +3,7 @@
 
 import React from 'react';
 import styles from './FilterPanel.module.scss';
+import { useCardState } from '$/app/components/hooks/useCardState';
 
 export const FilterPanel: React.FC<{ filters: Record<string, string>; onChange: (newFilters: object) => void }> = ({
     filters,
@@ -14,8 +15,10 @@ export const FilterPanel: React.FC<{ filters: Record<string, string>; onChange: 
         onChange(newFilters);
     };
 
+    const {active, activeShow, cardRef } = useCardState();
+
     return (
-        <div className={styles.filterPanel}>
+        <div ref={cardRef as any} className={`${styles.filterPanel} ${active && styles['filterPanel--active']}`} onMouseOver={activeShow} onClick={activeShow} >
             {/* Experience filter */}
             <div className={styles.filterSection}>
                 <h3>Experience</h3>

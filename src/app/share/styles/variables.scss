@@ -1,0 +1,17 @@
+
+$themes: (
+  light: (
+    color-primary: #D55563,
+    color-secondary: #8ACFC9,
+    color-black: #495754,
+    color-gray: #748A85,
+    color-white: #F0FFFC,
+  ),
+  dark: (
+    color-primary: darken(#D55563, 30%),
+    color-secondary: darken(#8ACFC9, 30%),
+    color-black: lighten(#495754, 30%),
+    color-gray: lighten(#748A85, 30%),
+    color-white: darken(#F0FFFC, 30%),
+  )
+);

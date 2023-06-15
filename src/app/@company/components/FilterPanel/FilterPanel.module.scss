@@ -1,10 +1,47 @@
+@import 'styles/animations.scss';
+@import 'styles/variables.scss';
+
+
+$photoTopLeftStart: (topRight: 50% 2%, bottomRight: 5% 80%, bottomLeft: 80% 2%, topLeft: 100% 5%);
+$photoTopLeftEnd: (topRight: 80% 5%, bottomRight: 2% 100% , bottomLeft: 50% 5% , topLeft: 120% 2% );
+@include liquid0x01(#{generateAnimationName(1, "liquid")} );
+@include liquid0x01(#{generateAnimationName(1, "liquid") + "Active"}, $photoTopLeftStart, $photoTopLeftEnd );
+
 .filterPanel {
     width: 300px;
     background-color: var(--color-white);
-    border-radius: 0px;
+    border-radius: 500%;
     /* box-shadow: var(--cards--shadow); */
+    position: absolute;
     padding: 1rem;
+    z-index: 30;
+    left: -2rem;
+    top: -3rem;
+    @include glassmorphism( map-get(map-get($themes, light), color-secondary), 15px, 0.6, rgba(0, 0, 255, 0.2));
+    border-radius: 60% 145% 52% 160% / 140% 60% 160% 40%;
+    transform: scale(.2, -.1) translateX(-200%);
+    // transition liquit
+    transition: all 0.5s ease-in-out;
+    animation: #{generateAnimationName(1, "liquid")} 5s ease-in-out infinite alternate;
+
 }
+
+.filterPanel--active {
+    border-radius: 100% 50% 5% 80% / 5% 2% 80% 2%;
+    transform: scale(1);
+    animation: #{generateAnimationName(1, "liquid") + "Active"} 5s ease-in-out infinite alternate 250ms;
+}
+
+
+.filterPanel > * {
+    opacity: 0;
+    transition: all 250ms ease-in-out 0.25s ;
+}
+
+.filterPanel--active > * {
+    opacity: .6;
+}
+
 
 .filterSection {
     margin-bottom: 1.5rem;
@@ -27,4 +64,5 @@
     padding: 0.5rem;
     border-radius: 0px;
     border: 1px solid var(--color-gray);
+    box-sizing: border-box;
 }
