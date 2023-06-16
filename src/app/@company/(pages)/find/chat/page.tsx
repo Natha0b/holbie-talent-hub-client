@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import './Chat.css';
+import './Chat.scss';
 import Link from 'next/link';
 import { userAgent } from 'next/server';
 
