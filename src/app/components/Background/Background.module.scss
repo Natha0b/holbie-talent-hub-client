@@ -1,0 +1,15 @@
+
+.background {
+    background-image: url('./5026563.jpg');
+    background-size: 120% 120%;
+    background-repeat: no-repeat;
+    background-position: var(--position-x, 10%) var(--position-y, 10%);
+    background-attachment: fixed;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1000;
+    transition: all 250ms ease-in-out, background-position 3.3s ease-in-out;
+}

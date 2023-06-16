@@ -1,6 +1,7 @@
 import crypto from "node:crypto";
 import "$share/styles/globals.scss";
 import "$share/styles/background.scss";
+import { Background } from "./components/Background/Background";
 // import { getSegment } from "@share/router/router.share";
 
 /* function to validate the auth with the headers and return the role of the user */
@@ -56,6 +57,7 @@ export default async function AuthLayout(
     const content = (children: React.ReactNode) => (<>
       <html lang="en">
         <body>
+          <Background />
           {
             children
           }

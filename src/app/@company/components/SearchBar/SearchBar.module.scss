@@ -1,3 +1,5 @@
+@import "styles/animations.scss";
+
 .searchBar {
     display: flex;
     align-items: center;
@@ -14,11 +16,13 @@
     border: none;
     /* box-shadow: var(--cards--shadow); */
     box-shadow: 2rem 0 15px -10px var(--color-secondary);
-    
     outline: none!important;
     border: none!important;
 
 }
+
+@include glassmorphismforclass(".searchBar input");
+
 
 .searchBar input:focus,
 .searchBar button:focus,
@@ -37,6 +41,18 @@
     filter: saturate(.6);
     background-color: white;
 
+}
+
+@include glassmorphismforclass(".searchBar button");
+
+.searchBar input {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.searchBar button {
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
 }
 
 .searchBar button:hover {

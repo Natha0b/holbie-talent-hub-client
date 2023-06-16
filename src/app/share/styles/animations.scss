@@ -136,3 +136,20 @@
 
 }
 
+@mixin glassmorphismforclass($selector, $color: rgba(255, 255, 255, 0.1), $blur: 30px, $opacity: 0.8, $border-color: rgba(255, 255, 255, 0.1)) {
+  
+  #{$selector} {
+    background: rgba($color, $opacity);
+    backdrop-filter: blur($blur);
+    border-radius: 15px;
+    border: 1px solid $border-color;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30) ;
+  }
+
+
+  #{$selector} > *:not(.not-opasity) {
+    opacity: $opacity;
+  }
+
+}
+

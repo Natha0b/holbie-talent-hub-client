@@ -14,20 +14,26 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
 @include liquid0x01(#{generateAnimationName(1, "liquid") + 'Wrapper'} , $onlyTopLeftStart, $onlyTopLeftEnd);
 
 
+@include glassmorphismforclass(".talentPreview");
+
+
+.not-opasity {
+    opacity: 1 !important;
+}
+
 .talentPreview {
     display: flex;
     align-items: center;
     padding: 1rem;
-    background-color: var(--color-white);
     cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    box-shadow: 0 6.5rem 0 0 inset var(--color-primary);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30),  0 6.5rem 0 0 inset var(--color-primary);
     padding: 20px;
     color: white;
     font-size: 20px;
-    border-radius: 0;
+    border-top-left-radius: 0;
     line-height: 20px;
     text-align: justify;
     flex-grow: 1;
