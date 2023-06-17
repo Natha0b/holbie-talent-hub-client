@@ -24,6 +24,17 @@
 
 }
 
+.icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+
 .profile-picture {
     border-radius: 150px;
     width: 170px;
@@ -109,23 +120,11 @@
 
 }
 
-.icon {
-    padding: 20px;
+.button {
+    height: 50px;
+    width: 50px;
 
 }
-
-.icons-languajes {
-    padding: 10px;
-    text-align: center;
-}
-
-.contact-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
 .programming-languages {
     display: flex;
     justify-content: center;
