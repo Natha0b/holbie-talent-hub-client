@@ -1,10 +1,14 @@
+@import "styles/animations.scss";
+
 .card__back {
     z-index: 10;
     height: 100%;
     width: 100%;
     box-shadow: 0 0 0 1px inset var(--color-primary);
-    background-color: var(--color-white);
 }
+
+@include glassmorphismforclass(".card__back");
+
 
 .card__back--active {
     transform: rotateY(10deg) translateX(49%);

@@ -15,7 +15,7 @@ const Card: React.FC<{ kindJob: string; jobName: string; icon: string; }> = ({
   jobName,
 }) => {
   
-  const { active, activeShow, cardRef } = useCardState();
+  const { active, activeShow, cardRef } = useCardState('group-profiles');
 
   return (
     <article
@@ -27,10 +27,11 @@ const Card: React.FC<{ kindJob: string; jobName: string; icon: string; }> = ({
     >
       <FrontCard icon={icon} jobName={jobName} active={active} />
       <BackCard kindJob={kindJob} active={active} />
+     {/* 
       <JobCard />
       <TechCard />
       <EnglishCard />
-      <ButtonSubmit />
+      <ButtonSubmit /> */}
     </article>
   );
 };
