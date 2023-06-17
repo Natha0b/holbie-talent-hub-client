@@ -1,5 +1,12 @@
+@import "styles/animations.scss";
+
 .form__tech {
     margin-bottom: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
 }
 
 .form__tech label {
@@ -10,7 +17,7 @@
 
 .form__tech input[type='text'] {
     width: 80%;
-    padding: 10px;
+    padding: .6rem;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -18,8 +25,66 @@
 
 .form__tech datalist {
     margin-top: 5px;
+    
 }
 
 .form__tech datalist option {
     padding: 5px;
+}
+
+.dropdown__icon {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .6rem;
+    cursor: pointer;
+    box-shadow: 0 1px 0 0 inset #ccc;
+    color: initial;
+    transition: all 150ms ease-in-out;
+    transition-delay: 0ms!important;
+    padding-inline: 2rem;
+}
+
+.dropdown__icon:hover {
+    color: var(--color);
+    box-shadow: 0 1px 0 0 inset #ccc, 0 0 1px 0px inset var(--color);
+}
+
+.dropdown__icon:first-child {
+    box-shadow: none;
+}
+
+.dropdown__container-list {
+    position: absolute;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 10;
+    padding: 0px;
+    width: 80%;
+    top: 4rem;
+    transition: all 150ms ease-in-out;
+    transition-delay: 0ms!important;
+    overflow: hidden;
+}
+
+
+
+
+@include glassmorphismforclass(".dropdown__container-list");
+
+
+.form__tech input[type='text']:focus ~ .dropdown__container-list {
+    max-height: 200px;
+}
+
+
+.dropdown__container input {
+    width: 100%!important;
 }

@@ -1,11 +1,17 @@
+"use client";
 import React, { useState } from 'react';
-import { technologies } from '$company/(pages)/find/profile/profile.data'
 import styles from './TechCard.module.scss'
 import { useSelectedTechnologies } from '$components/hooks/useSelectedTechnologies';
 
 const TechCard = () => {
-  const { selectedTechnologies, handleTechnologySelection, handleRemoveTechnology } =
-    useSelectedTechnologies();
+  const {
+    selectedTechnologies,
+    handleTechnologySelection,
+    handleRemoveTechnology,
+    technologies,
+    technologyIcons,
+    selectStackIcons,
+  } = useSelectedTechnologies();
 
   return (
     <section className={styles.form__tech}>
@@ -16,25 +22,32 @@ const TechCard = () => {
             {technology}
             <button
               className="remove-technology"
-              onClick={() => handleRemoveTechnology(technology)}
+            //onClick={() => handleRemoveTechnology(technology)}
             >
               ✅
             </button>
           </span>
         ))}
       </div>
-      <input
-        type="text"
-        list="technologies"
-        name=""
-        id=""
-        onChange={(e) => handleTechnologySelection(e.target.value)}
-      />
-      <datalist id="technologies">
-        {technologies.map((technology) => (
-          <option key={technology} value={technology} />
-        ))}
-      </datalist>
+        <input
+          type="text"
+          // list="technologies"
+          name=""
+          id=""
+
+        // onChange={(e) => handleTechnologySelection(e.target.value)}
+        />
+        <ul className={styles['dropdown__container-list']} >
+          {
+            selectStackIcons().map(({Icon, name, color}) => (
+              <li style={{'--color': color} as React.CSSProperties} className={styles['dropdown__icon']} >
+                <span>{name}</span>
+                <Icon key={name} /> 
+              </li>
+            ))
+          }
+
+        </ul>
     </section>
   );
 };
