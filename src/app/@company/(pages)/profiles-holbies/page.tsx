@@ -11,6 +11,7 @@ import { ProfileSection } from "$/app/@company/components/profile/ProfileSection
 import { UserInfo } from "$/app/@company/components/profile/UserInfo/UserInfo";
 import { ContactIcons } from "$/app/@company/components/profile/ContactIcons/ContactIcons";
 import { ProfileCard } from '../../components/profile/ProfileCard/ProfileCard';
+import Layout from '../find/layout';
 
 export interface User {
     name: string;
@@ -82,14 +83,14 @@ export default function HomeProfiles() {
     };
 
     return (
-        <>
+        <Layout>
             <ProfileSection
                 users={users}
                 handlePrevSlide={handlePrevSlide}
                 handleNextSlide={handleNextSlide}
                 currentSlide={currentSlide}
             />
-        </>
+        </Layout>
     );
 }
 
