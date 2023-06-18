@@ -4,17 +4,17 @@ import styles from './Dropdown.module.scss'
 import { DropdownProps } from './Dropdown.type';
 import { useDropdown } from './useDropdown';
 
-const Dropdown: React.FC<DropdownProps> = ({
+export const Dropdown: React.FC<DropdownProps> = ({
     label,
     items,
-    selectedItems,
     onItemSelect,
     onItemSelectedRemove,
     onFilterChange,
+    max = 4
 }) => {
 
 
-    const {filterItems, selectItem, removeSelectedItem, filterValue, setFilterValue } =  useDropdown(items);
+    const {filterItems, selectItem, removeSelectedItem, filterValue, setFilterValue, selectedItems } =  useDropdown(items, max);
 
     return (
         <section className={styles.dropdown}>
@@ -78,5 +78,3 @@ const Dropdown: React.FC<DropdownProps> = ({
         </section>
     );
 };
-
-export { Dropdown };

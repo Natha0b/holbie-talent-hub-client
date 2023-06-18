@@ -9,10 +9,9 @@ export interface IDropdownItem {
 export interface DropdownProps {
     label: string;
     items: IDropdownItem[];
-    selectedItems: IDropdownItem[];
-    onItemSelect: (item: IDropdownItem) => void;
-    onItemSelectedRemove: (item: IDropdownItem) => void;
-    filterValue: string;
-    onFilterChange: (newFilter: string) => void;
+    onItemSelect?: (item: IDropdownItem) => void;
+    onItemSelectedRemove?: (item: IDropdownItem) => void;
+    onFilterChange?: (newFilter: string) => void;
+    max?: number;
 }
 

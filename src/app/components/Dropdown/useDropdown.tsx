@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { IDropdownItem } from './Dropdown.type';
 
-export const useDropdown = (items: IDropdownItem[]) => {
+export const useDropdown = (items: IDropdownItem[], max = 4) => {
   const [filterValue, setFilterValue] = useState<string>('');
   const [selectedItems, setSelectedItems] = useState<IDropdownItem[]>([]);
 
@@ -20,8 +20,8 @@ export const useDropdown = (items: IDropdownItem[]) => {
     const lowerCaseFilter = filterValue.toLowerCase().split(' ');
     return items.filter(item => 
         lowerCaseFilter.reduce((prev, value) => prev && item.name.toLowerCase().includes(value), true)
-    );
+    ).splice(0, max);
   }, [filterValue, items]);
 
-  return { filterItems, selectItem, removeSelectedItem, filterValue, setFilterValue };
+  return { filterItems, selectItem, removeSelectedItem, filterValue, setFilterValue, selectedItems };
 };
