@@ -44,6 +44,9 @@
     transition: all 150ms ease-in-out;
     transition-delay: 0ms!important;
     padding-inline: 2rem;
+    background: transparent;
+    outline: none;
+    border: none;
 }
 
 .dropdown__icon:hover {
@@ -68,23 +71,62 @@
     z-index: 10;
     padding: 0px;
     width: 80%;
-    top: 4rem;
     transition: all 150ms ease-in-out;
-    transition-delay: 0ms!important;
+    transition-delay: .3s;
     overflow: hidden;
+    bottom: 0px;
+    transform: translateY(100%);
 }
-
-
-
 
 @include glassmorphismforclass(".dropdown__container-list");
 
+.dropdown__container-list {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
 
 .form__tech input[type='text']:focus ~ .dropdown__container-list {
     max-height: 200px;
+    transition-delay: 0ms;
 }
-
 
 .dropdown__container input {
     width: 100%!important;
 }
+
+.dropdown__icon input {
+    transition-delay: 0ms!important;
+    width: 100%!important;
+}
+
+.selected-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 10px;
+}
+
+@include glassmorphismforclass(".selected-technologies *");
+
+.selected-technologies * {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    transition-delay: 0ms!important;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: var(--color);
+    box-shadow: 0 0 1px 0px inset var(--color);
+
+}
+
+.selected-technologies *:hover {
+    color: var(--color-danger);
+    box-shadow: 0 0 1px 0px inset var(--color-danger);
+}
+

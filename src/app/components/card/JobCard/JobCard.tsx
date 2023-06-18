@@ -10,8 +10,8 @@ const JobCard = () => {
       <input type='text' list='jobKind ' name="" id="" />
       <datalist id="jobKind ">
         {
-            jobKind .map(Job => (
-                <option value={Job} />
+            jobKind .map((Job, key) => (
+                <option value={Job} key={key} />
             ))
         }
       </datalist>

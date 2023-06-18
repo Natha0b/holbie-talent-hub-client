@@ -396,26 +396,33 @@ const technologies = Object.keys(technologyIcons);
 export const useSelectedTechnologies = () => {
 
   const [valueFilter, setValueFilter] = useState<string>('');
-  const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
-  const [filterTechnologies, setFilterTechnologies] = useState<string[]>([]);
+  const [selectedTechnologies, setSelectedTechnologies] = useState<Record<string, null>>({});
 
-  const handleTechnologySelection = (selectedTechnology: string) => {
-    if (!selectedTechnologies.includes(selectedTechnology)) {
-      setSelectedTechnologies([...selectedTechnologies, selectedTechnology]);
-    }
+  const selectOne = (name: string) => () => {
+    setValueFilter('');
+    setSelectedTechnologies({...selectedTechnologies, [name]: null});
   };
 
-  const handleRemoveTechnology = (technology: string) => {
-    const updatedTechnologies = selectedTechnologies.filter((tech) => tech !== technology);
-    setSelectedTechnologies(updatedTechnologies);
+  const removeOne = (name: string) => () => {
+    setValueFilter('');
+    const newSelectedTechnologies = {...selectedTechnologies};
+    delete newSelectedTechnologies[name];
+    setSelectedTechnologies(newSelectedTechnologies);
   };
+
+  const selectActive = useCallback(() => {
+    console.log(Object.keys(selectedTechnologies))
+    return Object.keys(selectedTechnologies)
+      .map((technology) => technologyIcons[technology as keyof typeof technologyIcons]);
+  }, [selectedTechnologies]);
 
   const selectStackIcons = useCallback(() => {
+    const values = valueFilter.toLowerCase().split(/\s/g);
     return technologies
-      .filter((technology) => technology.includes(valueFilter))
-      .splice(0, 5)
+      .filter((technology) => values.reduce((prev, value) => prev && technology.toLowerCase().includes(value), true))
+      .splice(0, 4)
       .map((technology) => technologyIcons[technology as keyof typeof technologyIcons]);
   }, [valueFilter]);
 
-  return { selectedTechnologies, filterTechnologies, handleTechnologySelection, handleRemoveTechnology, technologies, technologyIcons, selectStackIcons, valueFilter, setValueFilter };
+  return { selectActive, selectOne, removeOne,  selectStackIcons, valueFilter, setValueFilter };
 };

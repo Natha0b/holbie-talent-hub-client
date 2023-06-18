@@ -6,5 +6,6 @@
   --color-primary: #{map-get(map-get($themes, light), color-primary)};
   --color-black: #{map-get(map-get($themes, light), color-black)};
   --color-gray: #{map-get(map-get($themes, light), color-gray)};
+  --color-danger: #{map-get(map-get($themes, light), color-danger)};
   --color-white: #{map-get(map-get($themes, light), color-white)};
 }

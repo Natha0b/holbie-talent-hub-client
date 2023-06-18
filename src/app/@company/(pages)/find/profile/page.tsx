@@ -10,8 +10,8 @@ export default function Find() {
                 <h1 className={profile.profile__title}>Select the profile that you want</h1>
                 <nav className={profile.profile__navigation}>
                     {
-                        profiles.map(({ jobName, icon: icon, kindJob }) => (
-                           <Card icon={icon} jobName={jobName} kindJob={kindJob}  />
+                        profiles.map(({ jobName, icon: icon, kindJob }, key) => (
+                           <Card key={key} icon={icon} jobName={jobName} kindJob={kindJob}  />
                         ))
                     }
                 </nav>

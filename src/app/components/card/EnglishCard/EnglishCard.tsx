@@ -10,8 +10,8 @@ const EnglishCard = () => {
       <input type='text' list='englishLevel' name="" id="" />
       <datalist id="englishLevel">
         {
-            englishLevel.map(Level => (
-                <option value={Level} />
+            englishLevel.map((Level, key) => (
+                <option value={Level} key={key} />
             ))
         }
       </datalist>

@@ -5,6 +5,7 @@
     height: 100%;
     width: 100%;
     box-shadow: 0 0 0 1px inset var(--color-primary);
+    overflow: auto;
 }
 
 @include glassmorphismforclass(".card__back");

@@ -16,8 +16,8 @@ const BackCard: React.FC<{ kindJob: string, active: boolean }> = ({ kindJob, act
                         <input type="text" list='locations' name="" id="" />
                         <datalist id="locations">
                             {
-                                listOfCities.map(city => (
-                                    <option value={city} />
+                                listOfCities.map((city, key) => (
+                                    <option value={city} key={key} />
                                 ))
                             }
                         </datalist>

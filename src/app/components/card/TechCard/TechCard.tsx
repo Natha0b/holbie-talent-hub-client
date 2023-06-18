@@ -1,32 +1,29 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './TechCard.module.scss'
 import { useSelectedTechnologies } from '$components/hooks/useSelectedTechnologies';
 
 const TechCard = () => {
   const {
-    selectedTechnologies,
-    handleTechnologySelection,
-    handleRemoveTechnology,
-    technologies,
-    technologyIcons,
     selectStackIcons,
+    setValueFilter,
+    valueFilter,
+    selectOne,
+    selectActive,
+    removeOne,
   } = useSelectedTechnologies();
 
   return (
     <section className={styles.form__tech}>
       <label htmlFor="">Technology</label>
-      <div className="selected-technologies">
-        {selectedTechnologies.map((technology) => (
-          <span key={technology} className="selected-technology">
-            {technology}
-            <button
-              className="remove-technology"
-            //onClick={() => handleRemoveTechnology(technology)}
-            >
-              ✅
-            </button>
-          </span>
+      <div className={styles["selected-technologies"]}>
+        {selectActive().map(({Icon, color, name}, key) => (
+            <Icon
+              style={{'--color': color} as React.CSSProperties}
+              key={key}
+              type="button"
+                onClick={removeOne(name)}
+            />
         ))}
       </div>
         <input
@@ -34,21 +31,28 @@ const TechCard = () => {
           // list="technologies"
           name=""
           id=""
-
-        // onChange={(e) => handleTechnologySelection(e.target.value)}
+          value={valueFilter}
+          onChange={(e) => setValueFilter(e.target.value)}
+          // onChange={(e) => handleTechnologySelection(e.target.value)}
         />
-        <ul className={styles['dropdown__container-list']} >
+        <nav className={styles['dropdown__container-list']} >
           {
-            selectStackIcons().map(({Icon, name, color}) => (
-              <li style={{'--color': color} as React.CSSProperties} className={styles['dropdown__icon']} >
+            selectStackIcons().map(({Icon, name, color}, index) => (
+              <button
+                key={index}
+                type='button'
+                style={{'--color': color} as React.CSSProperties}
+                className={styles['dropdown__icon']}
+                onClick={selectOne(name)}
+              >
                 <span>{name}</span>
-                <Icon key={name} /> 
-              </li>
+                <Icon />
+              </button>
             ))
           }
 
-        </ul>
-    </section>
+        </nav>
+    </section >
   );
 };
 
