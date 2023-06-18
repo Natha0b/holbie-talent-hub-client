@@ -1,0 +1,112 @@
+@import "styles/animations.scss";
+
+.dropdown {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.dropdown label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.dropdown input[type='text'] {
+    width: 80%;
+    padding: .6rem;
+    font-size: 16px;
+    border: none!important;
+    outline: none!important;
+    border-radius: 5px;
+}
+
+.dropdown__container-list {
+    position: absolute;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 10;
+    padding: 0px;
+    width: 80%;
+    transition: all 150ms ease-in-out;
+    transition-delay: .3s;
+    overflow: hidden;
+    bottom: 0px;
+    transform: translateY(100%);
+}
+
+@include glassmorphismforclass(".dropdown__container-list");
+
+.dropdown__container-list {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.dropdown input[type='text']:focus ~ .dropdown__container-list {
+    max-height: 200px;
+    transition-delay: 0ms;
+}
+
+.dropdown__icon {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .6rem;
+    cursor: pointer;
+    box-shadow: 0 1px 0 0 inset #ccc;
+    color: initial;
+    transition: all 150ms ease-in-out;
+    transition-delay: 0ms!important;
+    padding-inline: 2rem;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.dropdown__icon:hover {
+    color: var(--color);
+    box-shadow: 0 1px 0 0 inset #ccc, 0 0 1px 0px inset var(--color);
+}
+
+.dropdown__icon:first-child {
+    box-shadow: none;
+}
+
+.selected-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 10px;
+}
+
+@include glassmorphismforclass(".selected-items *");
+
+.selected-items * {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    transition-delay: 0ms!important;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: var(--color);
+    box-shadow: 0 0 1px 0px inset var(--color);
+}
+
+.selected-items *:hover {
+    color: var(--color-danger);
+    box-shadow: 0 0 1px 0px inset var(--color-danger);
+}
