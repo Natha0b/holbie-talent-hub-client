@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './Chat.scss';
 import Link from 'next/link';
 import { userAgent } from 'next/server';
+import { BsFillSendFill } from 'react-icons/bs';
 
 interface Message {
     id: number;
@@ -101,12 +102,7 @@ const Chat: React.FC = () => {
                     onChange={(e) => setNewMessage(e.target.value)}
                 />
                 <button onClick={handleSendMessage}>
-                    <img
-                        src="https://cdn.icon-icons.com/icons2/1880/PNG/512/iconfinder-send-4341325_120524.png"
-                        height="30"
-                        width="30"
-                        alt="Send"
-                    />
+                    <BsFillSendFill/>
                 </button>
             </div>
         </div>

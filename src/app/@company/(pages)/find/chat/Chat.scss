@@ -77,17 +77,40 @@
     flex: 1;
     border: 1px solid #ccc;
     border-radius: 3px;
-    padding: 5px;
     margin-right: 10px;
+    border-radius: 3px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border: none;
+}
+
+.input-container input:hover,
+.input-container input:focus {
+    box-shadow: 0 0 1px inset var(--color-secondary);
+    outline: none;
+    border: none;
 }
 
 .input-container button {
-    color: white;
+    display: grid;
+    place-items: center;
+    color: var(--color-primary);
     border: none;
+    background-color: transparent;
     border-radius: 3px;
-    padding: 5px 10px;
+    padding: 10px;
     cursor: pointer;
+    border: none!important;
+    outline: none!important;
 }
+
+.input-container button:hover,
+.input-container button:focus  {
+    color: var(--color-secondary);
+    box-shadow: 0 0 1px inset var(--color-secondary);
+}
+
 
 .username {
     padding: 10px;
