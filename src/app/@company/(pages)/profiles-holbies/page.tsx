@@ -1,12 +1,17 @@
 "use client";
 import React from 'react';
 import { useState } from "react";
-import './profiles.scss';
-import DashboardLayout from '../find/layout';
+import './profiles.scss'
 import Image from 'next/image';
 import javascriptIcon from '../../../../../public/imagenescoderise/java-script1.png';
 import cIcon from '../../../../../public/imagenescoderise/c-.png';
 import rubyIcon from '../../../../../public/imagenescoderise/ruby.png';
+import { Carousel } from "$/app/@company/components/profile/Carousel/Carousel";
+import { ProfileSection } from "$/app/@company/components/profile/ProfileSection/ProfileSection";
+import { UserInfo } from "$/app/@company/components/profile/UserInfo/UserInfo";
+import { ContactIcons } from "$/app/@company/components/profile/ContactIcons/ContactIcons";
+import { ProfileCard } from '../../components/profile/ProfileCard/ProfileCard';
+import Layout from '../find/layout';
 
 export interface User {
     name: string;
@@ -17,7 +22,6 @@ export interface User {
     linkedinUrl: string;
     gmailUrl: string;
     slackUrl: string;
-
 }
 
 export default function HomeProfiles() {
@@ -33,7 +37,7 @@ export default function HomeProfiles() {
             slackUrl: 'https://slack.com/',
         },
         {
-            name: 'Ana diaz',
+            name: 'Ana Diaz',
             profilePicture: 'profile2.jpg',
             age: 25,
             programmingLanguages: ['JavaScript', 'Ruby'],
@@ -57,7 +61,6 @@ export default function HomeProfiles() {
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    /*Estas funciones actualizan el estado currentSlide para mostrar el perfil de usuario anterior o siguiente en el carrusel.*/
     const handlePrevSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide === 0 ? users.length - 1 : prevSlide - 1));
     };
@@ -69,39 +72,27 @@ export default function HomeProfiles() {
     const getLanguageIcon = (language: string) => {
         switch (language) {
             case 'JavaScript':
-                return <Image src={javascriptIcon} alt="JavaScript" width={32} height={32} />;
+                return <Image src={javascriptIcon} alt="JavaScript" />;
             case 'C':
-                return <Image src={cIcon} alt="C" width={32} height={32} />;
+                return <Image src={cIcon} alt="C" />;
             case 'Ruby':
-                return <Image src={rubyIcon} alt="Ruby" width={32} height={32} />;
+                return <Image src={rubyIcon} alt="Ruby" />;
             default:
                 return null;
         }
     };
 
     return (
-        <>
-            <Carousel users={users} handlePrevSlide={function (): void {
-                throw new Error('Function not implemented.');
-            } } handleNextSlide={function (): void {
-                throw new Error('Function not implemented.');
-            } } currentSlide={0}/>
-            {/* <ContactIcons user={undefined}/>
-            <ProfileCard user={undefined} index={0} currentSlide={0}/> */}
-            <ProfileSection users={[]} handlePrevSlide={function (): void {
-                throw new Error('Function not implemented.');
-            } } handleNextSlide={function (): void {
-                throw new Error('Function not implemented.');
-            } } currentSlide={0}/>
-            {/* <UserInfo user={undefined}/> */}
+        <Layout>
             <ProfileSection
                 users={users}
                 handlePrevSlide={handlePrevSlide}
                 handleNextSlide={handleNextSlide}
                 currentSlide={currentSlide}
             />
-        </>
+        </Layout>
     );
-};
+}
 
-export default HomeProfiles;
+export { HomeProfiles };
+

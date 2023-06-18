@@ -10,16 +10,16 @@ export const ContactIcons: React.FC<ContactIconsProps> = ({ user }) => {
     return (
         <div className={styles["contact-icons"]}>
             <a href={user.githubUrl} target="_blank" rel="noopener noreferrer">
-                <img className={styles.icon} src="/ruta-completa-a-github.png" alt="GitHub" />
+                <img className={styles.icon} src="/imagenescoderise/github.png" alt="GitHub" />
             </a>
             <a href={user.linkedinUrl} target="_blank" rel="noopener noreferrer">
-                <img className={styles.icon} src="/ruta-completa-a-linkedin.png" alt="LinkedIn" />
+                <img className={styles.icon} src="/imagenescoderise/linkedin.png" alt="LinkedIn" />
             </a>
             <a href={user.slackUrl} target="_blank" rel="noopener noreferrer">
-                <img className={styles.icon} src="/ruta-completa-a-slack.png" alt="Slack" />
+                <img className={styles.icon} src="/imagenescoderise/slack.png" alt="Slack" />
             </a>
             <a href={user.gmailUrl} target="_blank" rel="noopener noreferrer">
-                <img className={styles.icon} src="/ruta-completa-a-gmail.png" alt="Gmail" />
+                <img className={styles.icon} src="/imagenescoderise/gmail.png" alt="Gmail" />
             </a>
         </div>
     );
