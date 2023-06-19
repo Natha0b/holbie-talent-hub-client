@@ -1,0 +1,101 @@
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Sonsie One', cursive;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos de la navegación */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilos del formulario de búsqueda */
+nav form {
+    margin-top: 10px;
+}
+
+nav form input[type="search"] {
+    padding: 5px;
+    width: 200px;
+}
+
+nav form input[type="submit"] {
+    background-color: #ccc;
+    border: none;
+    color: #333;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Estilos del contenido principal */
+main {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Estilos del artículo principal */
+article {
+    width: 70%;
+}
+
+/* Estilos de la barra lateral */
+aside {
+    width: 25%;
+}
+
+aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Estilos para los títulos y párrafos */
+h2,
+h3 {
+    margin-top: 20px;
+}
+
+p {
+    margin-bottom: 10px;
+}
