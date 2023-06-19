@@ -1,0 +1,40 @@
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: rgba(242, 242, 242, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 200px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    background-color:#45D678;
+    color: #495754;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45D678;
+}

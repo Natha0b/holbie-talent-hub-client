@@ -1,8 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from './login.module.scss';
-
+import styles from '../login-professionals/login.module.scss';
 
 export default function Login() {
     const [username, setUsername] = useState('');
@@ -11,8 +10,6 @@ export default function Login() {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // Realiza la lógica de autenticación aquí (comparar con una base de datos, API, etc.)
-        // Por simplicidad, simplemente comprobamos si el usuario y la contraseña son "admin"
         if (username === 'admin' && password === 'admin') {
             router.push('/dashboard');
         } else {
@@ -22,21 +19,17 @@ export default function Login() {
 
     return (
         <div className={styles.container}>
-            <h1>Inicio de sesión</h1>
+            <h1 className={styles.title}>LOGIN SESSIÓN</h1>
             <form onSubmit={handleLogin}>
                 <input
+                    className={styles.input}
                     type="text"
-                    placeholder="Correo electronico"
+                    placeholder="Email address"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
-                <input
-                    type="password"
-                    placeholder="Contraseña"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit">Iniciar sesión</button>
+
+                <button className={styles.button} type="submit">Login</button>
             </form>
         </div>
     );

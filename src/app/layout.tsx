@@ -40,7 +40,7 @@ const validateAuth = async (headers: Headers) => {
 export async function getAuth() {
   // const { token, role } = await validateAuth(headers());
   
-  const { token, role } = { token: null, role: 'company' };
+  const { token, role } = { token: null, role: '' };
   return {
     token,
     role
@@ -48,10 +48,10 @@ export async function getAuth() {
 }
 
 export default async function AuthLayout(
-  { professionals, company, ['unsigned-in']: unsignedIn}: {
+  { professionals, company, unsignedin: unsignedIn}: {
     professionals: React.ReactNode;
     company: React.ReactNode;
-    ['unsigned-in']: React.ReactNode;
+    unsignedin: React.ReactNode;
   }
 ) {
   return new Promise<Omit<React.ReactNode, "then">>(async (resolve) => {
