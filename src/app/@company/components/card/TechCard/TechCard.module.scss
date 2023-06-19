@@ -109,9 +109,9 @@
     margin: 10px;
 }
 
-@include glassmorphismforclass(".selected-technologies *");
+@include glassmorphismforclass(".selected-technologies > *");
 
-.selected-technologies * {
+.selected-technologies > * {
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
@@ -125,7 +125,7 @@
 
 }
 
-.selected-technologies *:hover {
+.selected-technologies > *:hover {
     color: var(--color-danger);
     box-shadow: 0 0 1px 0px inset var(--color-danger);
 }

@@ -1,5 +1,5 @@
 'use client';
-import { Card } from '$components/card/Card/Card';
+import { Card } from '$company/components/card/Card/Card';
 import { profiles } from './profile.data';
 import profile from '../profile/profile.module.scss';
 

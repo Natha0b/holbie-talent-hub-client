@@ -1,0 +1,28 @@
+.actionButton {
+    padding: .6rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+  }
+  
+  .danger {
+    background-color: var(--color-danger);
+    color: #fff;
+  }
+  
+  .warning {
+    background-color: var(--color-warning);
+    color: #fff;
+  }
+  
+  .success {
+    background-color: var(--color-success);
+    color: #fff;
+  }
+  
+  .actionButton:hover {
+    opacity: 0.8;
+  }
+  

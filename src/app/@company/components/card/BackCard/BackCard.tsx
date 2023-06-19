@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
-import { ButtonSubmit } from '$components/card/ButtonSubmit/ButtonSubmit';
+import { ButtonSubmit } from '$/app/@company/components/card/ButtonSubmit/ButtonSubmit';
 import { listOfCities } from '$company/(pages)/find/profile/profile.data';
-import { EnglishCard } from '$components/card/EnglishCard/EnglishCard';
-import { TechCard } from '$components/card/TechCard/TechCard';
-import { JobCard } from '$components/card/JobCard//JobCard';
+import { EnglishCard } from '$/app/@company/components/card/EnglishCard/EnglishCard';
+import { TechCard } from '$/app/@company/components/card/TechCard/TechCard';
+import { JobCard } from '$/app/@company/components/card/JobCard/JobCard';
 import styles from './BackCard.module.scss';
 
 const BackCard: React.FC<{ kindJob: string, active: boolean }> = ({ kindJob, active}) => {

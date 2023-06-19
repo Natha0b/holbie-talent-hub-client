@@ -1,11 +1,11 @@
 'use client';
 import React, { useRef } from 'react';
-import { FrontCard } from '$components/card/FrontCard/FrontCard';
-import { BackCard } from '$components/card/BackCard/BackCard';
-import { TechCard } from '$components/card/TechCard/TechCard';
-import { EnglishCard } from '$components/card/EnglishCard/EnglishCard';
-import { JobCard } from '$components/card/JobCard/JobCard';
-import { ButtonSubmit } from '$components/card/ButtonSubmit/ButtonSubmit';
+import { FrontCard } from '$/app/@company/components/card/FrontCard/FrontCard';
+import { BackCard } from '$/app/@company/components/card/BackCard/BackCard';
+import { TechCard } from '$/app/@company/components/card/TechCard/TechCard';
+import { EnglishCard } from '$/app/@company/components/card/EnglishCard/EnglishCard';
+import { JobCard } from '$/app/@company/components/card/JobCard/JobCard';
+import { ButtonSubmit } from '$/app/@company/components/card/ButtonSubmit/ButtonSubmit';
 import styles from './Card.module.scss';
 import { useCardState } from '$components/hooks/useCardState';
 
