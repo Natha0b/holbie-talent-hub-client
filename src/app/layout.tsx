@@ -40,7 +40,7 @@ const validateAuth = async (headers: Headers) => {
 export async function getAuth() {
   // const { token, role } = await validateAuth(headers());
   
-  const { token, role } = { token: null, role: '' };
+  const { token, role } = { token: null, role: 'company' };
   return {
     token,
     role
