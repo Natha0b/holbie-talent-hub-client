@@ -4,7 +4,10 @@ import "$share/styles/background.scss";
 import { Background } from "./components/Background/Background";
 // import { getSegment } from "@share/router/router.share";
 
-/* function to validate the auth with the headers and return the role of the user */
+/*
+web tonken 
+function to validate the auth with the headers and return the role of the user
+*/
 
 const validateAuthSinc = (headers: Headers) => {
   // without fetch and sinc
@@ -36,6 +39,7 @@ const validateAuth = async (headers: Headers) => {
 
 export async function getAuth() {
   // const { token, role } = await validateAuth(headers());
+  
   const { token, role } = { token: null, role: 'company' };
   return {
     token,
@@ -44,9 +48,10 @@ export async function getAuth() {
 }
 
 export default async function AuthLayout(
-  { professionals, company }: {
+  { professionals, company, ['unsigned-in']: unsignedIn}: {
     professionals: React.ReactNode;
     company: React.ReactNode;
+    ['unsigned-in']: React.ReactNode;
   }
 ) {
   return new Promise<Omit<React.ReactNode, "then">>(async (resolve) => {
@@ -71,8 +76,7 @@ export default async function AuthLayout(
     if (role === 'company')
       return resolve(content(company) as Omit<React.ReactNode, "then">);
 
-    return resolve(<>Login</>)
-
+    return resolve(content(unsignedIn) as Omit<React.ReactNode, "then">)
   });
 
 }

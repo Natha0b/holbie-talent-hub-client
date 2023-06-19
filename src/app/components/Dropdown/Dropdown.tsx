@@ -13,39 +13,11 @@ export const Dropdown: React.FC<DropdownProps> = ({
     max = 4
 }) => {
 
-
     const {filterItems, selectItem, removeSelectedItem, filterValue, setFilterValue, selectedItems } =  useDropdown(items, max);
 
     return (
         <section className={styles.dropdown}>
             <label htmlFor="">{label}</label>
-            <div className={styles["selected-items"]}>
-                {selectedItems.map(({ Icon, color, name, ...item }, key) => (
-                    <>
-                        {
-                            Icon ?
-                                <Icon
-                                    style={{ '--color': color } as React.CSSProperties}
-                                    key={key}
-                                    type="button"
-                                    onClick={() => {
-                                        if (typeof onItemSelectedRemove === 'function') onItemSelectedRemove({...item, Icon, color, name });
-                                        removeSelectedItem({ ...item, Icon, color, name });
-                                    }}
-                                />
-                                :
-                                <span
-                                    style={{ '--color': color } as React.CSSProperties}
-                                    key={key}
-                                    onClick={() => {
-                                        if (typeof onItemSelectedRemove === 'function') onItemSelectedRemove({ ...item, Icon, color, name });
-                                        removeSelectedItem({ ...item, Icon, color, name });
-                                    }}
-                                >{name}</span>
-                        }
-                    </>
-                ))}
-            </div>
             <input
                 type="text"
                 name=""

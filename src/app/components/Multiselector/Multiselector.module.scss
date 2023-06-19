@@ -1,6 +1,6 @@
 @import "styles/animations.scss";
 
-.dropdown {
+.multiselector {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -8,13 +8,13 @@
     align-items: center;
 }
 
-.dropdown label {
+.multiselector label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.dropdown input[type='text'] {
+.multiselector input[type='text'] {
     width: 80%;
     padding: .6rem;
     font-size: 16px;
@@ -24,7 +24,7 @@
     box-shadow: 0 0 0 1px inset #ccc;
 }
 
-.dropdown__container-list {
+.multiselector__container-list {
     position: absolute;
     margin: 0px;
     display: flex;
@@ -43,19 +43,19 @@
     transform: translateY(100%);
 }
 
-@include glassmorphismforclass(".dropdown__container-list");
+@include glassmorphismforclass(".multiselector__container-list");
 
-.dropdown__container-list {
+.multiselector__container-list {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
 }
 
-.dropdown input[type='text']:focus ~ .dropdown__container-list {
+.multiselector input[type='text']:focus ~ .multiselector__container-list {
     max-height: 200px;
     transition-delay: 0ms;
 }
 
-.dropdown__icon {
+.multiselector__icon {
     flex: 1;
     display: flex;
     justify-content: space-between;
@@ -72,12 +72,12 @@
     border: none;
 }
 
-.dropdown__icon:hover {
+.multiselector__icon:hover {
     color: var(--color);
     box-shadow: 0 1px 0 0 inset #ccc, 0 0 1px 0px inset var(--color);
 }
 
-.dropdown__icon:first-child {
+.multiselector__icon:first-child {
     box-shadow: none;
 }
 
