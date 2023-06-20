@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from './layout.module.scss'
 import Logo from './logo.png'
 import LogoCode from './logocoderiseapp.png'
-import { getSegment } from '$/app/share/router/router.share';
+import { getSegment } from '$share/router/router.share';
 import Image from 'next/image';
 
 export default function DashboardLayout({
@@ -22,6 +22,11 @@ export default function DashboardLayout({
                     <Image src={Logo} alt='logo'
                     />
                 </figure>
+                {/*
+                <div className={styles.containeravatar}>
+                    <img className={styles.avatarprofile} src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar" />
+
+                </div>*/}
                 <nav className={styles["navigation"]}>
                     <div
                         className={`${styles["navigation__buttons"]} ${segment.includes('profile') ? styles["navigation__buttons--active"] : ''}`}
@@ -42,7 +47,7 @@ export default function DashboardLayout({
             </main>
             <footer className={styles["footer"]}>
                 <center><Image src={LogoCode} alt='logocode'
-                    /></center>
+                /></center>
             </footer>
         </>
     );

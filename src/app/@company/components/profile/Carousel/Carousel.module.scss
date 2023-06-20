@@ -1,18 +1,20 @@
 .carousel {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .carousel__button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0;
+    background-color: var(--color-white);
     border: none;
-    color: #333;
+    color: var(--color-black);
     font-size: 18px;
     padding: 10px 15px;
     cursor: pointer;
+    border-radius: 30px;
 }
 
 .carousel__button--prev {
@@ -28,4 +30,16 @@
 .carousel__slide-container {
     position: relative;
     flex-grow: 1;
+}
+
+.contactsprofiles {
+    position: absolute;
+    bottom: -5px;
+    right: 20px;
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    border-color: var(--color-white);
+    background-color: var(--color-primary);
+    color: var(--color-black);
 }
