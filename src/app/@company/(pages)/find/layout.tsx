@@ -1,8 +1,10 @@
 import { headers } from 'next/headers';
 import Link from "next/link";
 import styles from './layout.module.scss'
-import Logo from '../../../../../public/logo.png'
+import Logo from './logo.png'
+import LogoCode from './logocoderiseapp.png'
 import { getSegment } from '$/app/share/router/router.share';
+import Image from 'next/image';
 
 export default function DashboardLayout({
     children,
@@ -17,7 +19,7 @@ export default function DashboardLayout({
         <>
             <header className={styles["header"]}>
                 <figure className={styles["header__company-icon"]}>
-                    <img src="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/79001/331125_630361.png"
+                    <Image src={Logo} alt='logo'
                     />
                 </figure>
                 <nav className={styles["navigation"]}>
@@ -39,7 +41,8 @@ export default function DashboardLayout({
                 {children}
             </main>
             <footer className={styles["footer"]}>
-                <center><img src="https://apply.holbertonschool.com/holberton-logo.png" alt="Image 1" /></center>
+                <center><Image src={LogoCode} alt='logocode'
+                    /></center>
             </footer>
         </>
     );
