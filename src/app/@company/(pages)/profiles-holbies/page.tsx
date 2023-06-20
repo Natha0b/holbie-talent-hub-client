@@ -7,10 +7,8 @@ import javascriptIcon from '../../../../../public/imagenescoderise/java-script1.
 import cIcon from '../../../../../public/imagenescoderise/c-.png';
 import rubyIcon from '../../../../../public/imagenescoderise/ruby.png';
 import { ProfileSection } from "$/app/@company/components/profile/ProfileSection/ProfileSection";
-import { BsFillSendFill } from 'react-icons/bs';
+
 import Layout from '../find/layout';
-import styles from '../../components/TalentPreview/TalentPreview.module.scss';
-import handleSendMessage from '$company/(pages)/find/chat/page';
 
 export interface User {
     name: string;
@@ -89,9 +87,7 @@ export default function HomeProfiles() {
                 handleNextSlide={handleNextSlide}
                 currentSlide={currentSlide}
             />
-            <button className={styles.contactsearch} onClick={handleSendMessage}>
-                <BsFillSendFill />
-            </button>
+
         </Layout>
     );
 }
