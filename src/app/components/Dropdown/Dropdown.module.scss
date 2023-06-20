@@ -20,8 +20,10 @@
     font-size: 16px;
     border: none!important;
     outline: none!important;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     box-shadow: 0 0 0 1px inset #ccc;
+  box-sizing: border-box;
+
 }
 
 .dropdown__container-list {
@@ -32,8 +34,8 @@
     width: 100%;
     max-height: 0px;
     overflow-y: auto;
-    border-radius: 5px;
-    z-index: 10;
+    border-radius: var(--border-radius);
+    z-index: 90;
     padding: 0px;
     width: 80%;
     transition: all 150ms ease-in-out;
@@ -41,6 +43,7 @@
     overflow: hidden;
     bottom: 0px;
     transform: translateY(100%);
+    
 }
 
 @include glassmorphismforclass(".dropdown__container-list");

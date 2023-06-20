@@ -10,20 +10,23 @@ $photoTopLeftEnd: (topRight: 80% 5%, bottomRight: 2% 100% , bottomLeft: 50% 5% ,
 .filterPanel {
     width: 300px;
     background-color: var(--color-white);
-    border-radius: 500%;
-    position: absolute;
+    position: fixed;
     padding: 1rem;
     z-index: 30;
-    left: -2rem;
-    top: -3rem;
-    @include glassmorphism( map-get(map-get($themes, light), color-secondary), 15px, 0.6, rgba(0, 0, 255, 0.2));
-    border-radius: 20%;
+    left: 0rem;
+    top: 1rem;
+    border-radius: 0px 15px 15px 0px;
     transform:  translateX(-100%);
-    transition: all 0.5s ease-in-out;
+    transition: all 250ms ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: none;
+    border: none;
+    height: 90vh;
+    overflow: visible;
 }
 
 .filterPanel--active {
-    border-radius: 0% ;
+    @include glassmorphism( map-get(map-get($themes, light), color-white), 15px, 0.6);
+    border-radius: 0px 15px 15px 0px;
     transform: translateX(0%);
 }
 
@@ -47,7 +50,7 @@ $photoTopLeftEnd: (topRight: 80% 5%, bottomRight: 2% 100% , bottomLeft: 50% 5% ,
 
 .filterIcon {
     position: absolute;
-    top: 0;
+    top: 4rem;
     left: 350px;
     color: var(--color-secondary);
     cursor: pointer;
@@ -58,6 +61,10 @@ $photoTopLeftEnd: (topRight: 80% 5%, bottomRight: 2% 100% , bottomLeft: 50% 5% ,
 
 @include glassmorphismforclass(".filterIcon");
 
+.filterSectionScroll {
+    overflow-y: auto;
+    height: 100%;
+}
 
 .filterSection {
     margin-bottom: 1.5rem;
@@ -74,11 +81,11 @@ $photoTopLeftEnd: (topRight: 80% 5%, bottomRight: 2% 100% , bottomLeft: 50% 5% ,
     margin-bottom: 0.25rem;
 }
 
-.filterSection input,
+/* .filterSection input,
 .filterSection select {
     width: 100%;
     padding: 0.5rem;
     border-radius: 0px;
     border: 1px solid var(--color-gray);
     box-sizing: border-box;
-}
+} */

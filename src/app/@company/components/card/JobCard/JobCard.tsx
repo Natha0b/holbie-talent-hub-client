@@ -1,22 +1,9 @@
-import React, { useState } from 'react';
-import { jobKind } from '$company/(pages)/find/profile/profile.data'
-import styles from './JobCard.module.scss'
+import React from 'react';
+import { Dropdown } from '$components/Dropdown/Dropdown';
+import { jobKindIcons } from './JobCard.data';
 
-const JobCard = () => {
+const JobCard = () => (
+  <Dropdown label="Kind Job" items={jobKindIcons} />
+);
 
-  return (
-    <section className={styles.form__job}>
-      <label htmlFor="">Kind Job</label>
-      <input type='text' list='jobKind ' name="" id="" />
-      <datalist id="jobKind ">
-        {
-            jobKind .map((Job, key) => (
-                <option value={Job} key={key} />
-            ))
-        }
-      </datalist>
-    </section>
-  );
-};
-
-export { JobCard};
+export { JobCard };

@@ -9,6 +9,7 @@ export interface IDropdownItem {
 export interface DropdownProps {
     label: string;
     items: IDropdownItem[];
+    initial?: IDropdownItem;
     onItemSelect?: (item: IDropdownItem) => void;
     onItemSelectedRemove?: (item: IDropdownItem) => void;
     onFilterChange?: (newFilter: string) => void;

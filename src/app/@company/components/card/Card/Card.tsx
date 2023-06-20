@@ -27,11 +27,6 @@ const Card: React.FC<{ kindJob: string; jobName: string; icon: string; }> = ({
     >
       <FrontCard icon={icon} jobName={jobName} active={active} />
       <BackCard kindJob={kindJob} active={active} />
-     {/* 
-      <JobCard />
-      <TechCard />
-      <EnglishCard />
-      <ButtonSubmit /> */}
     </article>
   );
 };

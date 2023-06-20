@@ -6,19 +6,6 @@ import { Dropdown } from '$components/Dropdown/Dropdown';
 import { technologyIcons } from './TechCard.dada';
 import { Multiselector } from '$components/Multiselector/Multiselector';
 
-export const TechCard = () => {
-  /*
-    const {
-    selectStackIcons,
-    setValueFilter,
-    valueFilter,
-    selectOne,
-    selectActive,
-    removeOne,
-  } = useSelectedTechnologies();
- */
-  return (
-    <Multiselector label="Technology" items={technologyIcons} />
-  );
-};
-
+export const TechCard = () => (
+  <Multiselector label="Technology" items={technologyIcons} />
+);

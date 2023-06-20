@@ -22,6 +22,7 @@
     background: #fff;
     padding: 20px;
     z-index: 1001;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
+
     max-width: 500px;
 }

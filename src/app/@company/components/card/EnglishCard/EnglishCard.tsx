@@ -1,22 +1,15 @@
 import React from 'react';
-import { englishLevel } from '$company/(pages)/find/profile/profile.data'
 import styles from './EnglishCard.module.scss'
+import { Dropdown } from '$components/Dropdown/Dropdown';
+import { englishLevelIcons } from './EnglishCard.data';
 
-const EnglishCard = () => {
 
-  return (
-    <section className={styles.form__english}>
-      <label htmlFor="">English Level</label>
-      <input type='text' list='englishLevel' name="" id="" />
-      <datalist id="englishLevel">
-        {
-            englishLevel.map((Level, key) => (
-                <option value={Level} key={key} />
-            ))
-        }
-      </datalist>
-    </section>
-  );
-};
+
+const EnglishCard = () => (
+    <Dropdown
+        label="English Level"
+        items={englishLevelIcons}
+    />
+);
 
 export { EnglishCard };

@@ -1,7 +1,7 @@
 @import "styles/animations.scss";
 
-.secondaryButton {
-  background-color: var(--color-secondary);
+.successButton {
+  background-color: var(--color-success);
   color: #fff;
   padding: .6rem 1rem;
   border: none;
@@ -11,7 +11,6 @@
   transition: all 150ms ease-in-out;
 }
 
-.secondaryButton:hover {
+.successButton:hover {
   filter: hue-rotate(20deg) saturate(1.5);
-
 }

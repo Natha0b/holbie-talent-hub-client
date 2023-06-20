@@ -5,8 +5,8 @@ import { Background } from "./components/Background/Background";
 // import { getSegment } from "@share/router/router.share";
 
 /*
-web tonken 
-function to validate the auth with the headers and return the role of the user
+Web tonken
+Function to validate the auth with the headers and return the role of the user
 */
 
 const validateAuthSinc = (headers: Headers) => {
