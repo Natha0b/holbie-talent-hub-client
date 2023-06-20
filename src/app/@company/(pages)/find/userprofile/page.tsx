@@ -61,8 +61,12 @@ const UserProfile: React.FC<{ profile: Profile }> = ({ profile }) => {
 
             <div className='info_profile'>
                 <div className="campo">
-                    <h2>About Me</h2>
+                    <h2>Welcome to my Holbie Profile!👋🏼</h2>
+                    <h3>I'm Eveling Rodriguez👩‍💻💫</h3>
                     <p>{profile.about_me}</p>
+                    <li>🔭 I’m graduate of holberton school.</li>
+                    <li>🌱 I’m currently learning different programming languages.</li>
+                    <li>📫 How to reach me: eve0128@gmail.com</li>
                 </div>
             </div>
             <div className='info_projects'>
@@ -75,6 +79,23 @@ const UserProfile: React.FC<{ profile: Profile }> = ({ profile }) => {
                     </article>
                 ))}
             </div>
+
+            <div className="levels">
+                <h2>Skills</h2>
+                <div className="skill">
+                    <span className="skill-name">Python</span>
+                    <progress className="skill-progress" value="80" max="100"></progress>
+                </div>
+                <div className="skill">
+                    <span className="skill-name">Rubi</span>
+                    <progress className="skill-progress" value="70" max="100"></progress>
+                </div>
+                <div className="skill">
+                    <span className="skill-name">JavaScript</span>
+                    <progress className="skill-progress" value="90" max="100"></progress>
+                </div>
+            </div>
+
         </div>
     );
 };
@@ -96,21 +117,21 @@ const profileData: Profile = {
 const popularRepositories: Repository[] = [
     {
         id: 1,
-        name: 'AwesomeProject',
-        description: 'An awesome project',
-        stars: 100,
+        name: 'AirBnb Clone',
+        description: 'The project aims to deploy a server on a simple copy of the AirBnB website.',
+        stars: 200,
     },
     {
         id: 2,
-        name: 'CoolApp',
-        description: 'A cool app',
-        stars: 50,
+        name: 'Simple Shell',
+        description: 'In this project the reconstruction of the Unix Shell a command line interpreter is performed.',
+        stars: 100,
     },
     {
         id: 3,
-        name: 'SuperLibrary',
-        description: 'A super library',
-        stars: 200,
+        name: 'Printf Project',
+        description: ' Printf is the function we use to make a formatted printout. Printf= the f stands for input by formatted output',
+        stars: 50,
     },
 ];
 

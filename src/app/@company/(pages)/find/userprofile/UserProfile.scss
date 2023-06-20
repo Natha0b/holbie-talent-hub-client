@@ -5,11 +5,12 @@
     flex-wrap: wrap;
     gap: 2rem;
     flex-direction: column;
-    height: 150vh;
+    height: 160vh;
     padding-top: 2rem;
 }
 
 @include glassmorphismforclass(".avatar");
+
 .details_profile {
     position: relative;
     width: 300px;
@@ -19,6 +20,14 @@
     text-align: left;
     padding: 1rem;
     box-sizing: border-box;
+}
+
+.details_profile h2 {
+    font-size: 22px;
+}
+
+.details_profile p {
+    font-size: 18px;
 }
 
 .info_profile {
@@ -37,6 +46,53 @@
 .info_profile h2 {
     text-align: center;
     font-size: 30px;
+    position: relative;
+    padding: 1rem;
+}
+
+.info_profile h3 {
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    padding: 1rem;
+}
+
+.info_profile p {
+    font-size: 20px;
+    text-align: left;
+
+}
+
+.info_profile li {
+    font-size: 19px;
+    text-align: left;
+
+}
+
+.info_profile hr {
+    color: #ccc;
+}
+
+.campo h2::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    position: absolute;
+    left: 0;
+    bottom: -0.1rem;
+
+}
+
+.campo h3::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    position: absolute;
+    left: 0;
+    bottom: -0.2rem;
+
 }
 
 .avatar {
@@ -62,6 +118,8 @@ h2 {
     margin-bottom: 5px;
 }
 
+
+
 p {
     font-size: 16px;
     color: #555;
@@ -75,47 +133,94 @@ p {
     justify-content: center;
     border: 1px solid #ccc;
     border-radius: var(--border-radius, 14px);
-    padding: 3rem;
+    padding: 2rem;
     margin-bottom: 10px;
     height: auto;
     box-sizing: border-box;
     width: calc(100vw - (320px + 5rem));
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: 2rem;
 }
 
 @include glassmorphismforclass(".info_projects > article");
 
-.info_projects > article {
+.info_projects>article {
     padding: 1rem;
     box-sizing: border-box;
+    background-color: var(--color-primary);
 
 }
+
 .info_projects h1 {
-    font-size: 24px;
+    font-size: 35px;
     font-weight: bold;
     margin-bottom: 10px;
     grid-column: 1/-1;
-  }
-  
+}
+
 .info_projects h2 {
-    font-size: 18px;
+    font-size: 23px;
     font-weight: bold;
     margin-bottom: 5px;
-  }
-  
+}
+
 .info_projects p {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 10px;
-  }
-
-
-
-.repo-name {
-    color: #0366d6;
+    color: #202020;
 }
 
 .repo-stars {
-    font-size: 12px;
+    font-size: 18px;
     color: #586069;
+}
+
+.levels {
+    position: relative;
+    display: grid;
+    float: right;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius, 14px);
+    padding: 2rem;
+    margin-bottom: 10px;
+    height: auto;
+    box-sizing: border-box;
+    width: calc(100vw - (320px + 5rem));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.levels h2 { 
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    grid-column: 1/-1;
+
+}
+
+.skill-name {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 0.1rem;
+    grid-column: 1/-1;
+}
+
+.skill-progress {
+    width: 200px;
+    height: 10px;
+    appearance: none;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.skill-progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.skill-progress::-webkit-progress-value {
+    background-color: var(--color-primary);
+    border-radius: 5px;
 }
