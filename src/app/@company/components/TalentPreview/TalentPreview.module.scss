@@ -141,6 +141,32 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
         p {
             margin-bottom: 0;
             color: var(--color-black);
+            text-align: center
+        }
+        h2{
+           color: var(--color-black);
+           font-family: Arial, Helvetica, sans-serif;
+           font-size: 12px;
         }
     }
+    .contactsearch{
+        background-color: var(--color-white);
+        color: var(--color-black);
+        border: none;
+        height: 40px;
+        width: 40px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .contactsearch:hover {
+        background-color: var(--color-white);
+    }
+    
+    .contactsearch:active {
+        background-color: var(--color-gray);
+    }
+
+ 
+
 }
