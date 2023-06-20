@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Dropdown.module.scss'
 import { DropdownProps } from './Dropdown.type';
 import { useDropdown } from './useDropdown';
@@ -7,13 +7,21 @@ import { useDropdown } from './useDropdown';
 export const Dropdown: React.FC<DropdownProps> = ({
     label,
     items,
+    initial = {
+        value: "",
+        name: "",
+    },
     onItemSelect,
-    onItemSelectedRemove,
     onFilterChange,
     max = 4
 }) => {
 
-    const {filterItems, selectItem, removeSelectedItem, filterValue, setFilterValue, selectedItems } =  useDropdown(items, max);
+    const {
+        filterItems,
+        selectItem,
+        filterValue,
+        setFilterValue
+    } = useDropdown(items, initial, max);
 
     return (
         <section className={styles.dropdown}>

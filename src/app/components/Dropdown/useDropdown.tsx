@@ -1,19 +1,18 @@
 import { useState, useCallback } from 'react';
 import { IDropdownItem } from './Dropdown.type';
 
-export const useDropdown = (items: IDropdownItem[], max = 4) => {
-  const [filterValue, setFilterValue] = useState<string>('');
-  const [selectedItems, setSelectedItems] = useState<IDropdownItem[]>([]);
+export const useDropdown = (items: IDropdownItem[], initial: IDropdownItem, max = 4) => {
+  const [filterValue, setFilterValue] = useState<string>(initial.name);
+  const [selectedItem, setSelectedItem] = useState<IDropdownItem>(initial);
 
   const selectItem = (item: IDropdownItem) => {
-    setFilterValue('');
-    setSelectedItems([...selectedItems, item]);
+    setFilterValue(item.name);
+    setSelectedItem(item);
   };
 
-  const removeSelectedItem = (selectedItem: IDropdownItem) => {
-    setFilterValue('');
-    const newSelectedItems = selectedItems.filter(item => item.value !== selectedItem.value);
-    setSelectedItems(newSelectedItems);
+  const removeSelectedItem = (item: IDropdownItem) => {
+    setFilterValue(initial.name);
+    setSelectedItem(initial);
   };
 
   const filterItems = useCallback(() => {
@@ -23,5 +22,5 @@ export const useDropdown = (items: IDropdownItem[], max = 4) => {
     ).splice(0, max);
   }, [filterValue, items]);
 
-  return { filterItems, selectItem, removeSelectedItem, filterValue, setFilterValue, selectedItems };
+  return { filterItems, selectItem, removeSelectedItem, filterValue, setFilterValue, selectedItem };
 };

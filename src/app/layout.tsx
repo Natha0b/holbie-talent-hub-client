@@ -5,8 +5,8 @@ import { Background } from "./components/Background/Background";
 // import { getSegment } from "@share/router/router.share";
 
 /*
-web tonken 
-function to validate the auth with the headers and return the role of the user
+Web tonken
+Function to validate the auth with the headers and return the role of the user
 */
 
 const validateAuthSinc = (headers: Headers) => {
@@ -48,10 +48,10 @@ export async function getAuth() {
 }
 
 export default async function AuthLayout(
-  { professionals, company, ['unsigned-in']: unsignedIn}: {
+  { professionals, company, unsignedin: unsignedIn}: {
     professionals: React.ReactNode;
     company: React.ReactNode;
-    ['unsigned-in']: React.ReactNode;
+    unsignedin: React.ReactNode;
   }
 ) {
   return new Promise<Omit<React.ReactNode, "then">>(async (resolve) => {

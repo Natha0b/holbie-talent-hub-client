@@ -7,6 +7,12 @@
     --cards--shadow: 0 0 20px 10px var(--color-primary);
     --border-size: 3px;
     --font-size-large: 32px;
+    --border-radius: 15px;
+
+}
+
+body {
+    overflow-x: hidden;
 }
 
 a {

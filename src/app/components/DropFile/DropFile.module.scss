@@ -5,7 +5,7 @@
     align-items: center;
     padding: 20px;
     border-width: 2px;
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     border-color: #eeeeee;
     border-style: dashed;
     background-color: #fafafa;

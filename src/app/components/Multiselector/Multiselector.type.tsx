@@ -9,9 +9,11 @@ export interface IMultiselectorItem {
 export interface MultiselectorProps {
     label: string;
     items: IMultiselectorItem[];
+    initial?: IMultiselectorItem[];
     onItemSelect?: (item: IMultiselectorItem) => void;
     onItemSelectedRemove?: (item: IMultiselectorItem) => void;
     onFilterChange?: (newFilter: string) => void;
+    onSelectedItems?: (item: IMultiselectorItem[]) => void;
     max?: number;
 }
 

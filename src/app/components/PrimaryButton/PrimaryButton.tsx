@@ -6,10 +6,9 @@ interface PrimaryButtonProps {
   label: string;
 }
 
-const PrimaryButton: React.FC<PrimaryButtonProps> = ({ onClick, label }) => (
-  <button onClick={onClick} className={styles.primaryButton}>
+export const PrimaryButton: React.FC<PrimaryButtonProps> = ({ onClick, label }) => (
+  <button onClick={onClick} className={styles.primaryButton} >
     {label}
   </button>
 );
 
-export { PrimaryButton };

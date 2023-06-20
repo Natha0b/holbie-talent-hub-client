@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Multiselector.module.scss'
 import { MultiselectorProps } from './Multiselector.type';
 import { useMultiselector } from './useMultiselector';
@@ -7,19 +7,29 @@ import { useMultiselector } from './useMultiselector';
 export const Multiselector: React.FC<MultiselectorProps> = ({
     label,
     items,
+    initial = [],
     onItemSelect,
     onItemSelectedRemove,
     onFilterChange,
+    onSelectedItems,
     max = 4
 }) => {
 
     const {
-        filterItems, selectItem, removeSelectedItem,
+        filterItems,
+        selectItem,
+        removeSelectedItem,
         filterValue, setFilterValue, selectedItems
-    } =  useMultiselector(items, max);
+    } =  useMultiselector(items, initial, max);
+
+    
+    useEffect(() => {
+        if (typeof onSelectedItems === 'function') onSelectedItems(selectedItems);
+    }, [selectedItems]);
+
 
     return (
-        <section className={styles.Multiselector}>
+        <section className={styles.multiselector}>
             <label htmlFor="">{label}</label>
             <div className={styles["selected-items"]}>
                 {selectedItems.map(({ Icon, color, name, ...item }, key) => (
@@ -70,7 +80,7 @@ export const Multiselector: React.FC<MultiselectorProps> = ({
                             className={styles['multiselector__icon']}
                             onClick={() => {
                                 if (typeof onItemSelect === 'function') onItemSelect({ ...item, Icon, color, name });
-                                selectItem({ ...item, Icon, color, name });
+                                selectItem({ Icon, color, name, ...item });
                             }}
                         >
                             <span>{name}</span>

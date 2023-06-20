@@ -1,9 +1,9 @@
 import { useState, useCallback } from 'react';
 import { IMultiselectorItem } from './Multiselector.type';
 
-export const useMultiselector = (items: IMultiselectorItem[], max = 4) => {
+export const useMultiselector = (items: IMultiselectorItem[], initial: IMultiselectorItem[],  max = 4) => {
   const [filterValue, setFilterValue] = useState<string>('');
-  const [selectedItems, setSelectedItems] = useState<IMultiselectorItem[]>([]);
+  const [selectedItems, setSelectedItems] = useState<IMultiselectorItem[]>(initial);
 
   const selectItem = (item: IMultiselectorItem) => {
     setFilterValue('');
