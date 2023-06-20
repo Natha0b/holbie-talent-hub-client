@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './Dropdown.module.scss'
 import { DropdownProps } from './Dropdown.type';
 import { useDropdown } from './useDropdown';

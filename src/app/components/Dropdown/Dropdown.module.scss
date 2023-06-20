@@ -22,6 +22,8 @@
     outline: none!important;
     border-radius: var(--border-radius);
     box-shadow: 0 0 0 1px inset #ccc;
+  box-sizing: border-box;
+
 }
 
 .dropdown__container-list {

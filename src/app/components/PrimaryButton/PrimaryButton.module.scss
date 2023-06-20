@@ -1,3 +1,5 @@
+@import "styles/animations.scss";
+
 .primaryButton {
   background-color: var(--color-primary);
   color: #fff;
@@ -10,5 +12,5 @@
 }
 
 .primaryButton:hover {
-  filter: saturate(1.4);
+  filter: hue-rotate(20deg) saturate(1.5);
 }
