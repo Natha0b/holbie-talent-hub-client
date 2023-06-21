@@ -33,7 +33,7 @@ export const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
                 <p className={styles["title"]}>Software Engineer</p>
                 <h3>Industry experience:</h3>
                 <p className={styles["description"]}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget condimentum tortor, vitae gravida ipsum. Nullam ut mi vel nisi auctor fermentum. In hac habitasse platea dictumst.
+                Passionate software developer with expertise in web development. Skilled in HTML, CSS, JavaScript, and Python. Committed to delivering high-quality code and exceeding client expectations. Strong problem-solving and communication skills. Seeking new challenges and opportunities in innovative projects
                 </p>
                 <p className={styles["description"]}>Programming Languages:</p>
                 <div className={styles["programming-languages"]}>
@@ -45,7 +45,7 @@ export const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
                 </div>
                 <h3>Type of work sought:</h3>
                 <p className={styles["description"]}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu diam eget dui euismod commodo vitae eget augue. Mauris vitae vestibulum quam.
+                Remote | Full Time
                 </p>
             </div>
         </div>

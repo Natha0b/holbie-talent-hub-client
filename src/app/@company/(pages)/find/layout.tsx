@@ -22,11 +22,7 @@ export default function DashboardLayout({
                     <Image src={Logo} alt='logo'
                     />
                 </figure>
-                {/*
-                <div className={styles.containeravatar}>
-                    <img className={styles.avatarprofile} src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar" />
-
-                </div>*/}
+            
                 <nav className={styles["navigation"]}>
                     <div
                         className={`${styles["navigation__buttons"]} ${segment.includes('profile') ? styles["navigation__buttons--active"] : ''}`}
@@ -39,6 +35,9 @@ export default function DashboardLayout({
                         <Link href="/find/other-one" >custom your profile</Link>
                     </div>
                 </nav>
+                <div className={styles.containeravatar}>
+                    <img className={styles.avatarprofile} src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1274656/draw_svg20211224-8647-tse8ye.svg.png" alt="Avatar" />
+                </div>
                 <figure className={styles["header__profile-icon"]}>
                 </figure>
             </header>
