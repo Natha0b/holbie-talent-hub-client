@@ -28,6 +28,7 @@ export const TalentPreview: React.FC<{ talent: Talent }> = ({ talent }) => {
                     <h2>{talent.bio}</h2>
                     <p>{talent.title}</p>
                     
+                    
                     {/* Display other relevant information */}
                 </div>
 
