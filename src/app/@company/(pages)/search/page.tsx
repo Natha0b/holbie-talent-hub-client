@@ -73,7 +73,7 @@ export default function TalentSearch() {
                 <SearchBar onSubmit={handleSearchSubmit} />
                 <div className={styles.contentWrapper}>
                     <FilterPanel filters={filters} onChange={handleFilterChange} />
-                    
+
                     <div className={styles.resultsContainer}>
                         {
                             fakeData.map((talent) => (
@@ -82,7 +82,7 @@ export default function TalentSearch() {
                         }
                         {/* Render talent previews based on search results */}
                         {/* Use the TalentPreview component */}
-                        
+
                     </div>
                 </div>
             </div>
