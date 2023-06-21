@@ -9,4 +9,5 @@
   --color-danger: #{map-get(map-get($themes, light), color-danger)};
   --color-white: #{map-get(map-get($themes, light), color-white)};
   --color-success: #{map-get(map-get($themes, light), color-success)};
+  --color-warning: #{map-get(map-get($themes, light), color-warning)};
 }
