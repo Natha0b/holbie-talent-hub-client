@@ -1,29 +1,35 @@
 @import "styles/animations.scss";
 
 .dropdown {
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
     position: relative;
     align-items: center;
+    width: 100%;
 }
 
 .dropdown label {
     display: block;
-    margin-bottom: 5px;
+    bottom: 0.6rem;
+    position: absolute;
     font-weight: bold;
+    cursor: cell;
+    user-select: none;
+    transition: all 150ms ease-in-out;
+    transform: scale(1);
 }
 
 .dropdown input[type='text'] {
-    width: 80%;
+    width: 100%;
     padding: .6rem;
     font-size: 16px;
-    border: none!important;
-    outline: none!important;
+    border: none !important;
+    outline: none !important;
     border-radius: var(--border-radius);
     box-shadow: 0 0 0 1px inset #ccc;
-  box-sizing: border-box;
-
+    box-sizing: border-box;
+    margin-block-start: 1rem;
 }
 
 .dropdown__container-list {
@@ -31,19 +37,18 @@
     margin: 0px;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - (var(--border-radius) * 2));
     max-height: 0px;
     overflow-y: auto;
     border-radius: var(--border-radius);
     z-index: 90;
     padding: 0px;
-    width: 80%;
     transition: all 150ms ease-in-out;
     transition-delay: .3s;
     overflow: hidden;
     bottom: 0px;
     transform: translateY(100%);
-    
+
 }
 
 @include glassmorphismforclass(".dropdown__container-list");
@@ -53,9 +58,15 @@
     border-top-right-radius: 0px;
 }
 
-.dropdown input[type='text']:focus ~ .dropdown__container-list {
+.dropdown input[type='text']:focus~.dropdown__container-list {
     max-height: 200px;
     transition-delay: 0ms;
+}
+
+.dropdown input[type='text']:focus~label,
+.label--active {
+    bottom: 2.4rem !important;
+    transform: scale(.8) !important;
 }
 
 .dropdown__icon {
@@ -68,7 +79,7 @@
     box-shadow: 0 1px 0 0 inset #ccc;
     color: initial;
     transition: all 150ms ease-in-out;
-    transition-delay: 0ms!important;
+    transition-delay: 0ms !important;
     padding-inline: 2rem;
     background: transparent;
     outline: none;
@@ -96,12 +107,12 @@
 
 @include glassmorphismforclass(".selected-items > *");
 
-.selected-items > * {
+.selected-items>* {
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
     transition: all 150ms ease-in-out;
-    transition-delay: 0ms!important;
+    transition-delay: 0ms !important;
     background: transparent;
     outline: none;
     border: none;
@@ -109,7 +120,7 @@
     box-shadow: 0 0 1px 0px inset var(--color);
 }
 
-.selected-items > *:hover {
+.selected-items>*:hover {
     color: var(--color-danger);
     box-shadow: 0 0 1px 0px inset var(--color-danger);
 }

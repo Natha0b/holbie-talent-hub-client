@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './Multiselector.module.scss'
 import { MultiselectorProps } from './Multiselector.type';
 import { useMultiselector } from './useMultiselector';
@@ -22,15 +22,14 @@ export const Multiselector: React.FC<MultiselectorProps> = ({
         filterValue, setFilterValue, selectedItems
     } =  useMultiselector(items, initial, max);
 
+    const id = useRef(Math.random().toString(16).slice(2)).current;
     
     useEffect(() => {
         if (typeof onSelectedItems === 'function') onSelectedItems(selectedItems);
     }, [selectedItems]);
 
-
     return (
         <section className={styles.multiselector}>
-            <label htmlFor="">{label}</label>
             <div className={styles["selected-items"]}>
                 {selectedItems.map(({ Icon, color, name, ...item }, key) => (
                     <>
@@ -63,13 +62,14 @@ export const Multiselector: React.FC<MultiselectorProps> = ({
             <input
                 type="text"
                 name=""
-                id=""
+                id={id}
                 value={filterValue}
                 onChange={(e) => {
                     if (typeof onFilterChange === 'function') onFilterChange(e.target.value);
                     setFilterValue(e.target.value);
                 }}
             />
+            <label htmlFor={id} className={`${filterValue?.length > 0 ? styles['label--active'] : ''}`}>{label}</label>
             <nav className={styles['multiselector__container-list']} >
                 {
                     filterItems().map(({ Icon, color, name, ...item }, index) => (

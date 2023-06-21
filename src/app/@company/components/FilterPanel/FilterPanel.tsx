@@ -84,7 +84,7 @@ export const FilterPanel: React.FC<{ filters: Record<string, string>; onChange: 
                     />
                     <Input
                         label="Field of Study"
-                        value={filters.fieldOfStudy || ''}
+                        value={filters.fieldOfStudy ?? ''}
                         onChange={(value) => handleFilterChange('fieldOfStudy', value)}
                     />
                 </div>
@@ -96,7 +96,7 @@ export const FilterPanel: React.FC<{ filters: Record<string, string>; onChange: 
                     <Multiselector label="Required Skills" items={technologyIcons} onSelectedItems={() => {
 
                     }} />
-                    <Multiselector label="Skill Level" items={technologyIcons} onSelectedItems={() => {
+                    <Multiselector label="Optionals Skills" items={technologyIcons} onSelectedItems={() => {
 
                     }} />
                 </div>
