@@ -1,0 +1,127 @@
+.navigation {
+    --size: 4rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.navigation__buttons {
+    height: var(--size);
+    padding-inline: 1rem;
+    display: grid;
+    place-items: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-variant: small-caps;
+    font-weight: 200;
+}
+
+
+.navigation__buttons:hover {
+    box-shadow: 0 0 0 var(--boder-size) inset var(--color-primary);
+    /* box-shadow: h v rd s; */
+}
+
+.navigation__buttons--active {
+    box-shadow: 0 var(--boder-size) 0 0 inset var(--color-primary);
+    height: var(--size);
+    cursor: normal;
+    color: var(--color-primary);
+    font-weight: 400;
+}
+
+
+
+.banner {
+    background-image: url('./3dtechnology.jpg');
+    width: 100%;
+    height: 700px;
+    margin-top: 70px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -40px;
+    image-rendering: crisp-edges
+}
+
+.titlehome {
+    font-size: 50px;
+    text-align: center;
+    color: var(--color-white);
+    margin-top: 40px;
+    padding: 40px;
+    
+}
+
+.title {
+    font-size: 50px;
+    text-align: center;
+    color: var(--color-secondary);
+    padding: 50px;
+
+}
+
+
+.textaboutme{
+    font-size: 20px;
+    color: var(--color-white);
+    padding: 70px;
+    width: 30%;
+}
+.paragraphcontact {
+    font-size: 10px;
+    color: var(--color-black);
+    padding: 50px;
+    position: absolute;
+    border: 50px;
+    width: 90%;
+}
+
+.buttonlogin {
+    height: 50px;
+    width: 90px;
+    border-radius: 20px;
+    float: right;
+    margin-right: 30px;
+    margin-top: -450px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+}
+
+.buttonregister {
+    height: 50px;
+    width: 90px;
+    border-radius: 20px;
+    border-color: var(--color-white);
+    margin-top: -300px;
+    margin-left: 70px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.resultsContainer {
+    flex: 1;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    padding-inline: 2vw;
+    gap: 6rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.footer {
+    --size: 6rem;
+    display: flex;
+    margin-top: 20px;
+    height: var(--size);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 -10px 30px 0 var(--color-gray);
+}
+
+.footer img {
+    width: 250px;
+    height: 80px;
+}

@@ -5,7 +5,18 @@ import handleSendMessage from '$company/(pages)/find/chat/page';
 import { ContactIcons } from '../profile/ContactIcons/ContactIcons';
 import { User } from "$company/(pages)/profiles-holbies/page";
 
-const user: User[] = [];
+const user: User = {
+
+    name: 'John Doe',
+    profilePicture: 'profile1.jpg',
+    age: 30,
+    programmingLanguages: ['JavaScript', 'C'],
+    githubUrl: 'https://github.com/',
+    linkedinUrl: 'https://linkedin.com/',
+    gmailUrl: 'https://gmail.com',
+    slackUrl: 'https://slack.com/',
+
+};
 const contactIconsInstance = <ContactIcons user={user} />;
 
 export const TalentPreview: React.FC<{ talent: Talent }> = ({ talent }) => {
@@ -24,11 +35,10 @@ export const TalentPreview: React.FC<{ talent: Talent }> = ({ talent }) => {
 
             <main>
                 <div className={styles.talentInfo}>
-                {contactIconsInstance}
+                    {contactIconsInstance}
                     <h2>{talent.bio}</h2>
                     <p>{talent.title}</p>
-                    
-                    
+
                     {/* Display other relevant information */}
                 </div>
 
