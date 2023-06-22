@@ -5,11 +5,15 @@ import Link from 'next/link';
 import { userAgent } from 'next/server';
 import { BsFillSendFill } from 'react-icons/bs';
 
+
+// Declaration of the Message interface
 interface Message {
     id: number;
     content: string;
     senderId: number;
 }
+
+// Array of messages with the Message type
 
 const messageData: Message[] = [
     {
@@ -29,6 +33,7 @@ const messageData: Message[] = [
     },
 ];
 
+// Array of user data
 const userData = [
     {
         id: 1,
@@ -43,15 +48,15 @@ const userData = [
 ];
 
 const Chat: React.FC = () => {
-    const [messages, setMessages] = useState<Message[]>(messageData);
-    const [newMessage, setNewMessage] = useState('');
+    const [messages, setMessages] = useState<Message[]>(messageData);  // State hook to manage the messages
+    const [newMessage, setNewMessage] = useState('');  // State hook to manage the new message input
 
-    const handleSendMessage = () => {
+    const handleSendMessage = () => {  // Function to handle sending a new message
         if (newMessage.trim() !== '') {
             const newMsg: Message = {
                 id: Date.now(),
                 content: newMessage,
-                senderId: 1, // Cambia el ID según el remitente actual
+                senderId: 1, // Change the ID according to the current sender
             };
 
             setMessages([...messages, newMsg]);
@@ -59,7 +64,7 @@ const Chat: React.FC = () => {
         }
     };
 
-    const getUserData = (senderId: number) => {
+    const getUserData = (senderId: number) => {   // Function to get user data based on senderId
         return userData.find((user) => user.id === senderId);
     };
 
@@ -109,4 +114,4 @@ const Chat: React.FC = () => {
     );
 };
 
-export default Chat;
+export default Chat; // Exporting the Chat component for use in other files

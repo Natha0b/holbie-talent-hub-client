@@ -22,7 +22,7 @@ export interface User {
 }
 
 export default function HomeProfiles() {
-    const users: User[] = [
+    const users: User[] = [  // Array of user objects with their profile information
         {
             name: 'John Doe',
             profilePicture: 'profile1.jpg',
@@ -53,20 +53,19 @@ export default function HomeProfiles() {
             gmailUrl: 'https://gmail.com',
             slackUrl: 'https://slack.com/',
         },
-        // Agrega más usuarios aquí si es necesario
     ];
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    const handlePrevSlide = () => {
+    const handlePrevSlide = () => {  // Implementation to handle going to the previous slide
         setCurrentSlide((prevSlide) => (prevSlide === 0 ? users.length - 1 : prevSlide - 1));
     };
 
-    const handleNextSlide = () => {
+    const handleNextSlide = () => {  // Implementation to handle going to the next slide
         setCurrentSlide((prevSlide) => (prevSlide === users.length - 1 ? 0 : prevSlide + 1));
     };
 
-    const getLanguageIcon = (language: string) => {
+    const getLanguageIcon = (language: string) => { // Implementation to return the icon component based on the provided language
         switch (language) {
             case 'JavaScript':
                 return <Image src={javascriptIcon} alt="JavaScript" />;
@@ -81,6 +80,7 @@ export default function HomeProfiles() {
 
     return (
         <Layout>
+            {/* Renders the ProfileSection component */}
             <ProfileSection
                 users={users}
                 handlePrevSlide={handlePrevSlide}

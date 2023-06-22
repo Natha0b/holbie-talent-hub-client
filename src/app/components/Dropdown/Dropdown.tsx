@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './Dropdown.module.scss'
 import { DropdownProps } from './Dropdown.type';
 import { useDropdown } from './useDropdown';
@@ -23,19 +23,21 @@ export const Dropdown: React.FC<DropdownProps> = ({
         setFilterValue
     } = useDropdown(items, initial, max);
 
+    const id = useRef(Math.random().toString(16).slice(2)).current;
+
     return (
         <section className={styles.dropdown}>
-            <label htmlFor="">{label}</label>
             <input
                 type="text"
                 name=""
-                id=""
+                id={id}
                 value={filterValue}
                 onChange={(e) => {
                     if (typeof onFilterChange === 'function') onFilterChange(e.target.value);
                     setFilterValue(e.target.value);
                 }}
             />
+            <label htmlFor={id} className={`${filterValue?.length > 0 ? styles['label--active'] : ''}`}>{label}</label>
             <nav className={styles['dropdown__container-list']} >
                 {
                     filterItems().map(({ Icon, color, name, ...item }, index) => (

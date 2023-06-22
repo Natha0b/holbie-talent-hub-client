@@ -20,18 +20,12 @@ const BackCard: React.FC<{ kindJob: string, active: boolean }> = ({ kindJob, act
                 <Dropdown label={'Location'} items={listOfCitiesIcons} onItemSelect={() => {
                 }} />
                 <Dropdown label="Kind Job" items={jobKindIcons} onItemSelect={() => {
-
-                }} />
-                <Dropdown label="Kind Job" items={jobKindIcons} onItemSelect={() => {
                 }} />
                 <Multiselector label="Technology" items={technologyIcons} onSelectedItems={() => {
-
                 }} />
                 <Dropdown label="English Level" items={englishLevelIcons} onItemSelect={() => {
-
                 }} />
-                <PrimaryButton label="To find" onClick={ () => {
-
+                <PrimaryButton label="To find" onClick={() => {
                 }} />
             </form>
         </aside>

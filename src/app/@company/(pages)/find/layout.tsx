@@ -8,14 +8,14 @@ import Image from 'next/image';
 
 
 export default function DashboardLayout({
-    children,
+    children,  // The children prop that represents the content within the DashboardLayout component
 }: {
-    children: React.ReactNode
+    children: React.ReactNode  // The type definition for the children prop, indicating it should be of type React.ReactNode
 }) {
 
-    console.log('children', children);
-    const segment = getSegment(children);
-
+    console.log('children', children);  // Log the children prop to the console
+    const segment = getSegment(children);  // Call the getSegment function and pass the children prop as an argument
+    // The result of getSegment is stored in the 'segment' variable
     return (
         <>
             <header className={styles["header"]}>

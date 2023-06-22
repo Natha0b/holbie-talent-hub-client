@@ -7,7 +7,7 @@ export const useMultiselector = (items: IMultiselectorItem[], initial: IMultisel
 
   const selectItem = (item: IMultiselectorItem) => {
     setFilterValue('');
-    setSelectedItems([...selectedItems, item]);
+    setSelectedItems([...selectedItems, item].filter((item, index, self) => self.findIndex(i => i.value === item.value) === index));
   };
 
   const removeSelectedItem = (selectedItem: IMultiselectorItem) => {

@@ -72,7 +72,7 @@ const App: React.FC = () => {
 
     return (
         <div>
-            <ChatUserList users={users} />
+            <ChatUserList users={users} />  {/* Render the ChatUserList component with the users array passed as props*/}
         </div>
     );
 }
