@@ -10,6 +10,15 @@ interface ProfileSectionProps {
     currentSlide: number;
 }
 
+
+/**
+ * The ProfileSection component represents a section containing profiles.
+ * It receives users, handlePrevSlide, handleNextSlide, and currentSlide as props.
+ * The users array contains the list of users to be displayed in the carousel.
+ * The handlePrevSlide and handleNextSlide functions are used to navigate the carousel.
+ * The currentSlide represents the currently active slide in the carousel.
+ * The component renders a title and the Carousel component with the provided props.
+ */
 export const ProfileSection: React.FC<ProfileSectionProps> = ({ users, handlePrevSlide, handleNextSlide, currentSlide }) => {
     return (
         <section className={styles.profile}>

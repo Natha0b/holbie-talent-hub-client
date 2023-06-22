@@ -12,6 +12,13 @@ interface CarouselProps {
     currentSlide: number;
 }
 
+/**
+ * The Carousel component represents a carousel/slider for displaying profile cards.
+ * It receives an array of users, previous slide handler, next slide handler, and the current slide index as props.
+ * It renders profile cards for each user and provides navigation buttons for previous and next slides.
+ * It also includes a button for sending messages and uses the BsFillSendFill icon from react-icons.
+ */
+
 export const Carousel: React.FC<CarouselProps> = ({ users, handlePrevSlide, handleNextSlide, currentSlide }) => {
     return (
         <div className={styles.carousel}>

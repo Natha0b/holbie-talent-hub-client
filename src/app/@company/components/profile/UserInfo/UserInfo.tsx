@@ -10,6 +10,13 @@ interface UserInfoProps {
     user: User;
 }
 
+
+/**
+ * The UserInfo component represents the user information section in the profile card.
+ * It receives the user object as a prop.
+ * The component renders the user's profile picture, name, title, industry experience, programming languages, and type of work sought.
+ * It uses switch statements to dynamically render language icons based on the user's programming languages.
+ */
 export const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
     const getLanguageIcon = (language: string) => {
         switch (language) {

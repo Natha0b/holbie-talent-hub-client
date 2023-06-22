@@ -2,6 +2,11 @@
 import React from 'react';
 import styles from './ProfileHeader.module.scss';
 
+/**
+ * The ProfileHeader component represents the header section of a profile.
+ * It renders the profile picture, name, title, description, and a "Say hello" button.
+ * The component uses CSS modules to style its elements.
+ */
 export const ProfileHeader: React.FC = () => {
     return (
         <div className={styles.profileHeader}>

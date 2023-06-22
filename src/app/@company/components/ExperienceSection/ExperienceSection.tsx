@@ -3,6 +3,12 @@
 import React from 'react';
 import styles from './ExperienceSection.module.scss';
 
+
+/**
+ * The ExperienceSection component represents a section for displaying experience information.
+ * It renders a title "Experience" and experience cards with details such as position, company, date, and description.
+ * Additional experience cards can be added.
+ */
 export const ExperienceSection: React.FC = () => {
   return (
     <div className={styles.experienceSection}>
