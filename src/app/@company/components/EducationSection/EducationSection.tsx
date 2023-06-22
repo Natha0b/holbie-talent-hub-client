@@ -1,7 +1,12 @@
-
 import React from 'react';
 import styles from './EducationSection.module.scss';
 
+
+/**
+ * The EducationSection component represents a section for displaying education information.
+ * It renders a title "Education" and education cards with details such as degree, university, and date.
+ * Additional education cards can be added.
+ */
 export const EducationSection: React.FC = () => {
   return (
     <div className={styles.educationSection}>

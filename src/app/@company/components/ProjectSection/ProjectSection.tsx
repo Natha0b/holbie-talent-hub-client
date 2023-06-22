@@ -1,7 +1,11 @@
-
 import React from 'react';
 import styles from './ProjectSection.module.scss';
 
+/**
+ * The ProjectSection component represents a section that displays a list of projects.
+ * It renders the section title and project cards.
+ * The component uses CSS modules to style its elements.
+ */
 export const ProjectSection: React.FC = () => {
   return (
     <div className={styles.projectSection}>

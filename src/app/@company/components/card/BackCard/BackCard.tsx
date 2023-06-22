@@ -12,6 +12,14 @@ import { Multiselector } from '$/app/components/Multiselector/Multiselector';
 import { technologyIcons } from '../TechCard/TechCard.dada';
 import { englishLevelIcons } from '../EnglishCard/EnglishCard.data';
 
+
+/**
+ * The BackCard component represents the back side of a card that displays additional information.
+ * It is used in conjunction with a front card to create a card flip effect.
+ *
+ * @param kindJob - The type of job associated with the card.
+ * @param active - Indicates whether the back card is active or not.
+ */
 const BackCard: React.FC<{ kindJob: string, active: boolean }> = ({ kindJob, active }) => {
     
     return (
@@ -32,4 +40,4 @@ const BackCard: React.FC<{ kindJob: string, active: boolean }> = ({ kindJob, act
     );
 }
 
-export { BackCard };
+export { BackCard };  //exports the BackCard component to make it available for other modules to import and use.

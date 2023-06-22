@@ -1,8 +1,11 @@
-
-
 import React from 'react';
 import styles from './TestimonialSection.module.scss';
 
+/**
+ * The TestimonialSection component represents a section that displays testimonials.
+ * It renders testimonial cards with avatars, testimonial text, and author information.
+ * The component uses CSS modules to style its elements.
+ */
 export const TestimonialSection: React.FC = () => {
   return (
     <div className={styles.testimonialSection}>

@@ -6,6 +6,12 @@ interface ContactIconsProps {
     user: User;
 }
 
+
+/**
+ * The ContactIcons component displays contact icons for a user.
+ * It receives a user object as a prop and renders icons for GitHub, LinkedIn, Slack, and Gmail.
+ * Each icon is wrapped in an anchor tag with the corresponding URL from the user object.
+ */
 export const ContactIcons: React.FC<ContactIconsProps> = ({ user }) => {
     return (
         <div className={styles["contact-icons"]}>

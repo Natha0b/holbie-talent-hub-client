@@ -3,6 +3,13 @@
 import React, { useState } from 'react';
 import styles from './SearchBar.module.scss';
 
+
+/**
+ * The SearchBar component represents a search bar form.
+ * It allows users to enter keywords and submit the search.
+ * The component uses CSS modules to style its elements.
+ * It receives a callback function onSubmit to handle the search submission.
+ */
 export const SearchBar: React.FC<{ onSubmit: (keywords: string) => void }> = ({ onSubmit }) => {
   const [keywords, setKeywords] = useState('');
 

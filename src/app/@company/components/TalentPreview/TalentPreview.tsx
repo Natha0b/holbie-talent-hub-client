@@ -5,20 +5,19 @@ import handleSendMessage from '$company/(pages)/find/chat/page';
 import { ContactIcons } from '../profile/ContactIcons/ContactIcons';
 import { User } from "$company/(pages)/profiles-holbies/page";
 
-const user: User = {
 
-    name: 'John Doe',
-    profilePicture: 'profile1.jpg',
-    age: 30,
-    programmingLanguages: ['JavaScript', 'C'],
-    githubUrl: 'https://github.com/',
-    linkedinUrl: 'https://linkedin.com/',
-    gmailUrl: 'https://gmail.com',
-    slackUrl: 'https://slack.com/',
+// An empty array of User type
+const user: User[] = [];
 
-};
+// An instance of the ContactIcons component
 const contactIconsInstance = <ContactIcons user={user} />;
 
+
+/**
+ * The TalentPreview component represents a preview of a talent.
+ * It displays the talent's profile picture, name, bio, title, and provides a button to send a message.
+ * The component uses CSS modules to style its elements.
+ */
 export const TalentPreview: React.FC<{ talent: Talent }> = ({ talent }) => {
     return (
         <div className={styles.talentPreview}>
@@ -49,6 +48,11 @@ export const TalentPreview: React.FC<{ talent: Talent }> = ({ talent }) => {
     );
 };
 
+
+/**
+ * The Talent interface represents the data structure of a talent.
+ * It includes properties such as profilePicture, name, title, bio, and additional properties.
+ */
 export interface Talent {
     profilePicture: string;
     name: string;
