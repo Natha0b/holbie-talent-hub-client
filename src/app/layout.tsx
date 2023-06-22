@@ -2,6 +2,8 @@ import crypto from "node:crypto";
 import "$share/styles/globals.scss";
 import "$share/styles/background.scss";
 import { Background } from "./components/Background/Background";
+import React from "react";
+import HomeLogin from "./@unsignedin/(pages)/(home)/homelogin/page";
 // import { getSegment } from "@share/router/router.share";
 
 /*
@@ -62,6 +64,7 @@ export default async function AuthLayout(
     const content = (children: React.ReactNode) => (<>
       <html lang="en">
         <body>
+            {/*<HomeLogin/>*/}
           <Background />
           {
             children

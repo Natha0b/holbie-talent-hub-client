@@ -6,6 +6,7 @@ import LogoCode from './logocoderiseapp.png'
 import { getSegment } from '$share/router/router.share';
 import Image from 'next/image';
 
+
 export default function DashboardLayout({
     children,  // The children prop that represents the content within the DashboardLayout component
 }: {
@@ -38,8 +39,7 @@ export default function DashboardLayout({
                 <div className={styles.containeravatar}>
                     <img className={styles.avatarprofile} src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1274656/draw_svg20211224-8647-tse8ye.svg.png" alt="Avatar" />
                 </div>
-                <figure className={styles["header__profile-icon"]}>
-                </figure>
+
             </header>
             <main>
                 {children}
