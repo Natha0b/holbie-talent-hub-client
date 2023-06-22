@@ -1,9 +1,11 @@
-'use client';
+'use client'; // Declaration indicating that the client is being used
 import React from 'react';
 import './Levels.scss'
 import { AiFillStar } from 'react-icons/ai'
 import { technologyIcons } from '../../card/TechCard/TechCard.dada';
 
+
+// Declaration of the functional component Levels
 const Levels: React.FC = () => {
     return (
         <div className="levels">
@@ -25,4 +27,4 @@ const Levels: React.FC = () => {
     );
 };
 
-export { Levels };
+export { Levels }; // Exporting the Levels component for use in other files

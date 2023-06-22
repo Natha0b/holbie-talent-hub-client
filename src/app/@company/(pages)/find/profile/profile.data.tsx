@@ -1,3 +1,4 @@
+//static information of page profile
 
 interface Profile {
     jobName: string;

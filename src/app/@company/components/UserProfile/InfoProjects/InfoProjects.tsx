@@ -1,9 +1,11 @@
-'use client';
+'use client';  // Declaration indicating that the client is being used
 import React from 'react';
 import './InfoProjects.scss'
 import './InfoProjects.data'
 import { popularRepositories } from './InfoProjects.data';
 
+
+// Declaration of the functional component InfoProjects
 const InfoProjects: React.FC = () => {
     return (
         <div className='info_projects'>
@@ -19,6 +21,6 @@ const InfoProjects: React.FC = () => {
     );
 };
 
-export { InfoProjects };
+export { InfoProjects }; // Exporting the InfoProjects component for use in other files
 
 

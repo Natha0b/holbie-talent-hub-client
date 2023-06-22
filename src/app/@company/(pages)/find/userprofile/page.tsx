@@ -10,10 +10,10 @@ const UserProfile: React.FC = () => {
     const profile = profileData
     return (
         <div className="profile">
-            <DetailsProfile profile={profile} />
-            <InfoProfile profile={profile} />
-            <InfoProjects />
-            <Levels />
+            <DetailsProfile profile={profile} />  {/*Render the DetailsProfile component and pass the 'profile' data as props*/}
+            <InfoProfile profile={profile} />  {/*Render the InfoProfile component and pass the 'profile' data as props*/}
+            <InfoProjects />  {/*Render the InfoProjects component*/}
+            <Levels /> {/*Render the Levels component*/}
         </div>
     );
 };

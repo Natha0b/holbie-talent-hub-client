@@ -1,8 +1,10 @@
-'use client';
+'use client'; // Declaration indicating that the client is being used
 import React from 'react';
 import './DetailsProfile.scss'
 import { Profile } from './DetailsProfile.data';
 
+
+// Declaration of the functional component DetailsProfile that receives a profile object as a prop
 const DetailsProfile: React.FC<{ profile: Profile }> = ({ profile }) => {
     return (
         <div className='details_profile'>
@@ -42,4 +44,4 @@ const DetailsProfile: React.FC<{ profile: Profile }> = ({ profile }) => {
     );
 };
 
-export { DetailsProfile };
+export { DetailsProfile };  // Exporting the DetailsProfile component for use in other files
