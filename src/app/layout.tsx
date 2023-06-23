@@ -64,7 +64,7 @@ export default async function AuthLayout(
     const content = (children: React.ReactNode) => (<>
       <html lang="en">
         <body>
-            {/*<HomeLogin/>*/}
+        <HomeLogin/>
           <Background />
           {
             children

@@ -26,7 +26,7 @@ export const TalentPreview: React.FC<{ talent: Talent }> = ({ talent }) => {
                 <figure className={styles['liquid-animation']} >
                     <img src={talent.profilePicture} alt="Profile" className="talent-img" />
                 </figure>
-                <h2>{talent.name}</h2>
+                <h3>{talent.name}</h3>
                 <button className={styles.contactsearch} onClick={handleSendMessage}>
                     <BsFillSendFill />
                 </button>
@@ -45,6 +45,7 @@ export const TalentPreview: React.FC<{ talent: Talent }> = ({ talent }) => {
 
             </main>
         </div>
+
     );
 };
 
@@ -58,5 +59,9 @@ export interface Talent {
     name: string;
     title: string;
     bio: string;
+    githubLink: string;
+    slackLink: string;
+    linkedinLink: string;
+    gmailLink: string;
     // Add additional properties
 }
