@@ -1,17 +1,36 @@
-
 @import 'styles/animations.scss';
 
 @include liquid0x00(generateAnimationName(0, "liquid"), (transform: translate(42%, -65%) rotate(3deg)), 1.03, 0%);
 @include liquid0x01();
-$photoTopLeftStart:(topRight: 45% 60%, bottomRight: 52% 60%, bottomLeft: 60% 40%, topLeft: 60% 40%); 
-$photoTopLeftEnd: (topRight: 60% 55%, bottomRight: 60% 52%, bottomLeft: 40%  58%, topLeft: 40% 58%);
+$photoTopLeftStart: (
+    topRight: 45% 60%,
+    bottomRight: 52% 60%,
+    bottomLeft: 60% 40%,
+    topLeft: 60% 40%
+);
+$photoTopLeftEnd: (
+    topRight: 60% 55%,
+    bottomRight: 60% 52%,
+    bottomLeft: 40% 58%,
+    topLeft: 40% 58%
+);
 
-@include liquid0x01(#{generateAnimationName(1, "liquid") + 'Photo'} , $photoTopLeftStart, $photoTopLeftEnd);
+@include liquid0x01(#{generateAnimationName(1, "liquid") + 'Photo'}, $photoTopLeftStart, $photoTopLeftEnd);
 
-$onlyTopLeftStart: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLeft: 60px 40px);
-$onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLeft: 50px 15px);
+$onlyTopLeftStart: (
+    topRight: 0% 0%,
+    bottomRight: 0% 0%,
+    bottomLeft: 0% 0%,
+    topLeft: 60px 40px
+);
+$onlyTopLeftEnd: (
+    topRight: 0% 0%,
+    bottomRight: 0% 0%,
+    bottomLeft: 0% 0%,
+    topLeft: 50px 15px
+);
 
-@include liquid0x01(#{generateAnimationName(1, "liquid") + 'Wrapper'} , $onlyTopLeftStart, $onlyTopLeftEnd);
+@include liquid0x01(#{generateAnimationName(1, "liquid") + 'Wrapper'}, $onlyTopLeftStart, $onlyTopLeftEnd);
 
 
 @include glassmorphismforclass(".talentPreview");
@@ -29,7 +48,7 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
     display: flex;
     flex-direction: column;
     gap: 40px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30),  0 6.5rem 0 0 inset var(--color-primary);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30), 0 6.5rem 0 0 inset var(--color-primary);
     padding: 20px;
     color: white;
     font-size: 20px;
@@ -63,7 +82,8 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
             }
         }
     }
-/* 
+
+    /* 
     &:hover {
         border-radius: 60px 0 0 0 / 40px 0 0 0;
         box-shadow: 0 6.5rem 0 0 inset var(--color-primary), 0 0 20px -10px var(--color-primary);
@@ -80,7 +100,7 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
 
     &::after,
     &::before
-     {
+    {
         content: "";
         position: absolute;
         top: 0;
@@ -97,13 +117,14 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
     }
     */
 
-    
+
     &::before {
         height: 6rem;
         z-index: initial;
         transition: all .7s ease-in-out -.4s, background-color 250ms ease-in-out;
     }
-/* 
+
+    /* 
     &:hover::before {
         background-color: var(--color-secondary);
         transform: translate(822%, 55%) rotateX(-100deg) scaleX(16);
@@ -143,13 +164,15 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
             color: var(--color-black);
             text-align: center
         }
-        h2{
-           color: var(--color-black);
-           font-family: Arial, Helvetica, sans-serif;
-           font-size: 12px;
+
+        h2 {
+            color: var(--color-black);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
         }
     }
-    .contactsearch{
+
+    .contactsearch {
         background-color: var(--color-white);
         color: var(--color-black);
         border: none;
@@ -159,14 +182,15 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
         border-radius: 4px;
         cursor: pointer;
     }
+
     .contactsearch:hover {
         background-color: var(--color-white);
     }
-    
+
     .contactsearch:active {
         background-color: var(--color-gray);
     }
 
- 
+
 
 }

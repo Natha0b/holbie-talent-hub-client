@@ -1,0 +1,72 @@
+@import "styles/animations.scss";
+
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    flex-direction: column;
+    height: 160vh;
+    padding-top: 2rem;
+    width: 450px;
+}
+
+.details_profile {
+    position: relative;
+    width: 450px;
+    height: 100%;
+    left: 0px;
+    float: left;
+    text-align: left;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+
+.holbies_parnets {
+    position: relative;
+    display: grid;
+    float: right;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius, 14px);
+    padding: 2rem;
+    margin-bottom: 10px;
+    height: auto;
+    box-sizing: border-box;
+    width: calc(100vw - (450px + 5rem));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.info_multimedia {
+    position: relative;
+    display: grid;
+    float: right;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius, 14px);
+    padding: 2rem;
+    margin-bottom: 10px;
+    height: auto;
+    box-sizing: border-box;
+    width: calc(100vw - (450px + 5rem));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.resultsContainer {
+    flex: 1;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    padding-inline: 2vw;
+    gap: 6rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+}
+
