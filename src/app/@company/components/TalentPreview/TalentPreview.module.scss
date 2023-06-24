@@ -1,17 +1,36 @@
-
 @import 'styles/animations.scss';
 
 @include liquid0x00(generateAnimationName(0, "liquid"), (transform: translate(42%, -65%) rotate(3deg)), 1.03, 0%);
 @include liquid0x01();
-$photoTopLeftStart:(topRight: 45% 60%, bottomRight: 52% 60%, bottomLeft: 60% 40%, topLeft: 60% 40%); 
-$photoTopLeftEnd: (topRight: 60% 55%, bottomRight: 60% 52%, bottomLeft: 40%  58%, topLeft: 40% 58%);
+$photoTopLeftStart: (
+    topRight: 45% 60%,
+    bottomRight: 52% 60%,
+    bottomLeft: 60% 40%,
+    topLeft: 60% 40%
+);
+$photoTopLeftEnd: (
+    topRight: 60% 55%,
+    bottomRight: 60% 52%,
+    bottomLeft: 40% 58%,
+    topLeft: 40% 58%
+);
 
-@include liquid0x01(#{generateAnimationName(1, "liquid") + 'Photo'} , $photoTopLeftStart, $photoTopLeftEnd);
+@include liquid0x01(#{generateAnimationName(1, "liquid") + 'Photo'}, $photoTopLeftStart, $photoTopLeftEnd);
 
-$onlyTopLeftStart: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLeft: 60px 40px);
-$onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLeft: 50px 15px);
+$onlyTopLeftStart: (
+    topRight: 0% 0%,
+    bottomRight: 0% 0%,
+    bottomLeft: 0% 0%,
+    topLeft: 60px 40px
+);
+$onlyTopLeftEnd: (
+    topRight: 0% 0%,
+    bottomRight: 0% 0%,
+    bottomLeft: 0% 0%,
+    topLeft: 50px 15px
+);
 
-@include liquid0x01(#{generateAnimationName(1, "liquid") + 'Wrapper'} , $onlyTopLeftStart, $onlyTopLeftEnd);
+@include liquid0x01(#{generateAnimationName(1, "liquid") + 'Wrapper'}, $onlyTopLeftStart, $onlyTopLeftEnd);
 
 
 @include glassmorphismforclass(".talentPreview");
@@ -28,8 +47,8 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30),  0 6.5rem 0 0 inset var(--color-primary);
+    gap: 2rem;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30), 0 6.5rem 0 0 inset var(--color-primary);
     padding: 20px;
     color: white;
     font-size: 20px;
@@ -42,8 +61,12 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
     & header {
         display: flex;
         justify-content: flex-start;
-        gap: 3rem;
+        gap: 1rem;
         width: 100%;
+
+        & h3 {
+            text-align: left!important;
+        }
 
         & figure {
             width: 6rem;
@@ -63,58 +86,12 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
             }
         }
     }
-/* 
-    &:hover {
-        border-radius: 60px 0 0 0 / 40px 0 0 0;
-        box-shadow: 0 6.5rem 0 0 inset var(--color-primary), 0 0 20px -10px var(--color-primary);
-        animation:  #{generateAnimationName(1, "liquid") + 'Wrapper'} 3s infinite linear 250ms;
-    }
 
-    &:hover header figure img {
-        top: 1rem;
-        border-radius: 60% 45% 52% 60% / 40% 60% 60% 40%;
-        box-shadow: 0 3px 0px 10px var(--color-primary), -5px -10px 20px -10px var(--color-primary);
-        transform: translate(-8%, -65%) rotate(3deg);
-        animation: #{generateAnimationName(0, "liquid")} 3s infinite linear 250ms, #{generateAnimationName(1, "liquid") + 'Photo'} 3.5s infinite linear 250ms;
-    } 
-
-    &::after,
-    &::before
-     {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 50%;
-        width: 6%;
-        height: 8rem;
-        transform: translate(100%, 5%) scaleX(3);
-        transition: all .7s ease-in-out .1s, background-color 250ms ease-in-out;
-        background-color: royalblue;
-        z-index: -1;
-        background-color: var(--color-primary);
-        animation-delay: 1s;
-    }
-    */
-
-    
     &::before {
         height: 6rem;
         z-index: initial;
         transition: all .7s ease-in-out -.4s, background-color 250ms ease-in-out;
     }
-/* 
-    &:hover::before {
-        background-color: var(--color-secondary);
-        transform: translate(822%, 55%) rotateX(-100deg) scaleX(16);
-        animation:  #{generateAnimationName(1, "liquid")} 3s infinite linear;
-    }
-    
-    &:hover::after {
-        transform: translate(822%, -50%) rotateX(-100deg) scaleX(16);
-        background-color: var(--color-secondary);
-        animation:  #{generateAnimationName(1, "liquid")} 3s infinite linear;
-    } */
 
     & main ul {
         display: flex;
@@ -133,40 +110,54 @@ $onlyTopLeftEnd: (topRight: 0% 0%, bottomRight: 0% 0%, bottomLeft: 0% 0%, topLef
     }
 
     .talentInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         h3 {
-            margin-bottom: 0.5rem;
+            margin: 0;
             color: var(--color-secondary);
         }
 
         p {
-            margin-bottom: 0;
+            margin: 0;
             color: var(--color-black);
-            text-align: center
+            font-size: 14px;
         }
-        h2{
-           color: var(--color-black);
-           font-family: Arial, Helvetica, sans-serif;
-           font-size: 12px;
+        
+        h2 {
+            margin: 0;
+            color: var(--color-black);
+            text-align: center;
+            font-size: 20px;
         }
     }
-    .contactsearch{
+
+    .contactsearch {
         background-color: var(--color-white);
         color: var(--color-black);
-        border: none;
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
         font-size: 16px;
-        border-radius: 4px;
+        border-radius: 50%;
         cursor: pointer;
+        box-sizing: border-box;
+        display: grid;
+        place-content: center;
+        border: none;
+        outline: none;
+        position: absolute;
+        right: 1rem;
+
     }
+
     .contactsearch:hover {
         background-color: var(--color-white);
     }
-    
+
     .contactsearch:active {
         background-color: var(--color-gray);
     }
 
- 
+
 
 }

@@ -8,15 +8,14 @@
     overflow: auto;
     padding: 1rem;
     box-sizing: border-box;
+    position: absolute;
 }
 
 @include glassmorphismforclass(".card__back");
 
-
 .card__back--active {
     transform: rotateY(10deg) translateX(49%);
 }
-
 
 .form {
     display: flex;

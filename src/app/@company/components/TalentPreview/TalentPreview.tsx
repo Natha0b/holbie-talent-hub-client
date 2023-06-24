@@ -6,21 +6,14 @@ import { ContactIcons } from '../profile/ContactIcons/ContactIcons';
 import { User } from "$company/(pages)/profiles-holbies/page";
 
 
-// An empty array of User type
-const user: User[] = [];
-
-// An instance of the ContactIcons component
-const contactIconsInstance = <ContactIcons user={user} />;
-
-
 /**
  * The TalentPreview component represents a preview of a talent.
  * It displays the talent's profile picture, name, bio, title, and provides a button to send a message.
  * The component uses CSS modules to style its elements.
  */
-export const TalentPreview: React.FC<{ talent: Talent }> = ({ talent }) => {
+export const TalentPreview: React.FC<{ talent: Talent, onClick?: () => void }> = ({ talent, onClick }) => {
     return (
-        <div className={styles.talentPreview}>
+        <div className={styles.talentPreview} onClick={onClick}>
             <header className={styles['not-opasity']}>
 
                 <figure className={styles['liquid-animation']} >
@@ -34,15 +27,10 @@ export const TalentPreview: React.FC<{ talent: Talent }> = ({ talent }) => {
 
             <main>
                 <div className={styles.talentInfo}>
-                    {contactIconsInstance}
-                    <h2>{talent.bio}</h2>
-                    <p>{talent.title}</p>
-
-                    {/* Display other relevant information */}
+                    <ContactIcons user={talent} />
+                    <p>{talent.bio}</p>
+                    <h2>{talent.title}</h2>
                 </div>
-
-                {/* Add additional UI elements and interactions */}
-
             </main>
         </div>
 

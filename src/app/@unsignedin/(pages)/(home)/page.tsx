@@ -71,29 +71,15 @@ const fakeData: Talent[] = [
     },
 ];
 
-const handleClick = (
-    githubLink: string,
-    twitterLink: string,
-    gmailLink: string,
-    slackLink: string
-) => { };
 
-
-export default function HomeLogin({
-    children,
-}: {
-    children: React.ReactNode
-}) {
-
-    console.log('children', children);
-    const segment = getSegment(children);
+export default function HomeLogin() {
 
     return (
         <>
 
             <header className={styles.containerfondo}>
                 <div className={styles.banner}>
-                    <h3 className={styles.titlehome}>HOLBIE TALENT CLUB</h3>
+                    <h3 className={styles.titlehome}>HOLBIE TALENT HUB</h3>
                     <p className={styles.textaboutme}>
                         Te preparamos para la vida después de Holberton dando acompañamiento a tu búsqueda de empleo y te damos todas las herramientas necesarias para que tu proceso sea exitoso.Revisa aquí como funciona la mecánica y los requisitos que debes cumplir.
                     </p>
@@ -118,12 +104,11 @@ export default function HomeLogin({
             </div>
 
             {/*add infomation of always*/}
-            <h3 className={styles.title}>Staff</h3>
+            <h3 className={styles.title}> Staff </h3>
             <div className={styles.resultsContainer}>
                 {fakeData.map((talent) => (
                     <TalentPreview
                         talent={talent}
-                        onClick={() => handleClick(talent.githubLink, talent.twitterLink, talent.gmailLink, talent.slackLink)}
                     />
                 ))}
             </div>
