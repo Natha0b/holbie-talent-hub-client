@@ -1,11 +1,7 @@
 import React from 'react';
 import styles from './ProjectsDetails.module.scss'
-
-// Import other components used within TalentSearch
-
 import { TalentPreview, Talent } from '$company/components/TalentPreview/TalentPreview';
 // import { Carousel, handlePrevSlide, handleNextSlide, currentSlide }from '$company/components/profile/Carousel';
-
 
 
 interface Profile {
@@ -210,10 +206,7 @@ const UserProfile: React.FC<{ profile: Profile }> = ({ profile }) => {
                         ))
                     }
                 </div>
-
-
             </div>
-
             <div className={styles.info_multimedia}>
                 {multimedia.map((media) => (
                     <div key={media.media_id}>
