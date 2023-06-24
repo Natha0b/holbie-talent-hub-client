@@ -37,7 +37,7 @@ const fakeData: Talent[] = [
         githubLink: 'https://github.com/Juanesduque1',
         linkedinLink: 'https://www.linkedin.com/in/juanesduque/',
         slackLink: '@Juan Esteban Duque Morales',
-        gmailLink: 'https://tu-slack-invite-link',
+        gmailLink: 'juanesduquemorales@gmail.com',
     },
     {
         profilePicture: 'https://avatars.githubusercontent.com/u/112909840?v=4',
