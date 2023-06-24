@@ -3,7 +3,7 @@ import styles from "./UserInfo.module.scss";
 import Image from 'next/image';
 import javascriptIcon from "../../../../../../public/imagenescoderise/java-script1.png";
 import cIcon from "../../../../../../public/imagenescoderise/c-.png";
-import { User } from "$company/(pages)/profiles-holbies/page";
+import { User } from "$/app/@company/(pages)/find/your-profiles/page";
 import rubyIcon from "../../../../../../public/imagenescoderise/ruby.png";
 
 interface UserInfoProps {

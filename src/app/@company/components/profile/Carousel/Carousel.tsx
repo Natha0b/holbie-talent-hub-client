@@ -1,8 +1,8 @@
 import React from "react";
 import { ProfileCard } from "../ProfileCard/ProfileCard"
 import styles from "./Carousel.module.scss"
-import { User } from "$company/(pages)/profiles-holbies/page";
-import handleSendMessage from '$company/(pages)/find/chat/page';
+import { User } from "$/app/@company/(pages)/find/your-profiles/page";
+import handleSendMessage from '$/app/@company/(pages)/@chat/chat/page';
 import { BsFillSendFill } from 'react-icons/bs';
 
 interface CarouselProps {

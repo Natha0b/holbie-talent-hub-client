@@ -12,6 +12,10 @@
 
 @include glassmorphismforclass(".container");
 
+.container > * {
+    margin-block: 1rem;
+}
+
 .title {
     font-size: 24px;
     margin-bottom: 20px;

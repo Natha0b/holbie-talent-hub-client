@@ -1,27 +1,34 @@
 import React from 'react';
-import styles from './UserProfilePage.module.scss';
+import './UserProfile.scss'
+import { DetailsProfile } from '$/app/@company/components/UserProfile/profile/DetailsProfile';
+import { InfoProfile } from '$/app/@company/components/UserProfile/InfoProfile/InfoProfile';
+import { InfoProjects } from '$/app/@company/components/UserProfile/InfoProjects/InfoProjects';
+import { Levels } from '$/app/@company/components/UserProfile/Levels/Levels';
+import { profileData } from '$/app/@company/components/UserProfile/profile/DetailsProfile.data';
 
-// Import other components used within UserProfilePage
-import {ProfileHeader} from '$company/components/ProfileHeader/ProfileHeader';
-import {ProjectSection} from '$company/components/ProjectSection/ProjectSection';
-import {ExperienceSection} from '$company/components/ExperienceSection/ExperienceSection';
-import {EducationSection} from '$company/components/EducationSection/EducationSection';
-import {SkillSection} from '$company/components/SkillSection/SkillSection';
-import {TeamWorkSection} from '$company/components/TeamWorkSection/TeamWorkSection';
-import {TestimonialSection} from '$company/components/TestimonialSection/TestimonialSection';
-
-export default function UserProfilePage()  {
-  return (
-    <div className={styles.userProfilePage}>
-      <ProfileHeader />
-      <div className={styles.contentWrapper}>
-        <ProjectSection />
-        <ExperienceSection />
-        <EducationSection />
-        <SkillSection />
-        <TeamWorkSection />
-        <TestimonialSection />
-      </div>
-    </div>
-  );
+const UserProfile: React.FC = () => {
+    const profile = profileData
+    return (
+        <div className="profile">
+            <DetailsProfile profile={profile} />  {/*Render the DetailsProfile component and pass the 'profile' data as props*/}
+            <InfoProfile profile={profile} />  {/*Render the InfoProfile component and pass the 'profile' data as props*/}
+            <InfoProjects />  {/*Render the InfoProjects component*/}
+            <Levels /> {/*Render the Levels component*/}
+        </div>
+    );
 };
+
+export default UserProfile;
+
+
+/*
+const App: React.FC = () => {
+    return (
+        <div>
+            <UserProfile profile={profileData} />
+        </div>
+    );
+};
+
+export { App };
+*/

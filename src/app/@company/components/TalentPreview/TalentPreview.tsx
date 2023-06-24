@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './TalentPreview.module.scss';
 import { BsFillSendFill } from 'react-icons/bs';
-import handleSendMessage from '$company/(pages)/find/chat/page';
+import handleSendMessage from '$/app/@company/(pages)/@chat/chat/page';
 import { ContactIcons } from '../profile/ContactIcons/ContactIcons';
-import { User } from "$company/(pages)/profiles-holbies/page";
+import { User } from "$/app/@company/(pages)/find/your-profiles/page";
 
 
 /**
@@ -51,5 +51,4 @@ export interface Talent {
     slackLink: string;
     linkedinLink: string;
     gmailLink: string;
-    // Add additional properties
 }

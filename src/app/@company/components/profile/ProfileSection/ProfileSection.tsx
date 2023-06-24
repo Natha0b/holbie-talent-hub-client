@@ -1,5 +1,5 @@
 import React from "react";
-import { User } from "$company/(pages)/profiles-holbies/page";
+import { User } from "$/app/@company/(pages)/find/your-profiles/page";
 import { Carousel } from "../Carousel/Carousel";
 import styles from "./ProfileSection.module.scss";
 

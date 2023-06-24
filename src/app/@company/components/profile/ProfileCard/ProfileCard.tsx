@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ProfileCard.module.scss";
 import { UserInfo } from "../UserInfo/UserInfo";
-import { User } from "$company/(pages)/profiles-holbies/page";
+import { User } from "$/app/@company/(pages)/find/your-profiles/page";
 import { ContactIcons } from "../ContactIcons/ContactIcons";
 
 interface ProfileCardProps {

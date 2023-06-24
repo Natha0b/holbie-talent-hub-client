@@ -3,7 +3,6 @@ import "$share/styles/globals.scss";
 import "$share/styles/background.scss";
 import { Background } from "./components/Background/Background";
 import React from "react";
-import HomeLogin from "./@unsignedin/(pages)/(home)/homelogin/page";
 // import { getSegment } from "@share/router/router.share";
 
 /*
@@ -42,7 +41,7 @@ const validateAuth = async (headers: Headers) => {
 export async function getAuth() {
   // const { token, role } = await validateAuth(headers());
   
-  const { token, role } = { token: null, role: '' };
+  const { token, role } = { token: null, role: 'company' };
   return {
     token,
     role
@@ -64,7 +63,6 @@ export default async function AuthLayout(
     const content = (children: React.ReactNode) => (<>
       <html lang="en">
         <body>
-        <HomeLogin/>
           <Background />
           {
             children

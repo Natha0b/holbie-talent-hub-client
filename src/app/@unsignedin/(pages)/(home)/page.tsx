@@ -5,6 +5,8 @@ import Image from 'next/image';
 import LogoCode from '$company/(pages)/find/logocoderiseapp.png'
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { TalentPreview, Talent } from '$company/components/TalentPreview/TalentPreview';
+import Link from 'next/link';
+import { HeaderHome } from './HeaderHome';
 
 
 const fakeData: Talent[] = [
@@ -76,20 +78,7 @@ export default function HomeLogin() {
     return (
         <>
 
-            <header className={styles.containerfondo}>
-                <div className={styles.banner}>
-                    <h3 className={styles.titlehome}>HOLBIE TALENT HUB</h3>
-                    <p className={styles.textaboutme}>
-                        Te preparamos para la vida después de Holberton dando acompañamiento a tu búsqueda de empleo y te damos todas las herramientas necesarias para que tu proceso sea exitoso.Revisa aquí como funciona la mecánica y los requisitos que debes cumplir.
-                    </p>
-                    <button className={styles.buttonlogin}>
-                        Login
-                    </button>
-                    <button className={styles.buttonregister}>
-                        Register
-                    </button>
-                </div>
-            </header>
+            <HeaderHome />
 
             <h3 className={styles.title}> About me</h3>
             <div className={styles.containertextabout}>
@@ -120,13 +109,12 @@ export default function HomeLogin() {
                         Holberton School Colombia
                         Es una academia operada por
                         Coderise SAS BIC
-
-                        <h5>
+                        <span>
                             <a href="https://www.coderise.org" className={styles.linkcoderise}>
                                 www.coderise.org
                             </a>
-                        </h5>
-                        <h5>EscríbenosWhatsapp +57 318 2263937</h5>
+                        </span>
+                        <span>EscríbenosWhatsapp +57 318 2263937</span>
                     </p>
                 </div>
 
@@ -148,4 +136,7 @@ export default function HomeLogin() {
             </footer>
         </>
     );
+
+    
 }
+
