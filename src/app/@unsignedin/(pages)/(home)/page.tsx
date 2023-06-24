@@ -1,8 +1,7 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './home.module.scss';
 import Image from 'next/image';
-import { getSegment } from '$share/router/router.share';
 import LogoCode from '$company/(pages)/find/logocoderiseapp.png'
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { TalentPreview, Talent } from '$company/components/TalentPreview/TalentPreview';
@@ -13,20 +12,20 @@ const fakeData: Talent[] = [
         profilePicture: 'https://avatars.githubusercontent.com/u/95534180?v=4',
         name: 'Felipe Villamizar',
         title: 'Backend',
-        bio: 'in the world of programming and development, I love to learn and am truly passionate about what I love💙. I also want to pursue my career as a software engineer.👨🏻‍💻',
+        bio: 'Software developer with knowledge in fullstack development. I am specialized in the backend area, where I have a solid experience in creating robust and scalable technical solutions for companies. Throughout my career, I have had the privilege of working on several team projects, collaborating with other industry professionals.👨🏻‍💻',
         githubLink: 'https://github.com/felipevcc',
-        linkedinLink: 'https://www.linkedin.com/in/tu-perfil',
-        slackLink: 'https://tu-slack-invite-link',
-        gmailLink: 'https://tu-slack-invite-link',
+        linkedinLink: 'https://www.linkedin.com/in/felipevc/',
+        slackLink: '@Felipe Villamizar',
+        gmailLink: 'felipevillamizarc@gmail.com',
     },
     {
         profilePicture: 'https://avatars.githubusercontent.com/u/106930148?v=4',
         name: 'Andres Solarte',
         title: 'Backend',
-        bio: 'in the world of programming and development, I love to learn and am truly passionate about what I love💙. I also want to pursue my career as a software engineer.👨🏻‍💻',
-        githubLink: 'https://github.com/felipevcc',
-        linkedinLink: 'https://www.linkedin.com/in/tu-perfil',
-        slackLink: 'https://tu-slack-invite-link',
+        bio: 'Hi! Im Andres, a passionate software developer specialized in the backend domain. With a strong background in computer engineering and several years of experience in application development, been dedicated to building robust and scalable solutions that drive system performance and efficiency.👨🏻‍💻',
+        githubLink: 'https://github.com/Andres98100',
+        linkedinLink: 'https://www.linkedin.com/in/andres-solarte-a89b88214/',
+        slackLink: '@Jaime Rodriguez',
         gmailLink: 'https://tu-slack-invite-link',
     },
     {
@@ -34,40 +33,40 @@ const fakeData: Talent[] = [
         name: 'Juan Esteban Duque',
         title: 'Backend',
         bio: 'in the world of programming and development, I love to learn and am truly passionate about what I love💙. I also want to pursue my career as a software engineer.👨🏻‍💻',
-        githubLink: 'https://github.com/felipevcc',
-        linkedinLink: 'https://www.linkedin.com/in/tu-perfil',
-        slackLink: 'https://tu-slack-invite-link',
-        gmailLink: 'https://tu-slack-invite-link',
+        githubLink: 'https://github.com/Juanesduque1',
+        linkedinLink: 'https://www.linkedin.com/in/juanesduque/',
+        slackLink: '@Juan Esteban Duque Morales',
+        gmailLink: 'juanesduquemorales@gmail.com',
     },
     {
         profilePicture: 'https://avatars.githubusercontent.com/u/112909840?v=4',
         name: 'Laura Ortiz',
         title: 'Fronted',
         bio: 'I am software developer👩🏽💻, I am passionate about technology, the new challenges and experiences that I am acquiring in this wonderful path of programming.',
-        githubLink: 'https://github.com/felipevcc',
-        linkedinLink: 'https://www.linkedin.com/in/tu-perfil',
-        slackLink: 'https://tu-slack-invite-link',
-        gmailLink: 'https://tu-slack-invite-link',
+        githubLink: 'https://github.com/Natha0b',
+        linkedinLink: 'https://www.linkedin.com/in/laura-nathaly-ortiz-barona-7518ba222/',
+        slackLink: '@Laura Nathaly Ortiz Barona',
+        gmailLink: 'laura.barona04@gmail.com',
     },
     {
         profilePicture: 'https://avatars.githubusercontent.com/u/111533983?v=4',
         name: 'Yurany Ulchur',
         title: 'Fronted',
         bio: 'I am just starting in this world of programming and development👩🏽💻 I love to learn and I am really passionate about what I like.💖',
-        githubLink: 'https://github.com/felipevcc',
+        githubLink: 'https://github.com/YuranyUlchur?tab=followers',
         linkedinLink: 'https://www.linkedin.com/in/tu-perfil',
-        slackLink: 'https://tu-slack-invite-link',
-        gmailLink: 'https://tu-slack-invite-link',
+        slackLink: '@Yurany Ulchur',
+        gmailLink: 'ulchuryurani80@gmail.com',
     },
     {
         profilePicture: 'https://avatars.githubusercontent.com/u/106554564?v=4',
         name: 'Luis Puerta',
         title: 'Fronted',
         bio: ' in the world of programming and development, I love to learn and am truly passionate about what I love💙. I also want to pursue my career as a software engineer.👨🏻‍💻',
-        githubLink: 'https://github.com/felipevcc',
-        linkedinLink: 'https://www.linkedin.com/in/tu-perfil',
-        slackLink: 'https://tu-slack-invite-link',
-        gmailLink: 'https://tu-slack-invite-link',
+        githubLink: 'https://github.com/Remenyr',
+        linkedinLink: ' http://www.linkedin.com/in/luis-alejandro-puerta-alvarez-567b82279',
+        slackLink: '@Luis Alejandro Puerta Alvarez',
+        gmailLink: 'puertaalejo02@gmail.comk',
     },
 ];
 
