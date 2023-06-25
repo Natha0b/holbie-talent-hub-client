@@ -3,14 +3,9 @@
 
 import React, { useState } from 'react';
 import styles from './TalentSearch.module.scss';
-import Layout from '../layout';
-import Link from 'next/link';
-
-
 
 // Import other components used within TalentSearch
 import { SearchBar } from '$company/components/SearchBar/SearchBar';
-import { FilterPanel } from '$company/components/FilterPanel/FilterPanel';
 import { TalentPreview, Talent } from '$company/components/TalentPreview/TalentPreview';
 
 export default function TalentSearch() {

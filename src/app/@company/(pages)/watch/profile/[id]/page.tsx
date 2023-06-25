@@ -13,7 +13,7 @@ const UserProfile: React.FC = () => {
             <DetailsProfile profile={profile} />
             <div className={styles.profileRight} >
                 <InfoProfile profile={profile} />  
-                <InfoProjects /> 
+                <InfoProjects />
                 <Levels /> 
             </div>
         </div>
@@ -21,4 +21,3 @@ const UserProfile: React.FC = () => {
 };
 
 export default UserProfile;
-
