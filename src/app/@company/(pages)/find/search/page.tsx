@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import styles from './TalentSearch.module.scss';
 import Layout from '../layout';
+import Link from 'next/link';
 
 
 
@@ -31,6 +32,7 @@ export default function TalentSearch() {
 
     const fakeData: Talent[] = [
         {
+            id: 1,
             profilePicture: 'https://avatars.githubusercontent.com/u/1?v=4',
             name: 'John Doe',
             title: 'Frontend Developer',
@@ -41,6 +43,7 @@ export default function TalentSearch() {
             gmailLink: 'johndoe@gmail.com',
         },
         {
+            id: 2,
             profilePicture: 'https://avatars.githubusercontent.com/u/2?v=4',
             name: 'Jane Smith',
             title: 'UI/UX Designer',
@@ -51,6 +54,7 @@ export default function TalentSearch() {
             gmailLink: 'janesmith@gmail.com',
         },
         {
+            id: 3,
             profilePicture: 'https://avatars.githubusercontent.com/u/3?v=4',
             name: 'Robert Johnson',
             title: 'Full Stack Developer',
@@ -61,6 +65,7 @@ export default function TalentSearch() {
             gmailLink: 'robertjohnson@gmail.com',
         },
         {
+            id: 4,
             profilePicture: 'https://avatars.githubusercontent.com/u/4?v=4',
             name: 'Sarah Johnson',
             title: 'Mobile App Developer',
@@ -71,6 +76,7 @@ export default function TalentSearch() {
             gmailLink: 'sarahjohnson@gmail.com',
         },
         {
+            id: 5,
             profilePicture: 'https://avatars.githubusercontent.com/u/5?v=4',
             name: 'Michael Brown',
             title: 'Data Scientist',
@@ -81,6 +87,7 @@ export default function TalentSearch() {
             gmailLink: 'michaelbrown@gmail.com',
         },
         {
+            id: 6,
             profilePicture: 'https://avatars.githubusercontent.com/u/6?v=4',
             name: 'Emily Davis',
             title: 'Product Manager',
@@ -91,6 +98,7 @@ export default function TalentSearch() {
             gmailLink: 'emilydavis@gmail.com',
         },
         {
+            id: 7,
             profilePicture: 'https://avatars.githubusercontent.com/u/7?v=4',
             name: 'David Wilson',
             title: 'DevOps Engineer',
@@ -101,6 +109,7 @@ export default function TalentSearch() {
             gmailLink: 'davidwilson@gmail.com',
         },
         {
+            id: 8,
             profilePicture: 'https://avatars.githubusercontent.com/u/8?v=4',
             name: 'Sophia Thompson',
             title: 'UI Designer',
@@ -111,6 +120,7 @@ export default function TalentSearch() {
             gmailLink: 'sophiathompson@gmail.com',
         },
         {
+            id: 9,
             profilePicture: 'https://avatars.githubusercontent.com/u/9?v=4',
             name: 'Christopher Martin',
             title: 'Backend Developer',
@@ -121,6 +131,7 @@ export default function TalentSearch() {
             gmailLink: 'christophermartin@gmail.com',
         },
         {
+            id: 10,
             profilePicture: 'https://avatars.githubusercontent.com/u/10?v=4',
             name: 'Olivia Wilson',
             title: 'Frontend Developer',
@@ -131,6 +142,7 @@ export default function TalentSearch() {
             gmailLink: 'oliviawilson@gmail.com',
         },
         {
+            id: 11,
             profilePicture: 'https://avatars.githubusercontent.com/u/11?v=4',
             name: 'William Davis',
             title: 'Software Engineer',
@@ -141,6 +153,7 @@ export default function TalentSearch() {
             gmailLink: 'williamdavis@gmail.com',
         },
         {
+            id: 12,
             profilePicture: 'https://avatars.githubusercontent.com/u/12?v=4',
             name: 'Ava Thompson',
             title: 'Frontend Developer',
@@ -151,6 +164,7 @@ export default function TalentSearch() {
             gmailLink: 'avathompson@gmail.com',
         },
         {
+            id: 13,
             profilePicture: 'https://avatars.githubusercontent.com/u/13?v=4',
             name: 'James Anderson',
             title: 'Data Analyst',
@@ -161,6 +175,7 @@ export default function TalentSearch() {
             gmailLink: 'jamesanderson@gmail.com',
         },
         {
+            id: 14,
             profilePicture: 'https://avatars.githubusercontent.com/u/14?v=4',
             name: 'Isabella Clark',
             title: 'UI/UX Designer',
@@ -171,6 +186,7 @@ export default function TalentSearch() {
             gmailLink: 'isabellaclark@gmail.com',
         },
         {
+            id: 15,
             profilePicture: 'https://avatars.githubusercontent.com/u/15?v=4',
             name: 'Daniel Roberts',
             title: 'Full Stack Developer',
@@ -181,6 +197,7 @@ export default function TalentSearch() {
             gmailLink: 'danielroberts@gmail.com',
         },
         {
+            id: 16,
             profilePicture: 'https://avatars.githubusercontent.com/u/16?v=4',
             name: 'Mia Walker',
             title: 'Mobile App Developer',
@@ -191,6 +208,7 @@ export default function TalentSearch() {
             gmailLink: 'miawalker@gmail.com',
         },
         {
+            id: 17,
             profilePicture: 'https://avatars.githubusercontent.com/u/17?v=4',
             name: 'Alexander Evans',
             title: 'Backend Developer',
@@ -201,6 +219,7 @@ export default function TalentSearch() {
             gmailLink: 'alexanderevans@gmail.com',
         },
         {
+            id: 18,
             profilePicture: 'https://avatars.githubusercontent.com/u/18?v=4',
             name: 'Charlotte Baker',
             title: 'UI Designer',
@@ -211,6 +230,7 @@ export default function TalentSearch() {
             gmailLink: 'charlottebaker@gmail.com',
         },
         {
+            id: 19,
             profilePicture: 'https://avatars.githubusercontent.com/u/19?v=4',
             name: 'Henry Green',
             title: 'Full Stack Developer',
@@ -221,6 +241,7 @@ export default function TalentSearch() {
             gmailLink: 'henrygreen@gmail.com',
         },
         {
+            id: 20,
             profilePicture: 'https://avatars.githubusercontent.com/u/20?v=4',
             name: 'Amelia Turner',
             title: 'Frontend Developer',
@@ -231,6 +252,7 @@ export default function TalentSearch() {
             gmailLink: 'ameliaturner@gmail.com',
         },
         {
+            id: 21,
             profilePicture: 'https://avatars.githubusercontent.com/u/21?v=4',
             name: 'Benjamin Adams',
             title: 'Data Scientist',
@@ -241,6 +263,7 @@ export default function TalentSearch() {
             gmailLink: 'benjaminadams@gmail.com',
         },
         {
+            id: 22,
             profilePicture: 'https://avatars.githubusercontent.com/u/22?v=4',
             name: 'Grace Hill',
             title: 'UI/UX Designer',
@@ -251,6 +274,7 @@ export default function TalentSearch() {
             gmailLink: 'gracehill@gmail.com',
         },
         {
+            id: 23,
             profilePicture: 'https://avatars.githubusercontent.com/u/23?v=4',
             name: 'Samuel Phillips',
             title: 'DevOps Engineer',
@@ -261,6 +285,7 @@ export default function TalentSearch() {
             gmailLink: 'samuelphillips@gmail.com',
         },
         {
+            id: 24,
             profilePicture: 'https://avatars.githubusercontent.com/u/24?v=4',
             name: 'Natalie Wilson',
             title: 'UI Designer',
@@ -271,6 +296,7 @@ export default function TalentSearch() {
             gmailLink: 'nataliewilson@gmail.com',
         },
         {
+            id: 25,
             profilePicture: 'https://avatars.githubusercontent.com/u/25?v=4',
             name: 'Christopher Turner',
             title: 'Backend Developer',
@@ -281,6 +307,7 @@ export default function TalentSearch() {
             gmailLink: 'christopherturner@gmail.com',
         },
         {
+            id: 26,
             profilePicture: 'https://avatars.githubusercontent.com/u/26?v=4',
             name: 'Chloe Hall',
             title: 'Frontend Developer',
@@ -291,6 +318,7 @@ export default function TalentSearch() {
             gmailLink: 'chloehall@gmail.com',
         },
         {
+            id: 27,
             profilePicture: 'https://avatars.githubusercontent.com/u/27?v=4',
             name: 'Ryan Roberts',
             title: 'Software Engineer',
@@ -301,6 +329,7 @@ export default function TalentSearch() {
             gmailLink: 'ryanroberts@gmail.com',
         },
         {
+            id: 28,
             profilePicture: 'https://avatars.githubusercontent.com/u/28?v=4',
             name: 'Lily Adams',
             title: 'Mobile App Developer',
@@ -311,6 +340,7 @@ export default function TalentSearch() {
             gmailLink: 'lilyadams@gmail.com',
         },
         {
+            id: 29,
             profilePicture: 'https://avatars.githubusercontent.com/u/29?v=4',
             name: 'Jackson Clark',
             title: 'Backend Developer',
@@ -321,6 +351,7 @@ export default function TalentSearch() {
             gmailLink: 'jacksonclark@gmail.com',
         },
         {
+            id: 30,
             profilePicture: 'https://avatars.githubusercontent.com/u/30?v=4',
             name: 'Sophie Wilson',
             title: 'UI/UX Designer',
@@ -331,6 +362,7 @@ export default function TalentSearch() {
             gmailLink: 'sophiewilson@gmail.com',
         },
         {
+            id: 31,
             profilePicture: 'https://avatars.githubusercontent.com/u/31?v=4',
             name: 'Henry Anderson',
             title: 'Full Stack Developer',
@@ -341,6 +373,7 @@ export default function TalentSearch() {
             gmailLink: 'henryanderson@gmail.com',
         },
         {
+            id: 32,
             profilePicture: 'https://avatars.githubusercontent.com/u/32?v=4',
             name: 'Scarlett Turner',
             title: 'Frontend Developer',
@@ -351,6 +384,7 @@ export default function TalentSearch() {
             gmailLink: 'scarlettturner@gmail.com',
         },
         {
+            id: 33,
             profilePicture: 'https://avatars.githubusercontent.com/u/33?v=4',
             name: 'Leo Hill',
             title: 'Data Scientist',
@@ -361,6 +395,7 @@ export default function TalentSearch() {
             gmailLink: 'leohill@gmail.com',
         },
         {
+            id: 34,
             profilePicture: 'https://avatars.githubusercontent.com/u/34?v=4',
             name: 'Emma Baker',
             title: 'UI/UX Designer',
@@ -371,6 +406,7 @@ export default function TalentSearch() {
             gmailLink: 'emmabaker@gmail.com',
         },
         {
+            id: 35,
             profilePicture: 'https://avatars.githubusercontent.com/u/35?v=4',
             name: 'Thomas Roberts',
             title: 'DevOps Engineer',
@@ -381,6 +417,7 @@ export default function TalentSearch() {
             gmailLink: 'thomasroberts@gmail.com',
         },
         {
+            id: 36,
             profilePicture: 'https://avatars.githubusercontent.com/u/36?v=4',
             name: 'Mila Wilson',
             title: 'Mobile App Developer',
@@ -391,6 +428,7 @@ export default function TalentSearch() {
             gmailLink: 'milawilson@gmail.com',
         },
         {
+            id: 37,
             profilePicture: 'https://avatars.githubusercontent.com/u/37?v=4',
             name: 'Nathan Clark',
             title: 'Backend Developer',
@@ -401,6 +439,7 @@ export default function TalentSearch() {
             gmailLink: 'nathanclark@gmail.com',
         },
         {
+            id: 38,
             profilePicture: 'https://avatars.githubusercontent.com/u/38?v=4',
             name: 'Aria Davis',
             title: 'UI/UX Designer',
@@ -411,6 +450,7 @@ export default function TalentSearch() {
             gmailLink: 'ariadavis@gmail.com',
         },
         {
+            id: 39,
             profilePicture: 'https://avatars.githubusercontent.com/u/39?v=4',
             name: 'Ethan Roberts',
             title: 'Full Stack Developer',
@@ -431,8 +471,13 @@ export default function TalentSearch() {
                     <FilterPanel filters={filters} onChange={handleFilterChange} />
                     <div className={styles.resultsContainer}>
                         {
-                            fakeData.map((talent) => (
-                                <TalentPreview talent={talent} />
+                            fakeData.map((talent, index) => (
+                                <div key={index}>
+                                    <TalentPreview talent={talent} />
+                                    <Link href="watch/profile/index" className={styles.primaryButton}>
+                                        Ver perfil
+                                    </Link>
+                                </div>
                             ))
                         }
                     </div>

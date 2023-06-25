@@ -51,4 +51,5 @@ export interface Talent {
     slackLink: string;
     linkedinLink: string;
     gmailLink: string;
+    id: Number;
 }
