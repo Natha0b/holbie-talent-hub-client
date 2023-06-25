@@ -1,16 +1,16 @@
 'use client';
 import React from 'react';
-import { EnglishCard } from '$/app/@company/components/card/EnglishCard/EnglishCard';
-import { TechCard } from '$/app/@company/components/card/TechCard/TechCard';
-import { JobCard } from '$/app/@company/components/card/JobCard/JobCard';
-import styles from './BackCard.module.scss';
+import { useRouter } from 'next/navigation'
+import stylesModules from './BackCard.module.scss';
+import Link from 'next/link';
 import { Dropdown } from '$components/Dropdown/Dropdown';
+import styles from '$/app/components/PrimaryButton/PrimaryButton.module.scss';
 import { listOfCitiesIcons } from './BackCard.data';
-import { PrimaryButton } from '$components/PrimaryButton/PrimaryButton';
 import { jobKindIcons } from '../JobCard/JobCard.data';
 import { Multiselector } from '$/app/components/Multiselector/Multiselector';
 import { technologyIcons } from '../TechCard/TechCard.dada';
 import { englishLevelIcons } from '../EnglishCard/EnglishCard.data';
+
 
 
 /**
@@ -20,11 +20,15 @@ import { englishLevelIcons } from '../EnglishCard/EnglishCard.data';
  * @param kindJob - The type of job associated with the card.
  * @param active - Indicates whether the back card is active or not.
  */
+
+
+
 const BackCard: React.FC<{ kindJob: string, active: boolean }> = ({ kindJob, active }) => {
-    
+    const router = useRouter()
+
     return (
-        <aside className={`${styles.card__back} ${active && styles['card__back--active']}`}>
-            <form className={styles.form} action="edit-profile" method="post">
+        <aside className={`${stylesModules.card__back} ${active && stylesModules['card__back--active']}`}>
+            <form className={stylesModules.form} action="edit-profile" method="post">
                 <Dropdown label={'Location'} items={listOfCitiesIcons} onItemSelect={() => {
                 }} />
                 <Dropdown label="Kind Job" items={jobKindIcons} onItemSelect={() => {
@@ -33,8 +37,10 @@ const BackCard: React.FC<{ kindJob: string, active: boolean }> = ({ kindJob, act
                 }} />
                 <Dropdown label="English Level" items={englishLevelIcons} onItemSelect={() => {
                 }} />
-                <PrimaryButton label="To find" onClick={() => {
-                }} />
+
+                <Link href="/find/your-profiles" className={styles.primaryButton}>
+                    To find
+                </Link>
             </form>
         </aside>
     );
