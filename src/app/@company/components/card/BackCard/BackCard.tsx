@@ -45,4 +45,4 @@ const BackCard: React.FC<{ kindJob: string, active: boolean }> = ({ kindJob, act
     );
 }
 
-export { BackCard };  //exports the BackCard component to make it available for other modules to import and use.
+export { BackCard };  
