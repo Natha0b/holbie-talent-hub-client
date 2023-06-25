@@ -111,6 +111,7 @@ const fakeData: Talent[] = [
         linkedinLink: 'https://www.linkedin.com/in/liamwalker',
         slackLink: '@Liam Walker',
         gmailLink: 'liamwalker@gmail.com',
+        id: 1,
     },
     {
         profilePicture: 'https://avatars.githubusercontent.com/u/41?v=4',
@@ -120,6 +121,7 @@ const fakeData: Talent[] = [
         githubLink: 'https://github.com/auroraturner',
         linkedinLink: 'https://www.linkedin.com/in/auroraturner',
         slackLink: '@Aurora Turner',
+        id: 1,
         gmailLink: 'auroraturner@gmail.com',
     },
     {
@@ -128,12 +130,14 @@ const fakeData: Talent[] = [
         title: 'UI/UX Designer',
         bio: 'Creative UI/UX designer with a focus on crafting visually appealing and user-friendly interfaces. Proficient in design tools such as Sketch, Figma, and Adobe XD. Experienced in conducting user research, creating wireframes, and prototyping interactive designs.',
         githubLink: 'https://github.com/lunabaker',
+        id: 1,
         linkedinLink: 'https://www.linkedin.com/in/lunabaker',
         slackLink: '@Luna Baker',
         gmailLink: 'lunabaker@gmail.com',
     },
     {
         profilePicture: 'https://avatars.githubusercontent.com/u/43?v=4',
+        id: 1,
         name: 'James Wilson',
         title: 'DevOps Engineer',
         bio: 'DevOps engineer with expertise in automating and optimizing software development processes. Skilled in cloud platforms like AWS and Azure. Experienced in CI/CD pipelines, infrastructure as code, and containerization. Passionate about improving efficiency and collaboration in software development.',
