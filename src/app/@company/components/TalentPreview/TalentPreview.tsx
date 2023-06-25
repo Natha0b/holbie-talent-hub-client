@@ -16,9 +16,6 @@ export const TalentPreview: React.FC<{ talent: Talent, onClick?: () => void }> =
         <div className={styles.talentPreview} onClick={onClick}>
             <header className={styles['not-opasity']}>
                 <figure className={styles['liquid-animation']} >
-                    <Link href={`/watch/profile/${talent.id}`} className={styles.primaryButton}>
-                        <img src={talent.profilePicture} alt="Profile" className="talent-img" />
-                    </Link>
                 </figure>
                 <h3>
                     <Link href={`/watch/profile/${talent.id}`} className={styles.primaryButton}>
@@ -36,7 +33,7 @@ export const TalentPreview: React.FC<{ talent: Talent, onClick?: () => void }> =
                     <p>{talent.bio}</p>
                     <h2>{talent.title}</h2>
                     <Link href={`/watch/profile/${talent.id}`} className={styles.primaryButton}>
-                        ver perfil completo
+                        Show profile
                     </Link>
                 </div>
             </main>

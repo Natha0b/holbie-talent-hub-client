@@ -3,6 +3,7 @@ import styles from "./ProfileCard.module.scss";
 import { UserInfo } from "../UserInfo/UserInfo";
 import { User } from "$/app/@company/(pages)/find/your-profiles/page";
 import { ContactIcons } from "../ContactIcons/ContactIcons";
+import Link from "next/link";
 
 interface ProfileCardProps {
     user: User;
@@ -23,8 +24,10 @@ interface ProfileCardProps {
 export const ProfileCard: React.FC<ProfileCardProps> = ({ user, index, currentSlide }) => {
     return (
         <div className={`${styles["carousel__slide"]} ${index === currentSlide ? styles["carousel__slide--active"] : ""}`}>
+
             <UserInfo user={user} />
             <ContactIcons user={user} />
         </div>
+        
     );
 };

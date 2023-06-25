@@ -36,6 +36,7 @@ export const Carousel: React.FC<CarouselProps> = ({ users, handlePrevSlide, hand
             <button className={styles.contactsprofiles} onClick={handleSendMessage}>
                 <BsFillSendFill />
             </button>
+
         </div>
     );
 };

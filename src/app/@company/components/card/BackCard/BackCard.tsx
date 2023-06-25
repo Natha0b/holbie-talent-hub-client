@@ -37,7 +37,6 @@ const BackCard: React.FC<{ kindJob: string, active: boolean }> = ({ kindJob, act
                 }} />
                 <Dropdown label="English Level" items={englishLevelIcons} onItemSelect={() => {
                 }} />
-
                 <Link href="/find/your-profiles" className={styles.primaryButton}>
                     To find
                 </Link>
