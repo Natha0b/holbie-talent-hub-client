@@ -4,6 +4,7 @@ import "$share/styles/background.scss";
 import { Background } from "./components/Background/Background";
 import React from "react";
 import { ThemeButton } from "./@company/components/ThemeButton/ThemeButton";
+import { ChatPanel } from "./@company/components/Chat/ChatPanel/ChatPanel";
 // import { getSegment } from "@share/router/router.share";
 
 /*
@@ -69,6 +70,7 @@ export default async function AuthLayout(
             children
           }
           <ThemeButton />
+          <ChatPanel/>
         </body>
       </html>
     </>);

@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './DetailsProfile.module.scss';
 import { Profile } from './DetailsProfile.data';
 import { BsFillSendFill } from 'react-icons/bs';
+import { PrimaryButton } from '$/app/components/PrimaryButton/PrimaryButton';
 
 
 // Declaration of the functional component DetailsProfile that receives a profile object as a prop

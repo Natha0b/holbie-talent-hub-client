@@ -7,7 +7,7 @@ const nextConfig = {
       customKey: 'my-value',
   },
   sassOptions: {
-    sourceMap: true, 
+    sourceMap: false,
     includePaths: [
       path.join(__dirname, 'src'),
       path.join(__dirname, 'src/app/share'),
@@ -15,7 +15,8 @@ const nextConfig = {
       path.join(__dirname, 'src/app/@company'),
       path.join(__dirname, 'src/app/@professionals')
     ]
-  }
+  },
+  reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
 }
 
 module.exports = nextConfig

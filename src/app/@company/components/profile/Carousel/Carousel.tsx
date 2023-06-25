@@ -2,7 +2,6 @@ import React from "react";
 import { ProfileCard } from "../ProfileCard/ProfileCard"
 import styles from "./Carousel.module.scss"
 import { User } from "$/app/@company/(pages)/find/your-profiles/page";
-import handleSendMessage from '$/app/@company/(pages)/@chat/chat/page';
 import { BsFillSendFill } from 'react-icons/bs';
 
 interface CarouselProps {
@@ -33,7 +32,7 @@ export const Carousel: React.FC<CarouselProps> = ({ users, handlePrevSlide, hand
             <button className={styles["carousel__button carousel__button--next"]} onClick={handleNextSlide}>
                 &gt;
             </button>
-            <button className={styles.contactsprofiles} onClick={handleSendMessage}>
+            <button className={styles.contactsprofiles} >
                 <BsFillSendFill />
             </button>
         </div>

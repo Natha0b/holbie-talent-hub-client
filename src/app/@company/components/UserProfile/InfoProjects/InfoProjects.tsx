@@ -4,9 +4,8 @@ import styles from './InfoProjects.module.scss'
 import './InfoProjects.data'
 import { popularRepositories } from './InfoProjects.data';
 import Link from 'next/link';
+import { AiFillStar } from 'react-icons/ai';
 
-
-// Declaration of the functional component InfoProjects
 const InfoProjects: React.FC = () => {
     return (
         <div className={styles.info_projects}>
@@ -16,7 +15,7 @@ const InfoProjects: React.FC = () => {
                     <article key={repo.id}>
                         <h2>{repo.name}</h2>
                         <p>{repo.description}</p>
-                        <p>{repo.stars} stars</p>
+                        <p>{repo.stars} <AiFillStar className={styles.start} /></p>
                     </article>
                 </Link>
             ))}

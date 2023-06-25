@@ -9,9 +9,14 @@
 
     display: flex;
     height: var(--size);
-    width: 100%;
     justify-content: space-between;
     box-shadow: 0 -10px 30px 0 var(--color-gray);
+    box-sizing: border-box;
+    position: relative;
+    width: 100vw;
+    left: 0px;
+    padding-inline-start: 2rem;
+    padding-inline-end: 4rem;
 }
 
 .header__company-icon img {

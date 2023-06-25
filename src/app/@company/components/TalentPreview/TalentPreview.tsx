@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './TalentPreview.module.scss';
 import { BsFillSendFill } from 'react-icons/bs';
-import handleSendMessage from '$/app/@company/(pages)/@chat/chat/page';
 import { ContactIcons } from '../profile/ContactIcons/ContactIcons';
 import Link from 'next/link';
 
@@ -25,7 +24,7 @@ export const TalentPreview: React.FC<{ talent: Talent, onClick?: () => void }> =
                         {talent.name}
                     </Link>
                 </h3>
-                <button className={styles.contactsearch} onClick={handleSendMessage}>
+                <button className={styles.contactsearch} >
                     <BsFillSendFill />
                 </button>
             </header>

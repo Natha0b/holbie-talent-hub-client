@@ -1,3 +1,5 @@
+@import 'styles/animations.scss';
+
 .chatHeader {
     position: relative;
     background-color: var(--color-white);
@@ -25,21 +27,26 @@
 }
 
 .chat-container {
-    width: 360px;
-    height: 100%;
-    min-height: 80vh;
-    border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
+    height: calc(100vh - (100px + 6rem));
+    overflow: hidden;
+    width: -webkit-fill-available;
+    padding: 0px;
+    border: none;
+    padding-block-end: 1rem;
+    border-radius: 0px 0px var(--border-radius) var(--border-radius);
 }
 
 .message-container {
     display: flex;
     flex: 1;
     overflow-y: scroll;
-    padding: 1rem;
+    padding-block-start: 1rem;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
+
 }
 
 .message-container article {
@@ -69,27 +76,11 @@
 
 .input-container {
     display: flex;
-    align-items: center;
-    padding: 10px;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
-.input-container input {
-    flex: 1;
-    border: 1px solid #ccc;
-    margin-right: 10px;
-    border-radius: 3px;
-    padding: 10px;
-    border: none;
-    outline: none;
-    border: none;
-}
-
-.input-container input:hover,
-.input-container input:focus {
-    box-shadow: 0 0 1px inset var(--color-secondary);
-    outline: none;
-    border: none;
-}
 
 .input-container button {
     display: grid;
@@ -106,9 +97,12 @@
 
 .input-container button:hover,
 .input-container button:focus  {
-    color: var(--color-secondary);
-    box-shadow: 0 0 1px inset var(--color-secondary);
+    color: var(--color-secondary)!important;
 }
+
+
+@include glassmorphismforclass(".input-container button:hover");
+@include glassmorphismforclass(".input-container button:focus");
 
 
 .username {

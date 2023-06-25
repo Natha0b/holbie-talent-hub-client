@@ -1,6 +1,6 @@
 "use client";
 import React, { useCallback, useEffect, useState } from 'react';
-import styles from './FilterPanel.module.scss';
+import styles from './ThemeButton.module.scss';
 // get sun icon from 'react-icons'
 import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
 

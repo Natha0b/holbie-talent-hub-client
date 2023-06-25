@@ -12,7 +12,7 @@
 .info_projects>*>article {
     padding: 1rem;
     box-sizing: border-box;
-    background-color: var(--color-primary);
+    background-color: var(--color-primary) !important;
     filter: grayscale(.8);
     cursor: pointer;
     height: 100%;
@@ -44,4 +44,8 @@
 
 .info_projects>*>article:hover {
     filter: grayscale(0);
+}
+
+.start {
+    color: var(--color-warning)
 }

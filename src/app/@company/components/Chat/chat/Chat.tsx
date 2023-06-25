@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './Chat.scss';
 import { BsFillSendFill } from 'react-icons/bs';
+import { Input } from '$/app/components/Input/Input';
 
 
 // Declaration of the Message interface
@@ -45,7 +46,7 @@ const userData = [
     },
 ];
 
-const Chat: React.FC = () => {
+export const Chat: React.FC = () => {
     const [messages, setMessages] = useState<Message[]>(messageData);  // State hook to manage the messages
     const [newMessage, setNewMessage] = useState('');  // State hook to manage the new message input
 
@@ -69,10 +70,6 @@ const Chat: React.FC = () => {
     return (
 
         <div className="chat-container">
-            <div className="profile-header">
-                <img src={getUserData(1)?.avatar} className="avatarprofile" />
-                <span className='user-name-profile'>{getUserData(1)?.name}</span>
-            </div>
             <div className="message-container">
 
                 {messages.map((message) => (
@@ -98,12 +95,7 @@ const Chat: React.FC = () => {
                 ))}
             </div>
             <div className="input-container">
-                <input
-                    type="text"
-                    placeholder="Type your message..."
-                    value={newMessage}
-                    onChange={(e) => setNewMessage(e.target.value)}
-                />
+                <Input value={newMessage} onChange={setNewMessage} />
                 <button onClick={handleSendMessage}>
                     <BsFillSendFill/>
                 </button>
@@ -111,5 +103,3 @@ const Chat: React.FC = () => {
         </div>
     );
 };
-
-export default Chat; // Exporting the Chat component for use in other files

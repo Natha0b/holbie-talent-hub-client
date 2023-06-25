@@ -17,7 +17,7 @@ const Levels: React.FC = () => {
                         <span className={styles["skill-name"]}>{name}</span>
                         <div>
                             {
-                                Array.from({ length: 5 }, () => (<AiFillStar className={styles.skillicon} />))
+                                Array.from({ length: 5 }, (_, key) => (<AiFillStar key={key} className={styles.skillicon} />))
                             }
                         </div>
                     </div>))

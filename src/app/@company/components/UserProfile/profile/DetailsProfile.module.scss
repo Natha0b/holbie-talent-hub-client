@@ -51,5 +51,6 @@
 @include glassmorphismforclass(".contactsearch:hover");
 
 .contactsearch:hover {
+    color: var(--color-black);
     background-color: var(--color-white);
 }
