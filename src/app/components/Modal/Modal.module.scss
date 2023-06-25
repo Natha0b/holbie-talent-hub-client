@@ -19,7 +19,7 @@
 
 .modalContent {
     position: relative;
-    background: #fff;
+    background: var(--color-white);
     padding: 20px;
     z-index: 1001;
     border-radius: var(--border-radius);

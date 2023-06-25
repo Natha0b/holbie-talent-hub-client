@@ -6,6 +6,7 @@ import styles from './TalentSearch.module.scss';
 import Layout from '../layout';
 
 
+
 // Import other components used within TalentSearch
 import { SearchBar } from '$company/components/SearchBar/SearchBar';
 import { FilterPanel } from '$company/components/FilterPanel/FilterPanel';
@@ -424,7 +425,6 @@ export default function TalentSearch() {
 
 
     return (
-        <Layout>
             <div className={styles.talentSearch}>
                 <SearchBar onSubmit={handleSearchSubmit} />
                 <div className={styles.contentWrapper}>
@@ -438,6 +438,5 @@ export default function TalentSearch() {
                     </div>
                 </div>
             </div>
-        </Layout>
     );
 }

@@ -9,23 +9,23 @@
 .alert-info {
     background-color: #d9edf7;
     border-color: #bce8f1;
-    color: #31708f;
+    color: var(--color-secondary);
 }
 
 .alert-success {
     background-color: #dff0d8;
     border-color: #d6e9c6;
-    color: #3c763d;
+    color: var(--color-success);
 }
 
 .alert-warning {
     background-color: #fcf8e3;
     border-color: #faebcc;
-    color: #8a6d3b;
+    color: var(--color-warning);
 }
 
 .alert-danger {
     background-color: #f2dede;
     border-color: #ebccd1;
-    color: #a94442;
+    color: var(--color-danger);
 }

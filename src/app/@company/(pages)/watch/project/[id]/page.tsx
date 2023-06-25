@@ -3,6 +3,9 @@ import styles from './ProjectsDetails.module.scss'
 import { TalentPreview, Talent } from '$company/components/TalentPreview/TalentPreview';
 // import { Carousel, handlePrevSlide, handleNextSlide, currentSlide }from '$company/components/profile/Carousel';
 
+import { FaGithub, FaGlobe, FaCalendarAlt, FaRegClock, FaClock } from "react-icons/fa";
+import { IoIosListBox, IoMdDownload, IoIosCloudyNight } from "react-icons/io";
+import { Levels } from '$/app/@company/components/UserProfile/Levels/Levels';
 
 interface Profile {
     profile_id: number;
@@ -73,20 +76,19 @@ const profileData: Profile = {
     salary_max: 80000,
 };
 
-const projectsData: Project[] = [
-    {
-        project_id: 1,
-        title: "Holberton-WeatherApp☀️",
-        description: "The Holberton-WeatherApp is a command-line application that provides accurate and up-to-date weather information for any user-specified location🌍.",
-        repository: "https://github.com/user/project1",
-        website: "https://project1.com",
-        start_date: "2023-01-01",
-        end_date: "2023-06-22",
-        created_at: "2023-01-01",
-        updated_at: "2023-06-22",
-    },
-    // Add more project objects as needed
-];
+const projectsData: Project = {
+    project_id: 1,
+    title: "Holberton-WeatherApp☀️",
+    description: "The Holberton-WeatherApp is a command-line application that provides accurate and up-to-date weather information for any user-specified location🌍.",
+    repository: "https://github.com/user/project1",
+    website: "https://project1.com",
+    start_date: "2023-01-01",
+    end_date: "2023-06-22",
+    created_at: "2023-01-01",
+    updated_at: "2023-06-22",
+};
+// Add more project objects as needed
+
 
 const skillsData: Skill[] = [
     {
@@ -156,65 +158,103 @@ const multimedia: Multimedia[] = [
         media_type: 'image',
         created_at: '2023-01-01',
         updated_at: '2023-01-01'
+    },
+    {
+        media_id: 3,
+        file_path: 'https://via.placeholder.com/150',
+        media_type: 'image',
+        created_at: '2023-01-01',
+        updated_at: '2023-01-01'
+    },
+    {
+        media_id: 4,
+        file_path: 'https://via.placeholder.com/150',
+        media_type: 'image',
+        created_at: '2023-01-01',
+        updated_at: '2023-01-01'
     }
 ];
 
 
 
-const UserProfile: React.FC<{ profile: Profile }> = ({ profile }) => {
+
+
+
+export default function ProjectView() {
+    const project = projectsData;
     return (
-        <div className={styles.profile}>
-            <div className={styles.details_profile}>
 
-                {projectsData.map((project) => (
-                    <div key={project.project_id}>
-                        <h1>{project.title}</h1>
-                        <h2>{project.description}</h2>
-                        <h3>The Holberton-WeatherApp displays the current and detailed weather forecast for the specified location, including temperature, humidity, wind speed, and an overall weather description📑.</h3>
-                        <h3>In addition to the current forecast, the application also provides the weather forecast for the next 5 days, allowing users to plan their activities accordingly☔.</h3>
-                        <h3>The Holberton-WeatherApp runs from the command line, enabling users to quickly obtain weather information without the need for a complex graphical interface.</h3>
-                        <h3>Users can customize the temperature unit (Celsius or Fahrenheit) and default location in the application settings, allowing them to tailor the experience to their preferences.</h3>
-                        <p>Repository: <a href={project.repository}>{project.repository}</a></p>
-                        <p>Website: <a href={project.website}>{project.website}</a></p>
-                        <p>Start Date: {project.start_date}</p>
-                        <p>End Date: {project.end_date}</p>
-                        <p>Updated At: {project.updated_at}</p>
-                    </div>
-                ))}
+        <div className={styles.project}>
+            <div className={styles.projectDetails}>
+                <div key={project.project_id}>
+                    <h1>{project.title}</h1>
+                    <p>{project.description}</p>
+                    <nav>
+                        <a className="btn" target="_blank" href={project.repository}>
+                            <FaGithub size={20} />
+                            Repository
+                        </a>
+                        <a className="btn" target="_blank" href={project.website}>
+                            <FaGlobe size={20} />
+                            Website
+                        </a>
+                    </nav>
+                    <nav>
+                        <span>Start Date:</span>
+                        <div className={styles.badge}>
+                            <FaCalendarAlt size={20} />
+                            <p>{project.start_date}</p>
+                        </div>
+                        <span>End Date:</span>
+                        <div className={styles.badge}>
+                            <FaRegClock size={20} />
+                            <p>{project.end_date}</p>
+                        </div>
+                        <span>Updated At:</span>
+                        <div className={styles.badge}>
+                            <FaClock size={20} />
+                            <p>{project.updated_at}</p>
+                        </div>
+                    </nav>
+                </div>
+                <div className={styles.contenedorReadme}>
 
-                {skillsData.map((skill) => (
-                    <div key={skill.skill_id}>
-                        <h2>{skill.name}</h2>
-                        <h3>{skill.description}</h3>
-                    </div>
-                ))}
-
-                <div>
-                    <h3>Installation and Usage Instructions</h3>
-                    <li>git clone https://github.com/your_username/Holberton-WeatherApp.git</li>
-                    <p>Install the necessary dependencies by running the following command:</p>
-                    <li>pip install -r requirements.txt</li>
-                    <p>Retrieve the weather forecast for a specific location:</p>
-                    <li>python app.py --location "Medellín"</li>
                 </div>
             </div>
-            <div className={styles.holbies_parnets}>
-                <div className={styles.resultsContainer}>
-                    {
-                        fakeData.map((talent) => (
-                            <TalentPreview talent={talent} />
-                        ))
-                    }
+
+
+            <div className={styles.focusInfo} >
+                <div className={styles.projectProfessional}>
+                    <h2>Team</h2>
+
+                    {fakeData.map((profile, key) => (
+                        <TalentPreview key={key} talent={profile} />
+                    ))}
                 </div>
-            </div>
-            <div className={styles.info_multimedia}>
-                {multimedia.map((media) => (
-                    <div key={media.media_id}>
-                        <span>{media.media_type}</span>
-                        <img src={media.file_path} alt="Project Media" />
-                    </div>
-                ))}
+
+                <div className={styles.projectMultimedia}>
+                    <h2>Multimedia</h2>
+                    <section>
+                        {multimedia.map((media) => (
+                            <div key={media.media_id}>
+                                <span>{media.media_type}</span>
+                                {
+                                    media.media_type === 'video'
+                                        ? <video src={media.file_path} controls></video>
+                                        : media.media_type === 'audio'
+                                            ? <audio src={media.file_path} controls></audio>
+                                            : media.media_type === 'image'
+                                                ? <img src={media.file_path} alt="Project Media" />
+                                                : false
+                                }
+                            </div>
+                        ))}
+                    </section>
+                </div>
+                <Levels />
+
             </div>
         </div>
+
     );
 };

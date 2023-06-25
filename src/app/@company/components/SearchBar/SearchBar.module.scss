@@ -7,6 +7,9 @@
     width: 100%;
     max-width: 400px;
     margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .searchBar input {
@@ -14,7 +17,6 @@
     padding: 0.5rem;
     border-radius: 0px;
     border: none;
-    /* box-shadow: var(--cards--shadow); */
     box-shadow: 2rem 0 15px -10px var(--color-secondary);
     outline: none!important;
     border: none!important;
@@ -39,7 +41,7 @@
     color: var(--color-secondary);
     cursor: pointer;
     filter: saturate(.6);
-    background-color: white;
+    background-color: var(--color-white);
 
 }
 

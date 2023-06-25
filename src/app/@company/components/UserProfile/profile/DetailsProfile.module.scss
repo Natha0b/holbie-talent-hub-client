@@ -1,12 +1,11 @@
 @import "styles/animations.scss";
 
 .details_profile {
-    position: relative;
+    position: sticky;
     width: 300px;
     height: 100%;
-    left: 0px;
-    float: left;
     text-align: left;
+    top: 1rem;
     padding: 1rem;
     box-sizing: border-box;
 }
@@ -20,6 +19,7 @@
 }
 
 @include glassmorphismforclass(".avatar");
+
 .avatar {
     width: 260px;
     height: 260px;

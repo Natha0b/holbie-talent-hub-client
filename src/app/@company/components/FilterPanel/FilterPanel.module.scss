@@ -17,7 +17,7 @@ $photoTopLeftEnd: (topRight: 80% 5%, bottomRight: 2% 100% , bottomLeft: 50% 5% ,
     top: 1rem;
     border-radius: 0px 15px 15px 0px;
     transform:  translateX(-100%);
-    transition: all 250ms ease-in-out, transform 0.5s ease-in-out;
+    transition: all 200ms ease-in-out, transform 0.5s ease-in-out;
     box-shadow: none;
     border: none;
     height: 90vh;
@@ -33,7 +33,7 @@ $photoTopLeftEnd: (topRight: 80% 5%, bottomRight: 2% 100% , bottomLeft: 50% 5% ,
 
 .filterPanel > *:not(.filterIcon) {
     opacity: 0;
-    transition: all 250ms ease-in-out 0.25s ;
+    transition: all 200ms ease-in-out 0.25s ;
     transform: translateX(-10%);
 }
 

@@ -23,12 +23,12 @@ export default function FindLayout({ children }: FindLayoutPros) {
                     <div
                         className={`${styles["navigation__buttons"]} ${segment.includes('profile') ? styles["navigation__buttons--active"] : ''}`}
                     >
-                        <Link href="/find/profile" >your profile</Link>
+                        <Link href="/find/profile" >find your profile</Link>
                     </div>
                     <div
                         className={`${styles["navigation__buttons"]} ${segment.includes('search') ? styles["navigation__buttons--active"] : ''}`}
                     >
-                        <Link href="/find/other-one" >search profiles</Link>
+                        <Link href="/find/search" >search profiles in hub</Link>
                     </div>
                 </nav>
                 <div className={styles.containeravatar}>

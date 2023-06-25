@@ -6,10 +6,10 @@
     padding: 20px;
     border-width: 2px;
     border-radius: var(--border-radius);
-    border-color: #eeeeee;
+    border-color: var(--color-white);
     border-style: dashed;
-    background-color: #fafafa;
-    color: #bdbdbd;
+    background-color: var(--color-white);
+    color: var(--color-text-alt);
     outline: none;
     transition: border .24s ease-in-out;
   box-sizing: border-box;

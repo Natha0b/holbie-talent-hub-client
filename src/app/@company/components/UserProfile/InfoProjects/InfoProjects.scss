@@ -1,17 +1,8 @@
 @import "styles/animations.scss";
 
 .info_projects {
-    position: relative;
     display: grid;
-    float: right;
     justify-content: center;
-    border: 1px solid #ccc;
-    border-radius: var(--border-radius, 14px);
-    padding: 2rem;
-    margin-bottom: 10px;
-    height: auto;
-    box-sizing: border-box;
-    width: calc(100vw - (320px + 5rem));
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
@@ -42,12 +33,12 @@
 .info_projects p {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #202020;
+    color: var(--color-text);
 }
 
 .repo-stars {
     font-size: 18px;
-    color: #586069;
+    color: var(--color-text-alt) !important;
 }
 
 .info_projects > article:hover {

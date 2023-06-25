@@ -1,16 +1,7 @@
 .levels {
-    position: relative;
     display: grid;
-    float: right;
     justify-content: center;
-    border: 1px solid #ccc;
-    border-radius: var(--border-radius, 14px);
-    padding: 2rem;
-    margin-bottom: 10px;
-    height: auto;
-    box-sizing: border-box;
-    width: calc(100vw - (320px + 5rem));
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
 }
 

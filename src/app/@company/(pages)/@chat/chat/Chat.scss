@@ -1,6 +1,6 @@
 .chatHeader {
     position: relative;
-    background-color: #f2f2f2;
+    background-color: var(--color-white);
     height: 100px;
     width: 100%;
     display: flex;
@@ -49,7 +49,7 @@
 }
 
 .message {
-    background-color: #f2f2f2;
+    background-color: var(--color-white);
     border-radius: 5px;
     padding: .4rem 1rem;
     margin: 0px;
@@ -59,7 +59,7 @@
 
 .message.user {
     align-self: flex-end;
-    background-color: #b3d4fc;
+    background-color: var(--color-primary);
     order: +1;
 }
 
@@ -133,6 +133,6 @@
 }
 
 .profile-header {
-    background-color: hsl(213, 92%, 85%);
+    background-color: var(--color-primary);
     height: 4rem;
 }

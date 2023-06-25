@@ -44,19 +44,22 @@ $onlyTopLeftEnd: (
     display: flex;
     align-items: center;
     padding: 1rem;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30), 0 6.5rem 0 0 inset var(--color-primary);
     padding: 20px;
-    color: white;
+    color: var(--color-white);
     font-size: 20px;
     border-top-left-radius: 0;
     line-height: 20px;
     text-align: justify;
     flex-grow: 1;
     position: relative;
+    
+    * {
+        user-select: none;
+    }
 
     & header {
         display: flex;
@@ -89,7 +92,7 @@ $onlyTopLeftEnd: (
     &::before {
         height: 6rem;
         z-index: initial;
-        transition: all .7s ease-in-out -.4s, background-color 250ms ease-in-out;
+        transition: all .7s ease-in-out -.4s, background-color 200ms ease-in-out;
     }
 
     & main ul {
@@ -145,7 +148,8 @@ $onlyTopLeftEnd: (
         border: none;
         outline: none;
         position: absolute;
-        right: 1rem;
+        right: .8rem;
+        top: .6rem;
 
     }
 

@@ -149,5 +149,14 @@
     opacity: $opacity;
   }
 
+  @media (prefers-color-scheme: dark) {
+    #{$selector} {
+      background: rgba(darken($color, 50%), $opacity);
+      backdrop-filter: blur($blur);
+      border-radius: 15px;
+      box-shadow: 10px 10px 20px rgba(118, 118, 118, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30);
+    }
+  }
+
 }
 

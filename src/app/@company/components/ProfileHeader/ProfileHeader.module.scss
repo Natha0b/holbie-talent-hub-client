@@ -12,7 +12,6 @@
 }
 
 .profileHeader__container {
-    background-color: red;
     aspect-ratio: 27/6;
     width: 100%;
     height: auto;
@@ -79,7 +78,7 @@
 .home__title {
     font-size: var(--big-font-size);
     margin-bottom: var(--mb-0-25);
-    color: white;
+    color: var(--color-white);
 }
 
 .home__hand {
@@ -94,7 +93,7 @@
     padding-left: 5.4rem;
     font-weight: var(--font-normal);
     margin-bottom: var(--mb-1);
-    color: white;
+    color: var(--color-white);
 }
 
 .home__subtitle::before {
@@ -102,7 +101,7 @@
     position: absolute;
     width: 70px;
     height: 1px;
-    background-color: #1cb698;
+    background-color: var(--color-success);
     left: 0;
     top: 1rem;
 }
@@ -110,5 +109,5 @@
 .home__description {
     max-width: 400px;
     margin-bottom: var(--mb-3);
-    color: white;
+    color: var(--color-white);
 }

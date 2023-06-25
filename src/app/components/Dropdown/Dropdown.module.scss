@@ -24,10 +24,10 @@
     width: 100%;
     padding: 0.6rem;
     font-size: 16px;
-    border: none !important;
     outline: none !important;
     border-radius: var(--border-radius);
-    box-shadow: 0 0 0 1px inset #ccc;
+    border: 1px solid var(--color-gray);
+    background-color: transparent;
     box-sizing: border-box;
     margin-block-start: 1rem;
 }
