@@ -60,7 +60,6 @@ export interface Skill {
 }
 
 
-
 // Ejemplo de información falsa
 const profileData: Profile = {
     profile_id: 1,
