@@ -1,38 +1,5 @@
 @import 'styles/animations.scss';
 
-@include liquid0x00(generateAnimationName(0, "liquid"), (transform: translate(42%, -65%) rotate(3deg)), 1.03, 0%);
-@include liquid0x01();
-$photoTopLeftStart: (
-    topRight: 45% 60%,
-    bottomRight: 52% 60%,
-    bottomLeft: 60% 40%,
-    topLeft: 60% 40%
-);
-$photoTopLeftEnd: (
-    topRight: 60% 55%,
-    bottomRight: 60% 52%,
-    bottomLeft: 40% 58%,
-    topLeft: 40% 58%
-);
-
-@include liquid0x01(#{generateAnimationName(1, "liquid") + 'Photo'}, $photoTopLeftStart, $photoTopLeftEnd);
-
-$onlyTopLeftStart: (
-    topRight: 0% 0%,
-    bottomRight: 0% 0%,
-    bottomLeft: 0% 0%,
-    topLeft: 60px 40px
-);
-$onlyTopLeftEnd: (
-    topRight: 0% 0%,
-    bottomRight: 0% 0%,
-    bottomLeft: 0% 0%,
-    topLeft: 50px 15px
-);
-
-@include liquid0x01(#{generateAnimationName(1, "liquid") + 'Wrapper'}, $onlyTopLeftStart, $onlyTopLeftEnd);
-
-
 @include glassmorphismforclass(".talentPreview");
 
 
@@ -47,7 +14,7 @@ $onlyTopLeftEnd: (
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30), 0 6.5rem 0 0 inset var(--color-primary);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30), 0 6.5rem 0 0 inset var(--color-primary)!important;
     padding: 20px;
     color: var(--color-white);
     font-size: 20px;
@@ -56,7 +23,7 @@ $onlyTopLeftEnd: (
     text-align: justify;
     flex-grow: 1;
     position: relative;
-    
+
     * {
         user-select: none;
     }
@@ -68,7 +35,7 @@ $onlyTopLeftEnd: (
         width: 100%;
 
         & h3 {
-            text-align: left!important;
+            text-align: left !important;
         }
 
         & figure {
@@ -89,6 +56,7 @@ $onlyTopLeftEnd: (
             }
         }
     }
+
     &::before {
         height: 6rem;
         z-index: initial;
@@ -107,14 +75,20 @@ $onlyTopLeftEnd: (
         gap: 10px;
     }
 
+    --color-link: var(--color-text-alt);
+
     &:hover {
         --color-primary: var(--color-secondary);
+        --color-black: var(--color-text-alt);
+        --color-link: var(--color-text);
+
     }
 
     .talentInfo {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+
         h3 {
             margin: 0;
             color: var(--color-secondary);
@@ -125,12 +99,28 @@ $onlyTopLeftEnd: (
             color: var(--color-black);
             font-size: 14px;
         }
-        
+
         h2 {
             margin: 0;
             color: var(--color-black);
             text-align: center;
             font-size: 20px;
+            padding-block-end: 1rem;
+        }
+
+        &>a {
+            text-align: right;
+            position: absolute;
+            font-variant: all-small-caps;
+            font-size: 12px;
+            bottom: 1rem;
+            color: var(--color-link);
+            right: 1.2rem;
+        }
+
+
+        &>a:hover {
+            filter: brightness(1.2) saturate(1.2);
         }
     }
 
@@ -150,16 +140,15 @@ $onlyTopLeftEnd: (
         position: absolute;
         right: .8rem;
         top: .6rem;
-
     }
+
+
+    @include glassmorphismforclass(".contactsearch:hover");
 
     .contactsearch:hover {
         background-color: var(--color-white);
     }
 
-    .contactsearch:active {
-        background-color: var(--color-gray);
-    }
 
 
 

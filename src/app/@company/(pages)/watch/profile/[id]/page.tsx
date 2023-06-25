@@ -1,5 +1,4 @@
 import React from 'react';
-import './UserProfile.scss'
 import styles from './UserProfile.module.scss'
 import { DetailsProfile } from '$/app/@company/components/UserProfile/profile/DetailsProfile';
 import { InfoProfile } from '$/app/@company/components/UserProfile/InfoProfile/InfoProfile';
@@ -8,7 +7,7 @@ import { Levels } from '$/app/@company/components/UserProfile/Levels/Levels';
 import { profileData } from '$/app/@company/components/UserProfile/profile/DetailsProfile.data';
 
 const UserProfile: React.FC = () => {
-    const profile = profileData
+    const profile = profileData;
     return (
         <div className={styles.profile}>
             <DetailsProfile profile={profile} />

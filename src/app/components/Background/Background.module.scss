@@ -14,22 +14,6 @@
     transition: all 200ms ease-in-out, background-position 3.3s ease-in-out;
 }
 
-
-[data-theme="dark"] .background {
+:root[data-theme="dark"] .background {
     filter: invert(0.75) saturate(2.75) hue-rotate(220deg) contrast(1.75);
-    
-}
-
-
-
-@media (prefers-color-scheme: dark) {
-    .background {
-        filter: invert(0.75) saturate(2.75) hue-rotate(220deg) contrast(1.75);
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    .background {
-        filter: none !important;
-    }
 }

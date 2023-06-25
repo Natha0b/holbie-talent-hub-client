@@ -14,6 +14,8 @@
   --color-text-alt: #{map-get(map-get($themes, light), color-text-alt)};
 }
 
+
+
 :root[data-theme="dark"] {
   --color-secondary: #{map-get(map-get($themes, dark), color-secondary)};
   --color-primary: #{map-get(map-get($themes, dark), color-primary)};
@@ -31,45 +33,3 @@
 :root[data-theme="dark"] :is(h1, h2, h3, h4, h5, h6, p, span, small, div, article, section, footer, header, main, label, input, textarea, select) {
   color: #{map-get(map-get($themes, dark), color-text)};
 }
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-secondary: #{map-get(map-get($themes, dark), color-secondary)};
-    --color-primary: #{map-get(map-get($themes, dark), color-primary)};
-    --color-black: #{map-get(map-get($themes, dark), color-black)};
-    --color-gray: #{map-get(map-get($themes, dark), color-gray)};
-    --color-danger: #{map-get(map-get($themes, dark), color-danger)};
-    --color-white: #{map-get(map-get($themes, dark), color-white)};
-    --color-success: #{map-get(map-get($themes, dark), color-success)};
-    --color-warning: #{map-get(map-get($themes, dark), color-warning)};
-    --color-text: #{map-get(map-get($themes, dark), color-text)};
-    --color-text-alt: #{map-get(map-get($themes, dark), color-text-alt)};
-  }
-    
-  :root :is(h1, h2, h3, h4, h5, h6, p, span, small, div, article, section, footer, header, main, label, input, textarea, select) {
-    color: #{map-get(map-get($themes, dark), color-text)};
-  }
-
-}
-
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-secondary: #{map-get(map-get($themes, light), color-secondary)};
-    --color-primary: #{map-get(map-get($themes, light), color-primary)};
-    --color-black: #{map-get(map-get($themes, light), color-black)};
-    --color-gray: #{map-get(map-get($themes, light), color-gray)};
-    --color-danger: #{map-get(map-get($themes, light), color-danger)};
-    --color-white: #{map-get(map-get($themes, light), color-white)};
-    --color-success: #{map-get(map-get($themes, light), color-success)};
-    --color-warning: #{map-get(map-get($themes, light), color-warning)};
-    --color-text: #{map-get(map-get($themes, light), color-text)};
-    --color-text-alt: #{map-get(map-get($themes, light), color-text-alt)};
-  }
-  
-}
-
-
-
-

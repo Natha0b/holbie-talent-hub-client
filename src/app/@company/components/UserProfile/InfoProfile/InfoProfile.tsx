@@ -13,9 +13,11 @@ const InfoProfile: React.FC<{ profile: Profile }> = ({ profile }) => {
                 <h2>Welcome to my Holbie Profile!👋🏼</h2>
                 <h3>I'm Eveling Rodriguez👩‍💻💫</h3>
                 <p>{profile.about_me}</p>
-                <li>🔭 I’m graduate of holberton school.</li>
-                <li>🌱 I’m currently learning different programming languages.</li>
-                <li>📫 How to reach me: eve0128@gmail.com</li>
+                <ul>
+                    <li>🔭 I’m graduate of holberton school.</li>
+                    <li>🌱 I’m currently learning different programming languages.</li>
+                    <li>📫 How to reach me: eve0128@gmail.com</li>
+                </ul>
             </div>
         </div>
 

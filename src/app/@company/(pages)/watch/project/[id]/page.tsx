@@ -220,15 +220,12 @@ export default function ProjectView() {
                         </div>
                     </nav>
                 </div>
-                <div className={styles.contenedorReadme}>
-
-                </div>
             </div>
 
 
             <div className={styles.focusInfo} >
                 <div className={styles.projectProfessional}>
-                    <h2>Team</h2>
+                    <h2>Team of the project</h2>
 
                     {fakeData.map((profile, key) => (
                         <TalentPreview key={key} talent={profile} />
@@ -256,6 +253,9 @@ export default function ProjectView() {
                 </div>
                 <Levels />
 
+                <div className={styles.contenedorReadme}>
+
+                </div>
             </div>
         </div>
 

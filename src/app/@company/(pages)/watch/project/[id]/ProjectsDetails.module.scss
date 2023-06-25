@@ -6,7 +6,6 @@
     flex-wrap: nowrap;
     gap: 2rem;
     padding-top: 2rem;
-    position: relative;
 
     .projectDetails {
         padding: 1rem;
@@ -14,8 +13,9 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        height: fit-content;
         position: sticky;
-        bottom: 1rem;
+        top: 1rem;
 
         &>div {
             display: flex;
@@ -99,22 +99,23 @@
 
                 // Estilos de la barra de desplazamiento para navegadores Webkit (Chrome, Safari, Edge)
                 &::-webkit-scrollbar {
-                    width: 2rem;
+                    width: .5rem;
                     border-radius: var(--border-radius);
                 }
 
                 &::-webkit-scrollbar-track {
-                    background: var(--color-primary);
+                    background-color: rgba(110, 110, 110, 0.003);
                     border-radius: var(--border-radius);
                 }
 
                 &::-webkit-scrollbar-thumb {
-                    background: var(--color-secondary);
+                    background: var(--color-primary);
                     border-radius: var(--border-radius);
+                    box-shadow: 2rem 0px 2rem var(--color-secondary), -2rem 0px 2rem var(--color-secondary), 0px 0px 3px 1px inset var(--color-secondary), -5rem 0px 3rem -4rem inset var(--color-secondary), 5rem 0px 3rem -4rem inset var(--color-secondary);
                 }
 
                 scrollbar-width: thin;
-                scrollbar-color: var(--color-primary) var(--color-secondary);
+                scrollbar-color: rgb(255 255 255 / 15%) var(--color-primary);
 
                 display: grid;
                 grid-auto-columns: calc(100% - 2rem);
@@ -124,7 +125,8 @@
                 padding: 1rem;
                 scroll-behavior: smooth;
                 scroll-snap-points-x: repeat(100%);
-                scroll-snap-type: x mandatory; 
+                scroll-snap-type: x mandatory;
+                overflow-y: hidden;
 
                 &>div {
                     scroll-snap-align: center;
@@ -133,14 +135,19 @@
                     grid-row: span 1;
                     display: grid;
                     grid-gap: 1rem;
-                    
+                    opacity: 0.4;
                     align-items: center;
+                    transition: opacity 0.6s ease-in-out;
 
                     &>*:not(span) {
                         width: 100%;
                         height: auto;
                         object-fit: cover;
                         border-radius: var(--border-radius);
+                    }
+
+                    &:hover {
+                        opacity: 1;
                     }
                 }
             }

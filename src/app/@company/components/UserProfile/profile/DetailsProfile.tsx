@@ -2,6 +2,7 @@
 import React from 'react';
 import styles from './DetailsProfile.module.scss';
 import { Profile } from './DetailsProfile.data';
+import { BsFillSendFill } from 'react-icons/bs';
 
 
 // Declaration of the functional component DetailsProfile that receives a profile object as a prop
@@ -9,6 +10,9 @@ const DetailsProfile: React.FC<{ profile: Profile }> = ({ profile }) => {
     return (
         <div className={styles.details_profile}>
             <img className={styles.avatar} src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar" />
+            <button className={styles.contactsearch} >
+                <BsFillSendFill />
+            </button>
             <h1>Eveling Rodriguez</h1>
             <h2>{profile.headline}</h2>
             <p>Enthusiastic software developer looking for exciting challenges.👩‍💻</p>

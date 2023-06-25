@@ -27,3 +27,29 @@
     margin-bottom: 10px;
     display: inline-block;
 }
+
+
+.contactsearch {
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: grid;
+    place-content: center;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 2rem;
+    height: 60px;
+    width: 60px;
+    top: 13rem;
+    border-radius: 50% !important;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+
+@include glassmorphismforclass(".contactsearch:hover");
+
+.contactsearch:hover {
+    background-color: var(--color-white);
+}

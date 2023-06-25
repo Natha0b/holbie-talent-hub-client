@@ -468,15 +468,13 @@ export default function TalentSearch() {
             <div className={styles.talentSearch}>
                 <SearchBar onSubmit={handleSearchSubmit} />
                 <div className={styles.contentWrapper}>
-                    <FilterPanel filters={filters} onChange={handleFilterChange} />
+                    {/* <FilterPanel filters={filters} onChange={handleFilterChange} /> */}
                     <div className={styles.resultsContainer}>
                         {
                             fakeData.map((talent, index) => (
                                 <div key={index}>
                                     <TalentPreview talent={talent} />
-                                    <Link href="watch/profile/index" className={styles.primaryButton}>
-                                        Ver perfil
-                                    </Link>
+                                    
                                 </div>
                             ))
                         }

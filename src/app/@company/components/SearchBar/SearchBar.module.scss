@@ -26,9 +26,9 @@
 @include glassmorphismforclass(".searchBar input");
 
 
-.searchBar input:focus,
-.searchBar button:focus,
-.searchBar input:focus ~ button {
+:root .searchBar input:focus,
+:root .searchBar button:focus,
+:root .searchBar input:focus ~ button {
     box-shadow: 0 0 0 1px var(--color-secondary);
     outline: none;
     border: none;
@@ -57,7 +57,7 @@
     border-bottom-left-radius: 0px !important;
 }
 
-.searchBar button:hover {
+:root .searchBar button:hover {
     background-color: var(--color-secondary);
     color: var(--color-white);
     filter: saturate(1) ;

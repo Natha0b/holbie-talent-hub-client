@@ -77,23 +77,19 @@
  * }
  */
 @mixin liquid0x01($animation-name: generateAnimationName(1, "liquid"),
-  $initial: (
-    topLeft: 60% 60%,
+  $initial: (topLeft: 60% 60%,
     topRight: 40% 30%,
     bottomRight: 30% 70%,
     bottomLeft: 70% 40%),
-  $final: (
-    topLeft: 30% 50%,
+  $final: (topLeft: 30% 50%,
     topRight: 60% 60%,
     bottomRight: 70% 30%,
     bottomLeft: 40% 60%)) {
-  $defaultInitial: (
-    topLeft: 60% 60%,
+  $defaultInitial: (topLeft: 60% 60%,
     topRight: 40% 30%,
     bottomRight: 30% 70%,
     bottomLeft: 70% 40%);
-  $defaultFinal: (
-    topLeft: 30% 50%,
+  $defaultFinal: (topLeft: 30% 50%,
     topRight: 60% 60%,
     bottomRight: 70% 30%,
     bottomLeft: 40% 60%);
@@ -131,12 +127,12 @@
   background: rgba($color, $opacity);
   backdrop-filter: blur($blur);
   border-radius: 15px;
-  box-shadow:  10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30);
 
 }
 
 @mixin glassmorphismforclass($selector, $color: rgba(255, 255, 255, 0.1), $blur: 30px, $opacity: 0.8) {
-  
+
   #{$selector} {
     background: rgba($color, $opacity);
     backdrop-filter: blur($blur);
@@ -144,19 +140,15 @@
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30);
   }
 
+  :root[data-theme="dark"] #{$selector} {
+    background: rgba(darken($color, 85%), $opacity);
+    backdrop-filter: blur($blur);
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.80), .5px .5px 0px inset rgba(255, 255, 255, 0.50);
+  }
 
-  #{$selector} > *:not(.not-opasity) {
+  #{$selector}>*:not(.not-opasity) {
     opacity: $opacity;
   }
 
-  @media (prefers-color-scheme: dark) {
-    #{$selector} {
-      background: rgba(darken($color, 50%), $opacity);
-      backdrop-filter: blur($blur);
-      border-radius: 15px;
-      box-shadow: 10px 10px 20px rgba(118, 118, 118, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30);
-    }
-  }
-
 }
-

@@ -3,7 +3,7 @@ import styles from './TalentPreview.module.scss';
 import { BsFillSendFill } from 'react-icons/bs';
 import handleSendMessage from '$/app/@company/(pages)/@chat/chat/page';
 import { ContactIcons } from '../profile/ContactIcons/ContactIcons';
-import { User } from "$/app/@company/(pages)/find/your-profiles/page";
+import Link from 'next/link';
 
 
 /**
@@ -15,11 +15,16 @@ export const TalentPreview: React.FC<{ talent: Talent, onClick?: () => void }> =
     return (
         <div className={styles.talentPreview} onClick={onClick}>
             <header className={styles['not-opasity']}>
-
                 <figure className={styles['liquid-animation']} >
-                    <img src={talent.profilePicture} alt="Profile" className="talent-img" />
+                    <Link href={`/watch/profile/${talent.id}`} className={styles.primaryButton}>
+                        <img src={talent.profilePicture} alt="Profile" className="talent-img" />
+                    </Link>
                 </figure>
-                <h3>{talent.name}</h3>
+                <h3>
+                    <Link href={`/watch/profile/${talent.id}`} className={styles.primaryButton}>
+                        {talent.name}
+                    </Link>
+                </h3>
                 <button className={styles.contactsearch} onClick={handleSendMessage}>
                     <BsFillSendFill />
                 </button>
@@ -30,6 +35,9 @@ export const TalentPreview: React.FC<{ talent: Talent, onClick?: () => void }> =
                     <ContactIcons user={talent} />
                     <p>{talent.bio}</p>
                     <h2>{talent.title}</h2>
+                    <Link href={`/watch/profile/${talent.id}`} className={styles.primaryButton}>
+                        ver perfil completo
+                    </Link>
                 </div>
             </main>
         </div>
