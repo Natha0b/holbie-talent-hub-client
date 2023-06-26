@@ -11,6 +11,7 @@ import { HeaderHome } from './HeaderHome';
 
 const fakeData: Talent[] = [
     {
+        id: 40,
         profilePicture: 'https://avatars.githubusercontent.com/u/95534180?v=4',
         name: 'Felipe Villamizar',
         title: 'Backend',
@@ -21,6 +22,7 @@ const fakeData: Talent[] = [
         gmailLink: 'felipevillamizarc@gmail.com',
     },
     {
+        id: 41,
         profilePicture: 'https://avatars.githubusercontent.com/u/106930148?v=4',
         name: 'Andres Solarte',
         title: 'Backend',
@@ -31,6 +33,7 @@ const fakeData: Talent[] = [
         gmailLink: 'https://tu-slack-invite-link',
     },
     {
+        id: 42,
         profilePicture: 'https://avatars.githubusercontent.com/u/114111326?v=4',
         name: 'Juan Esteban Duque',
         title: 'Backend',
@@ -41,9 +44,10 @@ const fakeData: Talent[] = [
         gmailLink: 'juanesduquemorales@gmail.com',
     },
     {
+        id: 43,
         profilePicture: 'https://avatars.githubusercontent.com/u/112909840?v=4',
         name: 'Laura Ortiz',
-        title: 'Fronted',
+        title: 'Frontend',
         bio: 'I am software developer👩🏽💻, I am passionate about technology, the new challenges and experiences that I am acquiring in this wonderful path of programming.',
         githubLink: 'https://github.com/Natha0b',
         linkedinLink: 'https://www.linkedin.com/in/laura-nathaly-ortiz-barona-7518ba222/',
@@ -51,9 +55,10 @@ const fakeData: Talent[] = [
         gmailLink: 'laura.barona04@gmail.com',
     },
     {
+        id: 43,
         profilePicture: 'https://avatars.githubusercontent.com/u/111533983?v=4',
         name: 'Yurany Ulchur',
-        title: 'Fronted',
+        title: 'Frontend',
         bio: 'I am just starting in this world of programming and development👩🏽💻 I love to learn and I am really passionate about what I like.💖',
         githubLink: 'https://github.com/YuranyUlchur?tab=followers',
         linkedinLink: 'https://www.linkedin.com/in/tu-perfil',
@@ -61,9 +66,10 @@ const fakeData: Talent[] = [
         gmailLink: 'ulchuryurani80@gmail.com',
     },
     {
+        id: 44,
         profilePicture: 'https://avatars.githubusercontent.com/u/106554564?v=4',
         name: 'Luis Puerta',
-        title: 'Fronted',
+        title: 'Frontend',
         bio: ' in the world of programming and development, I love to learn and am truly passionate about what I love💙. I also want to pursue my career as a software engineer.👨🏻‍💻',
         githubLink: 'https://github.com/Remenyr',
         linkedinLink: ' http://www.linkedin.com/in/luis-alejandro-puerta-alvarez-567b82279',
@@ -108,16 +114,16 @@ export default function HomeLogin() {
                 <div>
                     <p className={styles.paragraphcontact}>
                         Holberton School Colombia
-                        It is an academy operated by
-                        Coderise SAS BIC
+                        It is an academy operated
                         <span>
                             <a href="https://www.coderise.org" className={styles.linkcoderise}>
                                 www.coderise.org
                             </a>
                         </span>
-                        <span>Write us Whatsapp +57 318 2263937</span>
                     </p>
+                    <span className={styles.contactnumber}> Write us Whatsapp +57 318 2263937</span>
                 </div>
+
 
                 {/*add contacts of always*/}
                 <div className={styles.contactholbe}>

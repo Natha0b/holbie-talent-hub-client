@@ -94,7 +94,7 @@
 
 .paragraphcontact {
     font-size: 20px;
-    width: 40%;
+    width: 45%;
     margin-left: 70px;
 }
 
@@ -112,8 +112,13 @@
 
 .linkcoderise {
     color: var(--color-primary);
+    float: left;
 }
 
+.contactnumber{
+    font-size: 20px;
+    margin-left: -155px;
+}
 .contactholbe {
     display: flex;
     gap: 1rem;
