@@ -36,12 +36,12 @@ export const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
         <div className={styles["user-info"]}>
             <div className={styles["icon-profile"]}>
                 <img className={styles["profile-picture"]} src={`../../../../imagenescoderise/${user.profilePicture}`} alt="Profile" />
-                <Link href={`/watch/profile/`} className={styles.showprofile}>
-                    Show profile
-                </Link>
             </div>
             <div className={styles["user-details"]}>
                 <h1 className={styles["name"]}>{user.name}</h1>
+                <Link href={`/watch/profile/`} className={styles.showprofile}>
+                    Show profile
+                </Link>
                 <p className={styles["title"]}>Software Engineer</p>
                 <h3>Industry experience:</h3>
                 <p className={styles["description"]}>

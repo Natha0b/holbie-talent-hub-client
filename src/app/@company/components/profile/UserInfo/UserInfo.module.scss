@@ -33,7 +33,10 @@
 }
 
 .showprofile {
-    padding: 40px;
+    overflow: hidden;
+    white-space: nowrap;  
+    float: right;
+    width: 100px;
     color: var(--color-secondary);
 
 }
