@@ -82,13 +82,14 @@ export default function HomeLogin() {
 
             <h3 className={styles.title}> About me</h3>
             <div className={styles.containertextabout}>
-                <h3>¡Destaca y consigue tu empleo soñado!</h3>
+                <h3>¡Stand out and get your dream job!
+                </h3>
                 <p>
-                    Bienvenido a Holbie Talent Club, tu plataforma de apoyo laboral para estudiantes de Holberton School
-                    Aquí te ofrecemos las herramientas y recursos necesarios para que puedas sobresalir en el competitivo mundo
-                    laboral y conseguir el empleo que siempre has deseado.
+                    Our page dedicated to boosting employment opportunities for talented Holberton School students.
+                    Our main goal is to establish a strong bridge between Holberton students and leading companies looking to hire highly skilled professionals in the technology field.
+                    On this platform, we strive to connect students with exciting and meaningful job opportunities that allow them to put into practice their skills and knowledge acquired at Holberton School.
                 </p>
-                <h3>Tu puerta hacia el éxito profesional</h3>
+                <h3>Your gateway to professional success</h3>
             </div>
 
             {/*add infomation of always*/}
@@ -107,14 +108,14 @@ export default function HomeLogin() {
                 <div>
                     <p className={styles.paragraphcontact}>
                         Holberton School Colombia
-                        Es una academia operada por
+                        It is an academy operated by
                         Coderise SAS BIC
                         <span>
                             <a href="https://www.coderise.org" className={styles.linkcoderise}>
                                 www.coderise.org
                             </a>
                         </span>
-                        <span>EscríbenosWhatsapp +57 318 2263937</span>
+                        <span>Write us Whatsapp +57 318 2263937</span>
                     </p>
                 </div>
 

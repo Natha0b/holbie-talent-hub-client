@@ -35,7 +35,9 @@ export const  HeaderHome = () => {
         <div className={stylesModules.banner}>
             <h3 className={stylesModules.titlehome}>HOLBIE TALENT HUB</h3>
             <p className={stylesModules.textaboutme}>
-                Te preparamos para la vida después de Holberton dando acompañamiento a tu búsqueda de empleo y te damos todas las herramientas necesarias para que tu proceso sea exitoso.Revisa aquí como funciona la mecánica y los requisitos que debes cumplir.
+                Welcome to our page dedicated to connecting talented Holberton School students with innovative companies
+                looking to hire new talent in the technology field. On this page, you will find information about companies that
+                are interested in hiring Holberton School students, as well as the benefits of joining them.
             </p>
             <div className={stylesModules.logincontainer}>
                 <Link href="/login-company"  className={stylesModules.buttonlogin}>
