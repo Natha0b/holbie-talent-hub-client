@@ -97,7 +97,7 @@ export const Chat: React.FC = () => {
             <div className="input-container">
                 <Input value={newMessage} onChange={setNewMessage} />
                 <button onClick={handleSendMessage}>
-                    <BsFillSendFill/>
+                    <BsFillSendFill />
                 </button>
             </div>
         </div>

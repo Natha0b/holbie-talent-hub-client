@@ -1,4 +1,3 @@
-
 export interface IDropdownItem {
     name: string;
     Icon?: React.ElementType;
@@ -15,4 +14,3 @@ export interface DropdownProps {
     onFilterChange?: (newFilter: string) => void;
     max?: number;
 }
-

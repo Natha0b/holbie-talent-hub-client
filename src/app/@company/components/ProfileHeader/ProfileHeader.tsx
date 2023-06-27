@@ -11,7 +11,7 @@ export const ProfileHeader: React.FC = () => {
     return (
         <div className={styles.profileHeader}>
             <div className={`${styles['profileHeader__container']} patterns-pattern1-background`}>
-                </div>
+            </div>
             <div className={styles["home__data"]}>
                 <figure style={{ '--talent1': "url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png)" } as React.CSSProperties} className={styles['home__img']} />
                 <h1 className={styles["home__title"]}>John Doe</h1>

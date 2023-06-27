@@ -1,4 +1,3 @@
-
 export interface Profile {
     profile_id: number;
     is_user: boolean;

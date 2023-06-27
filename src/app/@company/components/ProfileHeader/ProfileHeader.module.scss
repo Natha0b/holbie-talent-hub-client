@@ -1,6 +1,3 @@
-
-
-
 .profileHeader {
     display: flex;
     flex-direction: column;
@@ -44,8 +41,6 @@
     text-align: center;
 }
 
-
-
 .home__container {
     row-gap: 7rem;
 }
@@ -69,7 +64,6 @@
     height: 300px;
     animation: liquidAnimation0x01 8s ease-in-out infinite 1s;
 }
-
 
 .home__data {
     grid-column: 2/3;

@@ -1,4 +1,4 @@
-'use client';  // Declaration indicating that the client is being used
+'use client';
 import React from 'react';
 import styles from './InfoProjects.module.scss'
 import './InfoProjects.data'

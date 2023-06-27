@@ -1,3 +1,5 @@
+// component used for filters
+
 'use client';
 import React from 'react';
 import { useRouter } from 'next/navigation'

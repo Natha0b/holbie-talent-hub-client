@@ -5,24 +5,23 @@
     font-size: 16px;
     cursor: pointer;
     transition: all 150ms ease-in-out;
-  }
-  
-  .danger {
+}
+
+.danger {
     background-color: var(--color-danger);
     color: var(--color-white);
-  }
-  
-  .warning {
+}
+
+.warning {
     background-color: var(--color-warning);
     color: var(--color-white);
-  }
-  
-  .success {
+}
+
+.success {
     background-color: var(--color-success);
     color: var(--color-white);
-  }
-  
-  .actionButton:hover {
+}
+
+.actionButton:hover {
     opacity: 0.8;
-  }
-  
+}

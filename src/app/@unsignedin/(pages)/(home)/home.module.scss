@@ -19,7 +19,6 @@
 
 .navigation__buttons:hover {
     box-shadow: 0 0 0 var(--boder-size) inset var(--color-primary);
-    /* box-shadow: h v rd s; */
 }
 
 .navigation__buttons--active {
@@ -29,8 +28,6 @@
     color: var(--color-primary);
     font-weight: 400;
 }
-
-
 
 .banner {
     background-image: url('./banner.jpeg');
@@ -44,7 +41,6 @@
     position: relative;
     overflow: hidden;
 }
-
 
 .banner:before {
     content: '';
@@ -80,7 +76,6 @@
 
 }
 
-
 .textaboutme {
     font-size: 25px;
     color: var(--color-white);
@@ -115,10 +110,11 @@
     float: left;
 }
 
-.contactnumber{
+.contactnumber {
     font-size: 20px;
     margin-left: -155px;
 }
+
 .contactholbe {
     display: flex;
     gap: 1rem;

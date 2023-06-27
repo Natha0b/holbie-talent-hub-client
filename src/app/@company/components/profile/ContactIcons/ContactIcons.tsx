@@ -1,13 +1,10 @@
 import React from "react";
 import styles from "./ContactIcons.module.scss"
-import { User } from "$/app/@company/(pages)/find/your-profiles/page";
 import { Talent } from "../../TalentPreview/TalentPreview";
 
 interface ContactIconsProps {
     user: Talent;
 }
-
-
 /**
  * The ContactIcons component displays contact icons for a user.
  * It receives a user object as a prop and renders icons for GitHub, LinkedIn, Slack, and Gmail.

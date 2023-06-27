@@ -1,10 +1,9 @@
+/* page showing more information about the user's project */
+
 import React from 'react';
 import styles from './ProjectsDetails.module.scss'
 import { TalentPreview, Talent } from '$company/components/TalentPreview/TalentPreview';
-// import { Carousel, handlePrevSlide, handleNextSlide, currentSlide }from '$company/components/profile/Carousel';
-
 import { FaGithub, FaGlobe, FaCalendarAlt, FaRegClock, FaClock } from "react-icons/fa";
-import { IoIosListBox, IoMdDownload, IoIosCloudyNight } from "react-icons/io";
 import { Levels } from '$/app/@company/components/UserProfile/Levels/Levels';
 
 interface Profile {
@@ -21,8 +20,6 @@ interface Profile {
     salary_max?: number;
 }
 
-
-
 interface Contact {
     contact_id: number;
     contact_type: string;
@@ -30,7 +27,6 @@ interface Contact {
     created_at: string;
     updated_at: string;
 }
-
 export interface Multimedia {
     media_id: number;
     media_type: string;
@@ -38,7 +34,6 @@ export interface Multimedia {
     created_at: string;
     updated_at: string;
 }
-
 export interface Project {
     project_id: number;
     title: string;
@@ -50,7 +45,6 @@ export interface Project {
     created_at: string;
     updated_at: string;
 }
-
 export interface Skill {
     skill_id: number;
     name: string;
@@ -59,8 +53,7 @@ export interface Skill {
     updated_at: string;
 }
 
-
-// Ejemplo de información falsa
+// Example of false information
 const profileData: Profile = {
     profile_id: 1,
     is_user: true,
@@ -86,9 +79,8 @@ const projectsData: Project = {
     created_at: "2023-01-01",
     updated_at: "2023-06-22",
 };
+
 // Add more project objects as needed
-
-
 const skillsData: Skill[] = [
     {
         skill_id: 1,
@@ -177,11 +169,6 @@ const multimedia: Multimedia[] = [
         updated_at: '2023-01-01'
     }
 ];
-
-
-
-
-
 
 export default function ProjectView() {
     const project = projectsData;

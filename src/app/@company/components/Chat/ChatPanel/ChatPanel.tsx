@@ -2,7 +2,6 @@
 import React, { useRef, useState } from 'react';
 import styles from './ChatPanel.module.scss';
 import { AiFillMessage } from 'react-icons/ai';
-
 import { useCardState } from '$components/hooks/useCardState';
 import { ChatUserList, IUser } from '../listchat/ChatUserList';
 import { Chat } from '../chat/Chat';
@@ -53,8 +52,8 @@ export const ChatPanel: React.FC = () => {
             <i className={styles.filterIcon}>
                 <AiFillMessage />
             </i>
-            <ChatUserList {...{selected, setSelected, users }}/>
-            <div style={{opacity: !Number.isNaN(selected) ? 1 : 0 }} >
+            <ChatUserList {...{ selected, setSelected, users }} />
+            <div style={{ opacity: !Number.isNaN(selected) ? 1 : 0 }} >
                 {!Number.isNaN(selected) && <Chat />}
             </div>
         </div>

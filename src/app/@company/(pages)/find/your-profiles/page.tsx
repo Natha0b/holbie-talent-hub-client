@@ -50,13 +50,13 @@ export default function HomeProfiles() {
         },
     ];
 
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0); // Use the hook useState for the state
 
-    const handlePrevSlide = () => {  // Implementation to handle going to the previous slide
+    const handlePrevSlide = () => {  // Implementation to go to previous slide
         setCurrentSlide((prevSlide) => (prevSlide === 0 ? users.length - 1 : prevSlide - 1));
     };
 
-    const handleNextSlide = () => {  // Implementation to handle going to the next slide
+    const handleNextSlide = () => {  // Implementation to go to the next slide
         setCurrentSlide((prevSlide) => (prevSlide === users.length - 1 ? 0 : prevSlide + 1));
     };
 
@@ -71,4 +71,3 @@ export default function HomeProfiles() {
 }
 
 export { HomeProfiles };
-

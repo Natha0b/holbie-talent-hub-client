@@ -16,4 +16,3 @@ export interface MultiselectorProps {
     onSelectedItems?: (item: IMultiselectorItem[]) => void;
     max?: number;
 }
-

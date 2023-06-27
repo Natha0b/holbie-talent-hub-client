@@ -28,8 +28,8 @@
  * 
  * 
  */
-export const getSegment = (children: React.ReactNode) => { 
-    return children 
-      ? (children['props' as keyof typeof children]?.['childProp'] as { current: object[], segment: string })?.segment ?? '' 
-      : '';
-  }
+export const getSegment = (children: React.ReactNode) => {
+    return children
+        ? (children['props' as keyof typeof children]?.['childProp'] as { current: object[], segment: string })?.segment ?? ''
+        : '';
+}

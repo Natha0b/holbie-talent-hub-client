@@ -5,7 +5,6 @@ import Image from 'next/image';
 import LogoCode from '$company/(pages)/find/logocoderiseapp.png'
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { TalentPreview, Talent } from '$company/components/TalentPreview/TalentPreview';
-import Link from 'next/link';
 import { HeaderHome } from './HeaderHome';
 
 
@@ -78,14 +77,11 @@ const fakeData: Talent[] = [
     },
 ];
 
-
 export default function HomeLogin() {
 
     return (
         <>
-
             <HeaderHome />
-
             <h3 className={styles.title}> About me</h3>
             <div className={styles.containertextabout}>
                 <h3>¡Stand out and get your dream job!
@@ -124,7 +120,6 @@ export default function HomeLogin() {
                     <span className={styles.contactnumber}> Write us Whatsapp +57 318 2263937</span>
                 </div>
 
-
                 {/*add contacts of always*/}
                 <div className={styles.contactholbe}>
                     <FaFacebook className={styles.contacticons} />
@@ -134,8 +129,6 @@ export default function HomeLogin() {
                 </div>
             </div>
 
-
-
             <footer className={styles.footer}>
                 <center>
                     <Image src={LogoCode} alt="logocode" />
@@ -144,6 +137,6 @@ export default function HomeLogin() {
         </>
     );
 
-    
+
 }
 

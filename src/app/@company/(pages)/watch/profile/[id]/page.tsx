@@ -1,3 +1,5 @@
+/* page showing more information about the user's */
+
 import React from 'react';
 import styles from './UserProfile.module.scss'
 import { DetailsProfile } from '$/app/@company/components/UserProfile/profile/DetailsProfile';

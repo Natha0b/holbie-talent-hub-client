@@ -7,7 +7,7 @@ import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
 export const ThemeButton: React.FC = () => {
     const [value, setTheme] = useState('');
 
-    
+
     const getStateTheme = useCallback(() => {
         const theme = localStorage.getItem('theme');
         if (theme === 'dark') {

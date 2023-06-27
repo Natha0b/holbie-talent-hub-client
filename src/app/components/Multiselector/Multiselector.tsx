@@ -20,10 +20,10 @@ export const Multiselector: React.FC<MultiselectorProps> = ({
         selectItem,
         removeSelectedItem,
         filterValue, setFilterValue, selectedItems
-    } =  useMultiselector(items, initial, max);
+    } = useMultiselector(items, initial, max);
 
     const id = useRef(Math.random().toString(16).slice(2)).current;
-    
+
     useEffect(() => {
         if (typeof onSelectedItems === 'function') onSelectedItems(selectedItems);
     }, [selectedItems]);
@@ -35,17 +35,17 @@ export const Multiselector: React.FC<MultiselectorProps> = ({
                     <>
                         {
                             Icon ?
-                            <>
-                                <Icon
-                                    style={{ '--color': color } as React.CSSProperties}
-                                    key={key}
-                                    type="button"
-                                    onClick={() => {
-                                        if (typeof onItemSelectedRemove === 'function') onItemSelectedRemove({...item, Icon, color, name });
-                                        removeSelectedItem({ ...item, Icon, color, name });
-                                    }}
-                                />
-                            </>
+                                <>
+                                    <Icon
+                                        style={{ '--color': color } as React.CSSProperties}
+                                        key={key}
+                                        type="button"
+                                        onClick={() => {
+                                            if (typeof onItemSelectedRemove === 'function') onItemSelectedRemove({ ...item, Icon, color, name });
+                                            removeSelectedItem({ ...item, Icon, color, name });
+                                        }}
+                                    />
+                                </>
                                 :
                                 <span
                                     style={{ '--color': color } as React.CSSProperties}

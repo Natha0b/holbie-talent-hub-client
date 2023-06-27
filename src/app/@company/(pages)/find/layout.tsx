@@ -1,3 +1,4 @@
+/* page of header */
 import Link from "next/link";
 import styles from './layout.module.scss'
 import Logo from './logo.png'

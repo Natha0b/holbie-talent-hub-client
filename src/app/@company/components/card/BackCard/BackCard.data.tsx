@@ -1,3 +1,5 @@
+// date static
+
 import { IDropdownItem } from '$components/Dropdown/Dropdown.type';
 import { MdLocationCity } from 'react-icons/md';
 

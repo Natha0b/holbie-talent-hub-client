@@ -1,3 +1,4 @@
+// Static information on English language levels
 import { IDropdownItem } from '$components/Dropdown/Dropdown.type';
 import { FaLanguage } from 'react-icons/fa';
 

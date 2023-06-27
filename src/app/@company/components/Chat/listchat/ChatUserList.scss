@@ -32,7 +32,7 @@
     justify-content: space-between;
     background-color: var(--color-white);
     border-radius: var(--border-radius);
-    padding: 1rem; 
+    padding: 1rem;
     margin-bottom: .3rem;
     cursor: pointer;
 }
@@ -40,9 +40,9 @@
 .chat-user--active {
     background-color: var(--color-primary);
     color: var(--color-text-alt) !important;
-    margin: 0px!important ;
-    border-bottom-left-radius: 0px!important;
-    border-bottom-right-radius: 0px!important;
+    margin: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
 }
 
 .chat-user--inactive {
@@ -56,7 +56,7 @@
     opacity: 0 !important;
 }
 
-.chat-user--inactive > * {
+.chat-user--inactive>* {
     transition: all 100ms linear;
     opacity: 0;
 }

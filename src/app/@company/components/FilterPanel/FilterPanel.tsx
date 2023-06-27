@@ -15,10 +15,10 @@ import { FaGraduationCap, FaUserGraduate, FaChalkboardTeacher, FaUserMd } from '
 import { technologyIcons } from '../card/TechCard/TechCard.dada';
 
 export const educationLevelIcons: IDropdownItem[] = [
-  { name: 'Diploma', Icon: FaGraduationCap, value: 'diploma' },
-  { name: "Bachelor's Degree", Icon: FaUserGraduate, value: 'bachelor' },
-  { name: "Master's Degree", Icon: FaChalkboardTeacher, value: 'master' },
-  { name: 'Doctorate', Icon: FaUserMd, value: 'doctorate' },
+    { name: 'Diploma', Icon: FaGraduationCap, value: 'diploma' },
+    { name: "Bachelor's Degree", Icon: FaUserGraduate, value: 'bachelor' },
+    { name: "Master's Degree", Icon: FaChalkboardTeacher, value: 'master' },
+    { name: 'Doctorate', Icon: FaUserMd, value: 'doctorate' },
 ];
 
 
@@ -41,46 +41,13 @@ export const FilterPanel: React.FC<{ filters: Record<string, string>; onChange: 
                 <BsFilterRight />
             </i>
             <section className={styles.filterSectionScroll}>
-                {/* 
-                <div className={styles.filterSection}>
-                    <h3>Experience</h3>
-                    <label htmlFor="experienceYears">Years of Experience:</label>
-                    <select
-                        value={filters?.experience ?? ''}
-                        onChange={(e) => handleFilterChange('experience', e.target.value)}
-                    >
-                        <option value="">Any</option>
-                        <option value="1">1 year</option>
-                        <option value="2">2 years</option>
-                        <option value="3">3 years</option>
-                    </select>
-                    <label htmlFor="previousIndustries">Previous Industries:</label>
-                    <input
-                        type="text"
-                        id="previousIndustries"
-                        value={filters.previousIndustries || ''}
-                        onChange={(e) => handleFilterChange('previousIndustries', e.target.value)}
-                    />
-                    <label htmlFor="responsibilityLevel">Responsibility Level:</label>
-                    <select
-                        id="responsibilityLevel"
-                        value={filters.responsibilityLevel || ''}
-                        onChange={(e) => handleFilterChange('responsibilityLevel', e.target.value)}
-                    >
-                        <option value="">Any</option>
-                        <option value="junior">Junior</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="senior">Senior</option>
-                    </select>
-                </div>
-                */}
                 {/* Education filter */}
                 <div className={styles.filterSection}>
                     <h3>Education</h3>
                     <Dropdown
-                        label="Education Level" 
+                        label="Education Level"
                         items={educationLevelIcons}
-                        onItemSelect={({value}: IDropdownItem) => handleFilterChange('educationLevel', String(value))}
+                        onItemSelect={({ value }: IDropdownItem) => handleFilterChange('educationLevel', String(value))}
                     />
                     <Input
                         label="Field of Study"
@@ -91,7 +58,7 @@ export const FilterPanel: React.FC<{ filters: Record<string, string>; onChange: 
 
                 {/* Skills filter */}
                 <div className={styles.filterSection}>
-                    
+
                     <h3>Skills</h3>
                     <Multiselector label="Required Skills" items={technologyIcons} onSelectedItems={() => {
 
@@ -118,8 +85,6 @@ export const FilterPanel: React.FC<{ filters: Record<string, string>; onChange: 
                     />
                 </div>
             </section>
-
-            {/* Add more filter sections as needed */}
         </div>
     );
 };

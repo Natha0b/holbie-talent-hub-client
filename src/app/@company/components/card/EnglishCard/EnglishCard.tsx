@@ -1,5 +1,5 @@
+// English level
 import React from 'react';
-import styles from './EnglishCard.module.scss'
 import { Dropdown } from '$components/Dropdown/Dropdown';
 import { englishLevelIcons } from './EnglishCard.data';
 

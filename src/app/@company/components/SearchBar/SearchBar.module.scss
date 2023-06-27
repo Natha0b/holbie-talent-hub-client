@@ -18,8 +18,8 @@
     border-radius: 0px;
     border: none;
     box-shadow: 2rem 0 15px -10px var(--color-secondary);
-    outline: none!important;
-    border: none!important;
+    outline: none !important;
+    border: none !important;
 
 }
 
@@ -28,7 +28,7 @@
 
 :root .searchBar input:focus,
 :root .searchBar button:focus,
-:root .searchBar input:focus ~ button {
+:root .searchBar input:focus~button {
     box-shadow: 0 0 0 1px var(--color-secondary);
     outline: none;
     border: none;
@@ -60,6 +60,6 @@
 :root .searchBar button:hover {
     background-color: var(--color-secondary);
     color: var(--color-white);
-    filter: saturate(1) ;
+    filter: saturate(1);
 
 }

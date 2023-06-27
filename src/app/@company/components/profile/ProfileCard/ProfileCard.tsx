@@ -3,7 +3,6 @@ import styles from "./ProfileCard.module.scss";
 import { UserInfo } from "../UserInfo/UserInfo";
 import { User } from "$/app/@company/(pages)/find/your-profiles/page";
 import { ContactIcons } from "../ContactIcons/ContactIcons";
-import Link from "next/link";
 
 interface ProfileCardProps {
     user: User;

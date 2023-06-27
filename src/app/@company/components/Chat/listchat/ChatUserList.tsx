@@ -1,21 +1,19 @@
 'use client';
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import './ChatUserList.scss';
-
 export interface IUser {
     id: number;
     name: string;
     avatar: string;
     lastSeen: string;
 }
-
 interface ChatUserListProps {
     users: IUser[];
     setSelected: React.Dispatch<React.SetStateAction<number>>;
     selected: number;
 }
 
-export const ChatUserList: React.FC<ChatUserListProps> = ({users, selected, setSelected}) => {
+export const ChatUserList: React.FC<ChatUserListProps> = ({ users, selected, setSelected }) => {
 
 
     return (

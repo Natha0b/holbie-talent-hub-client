@@ -7,7 +7,7 @@ import { jobKindIcons } from './JobCard.data';
  * It includes a Dropdown component to select the kind of job.
  */
 const JobCard = () => (
-  <Dropdown label="Kind Job" items={jobKindIcons} />
+    <Dropdown label="Kind Job" items={jobKindIcons} />
 );
 
 export { JobCard };
