@@ -15,7 +15,6 @@ export interface User {
     first_name: string;
     last_name: string;
     email: string;
-    password_hash: string;
     role: string;
     created_at: Date;
     updated_at: Date;
@@ -51,7 +50,7 @@ export default function Login() {
                 const key = "Authorization";
 
                 const newValue = JSON.stringify({ role, token: `${user_id}:${emailResponse}` });
-                
+
                 localStorage.setItem(key, newValue);
                 const event = new StorageEvent('storage', {
                     key,
@@ -60,7 +59,7 @@ export default function Login() {
 
                 window.dispatchEvent(event);
 
-                
+
                 router.push('/find/profile');
 
             } catch(error) {

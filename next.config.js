@@ -4,7 +4,7 @@ const path = require('path');
 
 const nextConfig = {
     server: {
-        port: 4040
+        port: 3000
     },
     env: {
         customKey: 'my-value',
