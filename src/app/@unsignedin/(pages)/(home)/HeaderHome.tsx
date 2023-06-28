@@ -39,12 +39,12 @@ export const HeaderHome = () => {
                 are interested in hiring Holberton School students, as well as the benefits of joining them.
             </p>
             <div className={stylesModules.logincontainer}>
-                <Link href="/login-company" className={stylesModules.buttonlogin}>
-                    Login for company
+                <Link href="/login" className={stylesModules.buttonlogin}>
+                    Login
                 </Link>
-                <Link href="/login-professionals" className={stylesModules.buttonlogin}>
+                {/* <Link href="/login-professionals" className={stylesModules.buttonlogin}>
                     Login for holbie
-                </Link>
+                </Link> */}
             </div>
             <Link href="/register" className={stylesModules.buttonregister}>
                 Register for company

@@ -1,16 +1,17 @@
-import crypto from "node:crypto";
+"use client";
 import "$share/styles/globals.scss";
 import "$share/styles/background.scss";
 import { Background } from "./components/Background/Background";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { ThemeButton } from "./@company/components/ThemeButton/ThemeButton";
 import { ChatPanel } from "./@company/components/Chat/ChatPanel/ChatPanel";
 // import { getSegment } from "@share/router/router.share";
 
 /*
+import crypto from "node:crypto";
 Web tonken
 Function to validate the auth with the headers and return the role of the user
-*/
+
 
 const validateAuthSinc = (headers: Headers) => {
     // without fetch and sinc
@@ -49,20 +50,42 @@ export async function getAuth() {
         role
     };
 }
+*/
 
-export default async function AuthLayout(
+export interface Authorization {
+    role: string;
+    token: string;
+}
+
+const key = "Authorization";
+const getAuth =  () => {
+    return JSON.parse(window.localStorage.getItem(key) ?? '{}') as Authorization;
+}
+
+export default function AuthLayout(
     { professionals, company, unsignedin: unsignedIn }: {
         professionals: React.ReactNode;
         company: React.ReactNode;
         unsignedin: React.ReactNode;
     }
 ) {
-    return new Promise<Omit<React.ReactNode, "then">>(async (resolve) => {
+    // return new Promise<Omit<React.ReactNode, "then">>(async (resolve) => {
 
+        const [role, setRole] = useState('');
 
-        const { role } = await getAuth();
+        useEffect(() => {
+            const state = getAuth();
+            setRole(state.role ?? "")
+            window.addEventListener('storage', (event: StorageEvent) => {
+                console.log('storage', event.key, event.newValue);
+                if (key === event.key)
+                    setRole(event.newValue ?? "");
+            });
+        }, [])
 
-        const content = (children: React.ReactNode) => (<>
+        
+
+        const content = (children: React.ReactNode, chat: boolean) => (<>
             <html lang="en">
                 <body>
                     <Background />
@@ -70,18 +93,18 @@ export default async function AuthLayout(
                         children
                     }
                     <ThemeButton />
-                    <ChatPanel />
+                    {chat && <ChatPanel />}
                 </body>
             </html>
         </>);
 
-        if (role === 'professionals')
-            return resolve(content(professionals) as Omit<React.ReactNode, "then">);
+        if (role.toUpperCase().includes('ACADEMY-STUDENTS'))
+            return /* resolve( */content(professionals, true) /* as Omit<React.ReactNode, "then"> )*/;
 
-        if (role === 'company')
-            return resolve(content(company) as Omit<React.ReactNode, "then">);
+        if (role.toUpperCase().includes('COMPANY'))
+            return /* resolve( */content(company, true) /* as Omit<React.ReactNode, "then"> )*/;
 
-        return resolve(content(unsignedIn) as Omit<React.ReactNode, "then">)
-    });
+        return /* resolve( */content(unsignedIn, false) /* as Omit<React.ReactNode, "then">) */
+    //});
 
 }

@@ -25,7 +25,8 @@
       "$share/*": ["./src/app/share/*"],
       "$components/*": ["./src/app/components/*"],
       "$company/*": ["./src/app/@company/*"],
-      "$professionals/*": ["./src/app/@professionals/*"]
+      "$professionals/*": ["./src/app/@professionals/*"],
+      "$unsignedin/*": ["./src/app/@unsignedin/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
