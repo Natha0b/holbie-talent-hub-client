@@ -20,7 +20,7 @@
 <div align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/800px-React.svg.png" height="100"/>
   <img src="https://www.svgrepo.com/download/374144/typescript.svg" height="100"  />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" height="100"/>
+  <img src="https://nextjs.org/static/blog/next-13/twitter-card.png" height="100"/>
   <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" height="100"/>
   <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png" height="100"/>
   </div>
