@@ -1,10 +1,10 @@
 import React from "react";
-import { User } from "$/app/@company/(pages)/find/your-profiles/page";
 import { Carousel } from "../Carousel/Carousel";
 import styles from "./ProfileSection.module.scss";
+import { ProfessionalProfile } from "$/app/@company/(pages)/find/search/page";
 
 interface ProfileSectionProps {
-    users: User[];
+    users: ProfessionalProfile[];
     handlePrevSlide: () => void;
     handleNextSlide: () => void;
     currentSlide: number;
@@ -24,14 +24,12 @@ export const ProfileSection: React.FC<ProfileSectionProps> = ({ users, handlePre
         <section className={styles.profile}>
             <h1 className={styles.profile__title}>Profiles</h1>
             <div className={styles.container}>
-                <div className={styles.card}>
                     <Carousel
                         users={users}
                         handlePrevSlide={handlePrevSlide}
                         handleNextSlide={handleNextSlide}
                         currentSlide={currentSlide}
                     />
-                </div>
             </div>
         </section>
     );

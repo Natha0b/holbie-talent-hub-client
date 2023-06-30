@@ -5,15 +5,16 @@ interface InputProps {
     label?: string;
     value: string;
     onChange: (newValue: string) => void;
+    type?: string;
 }
 
-const Input: React.FC<InputProps> = ({ label, value, onChange }) => {
+const Input: React.FC<InputProps> = ({ label, value, onChange, type = "text"}) => {
     const id = useRef(Math.random().toString(16).slice(2)).current
 
     return (
         <div className={styles.input}>
             <input
-                type="text"
+                type={type}
                 id={id}
                 className={styles.input__field}
                 value={value}

@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./ContactIcons.module.scss"
-import { Talent } from "../../TalentPreview/TalentPreview";
+import { ProfessionalProfile } from '../../../(pages)/find/search/page';
 
 interface ContactIconsProps {
-    user: Talent;
+    user: ProfessionalProfile;
 }
 /**
  * The ContactIcons component displays contact icons for a user.

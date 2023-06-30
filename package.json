@@ -14,23 +14,26 @@
     "test": "yarn prettier:check && yarn lint"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1",
-    "react-dropzone": "^14.2.3",
-    "react-icons": "^4.9.0",
-    "react-responsive-carousel": "^3.2.23",
-    "sass": "^1.63.3",
     "@heroicons/react": "1.0.6",
     "clsx": "1.2.1",
     "date-fns": "2.29.3",
     "dinero.js": "2.0.0-alpha.8",
+    "js-cookie": "3.0.5",
     "ms": "3.0.0-canary.1",
     "next": "latest",
+    "normalize.css": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-icons": "^4.9.0",
+    "react-responsive-carousel": "^3.2.23",
+    "sass": "^1.63.3",
     "server-only": "0.0.1",
-    "use-count-up": "3.0.1"
+    "use-count-up": "3.0.1",
+    "use-easy": "1.0.0"
   },
   "devDependencies": {
+    "@types/js-cookie": "3.0.3",
     "@types/ms": "0.7.31",
     "@types/node": "18.11.17",
     "@types/react": "18.0.26",

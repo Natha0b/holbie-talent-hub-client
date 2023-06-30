@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import styles from '../login.module.scss';
 import { Input } from '$components/Input/Input';
 import { SuccessButton } from '$components/SuccessButton/SuccessButton';
+import Cookies from 'js-cookie'
+import { useEasy } from 'use-easy';
 
 export interface LoginRequestBody {
     "email": string;
@@ -26,6 +28,7 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
+    const {state} = useEasy<{user: User | null}>({initial: {user: null}});
 
     const handleLogin = useCallback(() => {
         (async () => {
@@ -45,22 +48,17 @@ export default function Login() {
                     }
                 ).then((response) => response.json() as Promise<User>);
 
-                const { role, user_id, email: emailResponse } = user;
+                const key = "session";
 
-                const key = "Authorization";
+                state.user = user;
+                const newValue = JSON.stringify(user);
 
-                const newValue = JSON.stringify({ role, token: `${user_id}:${emailResponse}` });
+                Cookies.set(key, newValue, { expires: 7 });
 
-                localStorage.setItem(key, newValue);
-                const event = new StorageEvent('storage', {
-                    key,
-                    newValue,
-                });
-
-                window.dispatchEvent(event);
-
-
-                router.push('/find/profile');
+                setTimeout(() => {
+                    router.push('/find/profile');
+                    router.refresh();
+                }, 1000);
 
             } catch(error) {
                 console.error(error);
@@ -79,6 +77,7 @@ export default function Login() {
             />
             <Input
                 label="Password"
+                type='password'
                 value={password}
                 onChange={setPassword}
             />

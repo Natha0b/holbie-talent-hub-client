@@ -116,6 +116,7 @@ export default function Register() {
                 onItemSelect={({value}) => setRole(value as string)}
             />
             <Input
+                type='password'
                 label="Password"
                 value={password}
                 onChange={setPassword}

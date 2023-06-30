@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./ProfileCard.module.scss";
 import { UserInfo } from "../UserInfo/UserInfo";
-import { User } from "$/app/@company/(pages)/find/your-profiles/page";
 import { ContactIcons } from "../ContactIcons/ContactIcons";
+import { ProfessionalProfile } from "$/app/@company/(pages)/find/search/page";
 
 interface ProfileCardProps {
-    user: User;
+    user: ProfessionalProfile;
     index: number;
     currentSlide: number;
 }
@@ -25,6 +25,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({ user, index, currentSl
         <div className={`${styles["carousel__slide"]} ${index === currentSlide ? styles["carousel__slide--active"] : ""}`}>
 
             <UserInfo user={user} />
+            {/* @ts-ignore */}
             <ContactIcons user={user} />
         </div>
         
