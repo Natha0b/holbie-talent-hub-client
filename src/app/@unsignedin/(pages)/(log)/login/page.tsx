@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../login.module.scss';
 import { Input } from '$components/Input/Input';
 import { SuccessButton } from '$components/SuccessButton/SuccessButton';
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 import { useEasy } from 'use-easy';
 
 export interface LoginRequestBody {
@@ -28,6 +28,7 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
+    //@ts-ignore
     const {state} = useEasy<{user: User | null}>({initial: {user: null}});
 
     const handleLogin = useCallback(() => {

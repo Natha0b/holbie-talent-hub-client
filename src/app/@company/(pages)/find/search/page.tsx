@@ -36,30 +36,6 @@ export interface FullProfessionalProfile extends ProfessionalProfile {
     full_name: string;
 }
 
-// agregar name y first_name
-/*
-export async function FullProfiles(profiles: ProfessionalProfile[]): Promise<FullProfessionalProfile[]> {
-    //as
-    const users = await fetch("https://recruitment-system-production.up.railway.app/api/v1/users")
-    .then(response => response.json() as Promise<User[]>);
-
-    let completeProfiles: FullProfessionalProfile[] = [];
- 
-    profiles.forEach((profile: ProfessionalProfile) => {
-        try {
-            const {professional_id: _, company_id: __, ...user} = users.find((user: User) => user.professional_id === profile.profile_id) as User;
-            completeProfiles.push({
-                ...user, ...profile, full_name: `${user.first_name} ${user.last_name}`
-            });
-        } catch (error) {
-            console.error(error);
-        }
-
-    });
-
-    return completeProfiles;
-}*/
-
 export async function fullProfiles(profiles: ProfessionalProfile[]): Promise<FullProfessionalProfile[]> {
     let completeProfiles: FullProfessionalProfile[] = [];
  
@@ -80,6 +56,47 @@ export async function fullProfiles(profiles: ProfessionalProfile[]): Promise<Ful
     return completeProfiles;
 }
 
+function validation<T, >({whenError}: {whenError: T}) {
+    return async (response: Response) => {
+
+        if (response.status === 200) {
+            return response.json() as Promise<T>;
+        }
+    
+        if (response.status === 201) {
+            const data = await response.json() as Promise<T>;
+            console.log(`${response.status}, register created successfully:`,  data);
+            return data;
+        }
+    
+        if (response.status === 400) {
+            const res = await response.json() as {message: string};
+            console.error(`${response.status}:`, res.message)
+            return whenError
+        }
+
+        if (response.status === 401) {
+            const res = await response.json() as {message: string};
+            console.error(`${response.status}:`, res.message)
+            return whenError
+        }
+
+        if (response.status === 404) {
+            const res = await response.json() as {message: string};
+            console.error(`${response.status}:`, res.message)
+            return whenError
+        }
+    
+        if (response.status === 500) {
+            const res = await response.json() as {message: string};
+            console.error(`${response.status}:`, res.message)
+            return whenError
+        }
+
+        return whenError
+    }
+}
+
 export default function TalentSearch() {
     const [profiles, setProfiles] = useState<FullProfessionalProfile[]>([]);
 
@@ -93,7 +110,7 @@ export default function TalentSearch() {
                 } as SearchRequestBody)
             }
         )
-        .then(response => response.json() as Promise<ProfessionalProfile[]>)
+        .then(validation<ProfessionalProfile[]>({whenError: []}))
         .then(data => fullProfiles(data))
         .then(data => setProfiles(data as FullProfessionalProfile[]))
         .catch(error => console.error(error));

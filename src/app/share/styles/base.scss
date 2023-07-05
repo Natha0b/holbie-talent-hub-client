@@ -8,10 +8,15 @@
     --border-size: 3px;
     --font-size-large: 32px;
     --border-radius: 15px;
+
 }
 
 body {
+    position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
+    margin: 30px;
+    text-align: center;
 }
 
 a {

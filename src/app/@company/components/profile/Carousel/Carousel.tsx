@@ -9,21 +9,21 @@ import Image from 'next/image';
 import { profiles } from "../../TalentPreview/TalentPreview";
 
 interface CarouselProps {
-    users: ProfessionalProfile[];
+    matching_profiles: ProfessionalProfile[];
     handlePrevSlide: () => void;
     handleNextSlide: () => void;
     currentSlide: number;
 }
 
 
-export const Carousel: React.FC<CarouselProps> = ({ users, handlePrevSlide, handleNextSlide, currentSlide }) => {
+export const Carousel: React.FC<CarouselProps> = ({ matching_profiles, handlePrevSlide, handleNextSlide, currentSlide }) => {
     return (
         <div className={styles.carousel}>
             <button className={styles.carousel__button} onClick={handlePrevSlide}>
                 <BiChevronLeft />
             </button>
             <div className={styles.carousel__slideContainer}>
-                {users.map((user, index) => (
+                {matching_profiles.map((profile, index) => (
                     <div key={index} className={`${styles.carousel__slide} ${index === currentSlide ? styles.carousel__slideActive : ""}`}>
                         <div className={styles.userInfo}>
                             <div className={styles.iconProfile}>
@@ -33,8 +33,8 @@ export const Carousel: React.FC<CarouselProps> = ({ users, handlePrevSlide, hand
                                 </button>
                             </div>
                             <div className={styles.userDetails}>
-                                <h1 className={styles.name}>{user.headline}</h1>
-                                <Link href={`/watch/profile/${user.profile_id}`} replace className={styles.showProfile}>
+                                <h1 className={styles.name}>{profile.headline}</h1>
+                                <Link href={`/watch/profile/${profile.profile_id}`} replace className={styles.showProfile}>
                                     Show profile
                                 </Link>
                                 <p className={styles.title}>Software Engineer</p>

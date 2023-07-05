@@ -5,7 +5,7 @@ import { AiFillStar } from 'react-icons/ai'
 import { technologyIcons } from '../../card/TechCard/TechCard.dada';
 import { IDropdownItem } from '$/app/components/Dropdown/Dropdown.type';
 
-const skilsIcon = Object.fromEntries(technologyIcons.map(({ name, ...properties }) => [name.toLowerCase(), properties as IDropdownItem]));
+const skillsIcon = Object.fromEntries(technologyIcons.map(({ name, ...properties }) => [name.toLowerCase(), properties as IDropdownItem]));
 
 export interface Skill {
     skill_id: number;
@@ -21,7 +21,7 @@ const Levels: React.FC<{ id: string, owner: "projects" | "professional_profiles"
     React.useEffect(() => {
         fetch(`https://recruitment-system-production.up.railway.app/api/v1/${owner}/${id}/skills/`)
             .then(res => res.json() as Promise<Skill[]>)
-            .then(data => data.map(skill => ({ ...skill, ...skilsIcon[skill.name.toLowerCase()] }) as Skill & IDropdownItem))
+            .then(data => data.map(skill => ({ ...skill, ...skillsIcon[skill.name.toLowerCase()] }) as Skill & IDropdownItem))
             .then(data => setSkills(data))
             .catch(error => console.error(error));
 

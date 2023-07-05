@@ -4,7 +4,7 @@ import styles from "./ProfileSection.module.scss";
 import { ProfessionalProfile } from "$/app/@company/(pages)/find/search/page";
 
 interface ProfileSectionProps {
-    users: ProfessionalProfile[];
+    matching_profiles: ProfessionalProfile[];
     handlePrevSlide: () => void;
     handleNextSlide: () => void;
     currentSlide: number;
@@ -19,13 +19,13 @@ interface ProfileSectionProps {
  * The currentSlide represents the currently active slide in the carousel.
  * The component renders a title and the Carousel component with the provided props.
  */
-export const ProfileSection: React.FC<ProfileSectionProps> = ({ users, handlePrevSlide, handleNextSlide, currentSlide }) => {
+export const ProfileSection: React.FC<ProfileSectionProps> = ({ matching_profiles, handlePrevSlide, handleNextSlide, currentSlide }) => {
     return (
         <section className={styles.profile}>
             <h1 className={styles.profile__title}>Profiles</h1>
             <div className={styles.container}>
                     <Carousel
-                        users={users}
+                        matching_profiles={matching_profiles}
                         handlePrevSlide={handlePrevSlide}
                         handleNextSlide={handleNextSlide}
                         currentSlide={currentSlide}

@@ -1,5 +1,5 @@
+"use client";
 /* page showing more information about the user's project */
-
 import React from 'react';
 import styles from './ProjectsDetails.module.scss'
 import { TalentPreview } from '$company/components/TalentPreview/TalentPreview';
@@ -7,7 +7,7 @@ import { FaGithub, FaGlobe, FaCalendarAlt, FaRegClock, FaClock } from "react-ico
 import { Levels } from '$/app/@company/components/UserProfile/Levels/Levels';
 import { ProfessionalProfile } from '../../profile/[id]/page';
 import { User } from '$/app/@unsignedin/(pages)/(log)/login/page';
-import { FullProfessionalProfile } from '../../../find/search/page';
+import { FullProfessionalProfile, fullProfiles } from '../../../find/search/page';
 
 export interface Project {
     project_id: number;
@@ -56,21 +56,7 @@ const ProjectView: React.FC<{ params: { id: string } }> = ({ params: { id } }) =
             const profiles = await fetch(`https://recruitment-system-production.up.railway.app/api/v1/projects/${id}/collaborators`)
                 .then(res => res.json() as Promise<ProfessionalProfile[]>);
 
-            const completeProfiles: FullProfessionalProfile[] = [];
-
-            await Promise.all(profiles.map(async (profile: ProfessionalProfile) => {
-                try {
-                    const { professional_id: _, company_id: __, ...user } = await fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${profile.profile_id}/user`)
-                        .then(response => response.json() as Promise<User>);
-
-                    completeProfiles.push({
-                        ...user, ...profile, full_name: `${user.first_name} ${user.last_name}`
-                    });
-                } catch (error) {
-                    console.error(error);
-                }
-
-            }));
+            const completeProfiles = await fullProfiles(profiles);
             setColaborators(completeProfiles)
             return completeProfiles;
         })().catch(error => console.error(error));

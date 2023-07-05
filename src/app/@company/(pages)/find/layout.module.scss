@@ -1,8 +1,12 @@
 /* block element modifier */
 /* BEM: block element modifier */
 
+.main {
+    padding-block-end: calc(var(--size-layout) * 2);
+}
+
 .header {
-    --size: 4rem;
+    --size: var(--size-layout);
 
     display: flex;
     height: var(--size);
@@ -30,8 +34,9 @@
 
 .footer {
     --size: 6rem;
-
     display: flex;
+    position: absolute;
+    bottom: 0px;
     margin-top: 2rem;
     height: var(--size);
     width: 100%;

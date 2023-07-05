@@ -3,9 +3,6 @@ import React, { useEffect } from 'react';
 import styles from './InfoProjects.module.scss'
 import './InfoProjects.data'
 import Link from 'next/link';
-import { FaNetworkWired,} from 'react-icons/fa';
-
-
 
 export interface Project {
     project_id: number;
@@ -23,7 +20,7 @@ const InfoProjects: React.FC<{ id: string }> = ({ id }) => {
     const [projects, setProjects] = React.useState<Project[]>([]);
 
     useEffect(() => {
-        fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/{profile_id}/projects/${id}`)
+        fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${id}/projects`)
             .then(res => res.json())
             .then(data => setProjects(data))
             .catch(error => console.error(error));
@@ -38,7 +35,6 @@ const InfoProjects: React.FC<{ id: string }> = ({ id }) => {
                     <article key={repo.project_id}>
                         <h2>{repo.title} </h2>
                         <p>{repo.description}</p>
-                        <p>{repo && repo.website} <FaNetworkWired /></p>
                     </article>
                 </Link>
             ))}

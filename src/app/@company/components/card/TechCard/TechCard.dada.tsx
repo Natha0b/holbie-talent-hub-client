@@ -706,6 +706,12 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Heroku"
     },
     {
+        value: "HTML5",
+        Icon: DiHtml5,
+        color: "#e34c26",
+        name: "HTML5"
+    },
+    {
         value: "HTML5 3D Effects",
         Icon: DiHtml53DEffects,
         color: "#e34c26",
@@ -728,12 +734,6 @@ export const technologyIcons: IDropdownItem[] = [
         Icon: DiHtml5Multimedia,
         color: "#e34c26",
         name: "HTML5 Multimedia"
-    },
-    {
-        value: "HTML5",
-        Icon: DiHtml5,
-        color: "#e34c26",
-        name: "HTML5"
     },
     {
         value: "Internet Explorer",

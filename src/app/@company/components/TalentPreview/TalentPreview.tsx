@@ -1,9 +1,9 @@
+"use client";
 import React, { useEffect } from 'react';
 import styles from './TalentPreview.module.scss';
 import { BsFillSendFill } from 'react-icons/bs';
 import { ContactIcons } from '../profile/ContactIcons/ContactIcons';
 import Link from 'next/link';
-import { userAgent } from 'next/server';
 import { FullProfessionalProfile } from '../../(pages)/find/search/page';
 
 import profile1 from '$share/image/01.jpg';

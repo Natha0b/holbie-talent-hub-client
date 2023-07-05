@@ -37,7 +37,7 @@ export default function FindLayout({ children }: FindLayoutPros) {
                 </div>
 
             </header>
-            <main>
+            <main className={styles["main"]}>
                 {children}
             </main>
             <footer className={styles["footer"]}>
