@@ -20,7 +20,6 @@ const DetailsProfile: React.FC<{ profile: ProfessionalProfile }> = ({ profile })
             </button>
             <h1>Eveling Rodriguez</h1>
             <h2>{profile && profile.headline}</h2>
-            <p>Enthusiastic software developer looking for exciting challenges.👩‍💻</p>
 
             <div className={styles.campo}>
                 <h2>Location</h2>

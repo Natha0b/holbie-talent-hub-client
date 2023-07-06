@@ -1,5 +1,14 @@
 @import "styles/animations.scss";
 
+#contentProject {
+    display: flex;
+    /*margin: var(--content-margin);*/
+    justify-content: center;
+}
+
+/*#contentprofile {
+    margin-left: var(--contentprofile-margin-left);
+}*/
 
 .project {
     display: flex;

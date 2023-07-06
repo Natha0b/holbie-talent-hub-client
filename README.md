@@ -2,7 +2,7 @@
 
 <img align="center" src="https://media.tenor.com/7LAB1WbMURAAAAAd/website.gif" /></a>
 
-## 	DESCRIPTION PROYECT✍
+## 	PROJECT DESCRIPTION✍
  The project through a graphical interface aims to contact HOLBERTON SCHOOL COLOMBIA graduates with companies that are looking for developers with a specific profile.
 
 | Page             | Description                                                  |
@@ -53,3 +53,5 @@ Follow these steps to set up the project in your local environment:
 ### Authors ✍🏻
 | [<img src="https://avatars.githubusercontent.com/u/112909840?v=4" width=85><br><sub>  Nathaly Ortiz </sub>](https://github.com/Natha0b) | [<img src="https://avatars.githubusercontent.com/u/111533983?v=4" width=85><br><sub>  Yurany Ulchur  </sub>](https://github.com/YuranyUlchur) | [<img src="https://avatars.githubusercontent.com/u/106554564?v=4" width=85><br><sub> Luis Puerta </sub>](https://github.com/Remenyr) | 
 | :---: | :---: | :---: |
+
+> Consumed [API](https://github.com/felipevcc/recruitment-system)

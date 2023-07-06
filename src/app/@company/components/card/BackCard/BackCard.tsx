@@ -9,6 +9,7 @@ import { Dropdown } from '$components/Dropdown/Dropdown';
 import styles from '$/app/components/PrimaryButton/PrimaryButton.module.scss';
 import { listOfCitiesIcons } from './BackCard.data';
 import { jobKindIcons } from '../JobCard/JobCard.data';
+import { jobTypeIcons } from '../JobType/JobType.data';
 import { Multiselector } from '$/app/components/Multiselector/Multiselector';
 import { technologyIcons } from '../TechCard/TechCard.dada';
 import { englishLevelIcons } from '../EnglishCard/EnglishCard.data';
@@ -58,6 +59,7 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean }> = ({ profile
     const { state } = useEasy({ initial });
 
     const [item_kind_job, setItem_kind_job] = React.useState(jobKindIcons.find(({ value }) => value === profile.kind_job));
+    const [item_job_type, setItem_job_type] = React.useState(jobTypeIcons.find(({ value }) => value === profile.job_type));
     const [item_location, setItem_location] = React.useState(listOfCitiesIcons.find(({ value }) => value === profile.location));
     const [item_skills, setItem_skills] = React.useState<(Skill & IDropdownItem)[]>([]);
     const [item_english_level, setItem_english_level] = React.useState(undefined);
@@ -94,8 +96,13 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean }> = ({ profile
                     setItem_kind_job(item_kind_job);
                     state.filters.kind_job = item_kind_job.value as string;
                 }} />
+                <Dropdown label="Job Type" initial={item_job_type} items={jobTypeIcons} onItemSelect={(item_job_type) => {
+                    setItem_job_type(item_job_type);
+                    state.filters.job_type = item_job_type.value as string;
+                }} />
                 <Multiselector label="Technology" initial={item_skills} items={technologyIcons} onSelectedItems={(items_skills) => {
-                    // setItem_skills(items_skills);
+                    //const updatedSkills = [...items_skills];
+                    //setItem_skills(updatedSkills);
                     //@ts-ignore
                     state.filters.skills = items_skills.map(({ id }) => id) as number[];
                 }} />
@@ -109,4 +116,4 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean }> = ({ profile
     );
 }
 
-export { BackCard };  
+export { BackCard };

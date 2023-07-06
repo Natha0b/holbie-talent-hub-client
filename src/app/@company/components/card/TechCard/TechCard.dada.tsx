@@ -193,6 +193,7 @@ import {
     DiYii,
     DiZend
 } from 'react-icons/di';
+import { SiTypescript } from 'react-icons/si';
 
 export const technologyIcons: IDropdownItem[] = [
     {
@@ -1256,6 +1257,12 @@ export const technologyIcons: IDropdownItem[] = [
         Icon: DiTrello,
         color: "#0079bf",
         name: "Trello"
+    },
+    {
+        value: "TypeScript",
+        Icon: SiTypescript,
+        color: "#2F74C0",
+        name: "TypeScript"
     },
     {
         value: "TYPO3",

@@ -1,11 +1,12 @@
 "use client";
 import React from 'react';
 import styles from './UserProfile.module.scss'
+
 import { DetailsProfile } from '$/app/@company/components/UserProfile/profile/DetailsProfile';
 import { InfoProfile } from '$/app/@company/components/UserProfile/InfoProfile/InfoProfile';
 import { InfoProjects } from '$/app/@company/components/UserProfile/InfoProjects/InfoProjects';
 import { Levels } from '$/app/@company/components/UserProfile/Levels/Levels';
-
+//import { fullProfiles, FullProfessionalProfile } from '../../../find/search/page';
 
 export interface ProfessionalProfile {
     profile_id: number;
@@ -37,18 +38,23 @@ const UserProfile: React.FC<{ params: { id: string } }> = ({ params: { id } }) =
     // const profile = profileData;
     return (
         <>
-            {
-                profile && (
-                    <div className={styles.profile}>
-                        <DetailsProfile profile={profile} />
-                        <div className={styles.profileRight} >
-                            <InfoProfile profile={profile} />
-                            <InfoProjects id={String(profile.profile_id)} />
-                            <Levels owner='professional_profiles' id={String(profile.profile_id)} />
+            <div id={styles.content}>
+                {
+                    profile && (
+                        <div className={styles.profile}>
+                            <DetailsProfile profile={profile} />
+                            <div id={styles.contentprofile}>
+                                <div className={styles.profileRight} >
+                                    <InfoProfile profile={profile} />
+                                    <InfoProjects id={String(profile.profile_id)} />
+                                    <Levels owner='professional_profiles' id={String(profile.profile_id)} />
+
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                )
-            }
+                    )
+                }
+            </div>
         </>
 
     );

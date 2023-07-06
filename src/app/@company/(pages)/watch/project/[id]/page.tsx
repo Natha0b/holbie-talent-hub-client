@@ -71,80 +71,84 @@ const ProjectView: React.FC<{ params: { id: string } }> = ({ params: { id } }) =
 
     return (
         <>
-            {
-                project && (
-                    <div className={styles.project}>
-                        <div className={styles.projectDetails}>
-                            <div key={project.project_id}>
-                                <h1>{project.title}</h1>
-                                <p>{project.description}</p>
-                                <nav>
-                                    <a className="btn" target="_blank" href={project.repository}>
-                                        <FaGithub size={20} />
-                                        Repository
-                                    </a>
-                                    <a className="btn" target="_blank" href={project.website}>
-                                        <FaGlobe size={20} />
-                                        Website
-                                    </a>
-                                </nav>
-                                <nav>
-                                    <span>Start Date:</span>
-                                    <div className={styles.badge}>
-                                        <FaCalendarAlt size={20} />
-                                        <p>{project.start_date}</p>
-                                    </div>
-                                    <span>End Date:</span>
-                                    <div className={styles.badge}>
-                                        <FaRegClock size={20} />
-                                        <p>{project.end_date}</p>
-                                    </div>
-                                    <span>Updated At:</span>
-                                    <div className={styles.badge}>
-                                        <FaClock size={20} />
-                                        <p>{project.updated_at}</p>
-                                    </div>
-                                </nav>
-                            </div>
-                        </div>
-
-
-                        <div className={styles.focusInfo} >
-                            <div className={styles.projectProfessional}>
-                                <h2>Team of the project</h2>
-
-                                {colaborators.length > 0 && colaborators.map((profile, key) => (
-                                    <TalentPreview key={key} talent={profile} />
-                                ))}
-                            </div>
-
-                            <div className={styles.projectMultimedia}>
-                                <h2>Multimedia</h2>
-                                <section>
-                                    {multimedia.map((media) => (
-                                        <div key={media.media_id}>
-                                            <span>{media.media_type}</span>
-                                            {
-                                                media.media_type === 'video'
-                                                    ? <video src={media.file_path} controls></video>
-                                                    : media.media_type === 'audio'
-                                                        ? <audio src={media.file_path} controls></audio>
-                                                        : media.media_type === 'image'
-                                                            ? <img src={media.file_path} alt="Project Media" />
-                                                            : false
-                                            }
+            <div id={styles.contentProject}>
+                {
+                    project && (
+                        <div className={styles.project}>
+                            <div className={styles.projectDetails}>
+                                <div key={project.project_id}>
+                                    <h1>{project.title}</h1>
+                                    <p>{project.description}</p>
+                                    <nav>
+                                        <a className="btn" target="_blank" href={project.repository}>
+                                            <FaGithub size={20} />
+                                            Repository
+                                        </a>
+                                        <a className="btn" target="_blank" href={project.website}>
+                                            <FaGlobe size={20} />
+                                            Website
+                                        </a>
+                                    </nav>
+                                    <nav>
+                                        <span>Start Date:</span>
+                                        <div className={styles.badge}>
+                                            <FaCalendarAlt size={20} />
+                                            <p>{project.start_date}</p>
                                         </div>
-                                    ))}
-                                </section>
+                                        <span>End Date:</span>
+                                        <div className={styles.badge}>
+                                            <FaRegClock size={20} />
+                                            <p>{project.end_date}</p>
+                                        </div>
+                                        <span>Updated At:</span>
+                                        <div className={styles.badge}>
+                                            <FaClock size={20} />
+                                            <p>{project.updated_at}</p>
+                                        </div>
+                                    </nav>
+                                </div>
                             </div>
-                            <Levels owner='projects' id={String(project.project_id)} />
-                            <div className={styles.contenedorReadme}>
+
+
+                            <div id={styles.contentprofile}>
+                                <div className={styles.focusInfo} >
+                                    <div className={styles.projectProfessional}>
+                                        <h2>Team of the project</h2>
+
+                                        {colaborators.length > 0 && colaborators.map((profile, key) => (
+                                            <TalentPreview key={key} talent={profile} />
+                                        ))}
+                                    </div>
+
+                                    <div className={styles.projectMultimedia}>
+                                        <h2>Multimedia</h2>
+                                        <section>
+                                            {multimedia.map((media) => (
+                                                <div key={media.media_id}>
+                                                    <span>{media.media_type}</span>
+                                                    {
+                                                        media.media_type === 'video'
+                                                            ? <video src={media.file_path} controls></video>
+                                                            : media.media_type === 'audio'
+                                                                ? <audio src={media.file_path} controls></audio>
+                                                                : media.media_type === 'image'
+                                                                    ? <img src={media.file_path} alt="Project Media" />
+                                                                    : false
+                                                    }
+                                                </div>
+                                            ))}
+                                        </section>
+                                    </div>
+                                    <Levels owner='projects' id={String(project.project_id)} />
+                                    <div className={styles.contenedorReadme}>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                )
+                    )
 
-            }
+                }
+            </div>
         </>
     );
 };

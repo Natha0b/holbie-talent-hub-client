@@ -1,7 +1,7 @@
 'Use client';
 import React from 'react';
 import styles from './NotificationAlert.module.scss'
-import { useEasy } from 'use-easy';
+//import { useEasy } from 'use-easy';
 
 export interface NotificationItem {
     type: 'info' | 'success' | 'warning' | 'danger';
@@ -12,7 +12,7 @@ export interface NotificationAlert {
     notifications: NotificationItem[];
 }
 
-const NotificationAlert: React.FC = () => {
+/*const NotificationAlert: React.FC = () => {
     //@ts-ignore
     const { state: { notifications } } = useEasy({ initial: {notifications: []} as NotificationAlert} );
     
@@ -29,4 +29,4 @@ const NotificationAlert: React.FC = () => {
         </div>
     );
 };
-export { NotificationAlert };
+export { NotificationAlert };*/
