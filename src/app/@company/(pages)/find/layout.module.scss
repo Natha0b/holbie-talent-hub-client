@@ -86,12 +86,35 @@
     font-weight: 400;
 }
 
+.containeravatar{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
 .avatarprofile {
     width: 35px;
     height: 35px;
-    padding: 1rem;
     border-radius: 50% !important;
-    margin-bottom: 10px;
     display: inline-block;
     transform: scale(1.5);
+}
+
+.containerlogout{
+    padding: 1rem;
+}
+
+.logout-button {
+    background-color: var(--color-gray);
+    color: var(--color-text);
+    border: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 5%;
+    transition: 0.5s;
+}
+
+.logout-button:hover {
+    background-color: var(--color-success);
 }

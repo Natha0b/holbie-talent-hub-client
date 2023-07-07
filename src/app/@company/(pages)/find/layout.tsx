@@ -1,17 +1,34 @@
 /* page of header */
+"use client"
 import Link from "next/link";
+import { useState } from 'react'
 import styles from './layout.module.scss'
 import Logo from './logo.png'
+import { useRouter } from 'next/navigation';
 import LogoCode from './logocoderiseapp.png'
 import { getSegment } from '$share/router/router.share';
+import Cookies from 'js-cookie';
+import { MdLogout } from "react-icons/md";
 import Image from 'next/image';
+
 
 interface FindLayoutPros {
     children: React.ReactNode
 }
 
 export default function FindLayout({ children }: FindLayoutPros) {
+
     const segment = getSegment(children);
+    const [isDropdownOpen, updateOpen] = useState(false);
+    const router = useRouter();
+
+    function logout() {
+        localStorage.removeItem('token');
+        Cookies.remove('session');
+        router.push('/');
+        router.refresh();
+    }
+
     return (
         <>
             <header className={styles["header"]}>
@@ -32,11 +49,19 @@ export default function FindLayout({ children }: FindLayoutPros) {
                         <Link href="/find/search" >search profiles in hub</Link>
                     </div>
                 </nav>
-                <div className={styles.containeravatar}>
-                    <img className={styles.avatarprofile} src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1274656/draw_svg20211224-8647-tse8ye.svg.png" alt="Avatar" />
-                </div>
 
+                <div className={styles.containeravatar}>
+                    <img className={`${styles.avatarprofile} ${isDropdownOpen ? styles.active : ''}`}
+                        src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1274656/draw_svg20211224-8647-tse8ye.svg.png"
+                        alt="Avatar"
+                        onClick={() => updateOpen(!isDropdownOpen)} />
+                    <div className={styles.containerlogout}>
+                        <button className={styles["logout-button"]} onClick={logout}><MdLogout /></button>
+                    </div>
+
+                </div>
             </header>
+
             <main className={styles["main"]}>
                 {children}
             </main>

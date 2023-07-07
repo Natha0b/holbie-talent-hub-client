@@ -8,7 +8,7 @@ import { ChatPanel } from "./@company/components/Chat/ChatPanel/ChatPanel";
 // import { getSegment } from "@share/router/router.share";
 import { cookies } from 'next/headers'
 import { User } from "./@unsignedin/(pages)/(log)/login/page";
-//import { NotificationAlert } from "./components/NotificationAlert/NotificationAlert";
+import { NotificationAlert } from "./components/NotificationAlert/NotificationAlert";
 
 /*
 Web tonken
@@ -69,7 +69,7 @@ export default async function AuthLayout(
           }
           <ThemeButton />
           {chat && <ChatPanel/>}
-          {/* <NotificationAlert /> */}
+          <NotificationAlert />
         </body>
       </html>
     </>);

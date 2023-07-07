@@ -45,6 +45,16 @@ export const profiles = [
     profile16,
     profile17,
 ];
+
+export interface ProfessionalContact {
+    contact_id: number;
+    contact_type: string;
+    contact_info: string;
+    created_at: Date;
+    updated_at: Date;
+    profile_id: number;
+}
+
 /**
  * The TalentPreview component represents a preview of a talent.
  * It displays the talent's profile picture, name, bio, title, and provides a button to send a message.
@@ -53,8 +63,9 @@ export const profiles = [
 
 export const TalentPreview: React.FC<{ talent: FullProfessionalProfile, onClick?: () => void }> = ({ talent, onClick }) => {
 
-    const [profilePicture, setProfilePicture] = React.useState<StaticImageData | null>(null);
+    const [profilePicture, setProfilePicture] = React.useState<StaticImageData | string | null>(null);
     const [showFullDescription, setShowFullDescription] = useState(false);
+    const [contacts, setContactInfo] = useState<ProfessionalContact[]>([]);
 
     const toggleDescription = () => {
         setShowFullDescription(!showFullDescription);
@@ -66,11 +77,51 @@ export const TalentPreview: React.FC<{ talent: FullProfessionalProfile, onClick?
         }
         return talent.about_me.slice(0, 50) + '...';
     };
+    
+    useEffect(() => {
+        if (!talent) return;
+        fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${talent.profile_id}/contacts`)
+            .then(response => response.json() as Promise<ProfessionalContact[]>)
+            .then(data => setContactInfo(data))
+            .catch(error => console.error(error));
+    }, [talent])
+
+    /*const githubContact = contacts.at(0);
+
+    useEffect(() => {
+        const githubUsername: string | undefined = githubContact?.contact_info;
+        let profilePicture: StaticImageData | string | null = profiles[Math.floor(Math.random() * profiles.length)];
+        if (!githubUsername) {
+            setProfilePicture(profilePicture);
+            return;
+        }
+        (async () => {
+            try {
+                const response = await fetch(`https://github.com/${githubUsername}`);
+                const html = await response.text();
+                const parser = new DOMParser();
+                const document = parser.parseFromString(html, 'text/html');
+                const imageTag = document.querySelector('body > div:nth-of-type(1) > div:nth-of-type(6) > main > div > div > div:nth-of-type(1) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > a > img');
+
+                if (imageTag) {
+                    profilePicture = imageTag.getAttribute('src');
+                    console.log(profilePicture);
+                    setProfilePicture(profilePicture);
+                }
+            } catch (error) {
+                console.error(error);
+                setProfilePicture(profilePicture);
+            }
+        })();
+    
+
+    }, [githubContact]);*/
 
     useEffect(() => {
         const profilePicture = profiles[Math.floor(Math.random() * profiles.length)];
         setProfilePicture(profilePicture);
     }, []);
+
 
 
     return (

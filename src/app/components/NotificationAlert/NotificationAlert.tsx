@@ -1,4 +1,4 @@
-"Use client";
+"use client";
 import React from 'react';
 import styles from './NotificationAlert.module.scss'
 import { useEasy } from 'use-easy';

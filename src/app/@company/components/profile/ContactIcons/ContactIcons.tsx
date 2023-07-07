@@ -6,15 +6,9 @@ import { set } from "date-fns";
 import { userAgent } from "next/server";
 import { FullProfessionalProfile } from '$company/(pages)/find/search/page';
 import { profile } from "console";
+import { ProfessionalContact } from "../../TalentPreview/TalentPreview";
 
-export interface ProfessionalContact {
-    contact_id: number;
-    contact_type: string;
-    contact_info: string;
-    created_at: Date;
-    updated_at: Date;
-    profile_id: number;
-}
+
 /**
  * The ContactIcons component displays contact icons for a user.
  * It receives a user object as a prop and renders icons for GitHub, LinkedIn, Slack, and Gmail.

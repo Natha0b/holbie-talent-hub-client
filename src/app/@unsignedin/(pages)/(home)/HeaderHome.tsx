@@ -42,9 +42,6 @@ export const HeaderHome = () => {
                 <Link href="/login" className={stylesModules.buttonlogin}>
                     Login
                 </Link>
-                {/* <Link href="/login-professionals" className={stylesModules.buttonlogin}>
-                    Login for holbie
-                </Link> */}
             </div>
             <Link href="/register" className={stylesModules.buttonregister}>
                 Register for company

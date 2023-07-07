@@ -6,7 +6,9 @@ import { ProfileSection } from "$/app/@company/components/profile/ProfileSection
 import { ProfessionalProfile } from '../search/page';
 import { useEasy } from 'use-easy';
 import { initial } from '$company/components/card/BackCard/BackCard';
-import { NotificationItem } from '$components/NotificationAlert/NotificationAlert';
+import { NotificationAlert, NotificationItem } from '$components/NotificationAlert/NotificationAlert';
+import { useRouter } from 'next/navigation';
+import Link from "next/link";
 
 const ProfilesResult: React.FC = () => {
 
@@ -14,8 +16,9 @@ const ProfilesResult: React.FC = () => {
   const { state } = useEasy({ initial: { ...initial, notifications: [] as NotificationItem[] } });
 
   const [matching_profiles, setMatchingProfiles] = useState<ProfessionalProfile[]>([]);
-
   const [loading, setLoanding] = useState<boolean>(false)
+
+  const router = useRouter();
 
   useEffect(() => {
     (async () => {
@@ -29,7 +32,7 @@ const ProfilesResult: React.FC = () => {
       })
         .then((response) => response.json() as Promise<ProfessionalProfile[]>)
         .then(data => {
-          setMatchingProfiles(data as ProfessionalProfile[]);
+          setMatchingProfiles(Array.isArray(data) ? data as ProfessionalProfile[] : []);
           setLoanding(true);
         })
         .catch(error => console.error(error));
@@ -37,15 +40,14 @@ const ProfilesResult: React.FC = () => {
   }, []);
 
   useEffect(() => {
-
     if (loading && matching_profiles.length === 0) {
       const newNotification: NotificationItem = {
         type: 'danger',
         message: 'No matching profiles 😢'
       };
-      
+      debugger;
       state.notifications = [
-        ...state.notifications, 
+        ...state.notifications,
         newNotification
       ];
 
@@ -56,51 +58,6 @@ const ProfilesResult: React.FC = () => {
     }
 
   }, [loading, matching_profiles]);
-
-  const users: ProfessionalProfile[] = [
-    {
-      "profile_id": 17,
-      "is_user": 1,
-      "headline": "Backend Developer",
-      "about_me": "Backend Developer with knowledge in several technologies with 5 years of work experience",
-      "location": "Madrid",
-      "job_name": "Backend",
-      "kind_job": "REMOTE",
-      "job_type": "FULL_TIME",
-      "salary_min": 8000,
-      "salary_max": 10000,
-      "created_at": "2023-06-22T12:34:56Z" as unknown as Date,
-      "updated_at": "2023-06-22T12:34:56Z" as unknown as Date
-    },
-    {
-      "profile_id": 23,
-      "is_user": 1,
-      "headline": "Frontend Developer",
-      "about_me": "Frontend Developer in a startup with 2 years of work experience",
-      "location": "Madrid",
-      "job_name": "Backend",
-      "kind_job": "REMOTE",
-      "job_type": "FULL_TIME",
-      "salary_min": 4000,
-      "salary_max": 10000,
-      "created_at": "2023-06-22T12:34:56Z" as unknown as Date,
-      "updated_at": "2023-06-22T12:34:56Z" as unknown as Date
-    },
-    {
-      "profile_id": 54,
-      "is_user": 1,
-      "headline": "devops",
-      "about_me": "devops in a startup with 2 years of work experience",
-      "location": "Madrid",
-      "job_name": "Backend",
-      "kind_job": "REMOTE",
-      "job_type": "FULL_TIME",
-      "salary_min": 2000,
-      "salary_max": 5000,
-      "created_at": "2023-06-22T12:34:56Z" as unknown as Date,
-      "updated_at": "2023-06-22T12:34:56Z" as unknown as Date
-    }
-  ];
 
   const [currentSlide, setCurrentSlide] = useState(0); // Use the hook useState for the state
 
@@ -113,13 +70,23 @@ const ProfilesResult: React.FC = () => {
   };
 
   return (
-    <ProfileSection
-      matching_profiles={matching_profiles}
-      handlePrevSlide={handlePrevSlide}
-      handleNextSlide={handleNextSlide}
-      currentSlide={currentSlide}
-    />
+    <div>
+      {!loading ? (
+        <div>Loading...</div>
+      ) :
+        (loading && matching_profiles.length === 0) ?
+          <section>
+            <Link href='/find/search'>Return</Link>
+          </section>
+          : <ProfileSection
+            matching_profiles={matching_profiles}
+            handlePrevSlide={handlePrevSlide}
+            handleNextSlide={handleNextSlide}
+            currentSlide={currentSlide}
+          />
+      }
+    </div>
   );
-}
+};
 
 export default ProfilesResult;
