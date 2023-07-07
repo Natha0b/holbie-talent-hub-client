@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect } from 'react';
+import { useState } from 'react';
 import styles from './TalentPreview.module.scss';
 import { BsFillSendFill } from 'react-icons/bs';
 import { ContactIcons } from '../profile/ContactIcons/ContactIcons';
@@ -52,13 +53,25 @@ export const profiles = [
 
 export const TalentPreview: React.FC<{ talent: FullProfessionalProfile, onClick?: () => void }> = ({ talent, onClick }) => {
 
-    const [profilePicture, setProfilePicture] = React.useState<StaticImageData| null>(null);
+    const [profilePicture, setProfilePicture] = React.useState<StaticImageData | null>(null);
+    const [showFullDescription, setShowFullDescription] = useState(false);
+
+    const toggleDescription = () => {
+        setShowFullDescription(!showFullDescription);
+    };
+
+    const getDescription = () => {
+        if (showFullDescription || talent.about_me.length <= 50) {
+            return talent.about_me;
+        }
+        return talent.about_me.slice(0, 50) + '...';
+    };
 
     useEffect(() => {
         const profilePicture = profiles[Math.floor(Math.random() * profiles.length)];
         setProfilePicture(profilePicture);
     }, []);
-        
+
 
     return (
         <div className={styles.talentPreview} onClick={onClick}>
@@ -78,8 +91,8 @@ export const TalentPreview: React.FC<{ talent: FullProfessionalProfile, onClick?
 
             <main>
                 <div className={styles.talentInfo}>
-                    <ContactIcons user={talent} />
-                    <p>{talent.about_me}</p>
+                    <ContactIcons profile={talent} />
+                    <p onClick={toggleDescription}>{getDescription()}</p>
                     <h2>{talent.headline}</h2>
                     <Link href={`/watch/profile/${talent.profile_id}`} className={styles.primaryButton}>
                         Show profile
@@ -90,20 +103,3 @@ export const TalentPreview: React.FC<{ talent: FullProfessionalProfile, onClick?
 
     );
 };
-
-
-/**
- * The Talent interface represents the data structure of a talent.
- * It includes properties such as profilePicture, name, title, bio, and additional properties.
- */
-export interface Talent {
-    profilePicture: string;
-    name: string;
-    title: string;
-    bio: string;
-    githubLink: string;
-    slackLink: string;
-    linkedinLink: string;
-    gmailLink: string;
-    id: Number;
-}

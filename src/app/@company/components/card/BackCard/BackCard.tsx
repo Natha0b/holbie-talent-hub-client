@@ -1,8 +1,7 @@
-// component used for filters
+"use client";
 
-'use client';
+// component used for filters
 import React, { useEffect } from 'react';
-import { useRouter } from 'next/navigation'
 import stylesModules from './BackCard.module.scss';
 import Link from 'next/link';
 import { Dropdown } from '$components/Dropdown/Dropdown';
@@ -16,10 +15,7 @@ import { englishLevelIcons } from '../EnglishCard/EnglishCard.data';
 import { ProfileFake } from '$/app/@company/(pages)/find/profile/page';
 import { Skill } from '../../UserProfile/Levels/Levels';
 import { IDropdownItem } from '$/app/components/Dropdown/Dropdown.type';
-import { set } from 'date-fns';
-import { useEasy} from 'use-easy';
-
-
+import { useEasy } from 'use-easy';
 
 /**
  * The BackCard component represents the back side of a card that displays additional information.
@@ -52,9 +48,7 @@ export const initial: Initial = {
     }
 };
 
-const BackCard: React.FC<{ profile: ProfileFake, active: boolean }> = ({ profile, active }) => {
-    const router = useRouter()
-
+const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boolean }> = ({ profile, active }) => {
 
     const { state } = useEasy({ initial });
 

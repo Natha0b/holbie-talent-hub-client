@@ -4,7 +4,7 @@ import styles from './TalentSearch.module.scss';
 
 // Import other components used within TalentSearch
 import { SearchBar } from '$company/components/SearchBar/SearchBar';
-import { TalentPreview, Talent } from '$company/components/TalentPreview/TalentPreview';
+import { TalentPreview } from '$company/components/TalentPreview/TalentPreview';
 import { User } from '$/app/@unsignedin/(pages)/(log)/login/page';
 
 
@@ -125,7 +125,6 @@ export default function TalentSearch() {
                         profiles.map((talent, index) => (
                             <div key={index}>
                                 <TalentPreview talent={talent} />
-
                             </div>
                         ))
                     }

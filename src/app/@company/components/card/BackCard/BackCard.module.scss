@@ -1,6 +1,9 @@
 @import "styles/animations.scss";
 
 .card__back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 10;
     height: 100%;
     width: 100%;
@@ -22,14 +25,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 1rem;
-    width: 100%;
-    height: 100%;
+    gap: 0.5rem;
+    width: 90%;
+    height: 90%;
     box-sizing: border-box;
-}
-
-.form__item {
-    margin-bottom: 20px;
 }
 
 .form__item label {
@@ -37,7 +36,6 @@
     margin-bottom: 5px;
     font-weight: bold;
     margin-top: 1rem;
-
 }
 
 .form__item input[type='text'] {

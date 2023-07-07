@@ -43,9 +43,9 @@ const ProfilesResult: React.FC = () => {
         type: 'danger',
         message: 'No matching profiles 😢'
       };
-
+      
       state.notifications = [
-        ...state.notifications,
+        ...state.notifications, 
         newNotification
       ];
 
@@ -102,14 +102,6 @@ const ProfilesResult: React.FC = () => {
     }
   ];
 
-  const MAX_CHARACTERS = 50;
-  const limitAboutMe = (user: ProfessionalProfile) => {
-    if (user.about_me.length > MAX_CHARACTERS) {
-      user.about_me = user.about_me.slice(0, MAX_CHARACTERS) + '...';
-    }
-    return user;
-  };
-
   const [currentSlide, setCurrentSlide] = useState(0); // Use the hook useState for the state
 
   const handlePrevSlide = () => {  // Implementation to go to previous slide
@@ -120,12 +112,9 @@ const ProfilesResult: React.FC = () => {
     setCurrentSlide((prevSlide) => (prevSlide === matching_profiles.length - 1 ? 0 : prevSlide + 1));
   };
 
-  const limitedUsers = users.map(user => limitAboutMe(user));
-
   return (
-
     <ProfileSection
-      matching_profiles={limitedUsers}
+      matching_profiles={matching_profiles}
       handlePrevSlide={handlePrevSlide}
       handleNextSlide={handleNextSlide}
       currentSlide={currentSlide}

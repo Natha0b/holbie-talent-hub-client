@@ -6,7 +6,7 @@ import { DetailsProfile } from '$/app/@company/components/UserProfile/profile/De
 import { InfoProfile } from '$/app/@company/components/UserProfile/InfoProfile/InfoProfile';
 import { InfoProjects } from '$/app/@company/components/UserProfile/InfoProjects/InfoProjects';
 import { Levels } from '$/app/@company/components/UserProfile/Levels/Levels';
-//import { fullProfiles, FullProfessionalProfile } from '../../../find/search/page';
+import { fullProfiles, FullProfessionalProfile } from '../../../find/search/page';
 
 export interface ProfessionalProfile {
     profile_id: number;
@@ -25,29 +25,37 @@ export interface ProfessionalProfile {
 
 
 const UserProfile: React.FC<{ params: { id: string } }> = ({ params: { id } }) => {
-    const [profile, setProfile] = React.useState<ProfessionalProfile | undefined>(undefined);
+    const [profile, setProfile] = React.useState<ProfessionalProfile | null>(null);
+    const [fullProfile, setFullProfile] = React.useState<FullProfessionalProfile | undefined>(undefined);
 
     React.useEffect(() => {
-        fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${id}`)
-            .then(res => res.json())
-            .then(data => setProfile(data))
-            .catch(error => console.error(error));
-
+        (async () => {
+            await fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${id}`)
+                .then(res => res.json())
+                .then(data => setProfile(data))
+        })().catch(error => console.error(error));
     }, [id])
 
-    // const profile = profileData;
+    React.useEffect(() => {
+        (async () => {
+            if (!profile) return;
+            const completeProfile: FullProfessionalProfile[] = await fullProfiles([profile]);
+            setFullProfile(completeProfile.at(0));
+        })().catch(error => console.error(error));
+    }, [profile])
+
     return (
         <>
             <div id={styles.content}>
                 {
-                    profile && (
+                    fullProfile && (
                         <div className={styles.profile}>
-                            <DetailsProfile profile={profile} />
+                            <DetailsProfile profile={fullProfile} />
                             <div id={styles.contentprofile}>
                                 <div className={styles.profileRight} >
-                                    <InfoProfile profile={profile} />
-                                    <InfoProjects id={String(profile.profile_id)} />
-                                    <Levels owner='professional_profiles' id={String(profile.profile_id)} />
+                                    <InfoProfile profile={fullProfile} />
+                                    <InfoProjects id={String(fullProfile.profile_id)} />
+                                    <Levels owner='professional_profiles' id={String(fullProfile.profile_id)} />
 
                                 </div>
                             </div>

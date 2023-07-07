@@ -26,11 +26,12 @@
     "react-dom": "18.2.0",
     "react-dropzone": "^14.2.3",
     "react-icons": "^4.9.0",
+    "react-markdown": "8.0.7",
     "react-responsive-carousel": "^3.2.23",
     "sass": "^1.63.3",
     "server-only": "0.0.1",
     "use-count-up": "3.0.1",
-    "use-easy": "1.1.2"
+    "use-easy": "1.1.5"
   },
   "devDependencies": {
     "@types/js-cookie": "3.0.3",

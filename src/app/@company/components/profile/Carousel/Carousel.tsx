@@ -60,12 +60,6 @@ export const Carousel: React.FC<CarouselProps> = ({ matching_profiles, handlePre
                             <a href={"user.githubLink"} target="_blank" rel="noopener noreferrer">
                                 <FaGithub className={styles.icon} />
                             </a>
-                            <a href={"user.linkedinLink"} target="_blank" rel="noopener noreferrer">
-                                <FaLinkedin className={styles.icon} />
-                            </a>
-                            <a href={"user.slackLink"} target="_blank" rel="noopener noreferrer">
-                                <FaSlack className={styles.icon} />
-                            </a>
                             <a href={`mailto:${"user.email"}`} target="_blank" rel="noopener noreferrer">
                                 <FaEnvelope className={styles.icon} />
                             </a>

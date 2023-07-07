@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dropdown } from '$components/Dropdown/Dropdown';
-import { jobTypeIcons } from './TypeJob.data';
+import { jobTypeIcons } from './JobType.data';
 
 /**
  * The JobTypeCard component represents a dropdown for selecting a job type.

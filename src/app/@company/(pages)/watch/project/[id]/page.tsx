@@ -56,7 +56,7 @@ const ProjectView: React.FC<{ params: { id: string } }> = ({ params: { id } }) =
             const profiles = await fetch(`https://recruitment-system-production.up.railway.app/api/v1/projects/${id}/collaborators`)
                 .then(res => res.json() as Promise<ProfessionalProfile[]>);
 
-            const completeProfiles = await fullProfiles(profiles);
+            const completeProfiles: FullProfessionalProfile[] = await fullProfiles(profiles);
             setColaborators(completeProfiles)
             return completeProfiles;
         })().catch(error => console.error(error));

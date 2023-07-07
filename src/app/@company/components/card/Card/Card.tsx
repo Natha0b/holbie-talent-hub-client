@@ -13,9 +13,10 @@ import { ProfileFake } from '$/app/@company/(pages)/find/profile/page';
  * It includes a front card and a back card.
  * When hovered or clicked, it toggles the active state of the card.
  */
-const Card: React.FC<{ profile: ProfileFake; icon: string; }> = ({
+const Card: React.FC<{ profile: ProfileFake; icon: string; dynamic: boolean }> = ({
     icon,
     profile,
+    dynamic = false,
 }) => {
 
     const { active, activeShow, cardRef } = useCardState('group-profiles');
@@ -28,8 +29,8 @@ const Card: React.FC<{ profile: ProfileFake; icon: string; }> = ({
             onClick={activeShow}
 
         >
-            <FrontCard icon={icon} jobName={profile.job_name} active={active} />
-            <BackCard profile={profile} active={active} />
+            <FrontCard icon={icon} jobName={profile.job_name} dynamic={dynamic} active={active} />
+            <BackCard profile={profile} dynamic={dynamic} active={active} />
         </article>
     );
 };
