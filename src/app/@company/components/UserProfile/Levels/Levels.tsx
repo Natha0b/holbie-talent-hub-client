@@ -12,7 +12,7 @@ export interface Skill {
     name: string;
     description: string;
     proficiency_level: number;
-  }
+}
   
 // Declaration of the functional component Levels
 const Levels: React.FC<{ id: string, owner: "projects" | "professional_profiles" }> = ({id, owner}) => {

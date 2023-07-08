@@ -8,24 +8,25 @@ export interface NotificationItem {
     message: string;
 }
 
-export interface NotificationAlert {
+export interface NotificationAlertInterface {
     notifications: NotificationItem[];
 }
 
+
 const NotificationAlert: React.FC = () => {
-    const { state: { notifications } } = useEasy({ initial: {notifications: []} as NotificationAlert} );
-    
-    
+    const { state: { notifications } } = useEasy({ initial: { notifications: [] } as NotificationAlertInterface });
+
     return (
         <div className={styles['alert-wrapper']}>
             {
                 (notifications as NotificationItem[]).map((notification, index) => (
                     <div key={index} className={`${styles.alert} ${styles[`alert-${notification.type}`]}`}>
                         {notification.message}
+                        holaaa
                     </div>
                 ))
             }
-        </div>
+        </div >
     );
 };
 export { NotificationAlert };

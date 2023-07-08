@@ -12,81 +12,84 @@ import Link from "next/link";
 
 const ProfilesResult: React.FC = () => {
 
-  /* @ts-ignore */
-  const { state } = useEasy({ initial: { ...initial, notifications: [] as NotificationItem[] } });
+    /* @ts-ignore */
+    const { state } = useEasy({ initial: { ...initial, notifications: [] as NotificationItem[] } });
 
-  const [matching_profiles, setMatchingProfiles] = useState<ProfessionalProfile[]>([]);
-  const [loading, setLoanding] = useState<boolean>(false)
+    const [matching_profiles, setMatchingProfiles] = useState<ProfessionalProfile[]>([]);
+    const [loading, setLoanding] = useState<boolean>(false)
 
-  const router = useRouter();
+    const router = useRouter();
 
-  useEffect(() => {
-    (async () => {
-      await fetch("https://recruitment-system-production.up.railway.app/api/v1/filters", {
-        method: "POST",
-        headers: {
-          accept: 'application/json',
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(state.filters),
-      })
-        .then((response) => response.json() as Promise<ProfessionalProfile[]>)
-        .then(data => {
-          setMatchingProfiles(Array.isArray(data) ? data as ProfessionalProfile[] : []);
-          setLoanding(true);
-        })
-        .catch(error => console.error(error));
-    })();
-  }, []);
+    useEffect(() => {
+        (async () => {
+            await fetch("https://recruitment-system-production.up.railway.app/api/v1/filters", {
+                method: "POST",
+                headers: {
+                    accept: 'application/json',
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(state.filters),
+            })
+                .then((response) => response.json() as Promise<ProfessionalProfile[]>)
+                .then(data => {
+                    setMatchingProfiles(Array.isArray(data) ? data as ProfessionalProfile[] : []);
+                    setLoanding(true);
+                })
+                .catch(error => console.error(error));
+        })();
+    }, []);
 
-  useEffect(() => {
-    if (loading && matching_profiles.length === 0) {
-      const newNotification: NotificationItem = {
-        type: 'danger',
-        message: 'No matching profiles 😢'
-      };
-      debugger;
-      state.notifications = [
-        ...state.notifications,
-        newNotification
-      ];
+    useEffect(() => {
+        if (loading && matching_profiles.length === 0) {
+            const newNotification: NotificationItem = {
+                type: 'danger',
+                message: 'No matching profiles 😢'
+            };
+            state.notifications = [
+                ...state.notifications,
+                newNotification
+            ];
 
-      setTimeout(() => {
-        state.notifications = state.notifications
-          .filter((notification) => notification !== newNotification);
-      }, 60000);
-    }
+            setTimeout(() => {
+                state.notifications = state.notifications
+                    .filter((notification) => notification !== newNotification);
+            }, 60000);
+        }
 
-  }, [loading, matching_profiles]);
+    }, [loading, matching_profiles]);
 
-  const [currentSlide, setCurrentSlide] = useState(0); // Use the hook useState for the state
+    const [currentSlide, setCurrentSlide] = useState(0); // Use the hook useState for the state
 
-  const handlePrevSlide = () => {  // Implementation to go to previous slide
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? matching_profiles.length - 1 : prevSlide - 1));
-  };
+    const handlePrevSlide = () => {  // Implementation to go to previous slide
+        setCurrentSlide((prevSlide) => (prevSlide === 0 ? matching_profiles.length - 1 : prevSlide - 1));
+    };
 
-  const handleNextSlide = () => {  // Implementation to go to the next slide
-    setCurrentSlide((prevSlide) => (prevSlide === matching_profiles.length - 1 ? 0 : prevSlide + 1));
-  };
+    const handleNextSlide = () => {  // Implementation to go to the next slide
+        setCurrentSlide((prevSlide) => (prevSlide === matching_profiles.length - 1 ? 0 : prevSlide + 1));
+    };
 
-  return (
-    <div>
-      {!loading ? (
-        <div>Loading...</div>
-      ) :
-        (loading && matching_profiles.length === 0) ?
-          <section>
-            <Link href='/find/search'>Return</Link>
-          </section>
-          : <ProfileSection
-            matching_profiles={matching_profiles}
-            handlePrevSlide={handlePrevSlide}
-            handleNextSlide={handleNextSlide}
-            currentSlide={currentSlide}
-          />
-      }
-    </div>
-  );
+    return (
+        <div>
+            {!loading ? (
+                <div>Loading...</div>
+            ) :
+                (loading && matching_profiles.length === 0) ?
+                    <section className='alertBox'>
+                        {/* <NotificationAlert /> */}
+                        <div>
+                            <p>{/* {state.notifications.at(0)!.message} */}No matching profiles 🚨</p>
+                            <div className='alertButton'><Link href='/find/search'>Return</Link></div>
+                        </div>
+                    </section>
+                    : <ProfileSection
+                        matching_profiles={matching_profiles}
+                        handlePrevSlide={handlePrevSlide}
+                        handleNextSlide={handleNextSlide}
+                        currentSlide={currentSlide}
+                    />
+            }
+        </div>
+    );
 };
 
 export default ProfilesResult;
