@@ -38,16 +38,20 @@ export default function Find() {
             .catch(error => console.error(error));
     }, []);
 
+    /* useEffect(() => {
+        console.log(profiles);
+    }, [profiles]); */
+
     return (
         <section className={profile.profile}>
             <h1 className={profile.profile__title}>Select the profile that you want</h1>
             <nav className={profile.profile__navigation}>
                 {
                     profiles.map((profile, key) => (
-                        <Card key={key} dynamic={false} profile={profile} icon={icons[key % icons.length]} />
+                        <Card key={key} filterKey={key} dynamic={false} profile={profile} icon={icons[key % icons.length]} />
                     ))
                 }
-                <Card key={3} dynamic={true} profile={emptyFakeProfile} icon={icons[3 % icons.length]} />
+                <Card key={3} filterKey={3} dynamic={true} profile={emptyFakeProfile} icon={icons[3 % icons.length]} />
             </nav>
         </section>
     )

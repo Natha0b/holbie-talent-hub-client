@@ -31,7 +31,7 @@
     "sass": "^1.63.3",
     "server-only": "0.0.1",
     "use-count-up": "3.0.1",
-    "use-easy": "1.1.5"
+    "use-easy": "1.2.0"
   },
   "devDependencies": {
     "@types/js-cookie": "3.0.3",

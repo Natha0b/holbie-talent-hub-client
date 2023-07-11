@@ -19,10 +19,9 @@ const NotificationAlert: React.FC = () => {
     return (
         <div className={styles['alert-wrapper']}>
             {
-                (notifications as NotificationItem[]).map((notification, index) => (
+                notifications && (notifications as NotificationItem[]).map((notification, index) => (
                     <div key={index} className={`${styles.alert} ${styles[`alert-${notification.type}`]}`}>
                         {notification.message}
-                        holaaa
                     </div>
                 ))
             }

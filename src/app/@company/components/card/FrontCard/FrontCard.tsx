@@ -8,7 +8,7 @@ import { Input } from '$/app/components/Input/Input';
  * It displays the job name and icon.
  * The active prop determines if the card is active or not.
  */
-const FrontCard: React.FC<{ jobName: string; icon: string; active: boolean; dynamic: boolean }> = ({ jobName, icon, active, dynamic }) => {
+const FrontCard: React.FC<{ jobName: string; icon: string; active: boolean; dynamic: boolean; filterKey: number }> = ({ jobName, icon, active, dynamic, filterKey }) => {
 
     const  [value, setValue] = useState('');
 

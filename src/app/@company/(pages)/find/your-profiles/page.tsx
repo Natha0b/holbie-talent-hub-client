@@ -21,29 +21,28 @@ const ProfilesResult: React.FC = () => {
     const router = useRouter();
 
     useEffect(() => {
-        (async () => {
-            await fetch("https://recruitment-system-production.up.railway.app/api/v1/filters", {
-                method: "POST",
-                headers: {
-                    accept: 'application/json',
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(state.filters),
+        fetch("https://recruitment-system-production.up.railway.app/api/v1/filters", {
+            method: "POST",
+            headers: {
+                accept: 'application/json',
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(state.filters[state.filterKey as number]),
+        })
+            .then((response) => response.json() as Promise<ProfessionalProfile[]>)
+            .then(data => {
+                setMatchingProfiles(Array.isArray(data) ? data as ProfessionalProfile[] : []);
+                setLoanding(true);
             })
-                .then((response) => response.json() as Promise<ProfessionalProfile[]>)
-                .then(data => {
-                    setMatchingProfiles(Array.isArray(data) ? data as ProfessionalProfile[] : []);
-                    setLoanding(true);
-                })
-                .catch(error => console.error(error));
-        })();
+            .catch(error => console.error(error));
     }, []);
 
     useEffect(() => {
+        //console.log(state.filterKey);
         if (loading && matching_profiles.length === 0) {
             const newNotification: NotificationItem = {
                 type: 'danger',
-                message: 'No matching profiles 😢'
+                message: 'No matching profiles 🚨'
             };
             state.notifications = [
                 ...state.notifications,
