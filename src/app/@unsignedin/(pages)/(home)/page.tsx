@@ -49,8 +49,9 @@ export default function HomeLogin() {
             {/*add infomation of always*/}
             <h3 className={styles.title}> Staff </h3>
             <div className={styles.resultsContainer}>
-                {fullTalents.map((talent) => (
+                {fullTalents.map((talent, key) => (
                     <TalentPreview
+                        key={key}
                         talent={talent}
                     />
                 ))}

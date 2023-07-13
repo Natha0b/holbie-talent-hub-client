@@ -56,10 +56,10 @@ export const filters = {
 };
 
 export const initial: Initial = {
-    filter0: filters,
-    filter1: filters,
-    filter2: filters,
-    filter3: filters,
+    filter0: JSON.parse(JSON.stringify(filters)) as Filters,
+    filter1: JSON.parse(JSON.stringify(filters)) as Filters,
+    filter2: JSON.parse(JSON.stringify(filters)) as Filters,
+    filter3: JSON.parse(JSON.stringify(filters)) as Filters,
     filterKey: 0
 };
 
@@ -91,7 +91,8 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
             .then(data => ({ ...data, ...technologyIcons.find(({ name }) => name === data.name) }) as Skill & IMultiselectorItem)
         )).then(data => setItem_skills(data));
         //state.filters = [...state.filters, profile] as unknown as Initial["filters"][];
-        state[`filter${filterKey}`] = profile as unknown as Initial[`filter${filterKey}`]; // AQUI QUEDAMOS
+        // @ts-ignore
+        state[`filter${filterKey}` as keyof typeof state] = profile as unknown as Filters; // AQUI QUEDAMOS
         debugger;
         //state.filters.push(profile);
         setItem_english_level(undefined);
@@ -113,16 +114,17 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
         <aside className={`${stylesModules.card__back} ${active && stylesModules['card__back--active']}`}>
             <form className={stylesModules.form} id="filtersForm" onSubmit={handleSubmit} >
                 <Dropdown label={'Location'} initial={item_location} items={listOfCitiesIcons} onItemSelect={(item_location) => {
-                    setItem_location(item_location);
-                    state[`filter${filterKey}`].location = item_location.value as string;
+                    setItem_location(item_location);// @ts-ignore
+                    state[`filter${filterKey}` as keyof typeof state].location = item_location.value as string;
                 }} />
                 <Dropdown label="Kind Job" initial={item_kind_job} items={jobKindIcons} onItemSelect={(item_kind_job) => {
-                    setItem_kind_job(item_kind_job);
-                    state[`filter${filterKey}`].kind_job = item_kind_job.value as string;
+                    setItem_kind_job(item_kind_job);// @ts-ignore
+                    state[`filter${filterKey}` as keyof typeof state].kind_job = item_kind_job.value as string;
                 }} />
                 <Dropdown label="Job Type" initial={item_job_type} items={jobTypeIcons} onItemSelect={(item_job_type) => {
                     setItem_job_type(item_job_type);
-                    state[`filter${filterKey}`].job_type = item_job_type.value as string;
+                    // @ts-ignore
+                    state[`filter${filterKey}` as keyof typeof state].job_type = item_job_type.value as string;
                 }} />
                 <Multiselector label="Technology" initial={item_skills} items={technologyIcons} onSelectedItems={(items_skills) => {
                     const updatedSkills = [...item_skills, ...items_skills] as (Skill & IMultiselectorItem)[];

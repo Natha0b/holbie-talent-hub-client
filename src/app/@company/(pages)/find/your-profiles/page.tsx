@@ -27,7 +27,7 @@ const ProfilesResult: React.FC = () => {
                 accept: 'application/json',
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(state.filters[state.filterKey as number]),
+            body: JSON.stringify(state[`filter${state.filterKey}` as keyof typeof state]),
         })
             .then((response) => response.json() as Promise<ProfessionalProfile[]>)
             .then(data => {
@@ -35,7 +35,7 @@ const ProfilesResult: React.FC = () => {
                 setLoanding(true);
             })
             .catch(error => console.error(error));
-    }, []);
+    }, [state]);
 
     useEffect(() => {
         //console.log(state.filterKey);
