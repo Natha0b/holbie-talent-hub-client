@@ -1,12 +1,15 @@
 'use client';
 import React from 'react';
 import './ChatUserList.scss';
+import Image from 'next/image';
+
 export interface IUser {
     id: number;
     name: string;
     avatar: string;
     lastSeen: string;
 }
+
 interface ChatUserListProps {
     users: IUser[];
     setSelected: React.Dispatch<React.SetStateAction<number>>;
@@ -32,7 +35,7 @@ export const ChatUserList: React.FC<ChatUserListProps> = ({ users, selected, set
                                     return setSelected(user.id);
                                 }}
                             >
-                                <img src={user.avatar} alt={user.name} className="avatar" />
+                                <Image src={user.avatar} alt={user.name} className="avatar" />
                                 <span className="username">{user.name}</span>
                                 <span className="time">{`${new Date(user.id).getUTCHours()}:${String(new Date(user.id).getUTCMinutes()).padStart(2, '0')}`}</span>
                             </li>

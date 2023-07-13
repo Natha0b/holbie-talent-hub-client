@@ -30,7 +30,7 @@ export const ThemeButton: React.FC = () => {
         if (theme) {
             document.documentElement.setAttribute('data-theme', theme);
         }
-    }, []);
+    }, [getStateTheme]);
 
     const toggleTheme = useCallback(() => {
         const theme = getStateTheme();
@@ -43,7 +43,7 @@ export const ThemeButton: React.FC = () => {
             localStorage.setItem('theme', 'dark');
             setTheme('dark');
         }
-    }, []);
+    }, [getStateTheme]);
 
 
 

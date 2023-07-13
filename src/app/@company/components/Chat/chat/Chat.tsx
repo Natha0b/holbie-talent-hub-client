@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './Chat.scss';
 import { BsFillSendFill } from 'react-icons/bs';
 import { Input } from '$/app/components/Input/Input';
+import Image from 'next/image';
 
 
 // Declaration of the Message interface
@@ -78,9 +79,9 @@ export const Chat: React.FC = () => {
                             className={`message ${message.senderId === 1 ? 'user' : 'bot'
                                 }`}
                         >
-                            <img
-                                src={getUserData(message.senderId)?.avatar}
-                                alt={getUserData(message.senderId)?.name}
+                            <Image
+                                src={getUserData(message.senderId)?.avatar ?? ''}
+                                alt={getUserData(message.senderId)?.name ?? ''}
                                 className="avatar"
                             />
                             <div className="message-content">

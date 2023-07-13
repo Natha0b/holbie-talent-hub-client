@@ -80,11 +80,11 @@ const ProjectView: React.FC<{ params: { id: string } }> = ({ params: { id } }) =
                                     <h1>{project.title}</h1>
                                     <p>{project.description}</p>
                                     <nav>
-                                        <a className="btn" target="_blank" href={project.repository}>
+                                        <a className="btn" target="_blank"  rel="noreferrer"  href={project.repository}>
                                             <FaGithub size={20} />
                                             Repository
                                         </a>
-                                        <a className="btn" target="_blank" href={project.website}>
+                                        <a className="btn" target="_blank"  rel="noreferrer"  href={project.website}>
                                             <FaGlobe size={20} />
                                             Website
                                         </a>

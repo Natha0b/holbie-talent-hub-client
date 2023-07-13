@@ -30,8 +30,8 @@ const InfoProjects: React.FC<{ id: string }> = ({ id }) => {
     return (
         <div className={styles.info_projects}>
             <h1>Popular Projects</h1>
-            {projects.map((repo) => (
-                <Link href={`/watch/project/${repo.project_id}`} >
+            {projects.map((repo, key) => (
+                <Link href={`/watch/project/${repo.project_id}`} key={key} >
                     <article key={repo.project_id}>
                         <h2>{repo.title} </h2>
                         <p>{repo.description}</p>

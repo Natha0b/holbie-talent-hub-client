@@ -80,7 +80,7 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
             .then(data => ({ ...data, ...technologyIcons.find(({ name }) => name === data.name) }) as Skill & IMultiselectorItem)
         )).then(data => setItem_skills(data));
         setItem_english_level(undefined);
-    }, []);
+    }, [profile]);
 
     useEffect(() => {
         setItem_kind_job(jobKindIcons.find(({ value }) => value === profile.kind_job));
@@ -96,7 +96,7 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
         debugger;
         //state.filters.push(profile);
         setItem_english_level(undefined);
-    }, [profile]);
+    }, [profile, filterKey]);
 
     const handleSubmit = (event: SyntheticEvent) => {
         if (event) {

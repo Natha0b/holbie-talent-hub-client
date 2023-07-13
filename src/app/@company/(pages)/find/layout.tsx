@@ -51,7 +51,7 @@ export default function FindLayout({ children }: FindLayoutPros) {
                 </nav>
 
                 <div className={styles.containeravatar}>
-                    <img className={`${styles.avatarprofile} ${isDropdownOpen ? styles.active : ''}`}
+                    <Image className={`${styles.avatarprofile} ${isDropdownOpen ? styles.active : ''}`}
                         src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1274656/draw_svg20211224-8647-tse8ye.svg.png"
                         alt="Avatar"
                         onClick={() => updateOpen(!isDropdownOpen)} />

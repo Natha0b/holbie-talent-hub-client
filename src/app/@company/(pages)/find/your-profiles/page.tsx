@@ -55,7 +55,7 @@ const ProfilesResult: React.FC = () => {
             }, 60000);
         }
 
-    }, [loading, matching_profiles]);
+    }, [loading, matching_profiles, state]);
 
     const [currentSlide, setCurrentSlide] = useState(0); // Use the hook useState for the state
 
