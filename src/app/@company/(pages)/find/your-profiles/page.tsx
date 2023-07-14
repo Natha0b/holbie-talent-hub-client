@@ -35,7 +35,7 @@ const ProfilesResult: React.FC = () => {
                 setLoanding(true);
             })
             .catch(error => console.error(error));
-    }, [state]);
+    }, []);
 
     useEffect(() => {
         //console.log(state.filterKey);
@@ -44,6 +44,7 @@ const ProfilesResult: React.FC = () => {
                 type: 'danger',
                 message: 'No matching profiles 🚨'
             };
+
             state.notifications = [
                 ...state.notifications,
                 newNotification
@@ -55,7 +56,15 @@ const ProfilesResult: React.FC = () => {
             }, 60000);
         }
 
-    }, [loading, matching_profiles, state]);
+    }, [loading]);
+
+    const handleReturn = () => {
+        delete state.notifications[0];
+        state.notifications = [];
+        setLoanding(false);
+        router.push("/find/search");
+        router.refresh();
+    };
 
     const [currentSlide, setCurrentSlide] = useState(0); // Use the hook useState for the state
 
@@ -72,12 +81,12 @@ const ProfilesResult: React.FC = () => {
             {!loading ? (
                 <div>Loading...</div>
             ) :
-                (loading && matching_profiles.length === 0) ?
+                (loading && matching_profiles.length === 0 && state.notifications.at(0)) ?
                     <section className='alertBox'>
                         {/* <NotificationAlert /> */}
                         <div>
-                            <p>{/* {state.notifications.at(0)!.message} */}No matching profiles 🚨</p>
-                            <div className='alertButton'><Link href='/find/search'>Return</Link></div>
+                            <p>{state.notifications.at(0)!.message}</p>
+                            <button className='alertButton' onClick={handleReturn}>Return</button>
                         </div>
                     </section>
                     : <ProfileSection

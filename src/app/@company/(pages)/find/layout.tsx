@@ -51,14 +51,13 @@ export default function FindLayout({ children }: FindLayoutPros) {
                 </nav>
 
                 <div className={styles.containeravatar}>
-                    <Image className={`${styles.avatarprofile} ${isDropdownOpen ? styles.active : ''}`}
+                    <img className={`${styles.avatarprofile} ${isDropdownOpen ? styles.active : ''}`}
                         src="https://uploads.turbologo.com/uploads/design/hq_preview_image/1274656/draw_svg20211224-8647-tse8ye.svg.png"
                         alt="Avatar"
                         onClick={() => updateOpen(!isDropdownOpen)} />
                     <div className={styles.containerlogout}>
                         <button className={styles["logout-button"]} onClick={logout}><MdLogout /></button>
                     </div>
-
                 </div>
             </header>
 

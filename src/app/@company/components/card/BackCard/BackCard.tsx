@@ -90,11 +90,9 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
             .then(response => response.json() as Promise<Skill>)
             .then(data => ({ ...data, ...technologyIcons.find(({ name }) => name === data.name) }) as Skill & IMultiselectorItem)
         )).then(data => setItem_skills(data));
-        //state.filters = [...state.filters, profile] as unknown as Initial["filters"][];
         // @ts-ignore
-        state[`filter${filterKey}` as keyof typeof state] = profile as unknown as Filters; // AQUI QUEDAMOS
-        debugger;
-        //state.filters.push(profile);
+        state[`filter${filterKey}` as keyof typeof state] = profile as unknown as Filters;
+        //debugger;
         setItem_english_level(undefined);
     }, [profile, filterKey]);
 

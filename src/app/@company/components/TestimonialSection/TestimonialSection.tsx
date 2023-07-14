@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './TestimonialSection.module.scss';
-import Image from 'next/image';
 
 /**
  * The TestimonialSection component represents a section that displays testimonials.
@@ -13,7 +12,7 @@ export const TestimonialSection: React.FC = () => {
             <h2 className={styles.sectionTitle}>Testimonials</h2>
             {/* Render testimonial cards */}
             <div className={styles.testimonialCard}>
-                <Image src="/path/to/testimonial-avatar.jpg" alt="Testimonial" className={styles.testimonialAvatar} />
+                <img src="/path/to/testimonial-avatar.jpg" alt="Testimonial" className={styles.testimonialAvatar} />
                 <p className={styles.testimonialText}>John is an exceptional web developer with a keen eye for detail. He consistently delivers high-quality work and is a pleasure to work with.</p>
                 <p className={styles.testimonialAuthor}>Jane Smith, CEO at ABC Company</p>
             </div>

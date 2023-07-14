@@ -19,6 +19,9 @@ const nextConfig = {
             path.join(__dirname, 'src/app/@professionals')
         ]
     },
+    images: {
+        domains: ['*'], // Allows image hostnames
+    },
     reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
 }
 
