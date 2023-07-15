@@ -132,14 +132,17 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
     useEffect(() => {
         const index = `filter${filterKey}` as keyof typeof state;
         if (typeof state[index] === 'object' && item_skills?.length)
-            (state[index] as Filters).skills = item_skills?.map(({ skill_id }) => skill_id) as number[];
+            (state[index] as Filters).skills = item_skills
+                ?.map(({ skill_id }) => skill_id)
+                ?.filter((value) => typeof value === 'number') as number[];
     }, [item_skills, state])
     
     // english_level
     useEffect(() => {
         const index = `filter${filterKey}` as keyof typeof state;
         if (typeof state[index] === 'object' && item_english_level?.skill_id)
-            (state[index] as Filters).skills.push(item_english_level?.skill_id as number);
+            (state[index] as Filters).skills = [...(state[index] as Filters).skills, (item_english_level?.skill_id as number)]
+                .filter((value) => typeof value === 'number') as number[];
     }, [item_english_level, state])
 
     return (
@@ -160,7 +163,9 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
                         setItem_skills(updatedSkills);   // @ts-ignore
                     }} 
                     onItemSelectedRemove={(item_skill)=> {
-                        const updatedSkills = item_skills.filter(({ skill_id }) => skill_id !== (item_skill as unknown as Skill).skill_id as number);
+                        const updatedSkills = item_skills
+                            .filter(({ skill_id }) => skill_id !== (item_skill as unknown as Skill).skill_id as number)
+                            .filter((number) => typeof number === 'number');
                         setItem_skills(updatedSkills);   // @ts-ignore
                     }}
                 />
