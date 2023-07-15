@@ -71,7 +71,7 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
     const [item_job_type, setItem_job_type] = React.useState(jobTypeIcons.find(({ value }) => value === profile.job_type));
     const [item_location, setItem_location] = React.useState(listOfCitiesIcons.find(({ value }) => value === profile.location));
     const [item_skills, setItem_skills] = React.useState<(Skill & IMultiselectorItem)[]>([]); // IDropdownItem
-    const [item_english_level, setItem_english_level] = React.useState(undefined);
+    const [item_english_level, setItem_english_level] = React.useState<(Skill & IDropdownItem) | undefined>(undefined);
     const router = useRouter();
 
     useEffect(() => {
@@ -107,30 +107,60 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
         }, 500);
     };
 
+    // location
+    useEffect(() => {
+        const index = `filter${filterKey}` as keyof typeof state;
+        if (typeof state[index] === 'object' && item_location?.value)
+        (state[index] as Filters).location = item_location.value as string;
+    }, [item_location, state])
+    
+    // item_kind_job
+    useEffect(() => {
+        const index = `filter${filterKey}` as keyof typeof state;
+        if (typeof state[index] === 'object' && item_kind_job?.value)
+        (state[index] as Filters).kind_job = item_kind_job.value as string;
+    }, [item_kind_job, state])
+    
+    // job_type
+    useEffect(() => {
+        const index = `filter${filterKey}` as keyof typeof state;
+        if (typeof state[index] === 'object' && item_job_type?.value)
+            (state[index] as Filters).job_type = item_job_type?.value as string;
+    }, [item_job_type, state])
+
+    // updatedSkills
+    useEffect(() => {
+        const index = `filter${filterKey}` as keyof typeof state;
+        if (typeof state[index] === 'object' && item_skills?.length)
+            (state[index] as Filters).skills = item_skills?.map(({ skill_id }) => skill_id) as number[];
+    }, [item_skills, state])
+    
+    // english_level
+    useEffect(() => {
+        const index = `filter${filterKey}` as keyof typeof state;
+        if (typeof state[index] === 'object' && item_english_level?.skill_id)
+            (state[index] as Filters).skills.push(item_english_level?.skill_id as number);
+    }, [item_english_level, state])
 
     return (
         <aside className={`${stylesModules.card__back} ${active && stylesModules['card__back--active']}`}>
             <form className={stylesModules.form} id="filtersForm" onSubmit={handleSubmit} >
-                <Dropdown label={'Location'} initial={item_location} items={listOfCitiesIcons} onItemSelect={(item_location) => {
-                    setItem_location(item_location);// @ts-ignore
-                    state[`filter${filterKey}` as keyof typeof state].location = item_location.value as string;
-                }} />
-                <Dropdown label="Kind Job" initial={item_kind_job} items={jobKindIcons} onItemSelect={(item_kind_job) => {
-                    setItem_kind_job(item_kind_job);// @ts-ignore
-                    state[`filter${filterKey}` as keyof typeof state].kind_job = item_kind_job.value as string;
-                }} />
-                <Dropdown label="Job Type" initial={item_job_type} items={jobTypeIcons} onItemSelect={(item_job_type) => {
-                    setItem_job_type(item_job_type);
-                    // @ts-ignore
-                    state[`filter${filterKey}` as keyof typeof state].job_type = item_job_type.value as string;
-                }} />
+                <Dropdown label={'Location'} initial={item_location} items={listOfCitiesIcons} onItemSelect={(item_location) => 
+                    setItem_location(item_location) // @ts-ignore
+                } />
+                <Dropdown label="Kind Job" initial={item_kind_job} items={jobKindIcons} onItemSelect={(item_kind_job) => 
+                    setItem_kind_job(item_kind_job) // @ts-ignore
+                } />
+                <Dropdown label="Job Type" initial={item_job_type} items={jobTypeIcons} onItemSelect={(item_job_type) => 
+                    setItem_job_type(item_job_type) // @ts-ignore
+                } />
                 <Multiselector label="Technology" initial={item_skills} items={technologyIcons} onSelectedItems={(items_skills) => {
                     const updatedSkills = [...item_skills, ...items_skills] as (Skill & IMultiselectorItem)[];
-                    setItem_skills(updatedSkills);
-                    //@ts-ignore
-                    //state.filters[key].skills = items_skills.map(({ skill_id }) => skill_id) as number[];
+                    setItem_skills(updatedSkills);   // @ts-ignore
                 }} />
-                <Dropdown label="English Level" initial={item_english_level} items={englishLevelIcons} onItemSelect={() => {
+                <Dropdown label="English Level" initial={item_english_level} items={englishLevelIcons} onItemSelect={(item_english_level) => {
+                    if (item_english_level)
+                        setItem_english_level(item_english_level as unknown as Skill & IDropdownItem); // @ts-ignore
                 }} />
                 <button className={styles.primaryButton} type="submit" >
                     To find
