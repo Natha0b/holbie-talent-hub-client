@@ -3,7 +3,6 @@
 // component used for filters
 import React, { SyntheticEvent, useEffect } from 'react';
 import stylesModules from './BackCard.module.scss';
-import Link from 'next/link';
 import { Dropdown } from '$components/Dropdown/Dropdown';
 import styles from '$/app/components/PrimaryButton/PrimaryButton.module.scss';
 import { listOfCitiesIcons } from './BackCard.data';
@@ -17,8 +16,6 @@ import { Skill } from '../../UserProfile/Levels/Levels';
 import { IDropdownItem } from '$/app/components/Dropdown/Dropdown.type';
 import { useEasy } from 'use-easy';
 import { IMultiselectorItem } from '$/app/components/Multiselector/Multiselector.type';
-import { BsFillFilterSquareFill } from 'react-icons/bs';
-//import { Router } from 'next/router';
 import { useRouter } from 'next/navigation';
 
 /**
@@ -47,7 +44,7 @@ export interface Initial {
 }
 
 export const filters = {
-    company_id: 0,
+    company_id: 1,
     location: "",
     job_name: "",
     kind_job: "",
@@ -67,9 +64,9 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
 
     const { state } = useEasy({ initial });
 
+    const [item_location, setItem_location] = React.useState(listOfCitiesIcons.find(({ value }) => value === profile.location));
     const [item_kind_job, setItem_kind_job] = React.useState(jobKindIcons.find(({ value }) => value === profile.kind_job));
     const [item_job_type, setItem_job_type] = React.useState(jobTypeIcons.find(({ value }) => value === profile.job_type));
-    const [item_location, setItem_location] = React.useState(listOfCitiesIcons.find(({ value }) => value === profile.location));
     const [item_skills, setItem_skills] = React.useState<(Skill & IMultiselectorItem)[]>([]); // IDropdownItem
     const [item_english_level, setItem_english_level] = React.useState<(Skill & IDropdownItem) | undefined>(undefined);
     const router = useRouter();
@@ -91,8 +88,7 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
             .then(data => ({ ...data, ...technologyIcons.find(({ name }) => name === data.name) }) as Skill & IMultiselectorItem)
         )).then(data => setItem_skills(data));
         // @ts-ignore
-        state[`filter${filterKey}` as keyof typeof state] = profile as unknown as Filters;
-        //debugger;
+        //state[`filter${filterKey}` as keyof typeof state] = filters as unknown as Filters;
         setItem_english_level(undefined);
     }, [profile, filterKey]);
 
@@ -111,14 +107,14 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
     useEffect(() => {
         const index = `filter${filterKey}` as keyof typeof state;
         if (typeof state[index] === 'object' && item_location?.value)
-        (state[index] as Filters).location = item_location.value as string;
+            (state[index] as Filters).location = item_location.value as string;
     }, [item_location, state])
     
     // item_kind_job
     useEffect(() => {
         const index = `filter${filterKey}` as keyof typeof state;
         if (typeof state[index] === 'object' && item_kind_job?.value)
-        (state[index] as Filters).kind_job = item_kind_job.value as string;
+            (state[index] as Filters).kind_job = item_kind_job.value as string;
     }, [item_kind_job, state])
     
     // job_type
@@ -135,7 +131,7 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
             (state[index] as Filters).skills = item_skills
                 ?.map(({ skill_id }) => skill_id)
                 ?.filter((value) => typeof value === 'number') as number[];
-    }, [item_skills, state])
+    }, [item_skills])
     
     // english_level
     useEffect(() => {

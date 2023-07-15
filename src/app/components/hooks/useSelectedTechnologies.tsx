@@ -1,5 +1,4 @@
 import { useCallback, useState } from 'react';
-// import { technologies } from '$company/(pages)/find/profile/profile.data';
 import {
     DiAndroid,
     DiAngularSimple,
@@ -124,7 +123,6 @@ import {
     DiNginx,
     DiNodejs,
     DiNpm,
-    DiOnedrive,
     DiOpenshift,
     DiOpensource,
     DiOpera,
@@ -347,7 +345,7 @@ const technologyIcons = {
     "Ruby": { Icon: DiRuby, color: "#CC342D", name: "Ruby" },
     "Rust": { Icon: DiRust, color: "#000000", name: "Rust" },
     "Safari": { Icon: DiSafari, color: "#000000", name: "Safari" },
-    "Sass": { Icon: DiSass, color: "#c69", name: "Sass" },
+    "Sass": { Icon: DiSass, color: "#CF649A", name: "Sass" },
     "Scala": { Icon: DiScala, color: "#dc322f", name: "Scala" },
     "Scriptcs": { Icon: DiScriptcs, color: "#1d4956", name: "Scriptcs" },
     "Scrum": { Icon: DiScrum, color: "#4ea408", name: "Scrum" },
