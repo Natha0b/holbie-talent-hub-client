@@ -154,10 +154,16 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
                 <Dropdown label="Job Type" initial={item_job_type} items={jobTypeIcons} onItemSelect={(item_job_type) => 
                     setItem_job_type(item_job_type) // @ts-ignore
                 } />
-                <Multiselector label="Technology" initial={item_skills} items={technologyIcons} onSelectedItems={(items_skills) => {
-                    const updatedSkills = [...item_skills, ...items_skills] as (Skill & IMultiselectorItem)[];
-                    setItem_skills(updatedSkills);   // @ts-ignore
-                }} />
+                <Multiselector label="Technology" initial={item_skills} items={technologyIcons} 
+                    onSelectedItems={(items_skills) => {
+                        const updatedSkills = [...item_skills, ...items_skills] as (Skill & IMultiselectorItem)[];
+                        setItem_skills(updatedSkills);   // @ts-ignore
+                    }} 
+                    onItemSelectedRemove={(item_skill)=> {
+                        const updatedSkills = item_skills.filter(({ skill_id }) => skill_id !== (item_skill as unknown as Skill).skill_id as number);
+                        setItem_skills(updatedSkills);   // @ts-ignore
+                    }}
+                />
                 <Dropdown label="English Level" initial={item_english_level} items={englishLevelIcons} onItemSelect={(item_english_level) => {
                     if (item_english_level)
                         setItem_english_level(item_english_level as unknown as Skill & IDropdownItem); // @ts-ignore
