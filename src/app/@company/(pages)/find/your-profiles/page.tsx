@@ -35,7 +35,7 @@ const ProfilesResult: React.FC = () => {
                 setLoanding(true);
             })
             .catch(error => console.error(error));
-    }, []);
+    }, [state]);
 
     useEffect(() => {
         //console.log(state.filterKey);

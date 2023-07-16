@@ -24,13 +24,7 @@ const FrontCard: React.FC<{ jobName: string; icon: string; active: boolean; dyna
         const index = `filter${filterKey}` as keyof typeof state;
         if (typeof state[index] === 'object')
             (state[index] as Filters).job_name = job_name as string;
-    }, []);
-
-    useEffect(() => {
-        const index = `filter${filterKey}` as keyof typeof state;
-        if (typeof state[index] === 'object' && job_name != "")
-            (state[index] as Filters).job_name = job_name as string;
-    }, [job_name]);
+    }, [job_name, state]);
 
     return (
         <main className={`${styles.card__front} ${active && styles['card__front--active']}`}>
