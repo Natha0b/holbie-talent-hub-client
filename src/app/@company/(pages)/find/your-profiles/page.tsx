@@ -21,6 +21,9 @@ const ProfilesResult: React.FC = () => {
     const router = useRouter();
 
     useEffect(() => {
+        if (typeof state.filterKey === 'undefined') return;
+
+        console.log(state);
         fetch("https://recruitment-system-production.up.railway.app/api/v1/filters", {
             method: "POST",
             headers: {
@@ -35,7 +38,7 @@ const ProfilesResult: React.FC = () => {
                 setLoanding(true);
             })
             .catch(error => console.error(error));
-    }, []);
+    }, [state]);
 
     useEffect(() => {
         //console.log(state.filterKey);
@@ -56,7 +59,7 @@ const ProfilesResult: React.FC = () => {
             }, 60000);
         }
 
-    }, [loading]);
+    }, [loading, state, matching_profiles]);
 
     const handleReturn = () => {
         delete state.notifications[0];
