@@ -5,7 +5,8 @@ import { DetailsProfile } from '$/app/@company/components/UserProfile/profile/De
 import { InfoProfile } from '$/app/@company/components/UserProfile/InfoProfile/InfoProfile';
 import { InfoProjects } from '$/app/@company/components/UserProfile/InfoProjects/InfoProjects';
 import { Levels } from '$/app/@company/components/UserProfile/Levels/Levels';
-import { fullProfiles, FullProfessionalProfile } from '../../../find/search/page';
+import { FullProfessionalProfile } from '../../../find/search/page';
+import { fullProfiles } from '../../../find/search/fullProfiles';
 
 export interface ProfessionalProfile {
     profile_id: number;

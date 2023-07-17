@@ -6,7 +6,8 @@ import LogoCode from '$company/(pages)/find/logocoderiseapp.png'
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { TalentPreview } from '$company/components/TalentPreview/TalentPreview';
 import { HeaderHome } from './HeaderHome';
-import { fullProfiles, FullProfessionalProfile, ProfessionalProfile } from '$/app/@company/(pages)/find/search/page';
+import { FullProfessionalProfile, ProfessionalProfile } from '$/app/@company/(pages)/find/search/page';
+import { fullProfiles } from '$/app/@company/(pages)/find/search/fullProfiles';
 
 const AuthorIds: Number[] = [2, 3, 4, 5, 6];
 

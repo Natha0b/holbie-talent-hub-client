@@ -7,7 +7,8 @@ import { FaGithub, FaGlobe, FaCalendarAlt, FaRegClock, FaClock } from "react-ico
 import { Levels } from '$/app/@company/components/UserProfile/Levels/Levels';
 import { ProfessionalProfile } from '../../profile/[id]/page';
 import { User } from '$/app/@unsignedin/(pages)/(log)/login/page';
-import { FullProfessionalProfile, fullProfiles } from '../../../find/search/page';
+import { FullProfessionalProfile } from '../../../find/search/page';
+import { fullProfiles } from '../../../find/search/fullProfiles';
 
 export interface Project {
     project_id: number;
