@@ -3,8 +3,6 @@ import {
     DiAndroid,
     DiAngularSimple,
     DiAppcelerator,
-    DiApple,
-    DiAppstore,
     DiAptana,
     DiAsterisk,
     DiAtlassian,
@@ -14,31 +12,29 @@ import {
     DiBingSmall,
     DiBintray,
     DiBitbucket,
-    DiBlackberry,
     DiBootstrap,
     DiBower,
     DiBrackets,
     DiBugsense,
     DiCelluloid,
-    DiChrome,
     DiCisco,
-    DiClojure,
     DiClojureAlt,
+    DiClojure,
     DiCloud9,
     DiCoda,
-    DiCode,
     DiCodeBadge,
+    DiCode,
     DiCodeigniter,
     DiCodepen,
     DiCodrops,
     DiCoffeescript,
     DiCompass,
     DiComposer,
-    DiCreativecommons,
     DiCreativecommonsBadge,
-    DiCss3,
-    DiCss3Full,
+    DiCreativecommons,
     DiCssTricks,
+    DiCss3Full,
+    DiCss3,
     DiCssdeck,
     DiDart,
     DiDatabase,
@@ -62,22 +58,20 @@ import {
     DiFirefox,
     DiFsharp,
     DiGhost,
-    DiGhostSmall,
-    DiGit,
     DiGitBranch,
     DiGitCommit,
     DiGitCompare,
     DiGitMerge,
     DiGitPullRequest,
-    DiGithub,
+    DiGit,
     DiGithubAlt,
     DiGithubBadge,
     DiGithubFull,
+    DiGithub,
     DiGnu,
     DiGo,
     DiGoogleAnalytics,
     DiGoogleCloudPlatform,
-    DiGoogleDrive,
     DiGrails,
     DiGroovy,
     DiGrunt,
@@ -85,18 +79,18 @@ import {
     DiHackernews,
     DiHaskell,
     DiHeroku,
-    DiHtml5,
     DiHtml53DEffects,
     DiHtml5Connectivity,
     DiHtml5DeviceAccess,
     DiHtml5Multimedia,
+    DiHtml5,
     DiIe,
     DiIllustrator,
     DiIntellij,
     DiIonic,
     DiJava,
-    DiJavascript,
     DiJavascript1,
+    DiJavascript,
     DiJekyllSmall,
     DiJenkins,
     DiJira,
@@ -105,8 +99,8 @@ import {
     DiJqueryUiLogo,
     DiJsBadge,
     DiKomodo,
-    DiKrakenjs,
     DiKrakenjsBadge,
+    DiKrakenjs,
     DiLaravel,
     DiLess,
     DiLinux,
@@ -116,11 +110,10 @@ import {
     DiMaterializecss,
     DiMeteor,
     DiMeteorfull,
-    DiMitlicence,
     DiModernizr,
     DiMongodb,
-    DiMootools,
     DiMootoolsBadge,
+    DiMootools,
     DiMozilla,
     DiMsqlServer,
     DiMysql,
@@ -129,9 +122,7 @@ import {
     DiNetmagazine,
     DiNginx,
     DiNodejs,
-    DiNodejsSmall,
     DiNpm,
-    DiOnedrive,
     DiOpenshift,
     DiOpensource,
     DiOpera,
@@ -151,8 +142,8 @@ import {
     DiRequirejs,
     DiResponsive,
     DiRor,
-    DiRuby,
     DiRubyRough,
+    DiRuby,
     DiRust,
     DiSafari,
     DiSass,
@@ -170,11 +161,11 @@ import {
     DiStylus,
     DiSublime,
     DiSwift,
-    DiSymfony,
     DiSymfonyBadge,
+    DiSymfony,
     DiTechcrunch,
-    DiTerminal,
     DiTerminalBadge,
+    DiTerminal,
     DiTravis,
     DiTrello,
     DiTypo3,
@@ -187,13 +178,14 @@ import {
     DiWebplatform,
     DiWindows,
     DiWordpress,
-    DiYahoo,
-    DiYahooSmall,
     DiYeoman,
     DiYii,
     DiZend
 } from 'react-icons/di';
-import { SiTypescript } from 'react-icons/si';
+import { BsExplicitFill, BsFiletypeSql } from "react-icons/bs";
+import { SiFlask, SiTypescript, SiKotlin, SiLua, SiMicrosoftazure } from "react-icons/si";
+import { TbCircleLetterC, TbHexagonLetterC, TbSquareLetterR, TbLetterM } from "react-icons/tb";
+import { LuFileJson2 } from "react-icons/lu";
 
 export const technologyIcons: IDropdownItem[] = [
     {
@@ -213,18 +205,6 @@ export const technologyIcons: IDropdownItem[] = [
         Icon: DiAppcelerator,
         color: "#5c79a3",
         name: "Appcelerator"
-    },
-    {
-        value: "Apple",
-        Icon: DiApple,
-        color: "#999999",
-        name: "Apple"
-    },
-    {
-        value: "Appstore",
-        Icon: DiAppstore,
-        color: "#000000",
-        name: "Appstore"
     },
     {
         value: "Aptana",
@@ -257,6 +237,12 @@ export const technologyIcons: IDropdownItem[] = [
         name: "AWS"
     },
     {
+        value: "Azure",
+        Icon: SiMicrosoftazure,
+        color: "#0082CB",
+        name: "Azure"
+    },
+    {
         value: "Backbone",
         Icon: DiBackbone,
         color: "#0071b5",
@@ -279,12 +265,6 @@ export const technologyIcons: IDropdownItem[] = [
         Icon: DiBitbucket,
         color: "#205081",
         name: "Bitbucket"
-    },
-    {
-        value: "Blackberry",
-        Icon: DiBlackberry,
-        color: "#000000",
-        name: "Blackberry"
     },
     {
         value: "Bootstrap",
@@ -311,16 +291,28 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Bugsense"
     },
     {
+        value: "C",
+        Icon: TbCircleLetterC,
+        color: "#A0B1C3",
+        name: "C"
+    },
+    {
+        value: "C++",
+        Icon: TbHexagonLetterC,
+        color: "#6192C8",
+        name: "C++"
+    },
+    {
+        value: "C#",
+        Icon: TbHexagonLetterC,
+        color: "#934B8F",
+        name: "C#"
+    },
+    {
         value: "Celluloid",
         Icon: DiCelluloid,
         color: "#b09b5a",
         name: "Celluloid"
-    },
-    {
-        value: "Chrome",
-        Icon: DiChrome,
-        color: "#4285f4",
-        name: "Chrome"
     },
     {
         value: "Cisco",
@@ -413,6 +405,12 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Creative Commons"
     },
     {
+        value: "CSS3",
+        Icon: DiCss3,
+        color: "#254bdd",
+        name: "CSS3"
+    },
+    {
         value: "CSS Tricks",
         Icon: DiCssTricks,
         color: "#1e72b3",
@@ -423,12 +421,6 @@ export const technologyIcons: IDropdownItem[] = [
         Icon: DiCss3Full,
         color: "#254bdd",
         name: "CSS3 Full"
-    },
-    {
-        value: "CSS3",
-        Icon: DiCss3,
-        color: "#254bdd",
-        name: "CSS3"
     },
     {
         value: "CSSDeck",
@@ -539,6 +531,12 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Erlang"
     },
     {
+        value: "Express",
+        Icon: BsExplicitFill,
+        color: "#313131",
+        name: "Express"
+    },
+    {
         value: "Extjs",
         Icon: DiExtjs,
         color: "#87baf3",
@@ -557,16 +555,16 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Firefox"
     },
     {
+        value: "Flask",
+        Icon: SiFlask,
+        color: "#346D9D",
+        name: "Flask"
+    },
+    {
         value: "F#",
         Icon: DiFsharp,
         color: "#378bba",
         name: "F#"
-    },
-    {
-        value: "Ghost Small",
-        Icon: DiGhostSmall,
-        color: "#212425",
-        name: "Ghost Small"
     },
     {
         value: "Ghost",
@@ -653,12 +651,6 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Google Analytics"
     },
     {
-        value: "Google Drive",
-        Icon: DiGoogleDrive,
-        color: "#3cba54",
-        name: "Google Drive"
-    },
-    {
         value: "Google Cloud Platform",
         Icon: DiGoogleCloudPlatform,
         color: "#4285f4",
@@ -707,12 +699,6 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Heroku"
     },
     {
-        value: "HTML5",
-        Icon: DiHtml5,
-        color: "#e34c26",
-        name: "HTML5"
-    },
-    {
         value: "HTML5 3D Effects",
         Icon: DiHtml53DEffects,
         color: "#e34c26",
@@ -735,6 +721,12 @@ export const technologyIcons: IDropdownItem[] = [
         Icon: DiHtml5Multimedia,
         color: "#e34c26",
         name: "HTML5 Multimedia"
+    },
+    {
+        value: "HTML5",
+        Icon: DiHtml5,
+        color: "#e34c26",
+        name: "HTML5"
     },
     {
         value: "Internet Explorer",
@@ -779,10 +771,10 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Javascript"
     },
     {
-        value: "Jekyll Small",
+        value: "Jekyll",
         Icon: DiJekyllSmall,
         color: "#9b785e",
-        name: "Jekyll Small"
+        name: "Jekyll"
     },
     {
         value: "Jenkins",
@@ -827,6 +819,12 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Komodo"
     },
     {
+        value: "Kotlin",
+        Icon: SiKotlin,
+        color: "#6671D6",
+        name: "Kotlin"
+    },
+    {
         value: "Kraken.js Badge",
         Icon: DiKrakenjsBadge,
         color: "#82b414",
@@ -857,6 +855,12 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Linux"
     },
     {
+        value: "Lua",
+        Icon: SiLua,
+        color: "#000079",
+        name: "Lua"
+    },
+    {
         value: "Magento",
         Icon: DiMagento,
         color: "#ee672f",
@@ -881,6 +885,12 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Materialize CSS"
     },
     {
+        value: "Matlab",
+        Icon: TbLetterM,
+        color: "#C5570F",
+        name: "Matlab"
+    },
+    {
         value: "Meteor",
         Icon: DiMeteor,
         color: "#de4f4f",
@@ -891,12 +901,6 @@ export const technologyIcons: IDropdownItem[] = [
         Icon: DiMeteorfull,
         color: "#de4f4f",
         name: "Meteor Full"
-    },
-    {
-        value: "MIT License",
-        Icon: DiMitlicence,
-        color: "#e94e31",
-        name: "MIT License"
     },
     {
         value: "Modernizr",
@@ -965,16 +969,16 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Nginx"
     },
     {
-        value: "Node.js Small",
-        Icon: DiNodejsSmall,
-        color: "#3c873a",
-        name: "Node.js Small"
-    },
-    {
         value: "Node.js",
         Icon: DiNodejs,
         color: "#3c873a",
         name: "Node.js"
+    },
+    {
+        value: "NoSQL",
+        Icon: LuFileJson2,
+        color: "#076DEA",
+        name: "NoSQL"
     },
     {
         value: "npm",
@@ -983,22 +987,10 @@ export const technologyIcons: IDropdownItem[] = [
         name: "npm"
     },
     {
-        value: "OneDrive",
-        Icon: DiOnedrive,
-        color: "#094ab2",
-        name: "OneDrive"
-    },
-    {
         value: "OpenShift",
         Icon: DiOpenshift,
         color: "#ff3c00",
         name: "OpenShift"
-    },
-    {
-        value: "Open Source",
-        Icon: DiOpensource,
-        color: "#bd3d31",
-        name: "Open Source"
     },
     {
         value: "Opera",
@@ -1013,10 +1005,10 @@ export const technologyIcons: IDropdownItem[] = [
         name: "Perl"
     },
     {
-        value: "PhoneGap",
+        value: "Phonegap",
         Icon: DiPhonegap,
         color: "#2c4e8c",
-        name: "PhoneGap"
+        name: "Phonegap"
     },
     {
         value: "Photoshop",
@@ -1047,6 +1039,12 @@ export const technologyIcons: IDropdownItem[] = [
         Icon: DiPython,
         color: "#3572A5",
         name: "Python"
+    },
+    {
+        value: "R",
+        Icon: TbSquareLetterR,
+        color: "#1C60B0",
+        name: "R"
     },
     {
         value: "Rackspace",
@@ -1129,7 +1127,7 @@ export const technologyIcons: IDropdownItem[] = [
     {
         value: "Sass",
         Icon: DiSass,
-        color: "#c69",
+        color: "#CF649A",
         name: "Sass"
     },
     {
@@ -1179,6 +1177,12 @@ export const technologyIcons: IDropdownItem[] = [
         Icon: DiSpark,
         color: "#f26d00",
         name: "Spark"
+    },
+    {
+        value: "SQL",
+        Icon: BsFiletypeSql,
+        color: "#227EC4",
+        name: "SQL"
     },
     {
         value: "SQLite",
@@ -1261,7 +1265,7 @@ export const technologyIcons: IDropdownItem[] = [
     {
         value: "TypeScript",
         Icon: SiTypescript,
-        color: "#2F74C0",
+        color: "#3178C6",
         name: "TypeScript"
     },
     {
@@ -1283,10 +1287,10 @@ export const technologyIcons: IDropdownItem[] = [
         name: "UIKit"
     },
     {
-        value: "Unity Small",
+        value: "Unity",
         Icon: DiUnitySmall,
         color: "#000000",
-        name: "Unity Small"
+        name: "Unity"
     },
     {
         value: "Vim",
@@ -1323,18 +1327,6 @@ export const technologyIcons: IDropdownItem[] = [
         Icon: DiWordpress,
         color: "#21759b",
         name: "WordPress"
-    },
-    {
-        value: "Yahoo Small",
-        Icon: DiYahooSmall,
-        color: "#720e9e",
-        name: "Yahoo Small"
-    },
-    {
-        value: "Yahoo",
-        Icon: DiYahoo,
-        color: "#720e9e",
-        name: "Yahoo"
     },
     {
         value: "Yeoman",
