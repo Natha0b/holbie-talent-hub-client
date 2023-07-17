@@ -23,6 +23,8 @@ const ProfilesResult: React.FC = () => {
     useEffect(() => {
         if (typeof state.filterKey === 'undefined') return;
 
+        if (typeof state[`filter${state.filterKey}` as keyof typeof state] === 'undefined')
+
         console.log(state);
         fetch("https://recruitment-system-production.up.railway.app/api/v1/filters", {
             method: "POST",

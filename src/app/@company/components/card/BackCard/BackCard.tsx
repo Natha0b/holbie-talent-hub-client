@@ -57,7 +57,7 @@ export const initial: Initial = {
     filter1: JSON.parse(JSON.stringify(filters)) as Filters,
     filter2: JSON.parse(JSON.stringify(filters)) as Filters,
     filter3: JSON.parse(JSON.stringify(filters)) as Filters,
-    filterKey: 0
+    filterKey: -1
 };
 
 const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boolean, filterKey: number }> = ({ profile, active, dynamic, filterKey }) => {
