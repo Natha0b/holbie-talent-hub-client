@@ -32,7 +32,7 @@ export default function Find() {
     const [profiles, setProfiles] = useState<ProfileFake[]>([]);
 
     useEffect(() => {
-        fetch("https://recruitment-system-production.up.railway.app/api/v1/popular_filters")
+        fetch("https://165.232.131.33/api/v1/popular_filters")
             .then(response => response.json() as Promise<ProfileFake[]>)
             .then(data => setProfiles(data as ProfileFake[]))
             .catch(error => console.error(error));

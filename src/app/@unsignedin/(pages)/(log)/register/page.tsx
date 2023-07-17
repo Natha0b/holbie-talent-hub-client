@@ -68,7 +68,7 @@ export default function Register() {
         (async () => {
             try {
                 await fetch(
-                    "https://recruitment-system-production.up.railway.app/api/v1/registration",
+                    "https://165.232.131.33/api/v1/registration",
                     {
                         method: 'POST',
                         headers: {accept: 'application/json', 'content-type': 'application/json'},

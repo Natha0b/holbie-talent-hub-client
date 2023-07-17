@@ -41,7 +41,7 @@ export async function fullProfiles(profiles: ProfessionalProfile[]): Promise<Ful
  
     await Promise.all(profiles.map(async (profile: ProfessionalProfile) => {
         try {
-            const {professional_id: _, company_id: __, ...user} = await fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${profile.profile_id}/user`)
+            const {professional_id: _, company_id: __, ...user} = await fetch(`https://165.232.131.33/api/v1/professional_profiles/${profile.profile_id}/user`)
             .then(response => response.json() as Promise<User>);
 
             completeProfiles.push({
@@ -101,7 +101,7 @@ export default function TalentSearch() {
     const [profiles, setProfiles] = useState<FullProfessionalProfile[]>([]);
 
     const handleSearchSubmit = useCallback(async (keywords: string) => {
-        await fetch("https://recruitment-system-production.up.railway.app/api/v1/search_engine",
+        await fetch("https://165.232.131.33/api/v1/search_engine",
             {
                 method: 'POST',
                 headers: {accept: 'application/json', 'content-type': 'application/json'},

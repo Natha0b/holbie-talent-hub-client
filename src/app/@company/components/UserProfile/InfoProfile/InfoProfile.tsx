@@ -15,7 +15,7 @@ const InfoProfile: React.FC<{ profile: FullProfessionalProfile }> = ({ profile }
 
     useEffect(() => {
         if (!profile) return;
-        fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${profile.profile_id}/contacts`)
+        fetch(`https://165.232.131.33/api/v1/professional_profiles/${profile.profile_id}/contacts`)
             .then(response => response.json() as Promise<ProfessionalContact[]>)
             .then(data => setContactInfo(data))
             .catch(error => console.error(error));

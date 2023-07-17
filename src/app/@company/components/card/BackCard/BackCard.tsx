@@ -72,7 +72,7 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
     const router = useRouter();
 
     useEffect(() => {
-        Promise.all(profile.skills.map(skill => fetch(`https://recruitment-system-production.up.railway.app/api/v1/skills/${skill}`)
+        Promise.all(profile.skills.map(skill => fetch(`https://165.232.131.33/api/v1/skills/${skill}`)
             .then(response => response.json() as Promise<Skill>)
             .then(data => ({ ...data, ...technologyIcons.find(({ name }) => name === data.name) }) as Skill & IMultiselectorItem)
         )).then(data => setItem_skills(data));
@@ -83,7 +83,7 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
         setItem_kind_job(jobKindIcons.find(({ value }) => value === profile.kind_job));
         setItem_location(listOfCitiesIcons.find(({ value }) => value === profile.location));
         setItem_skills([]);
-        Promise.all(profile.skills.map(skill => fetch(`https://recruitment-system-production.up.railway.app/api/v1/skills/${skill}`)
+        Promise.all(profile.skills.map(skill => fetch(`https://165.232.131.33/api/v1/skills/${skill}`)
             .then(response => response.json() as Promise<Skill>)
             .then(data => ({ ...data, ...technologyIcons.find(({ name }) => name === data.name) }) as Skill & IMultiselectorItem)
         )).then(data => setItem_skills(data));

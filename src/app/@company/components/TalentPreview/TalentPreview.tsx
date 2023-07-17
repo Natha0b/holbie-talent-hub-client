@@ -80,7 +80,7 @@ export const TalentPreview: React.FC<{ talent: FullProfessionalProfile, onClick?
     
     useEffect(() => {
         if (!talent) return;
-        fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${talent.profile_id}/contacts`)
+        fetch(`https://165.232.131.33/api/v1/professional_profiles/${talent.profile_id}/contacts`)
             .then(response => response.json() as Promise<ProfessionalContact[]>)
             .then(data => setContactInfo(data))
             .catch(error => console.error(error));

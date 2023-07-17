@@ -19,7 +19,7 @@ const Levels: React.FC<{ id: string, owner: "projects" | "professional_profiles"
 
     const [skills, setSkills] = React.useState<(Skill & IDropdownItem)[]>([]);
     React.useEffect(() => {
-        fetch(`https://recruitment-system-production.up.railway.app/api/v1/${owner}/${id}/skills/`)
+        fetch(`https://165.232.131.33/api/v1/${owner}/${id}/skills/`)
             .then(res => res.json() as Promise<Skill[]>)
             .then(data => data.map(skill => ({ ...skill, ...skillsIcon[skill.name.toLowerCase()] }) as Skill & IDropdownItem))
             .then(data => setSkills(data))

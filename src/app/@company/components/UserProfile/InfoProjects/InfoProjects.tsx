@@ -20,7 +20,7 @@ const InfoProjects: React.FC<{ id: string }> = ({ id }) => {
     const [projects, setProjects] = React.useState<Project[]>([]);
 
     useEffect(() => {
-        fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${id}/projects`)
+        fetch(`https://165.232.131.33/api/v1/professional_profiles/${id}/projects`)
             .then(res => res.json())
             .then(data => setProjects(data))
             .catch(error => console.error(error));

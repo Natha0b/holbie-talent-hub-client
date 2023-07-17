@@ -45,7 +45,7 @@ const ProjectView: React.FC<{ params: { id: string } }> = ({ params: { id } }) =
     const [multimedia, setMultimedia] = React.useState<Media[]>([]);
 
     React.useEffect(() => {
-        fetch(`https://recruitment-system-production.up.railway.app/api/v1/projects/${id}`)
+        fetch(`https://165.232.131.33/api/v1/projects/${id}`)
             .then(res => res.json())
             .then(data => setProject(data))
             .catch(error => console.error(error));
@@ -53,7 +53,7 @@ const ProjectView: React.FC<{ params: { id: string } }> = ({ params: { id } }) =
 
         (async () => {
 
-            const profiles = await fetch(`https://recruitment-system-production.up.railway.app/api/v1/projects/${id}/collaborators`)
+            const profiles = await fetch(`https://165.232.131.33/api/v1/projects/${id}/collaborators`)
                 .then(res => res.json() as Promise<ProfessionalProfile[]>);
 
             const completeProfiles: FullProfessionalProfile[] = await fullProfiles(profiles);
@@ -62,7 +62,7 @@ const ProjectView: React.FC<{ params: { id: string } }> = ({ params: { id } }) =
         })().catch(error => console.error(error));
 
 
-        fetch(`https://recruitment-system-production.up.railway.app/api/v1/projects/${id}/multimedia`)
+        fetch(`https://165.232.131.33/api/v1/projects/${id}/multimedia`)
             .then(res => res.json() as Promise<Media[]>)
             .then(data => setMultimedia(data))
             .catch(error => console.error(error));

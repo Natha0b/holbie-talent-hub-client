@@ -1,5 +1,5 @@
 "use client";
-import React, { use } from 'react';
+import React from 'react';
 import { useState, useEffect } from "react";
 import './profiles.scss';
 import { ProfileSection } from "$/app/@company/components/profile/ProfileSection/ProfileSection";
@@ -26,7 +26,7 @@ const ProfilesResult: React.FC = () => {
         if (typeof state[`filter${state.filterKey}` as keyof typeof state] === 'undefined')
 
         console.log(state);
-        fetch("https://recruitment-system-production.up.railway.app/api/v1/filters", {
+        fetch("https://165.232.131.33/api/v1/filters", {
             method: "POST",
             headers: {
                 accept: 'application/json',

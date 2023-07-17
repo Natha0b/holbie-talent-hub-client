@@ -29,7 +29,7 @@ const UserProfile: React.FC<{ params: { id: string } }> = ({ params: { id } }) =
 
     React.useEffect(() => {
         (async () => {
-            await fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${id}`)
+            await fetch(`https://165.232.131.33/api/v1/professional_profiles/${id}`)
                 .then(res => res.json())
                 .then(data => setProfile(data))
         })().catch(error => console.error(error));

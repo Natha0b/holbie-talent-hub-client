@@ -38,7 +38,7 @@ export default function Login() {
                  * POST 
                  */
                 const user = await fetch(
-                    "https://recruitment-system-production.up.railway.app/api/v1/login",
+                    "https://165.232.131.33/api/v1/login",
                     {
                         method: 'POST',
                         headers: {accept: 'application/json', 'content-type': 'application/json'},

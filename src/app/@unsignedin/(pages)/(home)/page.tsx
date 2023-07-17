@@ -17,7 +17,7 @@ export default function HomeLogin() {
     React.useEffect(() => {
         Promise.all(
             AuthorIds.map(async (id) => {
-                return fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${id}`)
+                return fetch(`https://165.232.131.33/api/v1/professional_profiles/${id}`)
                     .then(response => response.json())
             })
         ).then((talents) => setTalents(talents));
