@@ -7,6 +7,7 @@ import { ContactIcons } from '../profile/ContactIcons/ContactIcons';
 import Link from 'next/link';
 import { FullProfessionalProfile } from '../../(pages)/find/search/page';
 
+import {NextConfig} from'next';
 import profile1 from '$share/image/01.jpg';
 import profile2 from '$share/image/02.jpg';
 import profile3 from '$share/image/03.jpg';

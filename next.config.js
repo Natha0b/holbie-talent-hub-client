@@ -3,12 +3,6 @@ const path = require('path');
 
 
 const nextConfig = {
-    server: {
-        port: 3000
-    },
-    env: {
-        customKey: 'my-value',
-    },
     sassOptions: {
         sourceMap: false,
         includePaths: [
