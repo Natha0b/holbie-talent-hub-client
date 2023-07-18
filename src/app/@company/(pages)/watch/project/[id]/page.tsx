@@ -10,6 +10,7 @@ import { FullProfessionalProfile } from '../../../find/search/page';
 import { fullProfiles } from '../../../find/search/fullProfiles';
 import { useParams } from 'react-router-dom';
 import { API } from '../../../../../../env';
+import { useGuard } from '../../../../../../useGuard';
 
 export interface Project {
     project_id: number;
@@ -46,6 +47,7 @@ const ProjectView: React.FC<{ }> = ({ }) => {
     const [colaborators, setColaborators] = React.useState<FullProfessionalProfile[]>([]);
     const [multimedia, setMultimedia] = React.useState<Media[]>([]);
     let { id } = useParams();
+    useGuard();
 
 
     React.useEffect(() => {

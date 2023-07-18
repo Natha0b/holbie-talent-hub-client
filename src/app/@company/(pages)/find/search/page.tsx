@@ -7,6 +7,7 @@ import { SearchBar } from '../../../../@company/components/SearchBar/SearchBar';
 import { TalentPreview } from '../../../../@company/components/TalentPreview/TalentPreview';
 import { fullProfiles } from './fullProfiles';
 import { API } from '../../../../../env';
+import { useGuard } from '../../../../../useGuard';
 
 
 export interface SearchRequestBody {
@@ -81,6 +82,7 @@ export function validation<T, >({whenError}: {whenError: T}) {
 
 export default function TalentSearch() {
     const [profiles, setProfiles] = useState<FullProfessionalProfile[]>([]);
+    useGuard();
 
     const handleSearchSubmit = useCallback(async (keywords: string) => {
         await fetch(`${API}/api/v1/search_engine`,

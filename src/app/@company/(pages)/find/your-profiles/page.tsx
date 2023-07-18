@@ -9,6 +9,7 @@ import { initial } from '../../../../@company/components/card/BackCard/BackCard'
 import { NotificationItem } from '../../../../components/NotificationAlert/NotificationAlert';
 import { useNavigate } from 'react-router-dom';
 import { API } from '../../../../../env';
+import { useGuard } from '../../../../../useGuard';
 
 
 const ProfilesResult: React.FC = () => {
@@ -19,6 +20,7 @@ const ProfilesResult: React.FC = () => {
     const [matching_profiles, setMatchingProfiles] = useState<ProfessionalProfile[]>([]);
     const [loading, setLoanding] = useState<boolean>(false)
     const [adding, setAdding] = useState<boolean>(false)
+    useGuard();
 
     const router = useNavigate();
 

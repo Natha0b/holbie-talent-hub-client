@@ -1,5 +1,6 @@
 'use client';
 import { API } from '../../../../../env';
+import { useGuard } from '../../../../../useGuard';
 import { Card } from '../../../../@company/components/card/Card/Card';
 import profile from '../profile/profile.module.scss';
 import { useEffect, useState } from 'react';
@@ -31,6 +32,7 @@ const emptyFakeProfile: ProfileFake = {
 
 export default function Find() {
     const [profiles, setProfiles] = useState<ProfileFake[]>([]);
+    useGuard();
 
     useEffect(() => {
         fetch(`${API}/api/v1/popular_filters`)

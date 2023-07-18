@@ -9,6 +9,7 @@ import { FullProfessionalProfile } from '../../../find/search/page';
 import { fullProfiles } from '../../../find/search/fullProfiles';
 import { useParams } from 'react-router-dom';
 import { API } from '../../../../../../env';
+import { useGuard } from '../../../../../../useGuard';
 
 export interface ProfessionalProfile {
     profile_id: number;
@@ -30,6 +31,7 @@ const UserProfile: React.FC<{  }> = ({  }) => {
     const [profile, setProfile] = React.useState<ProfessionalProfile | null>(null);
     const [fullProfile, setFullProfile] = React.useState<FullProfessionalProfile | undefined>(undefined);
     let { id } = useParams();
+    useGuard();
 
 
     React.useEffect(() => {
