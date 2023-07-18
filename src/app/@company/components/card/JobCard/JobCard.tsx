@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Dropdown } from '../../../../components/Dropdown/Dropdown';
 import { jobKindIcons } from './JobCard.data';
 

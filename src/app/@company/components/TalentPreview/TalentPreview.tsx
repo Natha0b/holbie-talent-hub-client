@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import styles from './TalentPreview.module.scss';
 import { BsFillSendFill } from 'react-icons/bs';
@@ -7,7 +7,6 @@ import { ContactIcons } from '../profile/ContactIcons/ContactIcons';
 import { Link } from "react-router-dom";
 
 import { FullProfessionalProfile } from '../../(pages)/find/search/page';
-import { API } from '../../../../env';
 import { useProfilePicture } from '../UserProfile/InfoProfile/InfoProfile';
 
 
