@@ -1,5 +1,4 @@
 // English level
-import React from 'react';
 import { Dropdown } from '../../../../components/Dropdown/Dropdown';
 import { englishLevelIcons } from './EnglishCard.data';
 

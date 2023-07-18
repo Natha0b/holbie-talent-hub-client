@@ -124,7 +124,6 @@ import {
     DiNodejs,
     DiNpm,
     DiOpenshift,
-    DiOpensource,
     DiOpera,
     DiPerl,
     DiPhonegap,

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Dropdown } from '../../../../components/Dropdown/Dropdown';
 import { jobTypeIcons } from './JobType.data';
 

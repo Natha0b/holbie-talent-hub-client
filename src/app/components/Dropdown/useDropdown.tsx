@@ -10,7 +10,7 @@ export const useDropdown = (items: IDropdownItem[], initial: IDropdownItem, max 
         setSelectedItem(item);
     };
 
-    const removeSelectedItem = (item: IDropdownItem) => {
+    const removeSelectedItem = () => {
         setFilterValue(initial.name);
         setSelectedItem(initial);
     };

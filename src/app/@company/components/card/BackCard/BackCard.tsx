@@ -61,7 +61,7 @@ export const initial: Initial = {
     filterKey: -1
 };
 
-const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boolean, filterKey: number }> = ({ profile, active, dynamic, filterKey }) => {
+const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boolean, filterKey: number }> = ({ profile, active, filterKey }) => {
 
     const { state } = useEasy({ initial });
 

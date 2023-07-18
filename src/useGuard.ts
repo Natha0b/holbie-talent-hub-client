@@ -1,4 +1,3 @@
-import { useNavigation } from "react-router-dom";
 import { useEasy } from 'use-easy';
 import { User } from "./app/@unsignedin/(pages)/(log)/login/page";
 import { useEffect } from "react";

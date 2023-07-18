@@ -3,7 +3,6 @@ import styles from "./Carousel.module.scss"
 import { BsFillSendFill } from 'react-icons/bs';
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { FaGithub, FaEnvelope } from "react-icons/fa";
-import { profiles } from "../../TalentPreview/TalentPreview";
 import { Link } from "react-router-dom";
 import { FullProfessionalProfile, ProfessionalProfile } from "../../../(pages)/find/search/page";
 import { useProfilePicture } from "../../UserProfile/InfoProfile/InfoProfile";

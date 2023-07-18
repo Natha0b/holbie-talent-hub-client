@@ -1,5 +1,5 @@
-import { IDropdownItem } from 'src/app/components/Dropdown/Dropdown.type';
 import { FaUserClock } from 'react-icons/fa';
+import { IDropdownItem } from '../../../../components/Dropdown/Dropdown.type';
 
 
 export const jobTypeIcons: IDropdownItem[] = [
