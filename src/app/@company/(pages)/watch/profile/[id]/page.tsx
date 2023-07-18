@@ -59,7 +59,7 @@ const UserProfile: React.FC<{  }> = ({  }) => {
                                 <div className={styles.profileRight} >
                                     <InfoProfile profile={fullProfile} />
                                     <InfoProjects id={String(fullProfile.profile_id)} />
-                                    <Levels owner='professional_profiles' id={String(fullProfile.profile_id)} />
+                                    <Levels owner='professional_profiles' id={String(fullProfile.profile_id)} prevProfile={false} />
 
                                 </div>
                             </div>

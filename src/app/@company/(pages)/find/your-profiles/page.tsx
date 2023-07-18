@@ -3,12 +3,13 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import './profiles.scss';
 import { ProfileSection } from "../../../../@company/components/profile/ProfileSection/ProfileSection";
-import { ProfessionalProfile } from '../search/page';
+import { ProfessionalProfile, FullProfessionalProfile } from '../search/page';
 import { useEasy } from 'use-easy';
 import { initial } from '../../../../@company/components/card/BackCard/BackCard';
 import { NotificationItem } from '../../../../components/NotificationAlert/NotificationAlert';
 import { useNavigate } from 'react-router-dom';
 import { API } from '../../../../../env';
+import { fullProfiles } from '../search/fullProfiles';
 
 
 const ProfilesResult: React.FC = () => {
@@ -17,6 +18,7 @@ const ProfilesResult: React.FC = () => {
     const { state } = useEasy({ initial: { ...initial, notifications: [] as NotificationItem[] } });
 
     const [matching_profiles, setMatchingProfiles] = useState<ProfessionalProfile[]>([]);
+    const [fullMatchingProfiles, setFullMatchingProfiles] = useState<FullProfessionalProfile[]>([]);
     const [loading, setLoanding] = useState<boolean>(false)
     const [adding, setAdding] = useState<boolean>(false)
 
@@ -43,6 +45,12 @@ const ProfilesResult: React.FC = () => {
             })
             .catch(error => console.error(error));
     }, [state]);
+
+    useEffect(() => {
+        (async () => {
+            await setFullMatchingProfiles(await fullProfiles(matching_profiles));
+        })();
+    }, [matching_profiles]);
 
     useEffect(() => {
         
@@ -109,7 +117,7 @@ const ProfilesResult: React.FC = () => {
                         </div>
                     </section>
                     : <ProfileSection
-                        matching_profiles={matching_profiles}
+                        matching_profiles={fullMatchingProfiles}
                         handlePrevSlide={handlePrevSlide}
                         handleNextSlide={handleNextSlide}
                         currentSlide={currentSlide}

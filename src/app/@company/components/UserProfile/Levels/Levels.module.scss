@@ -1,3 +1,21 @@
+.levelsPrevProfile {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5rem;
+}
+
+.skillPrevprofile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.IconPrevProfile {
+    color: var(--color);
+    font-size: 1.5rem;
+}
+
 .levels {
     display: grid;
     justify-content: center;
@@ -5,14 +23,14 @@
     gap: 2rem;
 }
 
-.levels h2 {
+.levels .title {
     font-size: 35px;
     font-weight: bold;
     justify-content: center;
     margin-bottom: 10px;
     grid-column: 1/-1;
-
 }
+
 .skill {
     display: flex;
     flex-direction: column;

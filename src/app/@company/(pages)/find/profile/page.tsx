@@ -39,10 +39,6 @@ export default function Find() {
             .catch(error => console.error(error));
     }, []);
 
-    /* useEffect(() => {
-        console.log(profiles);
-    }, [profiles]); */
-
     return (
         <section className={profile.profile}>
             <h1 className={profile.profile__title}>Select the profile that you want</h1>

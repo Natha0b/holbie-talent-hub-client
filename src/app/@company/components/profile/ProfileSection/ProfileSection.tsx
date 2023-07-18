@@ -1,10 +1,10 @@
 import React from "react";
 import { Carousel } from "../Carousel/Carousel";
 import styles from "./ProfileSection.module.scss";
-import { ProfessionalProfile } from "../../../../@company/(pages)/find/search/page";
+import { FullProfessionalProfile } from "../../../../@company/(pages)/find/search/page";
 
 interface ProfileSectionProps {
-    matching_profiles: ProfessionalProfile[];
+    matching_profiles: FullProfessionalProfile[];
     handlePrevSlide: () => void;
     handleNextSlide: () => void;
     currentSlide: number;
