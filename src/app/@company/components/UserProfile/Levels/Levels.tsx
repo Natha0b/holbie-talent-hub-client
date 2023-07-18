@@ -16,7 +16,7 @@ export interface Skill {
 }
   
 // Declaration of the functional component Levels
-const Levels: React.FC<{ id: string, owner: "projects" | "professional_profiles" }> = ({id, owner}) => {
+const Levels: React.FC<{ id: string, owner: "projects" | "professional_profiles", prevProfile: boolean }> = ({id, owner, prevProfile = false}) => {
 
     const [skills, setSkills] = React.useState<(Skill & IDropdownItem)[]>([]);
     React.useEffect(() => {
@@ -29,21 +29,35 @@ const Levels: React.FC<{ id: string, owner: "projects" | "professional_profiles"
     }, [id, owner])
 
     return (
-        <div className={styles.levels}>
-            <h2>Skills</h2>
-            {
-                skills.map(({ value, color, Icon }, key) => (
-                    <div className={styles.skill} key={key}>
-                        {Icon && <Icon className={styles.Icon} style={{ '--color': color } as React.CSSProperties} />}
-                        <span className={styles["skill-name"]}>{value}</span>
-                        <div>
-                            {
-                                Array.from({ length: 5 }, (_, key) => (<AiFillStar key={`${key}:${key}`} className={styles.skillicon} />))
-                            }
-                        </div>
-                    </div>))
-            }
-        </div>
+        <>
+            { prevProfile ? (
+                <div className={styles.levelsPrevProfile}>
+                {
+                    skills.map(({ value, color, Icon }, key) => (
+                        <div className={styles.skillPrevProfile} key={key}>
+                            {Icon && <Icon className={styles.IconPrevProfile} style={{ '--color': color } as React.CSSProperties} />}
+                            <span>{value}</span>
+                        </div>))
+                }
+                </div>
+            ) : (
+                <div className={styles.levels}>
+                <h2 className={styles.title}>Skills</h2>
+                {
+                    skills.map(({ value, color, Icon }, key) => (
+                        <div className={styles.skill} key={key}>
+                            {Icon && <Icon className={styles.Icon} style={{ '--color': color } as React.CSSProperties} />}
+                            <span className={styles["skill-name"]}>{value}</span>
+                            <div>
+                                {
+                                    Array.from({ length: 5 }, (_, key) => (<AiFillStar key={`${key}:${key}`} className={styles.skillicon} />))
+                                }
+                            </div>
+                        </div>))
+                }
+                </div>
+            )}
+        </>
     );
 };
 

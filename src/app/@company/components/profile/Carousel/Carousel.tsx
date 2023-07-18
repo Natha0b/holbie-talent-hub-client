@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { useState, useEffect, FC } from "react";
 import styles from "./Carousel.module.scss"
 import { BsFillSendFill } from 'react-icons/bs';
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
@@ -6,10 +6,12 @@ import { FaGithub, FaEnvelope } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FullProfessionalProfile, ProfessionalProfile } from "../../../(pages)/find/search/page";
 import { useProfilePicture } from "../../UserProfile/InfoProfile/InfoProfile";
+import { ProfessionalContact } from "../../TalentPreview/TalentPreview";
+import { Levels } from "../../UserProfile/Levels/Levels";
 
 
 interface CarouselProps {
-    matching_profiles: ProfessionalProfile[];
+    matching_profiles: FullProfessionalProfile[];
     handlePrevSlide: () => void;
     handleNextSlide: () => void;
     currentSlide: number;
@@ -25,7 +27,19 @@ export const Image: FC<{talent: ProfessionalProfile}> = ({talent}) => {
 
 export const Carousel: React.FC<CarouselProps> = ({ matching_profiles, handlePrevSlide, handleNextSlide, currentSlide }) => {
 
+    const [githubUsers, setGithubUsers] = useState<{ [profile_id: number]: string }[]>([]);
 
+    useEffect(() => {
+        matching_profiles.forEach(profile => {
+            fetch(`https://recruitment-system-production.up.railway.app/api/v1/professional_profiles/${profile.profile_id}/contacts`)
+                .then(response => response.json() as Promise<ProfessionalContact[]>)
+                .then(data => setGithubUsers(prevGithubUsers => ({
+                    ...prevGithubUsers,
+                    [profile.profile_id]: data[0]?.contact_info || ""
+                  })))
+                .catch(error => console.error(error));
+        });
+    }, [matching_profiles])
 
     return (
         <div className={styles.carousel}>
@@ -43,34 +57,28 @@ export const Carousel: React.FC<CarouselProps> = ({ matching_profiles, handlePre
                                 </button>
                             </div>
                             <div className={styles.userDetails}>
-                                <h1 className={styles.name}>{profile.headline}</h1>
+                                <h1 className={styles.name}>{profile.full_name}</h1>
                                 <Link to={`/watch/profile/${profile.profile_id}`} replace className={styles.showProfile}>
                                     Show profile
                                 </Link>
-                                <p className={styles.title}>Software Engineer</p>
-                                <h3>Industry experience:</h3>
+                                <p className={styles.title}>{profile.headline}</p>
+                                <h3>About me</h3>
                                 <p className={styles.description}>
-                                    Passionate software developer with expertise in web development. Skilled in HTML, CSS, JavaScript, and Python. Committed to delivering high-quality code and exceeding client expectations. Strong problem-solving and communication skills. Seeking new challenges and opportunities in innovative projects
+                                    {profile.about_me}
                                 </p>
-                                <p className={styles.description}>Programming Languages:</p>
-                                <div className={styles.programmingLanguages}>
-                                    {/* user.programmingLanguages.map((language, index) => (
-                                        <div className={styles.iconsLanguages} key={index}>
-                                            {getLanguageIcon(language)}
-                                        </div>
-                                    )) */}
-                                </div>
-                                <h3>Type of work sought:</h3>
+                                <h3>Skills</h3>
+                                <Levels owner='professional_profiles' id={String(profile.profile_id)} prevProfile={true} />
+                                <h3>Type of work sought</h3>
                                 <p className={styles.description}>
-                                    Remote | Full Time
+                                    {profile.job_type.replace(/_/g, ' ')}
                                 </p>
                             </div>
                         </div>
                         <div className={styles.contactIcons}>
-                            <a href={"user.githubLink"} target="_blank" rel="noopener noreferrer">
+                            <a href={`https://github.com/${githubUsers[profile.profile_id]}`} target="_blank" rel="noopener noreferrer">
                                 <FaGithub className={styles.icon} />
                             </a>
-                            <a href={`mailto:${"user.email"}`} target="_blank" rel="noopener noreferrer">
+                            <a href={`mailto:${profile.email}`} target="_blank" rel="noopener noreferrer">
                                 <FaEnvelope className={styles.icon} />
                             </a>
                         </div>

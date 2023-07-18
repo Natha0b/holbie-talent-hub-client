@@ -145,7 +145,7 @@ const ProjectView: React.FC<{ }> = ({ }) => {
                                             ))}
                                         </section>
                                     </div>
-                                    <Levels owner='projects' id={String(project.project_id)} />
+                                    <Levels owner='projects' id={String(project.project_id)} prevProfile={false} />
                                     <div className={styles.contenedorReadme}>
                                     </div>
                                 </div>
