@@ -1,0 +1,57 @@
+@import "styles/animations.scss";
+
+.card__back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 0 1px inset var(--color-primary);
+    overflow: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+@include glassmorphismforclass(".card__back");
+
+.card__back--active {
+    transform: rotateY(10deg) translateX(49%);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    width: 90%;
+    height: 90%;
+    box-sizing: border-box;
+}
+
+.form__item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.form__item input[type='text'] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--color-gray);
+    background-color: transparent;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form__item datalist {
+    margin-top: 5px;
+}
+
+.form__item datalist option {
+    padding: 5px;
+}

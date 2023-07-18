@@ -1,0 +1,29 @@
+.levels {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.levels h2 {
+    font-size: 35px;
+    font-weight: bold;
+    justify-content: center;
+    margin-bottom: 10px;
+    grid-column: 1/-1;
+
+}
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skillicon {
+    color: var(--color-warning)
+}
+
+.Icon {
+    color: var(--color);
+    font-size: 3rem;
+}

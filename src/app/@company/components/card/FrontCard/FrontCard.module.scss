@@ -1,0 +1,29 @@
+.card__front {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    z-index: 20;
+    box-shadow: 0 0 0 var(--border-size) inset var(--color-primary);
+    background-color: var(--color-white);
+}
+
+.card__icon {
+    font-size: 2rem;
+    color: var(--color-primary);
+    width: 50%;
+}
+
+.card__title {
+    text-align: center;
+    align-items: center;
+    color: var(--color-primary);
+}
+
+/** se activa el card__front cuando se pasa el mouse sobre el elemento card */
+.card__front--active {
+    transform: rotateY(10deg) translateX(-49%);
+}

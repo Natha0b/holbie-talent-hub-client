@@ -1,0 +1,126 @@
+@import "styles/animations.scss";
+
+.multiselector {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    align-items: center;
+    width: 100%;
+}
+
+.multiselector label {
+    display: block;
+    bottom: 0.6rem;
+    position: absolute;
+    font-weight: bold;
+    cursor: cell;
+    user-select: none;
+    transition: all 150ms ease-in-out;
+    transform: scale(1);
+}
+
+.multiselector input[type='text'] {
+    width: 100%;
+    padding: .6rem;
+    font-size: 16px;
+    outline: none !important;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    border: 1px solid var(--color-gray);
+    background-color: transparent;
+    margin-block-start: 1rem;
+}
+
+.multiselector__container-list {
+    position: absolute;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    max-height: 0px;
+    overflow-y: auto;
+    border-radius: var(--border-radius);
+    width: calc(100% - (var(--border-radius) * 2));
+    z-index: 10;
+    padding: 0px;
+    transition: all 150ms ease-in-out;
+    transition-delay: .3s;
+    overflow: hidden;
+    bottom: 0px;
+    transform: translateY(100%);
+}
+
+@include glassmorphismforclass(".multiselector__container-list");
+
+.multiselector__container-list {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.multiselector input[type='text']:focus~.multiselector__container-list {
+    max-height: 200px;
+    transition-delay: 0ms;
+}
+
+
+.multiselector input[type='text']:focus~label,
+.label--active {
+    bottom: 2.4rem !important;
+    transform: scale(.8) !important;
+}
+
+
+.multiselector__icon {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .6rem;
+    cursor: pointer;
+    box-shadow: 0 1px 0 0 inset #ccc;
+    color: initial;
+    transition: all 150ms ease-in-out;
+    transition-delay: 0ms !important;
+    padding-inline: 2rem;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.multiselector__icon:hover {
+    color: var(--color);
+    box-shadow: 0 1px 0 0 inset #ccc, 0 0 1px 0px inset var(--color);
+}
+
+.multiselector__icon:first-child {
+    box-shadow: none;
+}
+
+.selected-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@include glassmorphismforclass(".selected-items > *");
+
+.selected-items>* {
+    padding: 5px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+    transition-delay: 0ms !important;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: var(--color);
+    box-shadow: 0 0 1px 0px inset var(--color);
+}
+
+.selected-items>*:hover {
+    color: var(--color-danger);
+    box-shadow: 0 0 1px 0px inset var(--color-danger);
+}

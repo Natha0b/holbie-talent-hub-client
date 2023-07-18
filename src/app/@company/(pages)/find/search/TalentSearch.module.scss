@@ -1,0 +1,24 @@
+/* search engine styling module */
+.talentSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.contentWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.resultsContainer {
+    flex: 1;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    padding-inline: 2vw;
+    gap: 6rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}

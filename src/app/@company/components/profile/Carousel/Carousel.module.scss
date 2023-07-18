@@ -1,0 +1,141 @@
+@import 'styles/animations.scss';
+/* Carousel.module.scss */
+
+.carousel {
+    position: relative;
+    width: 90vw;
+    overflow: hidden;
+    margin: 0px 0px 5rem  0px;
+  }
+  
+  .carousel__button {
+    position: absolute;
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+    background: #f59600;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+  }
+  
+  .carousel__button:first-child {
+    left: 1rem;
+  }
+  
+  .carousel__button:last-child {
+    right: 1rem;
+  }
+  
+  .carousel__slideContainer {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+  }
+  
+  .carousel__slide {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    transition-delay: 0;
+    justify-content: center;
+    display: flex;
+    z-index: 0;
+
+  }
+  
+  .carousel__slideActive {
+    transition-delay: 0.4s;
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .userInfo {
+    position: relative;
+    width: 60%;
+    padding: 2rem;
+    margin: auto;
+  }
+  
+  .iconProfile {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+  }
+  
+  .profilePicture {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .userDetails {
+    position: relative;
+    margin-top: 1rem;
+  }
+  
+  .userDetails h1, .userDetails p {
+    margin: 0;
+  }
+  
+  .userDetails h1 {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+  
+  .showProfile {
+    display: inline-block;
+    font-size: 1rem;
+    color: var(--color-text-alt);
+    text-decoration: none;
+  }
+  
+  .programmingLanguages {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .iconsLanguages {
+    display: inline-block;
+  }
+  
+  .contactIcons {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .contactIcons a {
+    display: inline-block;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+  }
+  
+  .contactsProfiles {
+    position: absolute;
+    bottom: 0rem;
+    right: 0rem;
+    width: 2rem;
+    height: 2rem;
+    background: #f59600;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+
+@include glassmorphismforclass(".carousel");
+@include glassmorphismforclass(".carousel__button:hover");
+@include glassmorphismforclass(".contactsprofiles:hover");

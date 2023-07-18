@@ -1,0 +1,41 @@
+/**
+* Animations
+*/
+@import './functions.scss';
+
+/** SCSS DOCS: glassmorphismforclass mixin
+ * Creates a glassmorphism effect for a given selector.
+ *
+ * @param {string} $selector - The selector to apply the glassmorphism effect to.
+ * @param {color} [$color=rgba(255, 255, 255, 0.1)] - The background color for the glassmorphism effect. Default is rgba(255, 255, 255, 0.1).
+ * @param {length} [$blur=30px] - The amount of blur for the backdrop-filter property. Default is 30px.
+ * @param {number} [$opacity=0.8] - The opacity of the glassmorphism effect. Default is 0.8.
+ *
+ * @example
+ * Usage:
+ * This will apply the glassmorphism effect to the `.glass-container` selector with the specified background color, blur, and opacity.
+ * ```scss
+ * @include glassmorphismforclass('.glass-container', rgba(255, 255, 255, 0.1), 30px, 0.8);
+ * ```
+ */
+@mixin glassmorphismforclass($selector, $color: rgba(255, 255, 255, 0.1), $blur: 30px, $opacity: 0.8) {
+
+  #{$selector} {
+    background: rgba($color, $opacity);
+    backdrop-filter: blur($blur);
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25), .5px .5px 0px inset rgba(255, 255, 255, 0.30);
+  }
+
+  :root[data-theme="dark"] #{$selector} {
+    background: rgba(darken($color, 85%), $opacity);
+    backdrop-filter: blur($blur);
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.80), .5px .5px 0px inset rgba(255, 255, 255, 0.50);
+  }
+
+  #{$selector}>*:not(.not-opasity) {
+    opacity: $opacity;
+  }
+
+}

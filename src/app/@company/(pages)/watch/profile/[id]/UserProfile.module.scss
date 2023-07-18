@@ -1,0 +1,39 @@
+#content {
+    display: flex;
+    margin: var(--content-margin);
+    justify-content: center;
+}
+
+#contentprofile {
+    min-width: 140vh;
+}
+
+.profile {
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+    flex-wrap: nowrap;
+}
+
+.profileRight>* {
+    padding: 2rem;
+    border: solid 1px #ccc;
+    border-radius: var(--border-radius, 14px);
+    box-sizing: border-box;
+    margin: 1rem;
+    width: calc(100% - (2rem + 2px));
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1700px) {
+    #contentprofile {
+        min-width: 120vh;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    #contentprofile {
+        min-width: 100vh;
+    }
+}

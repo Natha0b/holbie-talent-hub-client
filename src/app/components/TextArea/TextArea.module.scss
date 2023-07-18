@@ -1,0 +1,22 @@
+@import "styles/animations.scss";
+
+.textarea {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.textarea label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.textarea__field {
+    width: 100%;
+    padding: .6rem;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    resize: vertical;
+}

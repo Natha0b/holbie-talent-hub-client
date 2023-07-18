@@ -1,0 +1,16 @@
+@import "styles/animations.scss";
+
+.successButton {
+    background-color: var(--color-success);
+    color: var(--color-white);
+    padding: .6rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+}
+
+.successButton:hover {
+    filter: hue-rotate(20deg) saturate(1.5);
+}
