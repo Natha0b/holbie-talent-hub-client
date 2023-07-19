@@ -49,7 +49,7 @@ export default function Login() {
                 /**
                  * POST 
                  */
-                const user = await fetch(
+                const response = await fetch(
                     `${API}/api/v1/login`,
                     {
                         method: 'POST',
@@ -59,7 +59,18 @@ export default function Login() {
                             "password": password
                         } as LoginRequestBody)
                     }
-                ).then((response) => response.json() as Promise<User>);
+                )
+
+                if (response.status !== 200) {
+                    const errorData = await response.json();
+                    const errorMessage = errorData.message;
+
+                    console.error(errorMessage); 
+                    router('/login');
+                    return;
+                }
+
+                const user = await response.json();
 
                 const key = "session";
 
