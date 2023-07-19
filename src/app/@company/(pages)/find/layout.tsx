@@ -2,12 +2,12 @@
 "use client"
 import { useState } from 'react'
 import styles from './layout.module.scss'
-import Logo from './logo.png'
-import LogoCode from './logocoderiseapp.png'
+import Logo from './logo.png';
+import LogoCode from './logocoderiseapp.png';
 import Cookies from 'js-cookie';
 import { MdLogout } from "react-icons/md";
 
-import { Link, useNavigate, useNavigation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 interface FindLayoutPros {
@@ -17,12 +17,10 @@ interface FindLayoutPros {
 export default function FindLayout({ children }: FindLayoutPros) {
 
     const [isDropdownOpen, updateOpen] = useState(false);
-    const router = useNavigate();
-    const {location} = useNavigation();
     function logout() {
         localStorage.removeItem('token');
         Cookies.remove('session');
-        router('/');
+        location.replace('/');
     }
 
     return (

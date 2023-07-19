@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './home.module.scss';
 /// app/company/
-import LogoCode from '../../../@company/(pages)/find/logocoderiseapp.png'
+// import LogoCode from '../../../@company/(pages)/find/logocoderiseapp.png'
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { HeaderHome } from './HeaderHome';
 import { FullProfessionalProfile, ProfessionalProfile, validation } from '../../../@company/(pages)/find/search/page';
@@ -87,7 +87,7 @@ export default function HomeLogin() {
 
             <footer className={styles.footer}>
                 <center>
-                    <img src={LogoCode} alt="logocode" />
+                    <img src={""} alt="logocode" />
                 </center>
             </footer>
         </>
