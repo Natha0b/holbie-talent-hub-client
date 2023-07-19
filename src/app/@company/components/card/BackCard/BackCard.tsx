@@ -63,8 +63,6 @@ export const initial: Initial = {
 };
 
 const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boolean, filterKey: number }> = ({ profile, active, filterKey }) => {
-    //const { state: prevState } = useEasy({ initial: { ...prevInitial } });
-    //const { state } = useEasy({ ...prevState, initial });
     const { state } = useEasy({ initial: { ...prevInitial, ...initial } })
 
     const [item_location, setItem_location] = React.useState(listOfCitiesIcons.find(({ value }) => value === profile.location));
