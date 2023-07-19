@@ -64,7 +64,7 @@ const App = () => {
 
           <nav className={styles["navigation"]}>
             <div
-              onClick={() => location.replace('/find/your-profiles')}
+              onClick={() => location.replace('/find/profile')}
               className={`${styles["navigation__buttons"]} ${location?.pathname.includes('profile') ? styles["navigation__buttons--active"] : ''}`}
             >
               find your profile
