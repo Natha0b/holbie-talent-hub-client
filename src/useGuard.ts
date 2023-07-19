@@ -27,14 +27,17 @@ export const useGuard = () => {
     const { state } = useEasy<{ user: User | null }>({ initial: { user: null } })
 
     useEffect(() => {
-        const { role } = { role: "UNSIGNEDIN", ...state.user };
+        console.log("🚀 ~ file: useGuard.ts:31 ~ useEffect ~ state.user", state.user)
+        if (state.user === null) return;
+        const { role } = { ...state.user };
         const { pathname } = location;
 
         const route = routesAccess.find((route) => pathname.includes(route.path));
 
         if (!(route?.roles.includes(role))) {
             const { path } = routesDefaultAccess.find((route) => role.includes(route.role)) ?? { path: "/" };
-            location.replace(path);
+            console.log("🚀 ~ file: useGuard.ts:37 ~ useEffect ~ path:", path)
+            // location.replace(path);
         }
 
     }, [state.user])
