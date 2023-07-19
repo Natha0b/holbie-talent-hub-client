@@ -18,6 +18,7 @@ import { useEasy } from 'use-easy';
 import { IMultiselectorItem } from '../../../../components/Multiselector/Multiselector.type';
 import { useNavigate } from 'react-router-dom';
 import { API } from '../../../../../env';
+import { initial as prevInitial } from '../../../../@unsignedin/(pages)/(log)/login/page';
 
 /**
  * The BackCard component represents the back side of a card that displays additional information.
@@ -62,8 +63,9 @@ export const initial: Initial = {
 };
 
 const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boolean, filterKey: number }> = ({ profile, active, filterKey }) => {
-
-    const { state } = useEasy({ initial });
+    //const { state: prevState } = useEasy({ initial: { ...prevInitial } });
+    //const { state } = useEasy({ ...prevState, initial });
+    const { state } = useEasy({ initial: { ...prevInitial, ...initial } })
 
     const [item_location, setItem_location] = React.useState(listOfCitiesIcons.find(({ value }) => value === profile.location));
     const [item_kind_job, setItem_kind_job] = React.useState(jobKindIcons.find(({ value }) => value === profile.kind_job));
@@ -107,6 +109,7 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
         
         const index = `filter${filterKey}` as keyof typeof state;
         if (typeof state[index] === 'object')
+            // @ts-ignore
             (state[index] as Filters) = {
                 
                 location: item_location?.name ?? '' as string,
@@ -115,7 +118,7 @@ const BackCard: React.FC<{ profile: ProfileFake, active: boolean, dynamic: boole
                 skills: [...item_skills
                     ?.map(({ skill_id }) => skill_id) ?? item_english_level?.skill_id]
                     ?.filter((value) => typeof value === 'number') as number[],
-                company_id: 1,
+                company_id: state["user"]?.company_id,
                 job_name: profile.job_name
 
             } as Filters

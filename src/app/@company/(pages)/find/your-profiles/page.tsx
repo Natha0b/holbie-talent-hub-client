@@ -31,7 +31,6 @@ const ProfilesResult: React.FC = () => {
 
         if (typeof state[`filter${state.filterKey}` as keyof typeof state] === 'undefined') return;
 
-        console.log(state);
         fetch(`${API}/api/v1/filters`, {
             method: "POST",
             headers: {

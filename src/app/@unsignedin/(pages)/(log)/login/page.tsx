@@ -26,12 +26,20 @@ export interface User {
     professional_id: number | null;
 }
 
+export interface Initial {
+    user: User | null;
+}
+
+export const initial: Initial = {
+    user: null
+}
+
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useNavigate();
     //@ts-ignore
-    const {state} = useEasy<{user: User | null}>({initial: {user: null}});
+    const { state } = useEasy<Initial>(initial);
     useGuard();
     
 
