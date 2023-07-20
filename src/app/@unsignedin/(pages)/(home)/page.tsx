@@ -67,7 +67,7 @@ export default function HomeLogin() {
                     <p className={styles.paragraphcontact}>
                         Holberton School Colombia<br/>It is an academy operated by Coderise SAS BIC
                         <span>
-                            <a href="https://www.coderise.org" className={styles.linkcoderise}>
+                            <a href="https://www.coderise.org" target="_blank" className={styles.linkcoderise}>
                                 www.coderise.org
                             </a>
                         </span>
@@ -77,10 +77,10 @@ export default function HomeLogin() {
 
                 {/*add contacts of always*/}
                 <div className={styles.contactholbe}>
-                    <FaFacebook className={styles.contacticons} />
-                    <FaInstagram className={styles.contacticons} />
-                    <FaTwitter className={styles.contacticons} />
-                    <FaLinkedin className={styles.contacticons} />
+                    <a href="https://www.facebook.com/Coderise/" target="_blank" className={styles.facebook}><FaFacebook className={styles.contacticons} /></a>
+                    <a href="https://www.instagram.com/coderiseorg/" target="_blank" className={styles.instagram}><FaInstagram className={styles.contacticons} /></a>
+                    <a href="https://twitter.com/coderiseorg" target="_blank" className={styles.twitter}><FaTwitter className={styles.contacticons} /></a>
+                    <a href="https://www.linkedin.com/company/coderise/about/" target="_blank" className={styles.linkedin}><FaLinkedin className={styles.contacticons} /></a>
                 </div>
             </div>
         </>

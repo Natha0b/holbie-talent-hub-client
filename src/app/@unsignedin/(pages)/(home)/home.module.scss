@@ -128,6 +128,23 @@
     width: 40px;
     margin-top: 0px;
     padding: 0px;
+    transition: color 0s ease; 
+}
+
+.facebook:hover {
+    color: #1F7BF2;
+}
+
+.instagram:hover {
+    color: #DB0855;
+}
+
+.twitter:hover {
+    color: #249EF0;
+}
+
+.linkedin:hover {
+    color: #126BC4;
 }
 
 .logincontainer {
