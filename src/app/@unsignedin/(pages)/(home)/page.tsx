@@ -37,7 +37,7 @@ export default function HomeLogin() {
     return (
         <>
             <HeaderHome />
-            <h3 className={styles.title}> About me</h3>
+            <h3 className={styles.title}> About me </h3>
             <div className={styles.containertextabout}>
                 <h3>¡Stand out and get your dream job!
                 </h3>
@@ -65,8 +65,7 @@ export default function HomeLogin() {
             <div className={styles.containercontact}>
                 <div>
                     <p className={styles.paragraphcontact}>
-                        Holberton School Colombia
-                        It is an academy operated
+                        Holberton School Colombia<br/>It is an academy operated by Coderise SAS BIC
                         <span>
                             <a href="https://www.coderise.org" className={styles.linkcoderise}>
                                 www.coderise.org
@@ -84,12 +83,6 @@ export default function HomeLogin() {
                     <FaLinkedin className={styles.contacticons} />
                 </div>
             </div>
-
-            <footer className={styles.footer}>
-                <center>
-                    <img src={""} alt="logocode" />
-                </center>
-            </footer>
         </>
     );
 }

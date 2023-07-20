@@ -71,8 +71,8 @@
     font-size: 50px;
     text-align: center;
     color: var(--color-secondary);
-    margin-bottom: 130px;
-    margin-top: 100px;
+    margin-bottom: 7%;
+    margin-top: 7%;
 
 }
 
@@ -90,7 +90,6 @@
 .paragraphcontact {
     font-size: 20px;
     width: 45%;
-    margin-left: 70px;
 }
 
 .containertextabout {
@@ -102,7 +101,11 @@
 }
 
 .containercontact {
+    margin-top: -3%;
     display: flex;
+    margin-bottom: 7%;
+    align-items: center;
+    justify-content: center;
 }
 
 .linkcoderise {
@@ -112,7 +115,7 @@
 
 .contactnumber {
     font-size: 20px;
-    margin-left: -155px;
+    margin-left: -157px;
 }
 
 .contactholbe {
@@ -174,22 +177,4 @@
     gap: 6rem 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-
-.footer {
-    --size: 6rem;
-    display: flex;
-    margin-top: 20px;
-    height: var(--size);
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-shadow: 0 -10px 30px 0 var(--color-gray);
-}
-
-.footer img {
-    width: 250px;
-    height: 80px;
 }
